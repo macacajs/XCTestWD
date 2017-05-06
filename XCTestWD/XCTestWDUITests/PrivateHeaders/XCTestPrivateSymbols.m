@@ -45,3 +45,8 @@ void *RetrieveXCTestSymbol(const char *name)
   NSCAssert(binaryPath != nil, @"XCTest binary path should not be nil", binaryPath);
   return FBRetrieveSymbolFromBinary(binaryPath, name);
 }
+
+int portNumber()
+{
+    return XCTESTWD_PORT;
+}

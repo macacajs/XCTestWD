@@ -33,3 +33,5 @@ void *RetrieveXCTestSymbol(const char *name);
 
 /*! Static constructor that will retrieve XCTest private symbols */
 __attribute__((constructor)) void LoadXCTestSymbols(void);
+
+int portNumber();
