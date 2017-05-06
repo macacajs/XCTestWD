@@ -5,23 +5,14 @@ const fs = require('fs');
 const _ = require('xutil');
 const path = require('path');
 const xcode = require('xcode');
-const AdmZip = require('adm-zip');
 const hostname = require('os').hostname();
 const childProcess = require('child_process');
 
 return;
 
 const distDirName = path.join(__dirname, '..');
-const wdaZipPath = path.join(distDirName, 'XCTestWD.zip');
 const scriptFile = path.join(distDirName, 'XCTestWD', 'Scripts', 'generate_modules.sh');
 const DEVELOPMENT_TEAM = process.env.DEVELOPMENT_TEAM_ID || '';
-
-try {
-  const zip = new AdmZip(wdaZipPath);
-  zip.extractAllTo(distDirName, true);
-} catch (e) {
-  console.log(e);
-}
 
 if (!_.isExistedFile(scriptFile)) {
   childProcess.exec(`unzip ${wdaZipPath}`, {

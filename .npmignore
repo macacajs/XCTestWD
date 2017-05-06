@@ -14,14 +14,12 @@ xcuserdata
 profile
 *.moved-aside
 DerivedData
-*.xcodeproj
 .idea/
 # Normal
 .project
 .settings
 node_modules/
 logs/
-Carthage/
 Cartfile.resolved
 UserInterfaceState.xcuserstate
 ios-app-bootstrap/
