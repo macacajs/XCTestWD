@@ -34,13 +34,13 @@ internal class XCTestWDSessionController: Controller {
         let bundleID = desiredCapabilities?["bundleId"]?.string ?? nil
         
         if bundleID == nil {
-            return HttpResponse.internalServerError
+            app = XCTestWDSession.activeApplication()
+        } else {
+            app = XCUIApplication.init(privateWithPath: path, bundleID: bundleID)!
+            app!.launchArguments = desiredCapabilities?["arguments"]?.arrayObject as! [String]? ?? [String]()
+            app!.launchEnvironment = desiredCapabilities?["environment"]?.dictionaryObject as! [String : String]? ?? [String:String]();
+            app!.launch()
         }
-        
-        app = XCUIApplication.init(privateWithPath: path, bundleID: bundleID)!
-        app!.launchArguments = desiredCapabilities?["arguments"]?.arrayObject as! [String]? ?? [String]()
-        app!.launchEnvironment = desiredCapabilities?["environment"]?.dictionaryObject as! [String : String]? ?? [String:String]();
-        app!.launch()
         
         if app != nil {
             session = XCTestWDSession.sessionWithApplication(app!)
