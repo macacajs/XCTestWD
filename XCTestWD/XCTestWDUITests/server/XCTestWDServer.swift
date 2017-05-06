@@ -15,12 +15,11 @@ public class XCTestWDServer {
     
     internal func startServer() {
         do {
-            print("-------starting http server:------")
             try server.start(fetchPort())
             registerRouters()
             
             XCUIApplication().terminate()
-            print("XCTestWD: setup->http://localhost:\(try! server.port())")
+            NSLog("XCTestWDSetup->http://localhost:\(try! server.port())<-XCTestWDSetup")
             RunLoop.main.run()
         } catch {
             print("Server start error: \(error)")
