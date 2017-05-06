@@ -1,0 +1,35 @@
+{
+  "name": "xctestwd",
+  "version": "0.1.1",
+  "description": "",
+  "keywords": [
+    "iOS"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/macacajs/xctestwd.git"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "adm-zip": "~0.4.7",
+    "xcode": "^0.8.9",
+    "xutil": "^1.0.2"
+  },
+  "devDependencies": {
+    "co-mocha": "*",
+    "ios-simulator": "^1.0.7",
+    "istanbul": "*",
+    "jshint": "*",
+    "macaca-utils": "^0.1.8",
+    "mocha": "*",
+    "pre-commit": "1.1.1",
+    "should": "*"
+  },
+  "scripts": {
+    "test": "make test",
+    "jshint": "make jshint",
+    "install": "node ./scripts/install.js",
+    "prepublishOnly": "make zip"
+  },
+  "license": "MIT"
+}
