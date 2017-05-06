@@ -1,0 +1,31 @@
+# Xcode
+.DS_Store
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+*.xcodeproj
+.idea/
+# Normal
+.project
+.settings
+node_modules/
+logs/
+Carthage/
+Cartfile.resolved
+UserInterfaceState.xcuserstate
+ios-app-bootstrap/
+ios-app-bootstrapTests/
+Cartfile
+*.sw*
+*.un~
