@@ -1,9 +1,10 @@
 {
   "name": "xctestwd",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "",
   "keywords": [
-    "iOS"
+    "iOS",
+    "xctest"
   ],
   "repository": {
     "type": "git",
@@ -27,8 +28,7 @@
   "scripts": {
     "test": "make test",
     "jshint": "make jshint",
-    "install": "node ./scripts/install.js",
-    "prepublishOnly": "make zip"
+    "install": "node ./scripts/install.js"
   },
   "license": "MIT"
 }
