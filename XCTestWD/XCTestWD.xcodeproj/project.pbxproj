@@ -371,12 +371,10 @@
 				TargetAttributes = {
 					63D408161EAB629400198736 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = CM2CQ7U9GM;
 						ProvisioningStyle = Automatic;
 					};
 					63D4082A1EAB629400198736 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = CM2CQ7U9GM;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 63D408161EAB629400198736;
@@ -634,7 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = XCTestWD/Info.plist;
@@ -651,7 +649,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = XCTestWD/Info.plist;
@@ -668,7 +666,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = XCTestWDUITests/Info.plist;
@@ -690,7 +688,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = XCTestWDUITests/Info.plist;
