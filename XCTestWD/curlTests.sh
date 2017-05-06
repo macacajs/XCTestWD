@@ -1,6 +1,6 @@
 
 export JSON_HEADER='-H "Content-Type:application/json"'
-export DEVICE_URL='http://127.0.0.1:8088'
+export DEVICE_URL='http://127.0.0.1:8001'
 
 TagHead() {
   echo "\n#### $1 ####"
