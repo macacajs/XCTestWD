@@ -24,7 +24,7 @@ public class XCTestWDServer {
       registerRouters()
         
       XCUIApplication().terminate()
-      print("XCTestWD: setup->http://localhost:\(try! server.port())")
+      print("XCTestWDSetup->http://localhost:\(try! server.port())<-XCTestWDSetup")
       RunLoop.main.run()
     } catch {
       print("Server start error: \(error)")
