@@ -29,6 +29,7 @@ NSArray<Class> *FBClassesThatConformsToProtocol(Protocol *protocol)
       [collection addObject:aClass];
     }
   }
+    
   free(classes);
   return collection.copy;
 }
