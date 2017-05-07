@@ -78,6 +78,99 @@ extension XCUIElement {
             "height":self.frame.height]
     }
     
+    func checkLastSnapShot() -> XCElementSnapshot {
+        if self.lastSnapshot != nil {
+            return self.lastSnapshot
+        }
+        self.resolve()
+        return self.lastSnapshot
+    }
+    
+    //MARK: element query
+    
+    func descendantsMatchingXPathQuery(xpathQuery:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
+        let query = xpathQuery.replacingOccurrences(of: "XCUIElementTypeAny", with: "*")
+        var matchSnapShots = XCTestWDXPath.findMatchesIn(self.lastSnapshot, query)
+        
+        if matchSnapShots == nil || matchSnapShots!.count == 0 {
+            return [XCUIElement]()
+        }
+        
+        if returnAfterFirstMatch {
+            matchSnapShots = [matchSnapShots!.first!]
+        }
+
+        var matchingTypes = Set<XCUIElementType>()
+        for snapshot in matchSnapShots! {
+            matchingTypes.insert(XCUIElementTypeTransformer.singleton.elementTypeWithTypeName(snapshot.wdType()))
+        }
+
+        var map = [XCUIElementType:[XCUIElement]]()
+        for type in matchingTypes {
+            let descendantsOfType = self.descendants(matching: type).allElementsBoundByIndex
+            map[type] = descendantsOfType
+        }
+
+        var matchingElements = [XCUIElement]()
+        for snapshot in matchSnapShots! {
+            var elements = map[snapshot.elementType]
+            if query.contains("last()") {
+                elements = elements?.reversed()
+            }
+            
+            innerLoop: for element in elements! {
+                if element.checkLastSnapShot()._matchesElement(snapshot) {
+                    matchingElements.append(element)
+                    break innerLoop
+                }
+            }
+            
+        }
+
+        return matchingElements
+    }
+    
+    func descendantsMatchingIdentifier(accessibilityId:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
+        var result = [XCUIElement]()
+        
+        if self.identifier == accessibilityId {
+            result.append(self)
+            if returnAfterFirstMatch {
+                return result
+            }
+        }
+        
+        let query = self.descendants(matching: XCUIElementType.any).matching(identifier: accessibilityId);
+        result.append(contentsOf: XCUIElement.extractMatchElementFromQuery(query: query, returnAfterFirstMatch: returnAfterFirstMatch))
+        
+        return result
+    }
+    
+    func descendantsMatchingClassName(className:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
+        var result = [XCUIElement]()
+        
+        let type = XCUIElementTypeTransformer.singleton.elementTypeWithTypeName(className)
+        if self.elementType == type || type == XCUIElementType.any {
+            result.append(self);
+            if returnAfterFirstMatch {
+                return result
+            }
+        }
+        
+        let query = self.descendants(matching: type);
+        result.append(contentsOf: XCUIElement.extractMatchElementFromQuery(query: query, returnAfterFirstMatch: returnAfterFirstMatch))
+        
+        return result
+    }
+    
+    static func extractMatchElementFromQuery(query:XCUIElementQuery, returnAfterFirstMatch:Bool) -> [XCUIElement] {
+        if !returnAfterFirstMatch {
+            return query.allElementsBoundByIndex
+        }
+        
+        let matchedElement = query.element(boundBy: 0)
+        return [matchedElement]
+    }
 }
 
 extension XCElementSnapshot {
