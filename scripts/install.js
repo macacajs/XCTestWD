@@ -1,38 +1,16 @@
-
 'use strict';
 
 const fs = require('fs');
-const _ = require('xutil');
 const path = require('path');
 const xcode = require('xcode');
 const hostname = require('os').hostname();
 const childProcess = require('child_process');
 
-return;
-
 const distDirName = path.join(__dirname, '..');
-const scriptFile = path.join(distDirName, 'XCTestWD', 'Scripts', 'generate_modules.sh');
 const DEVELOPMENT_TEAM = process.env.DEVELOPMENT_TEAM_ID || '';
 
-if (!_.isExistedFile(scriptFile)) {
-  childProcess.exec(`unzip ${wdaZipPath}`, {
-    maxBuffer: 1024 * 512 * 10,
-    wrapArgs: false,
-    cwd: distDirName
-  }, (err, stdout) => {
-    if (err) {
-      console.log(err);
-    }
-    console.log(stdout.trim());
-    fs.chmodSync(scriptFile, '755');
-  });
-} else {
-  fs.chmodSync(scriptFile, '755');
-}
-
 try {
-  const schemeName = 'XCTestWDRunner';
-  const libName = 'XCTestWDLib';
+  const schemeName = 'XCTestWDUITests';
   const projectPath = path.join(__dirname, '..', 'XCTestWD', 'XCTestWD.xcodeproj/project.pbxproj');
   const myProj = xcode.project(projectPath);
   myProj.parseSync();
@@ -56,20 +34,12 @@ try {
     }
   });
 
-  update(libName, function(buildSettings) {
-    if (DEVELOPMENT_TEAM) {
-      buildSettings.DEVELOPMENT_TEAM = DEVELOPMENT_TEAM;
-    }
-  });
-
   const projSect = myProj.getFirstProject();
   const myRunnerTargetKey = myProj.findTargetKey(schemeName);
-  const myLibTargetKey = myProj.findTargetKey(libName);
   const targetAttributes = projSect.firstProject.attributes.TargetAttributes;
   const runnerObj = targetAttributes[myRunnerTargetKey];
-  const libObj = targetAttributes[myLibTargetKey];
   if (DEVELOPMENT_TEAM) {
-    runnerObj.DevelopmentTeam = libObj.DevelopmentTeam = DEVELOPMENT_TEAM;
+    runnerObj.DevelopmentTeam = DEVELOPMENT_TEAM;
   }
 
   fs.writeFileSync(projectPath, myProj.writeSync());
