@@ -42,6 +42,6 @@ internal class XCTestWDSourceController: Controller {
     
     internal static func accessiblitySourceWithoutSession(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let temp = XCTestWDSession.activeApplication()?.accessibilityTree()
-        return XCTestWDResponse.response(session: request.session, value: JSON(JSON(temp!).rawString() ?? "")
+        return XCTestWDResponse.response(session: request.session, value: JSON(JSON(temp!).rawString() ?? ""))
     }
 }
