@@ -676,6 +676,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2",
+					"$(SRCROOT)/",
 				);
 				INFOPLIST_FILE = XCTestWDUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -701,6 +702,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2",
+					"$(SRCROOT)/",
 				);
 				INFOPLIST_FILE = XCTestWDUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
