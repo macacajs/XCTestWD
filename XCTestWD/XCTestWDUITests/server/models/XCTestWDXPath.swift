@@ -8,27 +8,42 @@
 
 import Foundation
 import AEXML
+import Fuzi
 
 internal class XCTestWDXPath {
     
     //MARK: External API
     static let defaultTopDir = "top"
     
-    static func xmlStringWithSnapShot(_ snapshot:XCElementSnapshot) -> String? {
-        let document = generateXMLPresentation(snapshot,
-                                               nil,
-                                               nil,
-                                               defaultTopDir)
-        return document?.xml
-    }
     
     static func findMatchesIn(_ root:XCElementSnapshot, _ xpathQuery:String) -> [XCElementSnapshot]? {
         
-        return nil
+        var mapping = [String:XCElementSnapshot]()
+        let documentXml = generateXMLPresentation(root,
+                                                  nil,
+                                                  nil,
+                                                  defaultTopDir,
+                                                  &mapping)?.xml
+        
+        if documentXml == nil {
+            return nil
+        }
+        
+        let document = try? XMLDocument(string: documentXml!, encoding:String.Encoding.utf8)
+        let nodes = document?.xpath(xpathQuery)
+        var results = [XCElementSnapshot]()
+        
+        for node in nodes! {
+            if mapping[node.attr("private_indexPath")!] != nil {
+                results.append(mapping[node.attr("private_indexPath")!]!)
+            }
+        }
+        
+        return results
     }
     
     //MARK: Internal Utils
-    static func generateXMLPresentation(_ root:XCElementSnapshot, _ parentElement:AEXMLElement?, _ writingDocument:AEXMLDocument?, _ indexPath:String) -> AEXMLDocument? {
+    static func generateXMLPresentation(_ root:XCElementSnapshot, _ parentElement:AEXMLElement?, _ writingDocument:AEXMLDocument?, _ indexPath:String, _ mapping: inout [String:XCElementSnapshot]) -> AEXMLDocument? {
         
         let elementName = XCUIElementTypeTransformer.singleton.shortStringWithElementType(root.elementType)
         let currentElement = AEXMLElement(name:elementName)
@@ -46,8 +61,11 @@ internal class XCTestWDXPath {
         var index = 0;
         for child in root.children {
             let childSnapshot = child as! XCElementSnapshot
-            let childIndexPath = indexPath.appending(",\(index+=1)")
-            _ = generateXMLPresentation(childSnapshot, currentElement, document, childIndexPath)
+            let childIndexPath = indexPath.appending(",\(index)")
+            index += 1
+            mapping[childIndexPath] = childSnapshot
+
+            _ = generateXMLPresentation(childSnapshot, currentElement, document, childIndexPath, &mapping)
         }
 
         return document
