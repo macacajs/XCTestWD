@@ -57,6 +57,7 @@
 		7FD799851EBC96F00053C4D2 /* XCRuntimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */; };
 		7FD799861EBC96F00053C4D2 /* XCRuntimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */; };
 		7FE01C5A1EB183D800B38DE1 /* XCTestWDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE01C591EB183D800B38DE1 /* XCTestWDAlert.swift */; };
+		7FF2623B1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2623A1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCRuntimeUtils.h; sourceTree = "<group>"; };
 		7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCRuntimeUtils.m; sourceTree = "<group>"; };
 		7FE01C591EB183D800B38DE1 /* XCTestWDAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlert.swift; path = XCTestWDUITests/server/models/XCTestWDAlert.swift; sourceTree = SOURCE_ROOT; };
+		7FF2623A1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDFindElementUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				7FD7997D1EBC6AC30053C4D2 /* XCTestWDMathUtils.swift */,
+				7FF2623A1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift */,
 			);
 			name = utils;
 			path = XCTestWDUITests/server/models/utils;
@@ -445,6 +448,7 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/Swifter.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/AEXML.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Fuzi.framework",
 			);
 			outputPaths = (
 			);
@@ -495,6 +499,7 @@
 				63BCCF431EAC8D0600DE4CC0 /* XCTestWDUrlController.swift in Sources */,
 				7FD799861EBC96F00053C4D2 /* XCRuntimeUtils.m in Sources */,
 				63BCCF421EAC8D0600DE4CC0 /* XCTestWDTitleController.swift in Sources */,
+				7FF2623B1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift in Sources */,
 				7F22148E1EB467B7006D706F /* XCTestWDAccessibility.swift in Sources */,
 				63BCCF3E1EAC8D0600DE4CC0 /* XCTestWDSessionController.swift in Sources */,
 			);
@@ -668,7 +673,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = XCTestWDUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -690,7 +698,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = XCTestWDUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
