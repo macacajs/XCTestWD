@@ -75,6 +75,7 @@ internal class XCTestWDSessionManager {
     static let singleton = XCTestWDSessionManager()
     
     private var sessionMapping = [String: XCTestWDSession]()
+    private var defaultSession:XCTestWDSession?
     
     func mountSession(_ session: XCTestWDSession) {
         sessionMapping[session.identifier] = session
@@ -82,6 +83,15 @@ internal class XCTestWDSessionManager {
     
     func querySession(_ identifier:String) -> XCTestWDSession? {
         return sessionMapping[identifier]
+    }
+    
+    func checkDefaultSession() -> XCTestWDSession {
+        if self.defaultSession == nil {
+            let application = XCTestWDSession.activeApplication()
+            self.defaultSession = XCTestWDSession.sessionWithApplication(application!)
+        }
+        
+        return self.defaultSession!
     }
     
     func queryAll() -> [String:XCTestWDSession] {

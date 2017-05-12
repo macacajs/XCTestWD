@@ -57,6 +57,7 @@
 		7FD799851EBC96F00053C4D2 /* XCRuntimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */; };
 		7FD799861EBC96F00053C4D2 /* XCRuntimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */; };
 		7FE01C5A1EB183D800B38DE1 /* XCTestWDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE01C591EB183D800B38DE1 /* XCTestWDAlert.swift */; };
+		7FEDEA761EC48D0900748089 /* XCTestWDErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEA751EC48D0900748089 /* XCTestWDErrors.swift */; };
 		7FF2623B1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2623A1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCRuntimeUtils.h; sourceTree = "<group>"; };
 		7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCRuntimeUtils.m; sourceTree = "<group>"; };
 		7FE01C591EB183D800B38DE1 /* XCTestWDAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlert.swift; path = XCTestWDUITests/server/models/XCTestWDAlert.swift; sourceTree = SOURCE_ROOT; };
+		7FEDEA751EC48D0900748089 /* XCTestWDErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDErrors.swift; path = XCTestWDUITests/server/models/XCTestWDErrors.swift; sourceTree = SOURCE_ROOT; };
 		7FF2623A1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDFindElementUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 				7F36D5381EADFD8E00C83CF0 /* XCTestWDReponse.swift */,
 				7FE01C591EB183D800B38DE1 /* XCTestWDAlert.swift */,
 				7F8119571EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift */,
+				7FEDEA751EC48D0900748089 /* XCTestWDErrors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				63BCCF411EAC8D0600DE4CC0 /* XCTestWDTimeoutController.swift in Sources */,
 				63BCCF3F1EAC8D0600DE4CC0 /* XCTestWDSourceController.swift in Sources */,
 				63BCCF3A1EAC8D0600DE4CC0 /* XCTestWDElementController.swift in Sources */,
+				7FEDEA761EC48D0900748089 /* XCTestWDErrors.swift in Sources */,
 				7FD799821EBC84D50053C4D2 /* XCTestPrivateSymbols.m in Sources */,
 				63D408671EAB62EB00198736 /* XCTestWDRunner.swift in Sources */,
 				7F9ACA9E1EAEF39100AA39A7 /* XCTestWDDispatch.swift in Sources */,

@@ -13,9 +13,13 @@ class XCTestWDFindElementUtils {
     // TODO: provide alert filter here
     
     
+    static func filterElement(usingText:String, withvalue:String, underElement:XCUIElement) throws -> XCUIElement? {
+        return try filterElements(usingText:usingText, withValue:withvalue, underElement:underElement, returnAfterFirstMatch:true)?.first
+    }
+    
     
     // Routing for xpath, class name, name, id
-    static func filterElement(usingText:String, withValue:String, underElement:XCUIElement, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
+    static func filterElements(usingText:String, withValue:String, underElement:XCUIElement, returnAfterFirstMatch:Bool) throws -> [XCUIElement]? {
         
         let isSearchByIdentifier = (usingText == "name" || usingText == "id" || usingText == "accessibility id")
         
@@ -30,6 +34,6 @@ class XCTestWDFindElementUtils {
                                                               returnAfterFirstMatch: returnAfterFirstMatch)
         }
         
-        return nil
+        throw XCTestWDRoutingError.noSuchUsingMethod
     }
 }
