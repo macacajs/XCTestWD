@@ -47,6 +47,31 @@ curl -X GET $JSON_HEADER \
 $DEVICE_URL/accessibleSource \
 
 
+TagHead "Check Window Size"
+
+curl -X GET $JSON_HEADER \
+$DEVICE_URL/wd/hub/session/$sessionID/window/current/size
+
+TagHead "Element"
+
+# curl -X POST $JSON_HEADER \
+# -d "{\"using\":\"xpath\",\"value\":\"//XCUIElementTypeTextField[1]\"}" \
+# $DEVICE_URL/element \
+#
+# curl -X POST $JSON_HEADER \
+# -d "{\"using\":\"name\",\"value\":\"Login\"}" \
+# $DEVICE_URL/element \
+
+curl -X POST $JSON_HEADER \
+-d "{\"using\":\"class name\",\"value\":\"XCUIElementTypeTextField\"}" \
+$DEVICE_URL/element \
+
+TagHead "Elements"
+
+curl -X POST $JSON_HEADER \
+-d "{\"using\":\"xpath\",\"value\":\"//XCUIElementTypeOther\"}" \
+$DEVICE_URL/elements \
+
 #Session: delete session by ID
 
 TagHead "Delete Session By ID"

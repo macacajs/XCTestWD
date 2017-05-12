@@ -34,8 +34,8 @@ internal class XCTestWDElementController: Controller {
     
     //MARK: Routing Logic Specification
     internal static func findElement(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let usage = request.params["using"]
-        let value = request.params["value"]
+        let usage = request.jsonBody["using"].string
+        let value = request.jsonBody["value"].string
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let application = request.session?.application ?? XCTestWDSessionManager.singleton.checkDefaultSession().application
         
@@ -44,16 +44,19 @@ internal class XCTestWDElementController: Controller {
         }
         
         let element = try? XCTestWDFindElementUtils.filterElement(usingText: usage!, withvalue: value!, underElement: application!)
-        if element == nil {
-            return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
-        }
         
-        return XCTestWDResponse.responseWithCacheElement(element!!, session.cache)
+        if let element = element {
+            if let element = element {
+                return XCTestWDResponse.responseWithCacheElement(element, session.cache)
+            }
+        }
+    
+        return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
     }
     
     internal static func findElements(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let usage = request.params["using"]
-        let value = request.params["value"]
+        let usage = request.jsonBody["using"].string
+        let value = request.jsonBody["value"].string
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let application = request.session?.application ?? XCTestWDSessionManager.singleton.checkDefaultSession().application
         
@@ -62,11 +65,14 @@ internal class XCTestWDElementController: Controller {
         }
         
         let elements = try? XCTestWDFindElementUtils.filterElements(usingText: usage!, withValue: value!, underElement: application!, returnAfterFirstMatch: false)
-        if elements == nil || elements.count == 0 {
-            return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
+        
+        if let elements = elements {
+            if let elements = elements {
+                return XCTestWDResponse.responsWithCacheElements(elements, session.cache)
+            }
         }
         
-        return XCTestWDResponse.responsWithCacheElements(elements!!, session.cache)
+        return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
     }
     
     internal static func setValue(request: Swifter.HttpRequest) -> Swifter.HttpResponse {

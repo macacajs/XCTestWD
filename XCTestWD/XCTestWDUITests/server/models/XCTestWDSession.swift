@@ -86,7 +86,7 @@ internal class XCTestWDSessionManager {
     }
     
     func checkDefaultSession() -> XCTestWDSession {
-        if self.defaultSession == nil {
+        if self.defaultSession == nil || self.defaultSession?.application.accessibilityActivate() == false {
             let application = XCTestWDSession.activeApplication()
             self.defaultSession = XCTestWDSession.sessionWithApplication(application!)
         }

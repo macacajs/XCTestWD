@@ -169,7 +169,12 @@ extension XCUIElement {
         }
         
         let matchedElement = query.element(boundBy: 0)
-        return [matchedElement]
+        
+        if query.allElementsBoundByIndex.count == 0{
+            return [XCUIElement]()
+        } else {
+            return [matchedElement]
+        }
     }
 }
 
