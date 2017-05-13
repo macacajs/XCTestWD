@@ -72,6 +72,13 @@ curl -X POST $JSON_HEADER \
 -d "{\"using\":\"xpath\",\"value\":\"//XCUIElementTypeOther\"}" \
 $DEVICE_URL/elements \
 
+
+TagHead "Element Value"
+
+curl -X POST $JSON_HEADER  \
+$DEVICE_URL/element/mockElementId/value \
+
+
 #Session: delete session by ID
 
 TagHead "Delete Session By ID"

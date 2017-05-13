@@ -126,11 +126,11 @@ extension HttpRequest {
         }
     }
     
-    var element: String? {
+    var elementId: String? {
         get {
-            if self.path.contains("\\element\\") {
-                let components = self.path.components(separatedBy:"\\")
-                let index = components.index(of: "session")!
+            if self.path.contains("/element/") {
+                let components = self.path.components(separatedBy:"/")
+                let index = components.index(of: "element")!
                 if index < components.count - 1 {
                     return components[index + 1]
                 }
