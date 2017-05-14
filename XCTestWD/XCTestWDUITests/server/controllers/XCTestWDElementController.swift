@@ -14,19 +14,19 @@ internal class XCTestWDElementController: Controller {
   
     //MARK: Controller - Protocol
     static func routes() -> [(RequestRoute, RoutingCall)] {
-        return [(RequestRoute("/element", "post"), findElement),
-                (RequestRoute("/elements", "post"), findElements),
-                (RequestRoute("/element/:elementId/element", "post"), findElement),
-                (RequestRoute("/element/:elementId/elements", "post"), findElements),
-                (RequestRoute("/element/:elementId/value", "post"), setValue),
-                (RequestRoute("/element/:elementId/click", "post"), click),
-                (RequestRoute("/element/:elementId/text", "get"), getText),
-                (RequestRoute("/element/:elementId/clear", "post"), clearText),
-                (RequestRoute("/element/:elementId/displayed", "get"), isDisplayed),
-                (RequestRoute("/element/:elementId/attribute/:name", "get"), getAttribute),
-                (RequestRoute("/element/:elementId/property/:name", "get"), getProperty),
-                (RequestRoute("/element/:elementId/css/:propertyName", "get"), getComputedCss),
-                (RequestRoute("/element/:elementId/rect", "get"), getRect)]
+        return [(RequestRoute("/wd/hub/session/:sessionId/element", "post"), findElement),
+                (RequestRoute("/wd/hub/session/:sessionId/elements", "post"), findElements),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/element", "post"), findElement),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/elements", "post"), findElements),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/value", "post"), setValue),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/click", "post"), click),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/text", "get"), getText),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/clear", "post"), clearText),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/displayed", "get"), isDisplayed),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/attribute/:name", "get"), getAttribute),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/property/:name", "get"), getProperty),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/css/:propertyName", "get"), getComputedCss),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/rect", "get"), getRect)]
     }
     
     static func shouldRegisterAutomatically() -> Bool {
@@ -93,7 +93,7 @@ internal class XCTestWDElementController: Controller {
     internal static func setValue(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         let value = request.jsonBody["value"].string
 
@@ -127,7 +127,7 @@ internal class XCTestWDElementController: Controller {
     internal static func click(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         
         if elementId == nil {
@@ -145,7 +145,7 @@ internal class XCTestWDElementController: Controller {
     internal static func getText(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         
         if elementId == nil {
@@ -163,7 +163,7 @@ internal class XCTestWDElementController: Controller {
     internal static func clearText(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         
         if elementId == nil {
@@ -176,7 +176,7 @@ internal class XCTestWDElementController: Controller {
         
         element?.tap()
         if element?.hasKeyboardFocus == true {
-            element?.typeText(value!)
+            element?.typeText("")
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
         
@@ -186,7 +186,7 @@ internal class XCTestWDElementController: Controller {
     internal static func isDisplayed(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         
         if elementId == nil {
@@ -207,9 +207,9 @@ internal class XCTestWDElementController: Controller {
     internal static func getAttribute(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
-        let attributeName = request.params["name"]
+        let attributeName = request.params[":name"]
         
         if elementId == nil || attributeName == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
@@ -220,15 +220,15 @@ internal class XCTestWDElementController: Controller {
         }
 
         let value = element?.value(forKey: (attributeName?.capitalized)!)
-        return XCTestWDResponse.response(session: session, value: JSON(value))
+        return XCTestWDResponse.response(session: session, value: JSON(value as Any))
     }
     
     internal static func getRect(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
 
         let elementId = request.elementId
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
-        let attributeName = request.params["name"]
+        let attributeName = request.params[":name"]
         
         if elementId == nil || attributeName == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
@@ -238,7 +238,7 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
 
-        return XCTestWDResponse.response(session: session, value: JSON(element?.wdRect()))
+        return XCTestWDResponse.response(session: session, value: JSON(element?.wdRect() as Any))
     }
     
     //MARK: WEB impl methods
@@ -252,7 +252,7 @@ internal class XCTestWDElementController: Controller {
     
     private static func checkRequestValid(request: Swifter.HttpRequest) -> Swifter.HttpResponse? {
         let elementId = request.elementId
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         
         if elementId == nil {

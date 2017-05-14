@@ -14,7 +14,7 @@ internal class XCTestWDScreenshotController: Controller {
   
   //MARK: Controller - Protocol
   static func routes() -> [(RequestRoute, RoutingCall)] {
-    return [(RequestRoute("/screenshot", "get"), getScreenshot)]
+    return [(RequestRoute("/wd/hub/screenshot", "get"), getScreenshot)]
   }
   
   static func shouldRegisterAutomatically() -> Bool {
