@@ -26,7 +26,9 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/attribute/:name", "get"), getAttribute),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/property/:name", "get"), getAttribute),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/css/:propertyName", "get"), getComputedCss),
-                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/rect", "get"), getRect)]
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/rect", "get"), getRect),
+                (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap)]
+        
     }
     
     static func shouldRegisterAutomatically() -> Bool {
@@ -156,7 +158,7 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
-        let text:String = firstNonEmptyValue(element?.wdName(), element?.wdLabel()) as? String ?? ""
+        let text:String = firstNonEmptyValue(element?.wdName(), element?.wdLabel()) ?? ""
         return XCTestWDResponse.response(session: session, value: JSON(text))
     }
     
@@ -218,9 +220,8 @@ internal class XCTestWDElementController: Controller {
         if element == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
-
-        let values = element?.value as? [String:Any]
-        let value = values?[(attributeName?.capitalized)!] as? String
+        
+        let value = element?.value(forKey: (attributeName?.capitalized)!)
         return XCTestWDResponse.response(session: session, value: JSON(value as Any))
     }
     
@@ -240,6 +241,23 @@ internal class XCTestWDElementController: Controller {
         }
 
         return XCTestWDResponse.response(session: session, value: JSON(element?.wdRect() as Any))
+    }
+    
+    internal static func tap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        
+        if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
+            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+        }
+        
+        let x = CGFloat(request.jsonBody["x"].float!)
+        let y = CGFloat(request.jsonBody["y"].float!)
+        
+        let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
+        let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
+        triggerCoordinate?.tap()
+        
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     
     //MARK: WEB impl methods

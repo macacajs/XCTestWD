@@ -8,8 +8,8 @@
 
 import Foundation
 
-func firstNonEmptyValue(_ value1:Any?, _ value2:Any?) -> Any? {
-    if value1 != nil {
+func firstNonEmptyValue(_ value1:String?, _ value2:String?) -> String? {
+    if value1 != nil && (value1?.characters.count)! > 0 {
         return value1
     } else {
         return value2
@@ -21,10 +21,18 @@ extension XCUIElement {
     func wdValue() -> Any! {
         var value = self.value
         if self.elementType == XCUIElementType.staticText {
-            value = firstNonEmptyValue(self.value, self.label)
+            if let temp = self.value {
+                value = self.value
+            } else {
+                value = self.label
+            }
         }
         if self.elementType == XCUIElementType.button {
-            value = firstNonEmptyValue(self.value, self.isSelected ? true: nil)
+            if let temp = self.value {
+                value = self.value
+            } else {
+                value = self.isSelected
+            }
         }
         if self.elementType == XCUIElementType.switch {
             value = self.value as! Int > 0
@@ -32,7 +40,11 @@ extension XCUIElement {
         if self.elementType == XCUIElementType.textField ||
            self.elementType == XCUIElementType.textView ||
             self.elementType == XCUIElementType.secureTextField {
-            value = firstNonEmptyValue(self.value, self.placeholderValue)
+            if let temp = self.value {
+                value = self.value
+            } else {
+                value = self.placeholderValue
+            }
         }
         
         return value
@@ -49,7 +61,7 @@ extension XCUIElement {
     }
     
     func wdName() -> String? {
-        let name = (firstNonEmptyValue(self.identifier, self.label) as? String)
+        let name = (firstNonEmptyValue(self.identifier, self.label))
         if name?.characters.count == 0 {
             return nil
         } else {
@@ -180,6 +192,36 @@ extension XCUIElement {
             return [matchedElement]
         }
     }
+    
+    open override func value(forKey key: String) -> Any? {
+        if key.lowercased().contains("enable") {
+            return self.isEnabled
+        } else if key.lowercased().contains("name") {
+            return self.wdName() ?? ""
+        } else if key.lowercased().contains("value") {
+            return self.wdValue()
+        } else if key.lowercased().contains("label") {
+            return self.wdLabel()
+        } else if key.lowercased().contains("type") {
+            return self.wdType()
+        } else if key.lowercased().contains("visible") {
+            if self.lastSnapshot == nil {
+                self.resolve()
+            }
+            return self.lastSnapshot.isWDVisible()
+        } else if key.lowercased().contains("access") {
+            if self.lastSnapshot == nil {
+                self.resolve()
+            }
+            return self.lastSnapshot.isAccessibile()
+        }
+        
+        return ""
+    }
+    
+    open override func value(forUndefinedKey key: String) -> Any? {
+        return ""
+    }
 }
 
 extension XCElementSnapshot {
@@ -187,10 +229,18 @@ extension XCElementSnapshot {
     func wdValue() -> Any? {
         var value = self.value
         if self.elementType == XCUIElementType.staticText {
-            value = firstNonEmptyValue(self.value, self.label)
+            if let temp = self.value {
+                value = self.value
+            } else {
+                value = self.label
+            }
         }
         if self.elementType == XCUIElementType.button {
-            value = firstNonEmptyValue(self.value, self.isSelected ? true: nil)
+            if let temp = self.value {
+                value = self.value
+            } else {
+                value = self.isSelected
+            }
         }
         if self.elementType == XCUIElementType.switch {
             value = self.value as! Int > 0
@@ -198,7 +248,11 @@ extension XCElementSnapshot {
         if self.elementType == XCUIElementType.textField ||
             self.elementType == XCUIElementType.textView ||
             self.elementType == XCUIElementType.secureTextField {
-            value = firstNonEmptyValue(self.value, self.placeholderValue)
+            if let temp = self.value {
+                value = self.value
+            } else {
+                value = self.placeholderValue
+            }
         }
         
         return value
@@ -215,7 +269,7 @@ extension XCElementSnapshot {
     }
     
     func wdName() -> String? {
-        let name = (firstNonEmptyValue(self.identifier, self.label) as? String)
+        let name = (firstNonEmptyValue(self.identifier, self.label))
         if name?.characters.count == 0 {
             return nil
         } else {
