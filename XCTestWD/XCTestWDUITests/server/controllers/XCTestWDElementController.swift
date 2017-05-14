@@ -24,7 +24,7 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/clear", "post"), clearText),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/displayed", "get"), isDisplayed),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/attribute/:name", "get"), getAttribute),
-                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/property/:name", "get"), getProperty),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/property/:name", "get"), getAttribute),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/css/:propertyName", "get"), getComputedCss),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/rect", "get"), getRect)]
     }
@@ -95,7 +95,7 @@ internal class XCTestWDElementController: Controller {
         let elementId = request.elementId
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
-        let value = request.jsonBody["value"].string
+        let value = request.jsonBody["value"][0].string
 
         if value == nil || elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
@@ -219,7 +219,8 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
 
-        let value = element?.value(forKey: (attributeName?.capitalized)!)
+        let values = element?.value as? [String:Any]
+        let value = values?[(attributeName?.capitalized)!] as? String
         return XCTestWDResponse.response(session: session, value: JSON(value as Any))
     }
     
