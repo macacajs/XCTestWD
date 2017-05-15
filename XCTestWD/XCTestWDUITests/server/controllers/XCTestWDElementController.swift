@@ -27,8 +27,13 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/property/:name", "get"), getAttribute),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/css/:propertyName", "get"), getComputedCss),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/rect", "get"), getRect),
-                (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap)]
-        
+                (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap),
+                (RequestRoute("/wd/hub/session/:sessionId/doubleTap/", "post"), doubleTap),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTapAtCoordinate),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/twoFingerTap", "post"), handleTwoElementTap),
+                (RequestRoute("/wd/hub/session/:sessionId/touchAndHold", "post"), touchAndHold),
+                (RequestRoute("/wd/hub/session/:sessionId/dragfromtoforduration", "post"), dragForDuration),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/pinch", "post"), pinch)]
     }
     
     static func shouldRegisterAutomatically() -> Bool {
@@ -158,7 +163,7 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
-        let text:String = firstNonEmptyValue(element?.wdName(), element?.wdLabel()) ?? ""
+        let text:String = firstNonEmptyValue(element?.wdValue() as? String, element?.wdLabel()) ?? ""
         return XCTestWDResponse.response(session: session, value: JSON(text))
     }
     
@@ -257,6 +262,122 @@ internal class XCTestWDElementController: Controller {
         let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
         triggerCoordinate?.tap()
         
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func doubleTapAtCoordinate(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        
+        if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
+            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+        }
+        
+        let x = CGFloat(request.jsonBody["x"].float!)
+        let y = CGFloat(request.jsonBody["y"].float!)
+        
+        let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
+        let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
+        triggerCoordinate?.doubleTap()
+        
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func touchAndHold(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let action = request.jsonBody
+        
+        if action["x"].float == nil || action["y"].float == nil {
+            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+        }
+        
+        let x = CGFloat(action["x"].float!)
+        let y = CGFloat(action["y"].float!)
+        let duration = action["duration"].double
+        
+        let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
+        let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
+        triggerCoordinate?.press(forDuration: duration!)
+        
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func dragForDuration(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let action = request.jsonBody
+        
+        if action["fromX"].float == nil || action["fromY"].float == nil {
+            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+        }
+        
+        let x = CGFloat(action["fromX"].float!)
+        let y = CGFloat(action["fromY"].float!)
+        let toX = CGFloat(action["toX"].float!)
+        let toY = CGFloat(action["toY"].float!)
+        let duration = action["duration"].double
+        
+        let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
+        let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
+        
+        let endCoordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
+        let endTriggerCoordinate = XCUICoordinate.init(coordinate: endCoordinate, pointsOffset: CGVector.init(dx: toX, dy: toY))
+        
+        triggerCoordinate?.press(forDuration: duration!, thenDragTo: endTriggerCoordinate!)
+        
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func pinch(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let elementId = request.elementId
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = session.cache.elementForUUID(elementId)
+        let action = request.jsonBody
+
+        if element == nil {
+            return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
+        }
+       
+        if elementId == nil{
+            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+        }
+        
+        let scale = CGFloat(action["scale"].double!)
+        let velocity = CGFloat(action["velocity"].double!)
+        
+        element?.pinch(withScale: scale, velocity: velocity)
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func handleTwoElementTap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let elementId = request.elementId
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = session.cache.elementForUUID(elementId)
+        
+        if element == nil {
+            return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
+        }
+        
+        if elementId == nil{
+            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+        }
+        
+        element?.twoFingerTap()
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func doubleTap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let elementId = request.elementId
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = session.cache.elementForUUID(elementId)
+        
+        if element == nil {
+            return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
+        }
+        
+        if elementId == nil{
+            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+        }
+        
+        element?.doubleTap()
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     
