@@ -40,6 +40,36 @@ internal class XCTestWDResponse {
         return XCTestWDResponse(session?.identifier ?? "", error, nil).response()
     }
     
-    //MARK: Factory for Error Code
+    //MARK: Element Response
+    static func responseWithCacheElement(_ element:XCUIElement, _ elementCache:XCTestWDElementCache) -> HttpResponse {
+        let elementUUID = elementCache.storeElement(element)
+        return getResponseFromDictionary(dictionaryWithElement(element, elementUUID, false))
+    }
+    
+    static func responsWithCacheElements(_ elements:[XCUIElement], _ elementCache:XCTestWDElementCache) -> HttpResponse {
+        var response = [[String:String]]()
+        for element in elements {
+            let elementUUID = elementCache.storeElement(element)
+            response.append(dictionaryWithElement(element, elementUUID, false))
+        }
+        return XCTestWDResponse.response(session: nil, value: JSON(response))
+    }
+    
+    // ------------ Internal Method ---------
+    private static func dictionaryWithElement(_ element:XCUIElement, _ elementUUID:String, _ compact:Bool) -> [String:String] {
+        var dictionary = [String:String]();
+        dictionary["ELEMENT"] = elementUUID
+        
+        if compact == false {
+            dictionary["label"] = element.wdLabel()
+            dictionary["type"] = element.wdType()
+        }
+        
+        return dictionary
+    }
+    
+    private static func getResponseFromDictionary(_ dictionary:[String:String]) -> HttpResponse {
+        return XCTestWDResponse.response(session:nil, value:JSON(dictionary))
+    }
     
 }

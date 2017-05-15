@@ -13,3 +13,4 @@
 #import "XCUIApplication.h"
 #import "XCAccessibilityElement.h"
 #import "XCTestPrivateSymbols.h"
+#import "XCUICoordinate.h"

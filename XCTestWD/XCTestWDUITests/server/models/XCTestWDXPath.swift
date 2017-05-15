@@ -45,7 +45,7 @@ internal class XCTestWDXPath {
     //MARK: Internal Utils
     static func generateXMLPresentation(_ root:XCElementSnapshot, _ parentElement:AEXMLElement?, _ writingDocument:AEXMLDocument?, _ indexPath:String, _ mapping: inout [String:XCElementSnapshot]) -> AEXMLDocument? {
         
-        let elementName = XCUIElementTypeTransformer.singleton.shortStringWithElementType(root.elementType)
+        let elementName = XCUIElementTypeTransformer.singleton.stringWithElementType(root.elementType)
         let currentElement = AEXMLElement(name:elementName)
         recordAttributeForElement(root, currentElement, indexPath)
         
@@ -73,7 +73,7 @@ internal class XCTestWDXPath {
 
     static func recordAttributeForElement(_ snapshot:XCElementSnapshot, _ currentElement:AEXMLElement, _ indexPath:String?) {
         
-        currentElement.attributes["type"] = XCUIElementTypeTransformer.singleton.shortStringWithElementType(snapshot.elementType)
+        currentElement.attributes["type"] = XCUIElementTypeTransformer.singleton.stringWithElementType(snapshot.elementType)
         
         if snapshot.wdValue() != nil {
             let value = snapshot.wdValue()!

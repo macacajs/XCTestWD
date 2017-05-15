@@ -14,10 +14,10 @@ internal class XCTestWDSourceController: Controller {
     
     //MARK: Controller - Protocol
     static func routes() -> [(RequestRoute, RoutingCall)] {
-        return [(RequestRoute("/session/:sessionId/source", "get"), source),
-                (RequestRoute("/source", "get"), sourceWithoutSession),
-                (RequestRoute("/session/:sessionId/accessibleSource", "get"), accessiblitySource),
-                (RequestRoute("/accessibleSource", "get"), accessiblitySourceWithoutSession)]
+        return [(RequestRoute("/wd/hub/session/:sessionId/source", "get"), source),
+                (RequestRoute("/wd/hub/source", "get"), sourceWithoutSession),
+                (RequestRoute("/wd/hub/session/:sessionId/accessibleSource", "get"), accessiblitySource),
+                (RequestRoute("/wd/hub/accessibleSource", "get"), accessiblitySourceWithoutSession)]
     }
     
     static func shouldRegisterAutomatically() -> Bool {
