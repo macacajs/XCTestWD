@@ -75,6 +75,7 @@ internal class XCTestWDSessionManager {
     static let singleton = XCTestWDSessionManager()
     
     private var sessionMapping = [String: XCTestWDSession]()
+    private var defaultSession:XCTestWDSession?
     
     func mountSession(_ session: XCTestWDSession) {
         sessionMapping[session.identifier] = session
@@ -82,6 +83,15 @@ internal class XCTestWDSessionManager {
     
     func querySession(_ identifier:String) -> XCTestWDSession? {
         return sessionMapping[identifier]
+    }
+    
+    func checkDefaultSession() -> XCTestWDSession {
+        if self.defaultSession == nil || self.defaultSession?.application.accessibilityActivate() == false {
+            let application = XCTestWDSession.activeApplication()
+            self.defaultSession = XCTestWDSession.sessionWithApplication(application!)
+        }
+        
+        return self.defaultSession!
     }
     
     func queryAll() -> [String:XCTestWDSession] {
@@ -116,11 +126,11 @@ extension HttpRequest {
         }
     }
     
-    var element: String? {
+    var elementId: String? {
         get {
-            if self.path.contains("\\element\\") {
-                let components = self.path.components(separatedBy:"\\")
-                let index = components.index(of: "session")!
+            if self.path.contains("/element/") {
+                let components = self.path.components(separatedBy:"/")
+                let index = components.index(of: "element")!
                 if index < components.count - 1 {
                     return components[index + 1]
                 }

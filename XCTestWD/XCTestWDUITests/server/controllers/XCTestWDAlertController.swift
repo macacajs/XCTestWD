@@ -14,10 +14,10 @@ internal class XCTestWDAlertController: Controller {
   
     //MARK: Controller - Protocol
     static func routes() -> [(RequestRoute, RoutingCall)] {
-        return [(RequestRoute("/accept_alert", "post"), acceptAlert),
-                (RequestRoute("/dismiss_alert", "post"), dismissAlert),
-                (RequestRoute("/alert_text", "get"), alertText),
-                (RequestRoute("/alert_text", "post"), alertKeys)]
+        return [(RequestRoute("/wd/hub/session/:sessionId/accept_alert", "post"), acceptAlert),
+                (RequestRoute("/wd/hub/session/:sessionId/dismiss_alert", "post"), dismissAlert),
+                (RequestRoute("/wd/hub/session/:sessionId/alert_text", "get"), alertText),
+                (RequestRoute("/wd/hub/session/:sessionId/alert_text", "post"), alertKeys)]
     }
     
     static func shouldRegisterAutomatically() -> Bool {

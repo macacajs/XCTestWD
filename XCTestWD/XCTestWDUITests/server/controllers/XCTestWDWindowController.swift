@@ -14,7 +14,7 @@ internal class XCTestWDWindowController: Controller {
     
     //MARK: Controller - Protocol
     static func routes() -> [(RequestRoute, RoutingCall)] {
-        return [(RequestRoute("/session/:sessionId/window/current/size", "get"), getWindowSize)]
+        return [(RequestRoute("/wd/hub/session/:sessionId/window/current/size", "get"), getWindowSize)]
     }
     
     static func shouldRegisterAutomatically() -> Bool {
