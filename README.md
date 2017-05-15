@@ -17,6 +17,7 @@
 [download-image]: https://img.shields.io/npm/dm/xctestwd.svg?style=flat-square
 [download-url]: https://npmjs.org/package/xctestwd
 
+> Node.js wrapper for XCTest.
 
 ## 1. Requirements
 

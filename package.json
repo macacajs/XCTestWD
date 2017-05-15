@@ -1,7 +1,7 @@
 {
   "name": "xctestwd",
-  "version": "1.0.5",
-  "description": "",
+  "version": "1.0.8",
+  "description": "Node.js wrapper for XCTest.",
   "keywords": [
     "iOS",
     "xctest"
