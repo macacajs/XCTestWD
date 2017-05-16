@@ -44,10 +44,6 @@ curl -X POST $JSON_HEADER \
 -d "{\"value\":\"send keys hahaha\"}" \
 $DEVICE_URL/wd/hub/session/$sessionID/keys \
 
-curl -X POST $JSON_HEADER \
--d "{\"value\":\"send2 keys2 hahaha2\"}" \
-$DEVICE_URL/wd/hub/session/$sessionID/keys \
-
 TagHead "Check Source"
 
 curl -X GET $JSON_HEADER \
@@ -72,11 +68,7 @@ TagHead "Element"
 
 curl -X POST $JSON_HEADER \
 -d "{\"using\":\"xpath\",\"value\":\"//XCUIElementTypeTextField[1]\"}" \
-$DEVICE_URL/session/$sessionID/element \
-
-curl -X POST $JSON_HEADER \
--d "{\"using\":\"name\",\"value\":\"Login\"}" \
-$DEVICE_URL/session/$sessionID/element \
+$DEVICE_URL/wd/hub/session/$sessionID/element \
 
 curl -X POST $JSON_HEADER \
 -d "{\"using\":\"class name\",\"value\":\"XCUIElementTypeTextField\"}" \
