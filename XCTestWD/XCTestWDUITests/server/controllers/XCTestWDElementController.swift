@@ -28,7 +28,8 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/css/:propertyName", "get"), getComputedCss),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/rect", "get"), getRect),
                 (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap),
-                (RequestRoute("/wd/hub/session/:sessionId/doubleTap/", "post"), doubleTap),
+                (RequestRoute("/wd/hub/session/:sessionId/doubleTap", "post"), doubleTap),
+                (RequestRoute("/wd/hub/session/:sessionId/keys", "post"), handleKeys),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTapAtCoordinate),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/twoFingerTap", "post"), handleTwoElementTap),
                 (RequestRoute("/wd/hub/session/:sessionId/touchAndHold", "post"), touchAndHold),
@@ -361,6 +362,19 @@ internal class XCTestWDElementController: Controller {
         }
         
         element?.twoFingerTap()
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func handleKeys(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let action = request.jsonBody
+        let text = action["value"].string ?? ""
+        
+        XCTestDaemonsProxy.testRunnerProxy()._XCT_send(text, maximumFrequency: 60) { (error) in
+            if error != nil {
+                print("Error occured in sending key: \(error.debugDescription)")
+            }
+        }
+        
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     
