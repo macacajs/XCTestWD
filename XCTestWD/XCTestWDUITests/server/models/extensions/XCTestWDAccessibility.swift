@@ -35,7 +35,7 @@ extension XCUIElement {
             }
         }
         if self.elementType == XCUIElementType.switch {
-            value = self.value as! Int > 0
+            value = (self.value as! NSString).doubleValue > 0
         }
         if self.elementType == XCUIElementType.textField ||
            self.elementType == XCUIElementType.textView ||
@@ -243,7 +243,7 @@ extension XCElementSnapshot {
             }
         }
         if self.elementType == XCUIElementType.switch {
-            value = self.value as! Int > 0
+            value = (self.value as! NSString).doubleValue > 0
         }
         if self.elementType == XCUIElementType.textField ||
             self.elementType == XCUIElementType.textView ||
