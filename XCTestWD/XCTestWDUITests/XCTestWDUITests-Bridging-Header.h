@@ -6,6 +6,7 @@
 //  Copyright © 2017 XCTestWD. All rights reserved.
 //
 
+#import "CDStructures.h"
 #import "XCUIElementQuery.h"
 #import "XCUIElement.h"
 #import "XCElementSnapshot.h"
@@ -14,3 +15,6 @@
 #import "XCAccessibilityElement.h"
 #import "XCTestPrivateSymbols.h"
 #import "XCUICoordinate.h"
+#import "XCTestDriver.h"
+#import "XCTestDaemonsProxy.h"
+#import "XCTRunnerDaemonSession.h"
