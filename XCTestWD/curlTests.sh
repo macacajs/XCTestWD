@@ -10,8 +10,12 @@ echo "\n#### $1 ####"
 
 TagHead "Create Session"
 
+#curl -X POST $JSON_HEADER \
+#-d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 6\",\"platformName\":\"iOS\", \"bundleId\":\"xudafeng.ios-app-bootstrap\",\"autoAcceptAlerts\":false}}" \
+#$DEVICE_URL/wd/hub/session \
+
 curl -X POST $JSON_HEADER \
--d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 6\",\"platformName\":\"iOS\", \"bundleId\":\"xudafeng.ios-app-bootstrap\",\"autoAcceptAlerts\":false}}" \
+-d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 6\",\"platformName\":\"iOS\", \"bundleId\":\"com.apple.mobilesafari\"}}" \
 $DEVICE_URL/wd/hub/session \
 
 ### Read session as input for next stage testing
@@ -35,59 +39,59 @@ $DEVICE_URL/wd/hub/session/$sessionID/elements \
 echo "\n\ninput the elementID generated:\n"
 read elementID
 
-curl -X POST $JSON_HEADER \
-$DEVICE_URL/wd/hub/session/$sessionID/element/$elementID/clear \
-
-TagHead "Send Keys"
-
-curl -X POST $JSON_HEADER \
--d "{\"value\":\"send keys hahaha\"}" \
-$DEVICE_URL/wd/hub/session/$sessionID/keys \
-
-TagHead "Check Source"
-
-curl -X GET $JSON_HEADER \
-$DEVICE_URL/wd/hub/session/$sessionID/source \
-
-curl -X GET $JSON_HEADER \
-$DEVICE_URL/wd/hub/source \
-
-# Session: checkon accessible source
-
-TagHead "Check Accessiblility"
-
-curl -X GET $JSON_HEADER \
-$DEVICE_URL/wd/hub/accessibleSource \
-
-TagHead "Check Window Size"
-
-curl -X GET $JSON_HEADER \
-$DEVICE_URL/wd/hub/session/$sessionID/window/current/size
-
-TagHead "Element"
-
-curl -X POST $JSON_HEADER \
--d "{\"using\":\"xpath\",\"value\":\"//XCUIElementTypeTextField[1]\"}" \
-$DEVICE_URL/wd/hub/session/$sessionID/element \
-
-curl -X POST $JSON_HEADER \
--d "{\"using\":\"class name\",\"value\":\"XCUIElementTypeTextField\"}" \
-$DEVICE_URL/wd/hub/session/$sessionID/element \
-
-TagHead "Elements"
-
-curl -X POST $JSON_HEADER \
--d "{\"using\":\"xpath\",\"value\":\"//XCUIElementTypeOther\"}" \
-$DEVICE_URL/wd/hub/session/$sessionID/elements \
-
-TagHead "Element Value"
-
-curl -X POST $JSON_HEADER  \
-$DEVICE_URL/wd/hub/session/$sessionID/element/mockElementId/value \
-
-#Session: delete session by ID
-
-TagHead "Delete Session By ID"
-
-curl -X DELETE $JSON_HEADER \
-$DEVICE_URL/wd/hub/session/$sessionID \
+#curl -X POST $JSON_HEADER \
+#$DEVICE_URL/wd/hub/session/$sessionID/element/$elementID/clear \
+#
+#TagHead "Send Keys"
+#
+#curl -X POST $JSON_HEADER \
+#-d "{\"value\":\"send keys hahaha\"}" \
+#$DEVICE_URL/wd/hub/session/$sessionID/keys \
+#
+#TagHead "Check Source"
+#
+#curl -X GET $JSON_HEADER \
+#$DEVICE_URL/wd/hub/session/$sessionID/source \
+#
+#curl -X GET $JSON_HEADER \
+#$DEVICE_URL/wd/hub/source \
+#
+## Session: checkon accessible source
+#
+#TagHead "Check Accessiblility"
+#
+#curl -X GET $JSON_HEADER \
+#$DEVICE_URL/wd/hub/accessibleSource \
+#
+#TagHead "Check Window Size"
+#
+#curl -X GET $JSON_HEADER \
+#$DEVICE_URL/wd/hub/session/$sessionID/window/current/size
+#
+#TagHead "Element"
+#
+#curl -X POST $JSON_HEADER \
+#-d "{\"using\":\"xpath\",\"value\":\"//XCUIElementTypeTextField[1]\"}" \
+#$DEVICE_URL/wd/hub/session/$sessionID/element \
+#
+#curl -X POST $JSON_HEADER \
+#-d "{\"using\":\"class name\",\"value\":\"XCUIElementTypeTextField\"}" \
+#$DEVICE_URL/wd/hub/session/$sessionID/element \
+#
+#TagHead "Elements"
+#
+#curl -X POST $JSON_HEADER \
+#-d "{\"using\":\"xpath\",\"value\":\"//XCUIElementTypeOther\"}" \
+#$DEVICE_URL/wd/hub/session/$sessionID/elements \
+#
+#TagHead "Element Value"
+#
+#curl -X POST $JSON_HEADER  \
+#$DEVICE_URL/wd/hub/session/$sessionID/element/mockElementId/value \
+#
+##Session: delete session by ID
+#
+#TagHead "Delete Session By ID"
+#
+#curl -X DELETE $JSON_HEADER \
+#$DEVICE_URL/wd/hub/session/$sessionID \

@@ -256,14 +256,22 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let x = CGFloat(request.jsonBody["x"].float!)
-        let y = CGFloat(request.jsonBody["y"].float!)
-        
-        let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
-        let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
-        triggerCoordinate?.tap()
-        
-        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+        let elementId = request.elementId
+        let element = session.cache.elementForUUID(elementId)
+
+        if element != nil {
+            element?.tap()
+            return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+        } else {
+            let x = CGFloat(request.jsonBody["x"].float!)
+            let y = CGFloat(request.jsonBody["y"].float!)
+            
+            let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
+            let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
+            triggerCoordinate?.tap()
+            
+            return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+        }
     }
     
     internal static func doubleTapAtCoordinate(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
