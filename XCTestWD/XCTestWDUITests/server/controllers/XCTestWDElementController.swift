@@ -251,18 +251,17 @@ internal class XCTestWDElementController: Controller {
     
     internal static func tap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        
-        if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
-            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
-        }
-        
-        let elementId = request.elementId
+        let elementId = request.params[":elementId"]
         let element = session.cache.elementForUUID(elementId)
 
         if element != nil {
             element?.tap()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
+            if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
+                return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+            }
+            
             let x = CGFloat(request.jsonBody["x"].float!)
             let y = CGFloat(request.jsonBody["y"].float!)
             
@@ -305,7 +304,7 @@ internal class XCTestWDElementController: Controller {
         
         let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
         let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
-        triggerCoordinate?.press(forDuration: duration!)
+        triggerCoordinate?.press(forDuration: duration ?? 1)
         
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }

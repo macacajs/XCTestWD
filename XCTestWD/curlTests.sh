@@ -10,13 +10,13 @@ echo "\n#### $1 ####"
 
 TagHead "Create Session"
 
-#curl -X POST $JSON_HEADER \
-#-d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 6\",\"platformName\":\"iOS\", \"bundleId\":\"xudafeng.ios-app-bootstrap\",\"autoAcceptAlerts\":false}}" \
-#$DEVICE_URL/wd/hub/session \
-
 curl -X POST $JSON_HEADER \
--d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 6\",\"platformName\":\"iOS\", \"bundleId\":\"com.apple.mobilesafari\"}}" \
+-d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 6\",\"platformName\":\"iOS\", \"bundleId\":\"xudafeng.ios-app-bootstrap\",\"autoAcceptAlerts\":false}}" \
 $DEVICE_URL/wd/hub/session \
+
+#curl -X POST $JSON_HEADER \
+#-d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 6\",\"platformName\":\"iOS\", \"bundleId\":\"com.apple.mobilesafari\"}}" \
+#$DEVICE_URL/wd/hub/session \
 
 ### Read session as input for next stage testing
 
@@ -38,6 +38,9 @@ $DEVICE_URL/wd/hub/session/$sessionID/elements \
 
 echo "\n\ninput the elementID generated:\n"
 read elementID
+
+curl -X POST $JSON_HEADER \
+$DEVICE_URL/wd/hub/session/$sessionID/tap/$elementID \
 
 #curl -X POST $JSON_HEADER \
 #$DEVICE_URL/wd/hub/session/$sessionID/element/$elementID/clear \
