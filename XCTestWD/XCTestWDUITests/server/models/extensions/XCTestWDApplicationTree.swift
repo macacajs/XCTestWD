@@ -30,6 +30,7 @@ extension XCUIApplication {
     func accessibilityTree() -> [String : AnyObject]? {
         
         if self.lastSnapshot == nil {
+            let _ = self.query()
             self.resolve()
         }
         
