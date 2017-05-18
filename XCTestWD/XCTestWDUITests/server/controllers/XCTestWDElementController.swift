@@ -11,7 +11,7 @@ import Swifter
 import SwiftyJSON
 
 internal class XCTestWDElementController: Controller {
-  
+    
     //MARK: Controller - Protocol
     static func routes() -> [(RequestRoute, RoutingCall)] {
         return [(RequestRoute("/wd/hub/session/:sessionId/element", "post"), findElement),
@@ -28,9 +28,10 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/css/:propertyName", "get"), getComputedCss),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/rect", "get"), getRect),
                 (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap),
-                (RequestRoute("/wd/hub/session/:sessionId/doubleTap", "post"), doubleTap),
+                (RequestRoute("/wd/hub/session/:sessionId/doubleTap", "post"), doubleTapAtCoordinate),
                 (RequestRoute("/wd/hub/session/:sessionId/keys", "post"), handleKeys),
-                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTapAtCoordinate),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTap),
+                (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/touchAndHold", "post"), touchAndHoldOnElement),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/twoFingerTap", "post"), handleTwoElementTap),
                 (RequestRoute("/wd/hub/session/:sessionId/touchAndHold", "post"), touchAndHold),
                 (RequestRoute("/wd/hub/session/:sessionId/dragfromtoforduration", "post"), dragForDuration),
@@ -66,7 +67,7 @@ internal class XCTestWDElementController: Controller {
                 return XCTestWDResponse.responseWithCacheElement(element, session.cache)
             }
         }
-    
+        
         return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
     }
     
@@ -104,7 +105,7 @@ internal class XCTestWDElementController: Controller {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         let value = request.jsonBody["value"][0].string
-
+        
         if value == nil || elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
@@ -128,7 +129,7 @@ internal class XCTestWDElementController: Controller {
             element?.typeText(value!)
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
-
+        
         return XCTestWDResponse.response(session: nil, error: WDStatus.ElementIsNotSelectable)
     }
     
@@ -204,7 +205,7 @@ internal class XCTestWDElementController: Controller {
         if element == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
-
+        
         if element?.lastSnapshot == nil {
             element?.resolve()
         }
@@ -232,7 +233,7 @@ internal class XCTestWDElementController: Controller {
     }
     
     internal static func getRect(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-
+        
         let elementId = request.elementId
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
@@ -245,7 +246,7 @@ internal class XCTestWDElementController: Controller {
         if element == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
-
+        
         return XCTestWDResponse.response(session: session, value: JSON(element?.wdRect() as Any))
     }
     
@@ -253,7 +254,7 @@ internal class XCTestWDElementController: Controller {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let elementId = request.params[":elementId"]
         let element = session.cache.elementForUUID(elementId)
-
+        
         if element != nil {
             element?.tap()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
@@ -262,8 +263,8 @@ internal class XCTestWDElementController: Controller {
                 return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
             }
             
-            let x = CGFloat(request.jsonBody["x"].float!)
-            let y = CGFloat(request.jsonBody["y"].float!)
+            let x = CGFloat(request.jsonBody["x"].float ?? 0)
+            let y = CGFloat(request.jsonBody["y"].float ?? 0)
             
             let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
             let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
@@ -280,8 +281,8 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let x = CGFloat(request.jsonBody["x"].float!)
-        let y = CGFloat(request.jsonBody["y"].float!)
+        let x = CGFloat(request.jsonBody["x"].float ?? 0)
+        let y = CGFloat(request.jsonBody["y"].float ?? 0)
         
         let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
         let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
@@ -298,8 +299,8 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let x = CGFloat(action["x"].float!)
-        let y = CGFloat(action["y"].float!)
+        let x = CGFloat(action["x"].float ?? 0)
+        let y = CGFloat(action["y"].float ?? 0)
         let duration = action["duration"].double
         
         let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
@@ -309,6 +310,27 @@ internal class XCTestWDElementController: Controller {
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     
+    internal static func touchAndHoldOnElement(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        let elementId = request.elementId
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = session.cache.elementForUUID(elementId)
+        let action = request.jsonBody
+        
+        if element == nil {
+            return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
+        }
+        
+        if elementId == nil{
+            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+        }
+        
+        let duration = action["duration"].double ?? 2
+        
+        element?.press(forDuration: duration)
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    
     internal static func dragForDuration(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let action = request.jsonBody
@@ -317,10 +339,10 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let x = CGFloat(action["fromX"].float!)
-        let y = CGFloat(action["fromY"].float!)
-        let toX = CGFloat(action["toX"].float!)
-        let toY = CGFloat(action["toY"].float!)
+        let x = CGFloat(action["fromX"].float ?? 0)
+        let y = CGFloat(action["fromY"].float ?? 0)
+        let toX = CGFloat(action["toX"].float ?? 0)
+        let toY = CGFloat(action["toY"].float ?? 0)
         let duration = action["duration"].double
         
         let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
@@ -329,7 +351,7 @@ internal class XCTestWDElementController: Controller {
         let endCoordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
         let endTriggerCoordinate = XCUICoordinate.init(coordinate: endCoordinate, pointsOffset: CGVector.init(dx: toX, dy: toY))
         
-        triggerCoordinate?.press(forDuration: duration!, thenDragTo: endTriggerCoordinate!)
+        triggerCoordinate?.press(forDuration: duration ?? 1, thenDragTo: endTriggerCoordinate!)
         
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
@@ -339,17 +361,17 @@ internal class XCTestWDElementController: Controller {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         let action = request.jsonBody
-
+        
         if element == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
-       
+        
         if elementId == nil{
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let scale = CGFloat(action["scale"].double!)
-        let velocity = CGFloat(action["velocity"].double!)
+        let scale = CGFloat(action["scale"].double ?? 2)
+        let velocity = CGFloat(action["velocity"].double ?? 1)
         
         element?.pinch(withScale: scale, velocity: velocity)
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
@@ -390,16 +412,23 @@ internal class XCTestWDElementController: Controller {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
         
-        if element == nil {
-            return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
+        if element != nil {
+            element?.doubleTap()
+            return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+        } else {
+            if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
+                return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+            }
+            
+            let x = CGFloat(request.jsonBody["x"].float ?? 0)
+            let y = CGFloat(request.jsonBody["y"].float ?? 0)
+            
+            let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
+            let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
+            triggerCoordinate?.doubleTap()
+            
+            return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
-        
-        if elementId == nil{
-            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
-        }
-        
-        element?.doubleTap()
-        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     
     //MARK: WEB impl methods
