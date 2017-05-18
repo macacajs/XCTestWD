@@ -413,7 +413,7 @@ internal class XCTestWDElementController: Controller {
         let element = session.cache.elementForUUID(elementId)
         
         if element != nil {
-            element?.tap()
+            element?.doubleTap()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
             if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
