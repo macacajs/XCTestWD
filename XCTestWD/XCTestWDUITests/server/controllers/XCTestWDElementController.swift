@@ -30,7 +30,6 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap),
                 (RequestRoute("/wd/hub/session/:sessionId/doubleTap", "post"), doubleTapAtCoordinate),
                 (RequestRoute("/wd/hub/session/:sessionId/keys", "post"), handleKeys),
-                (RequestRoute("/keys", "post"), handleKeys),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTap),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/touchAndHold", "post"), touchAndHoldOnElement),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/twoFingerTap", "post"), handleTwoElementTap),
