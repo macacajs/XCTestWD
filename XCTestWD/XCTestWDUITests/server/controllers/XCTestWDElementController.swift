@@ -30,6 +30,7 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap),
                 (RequestRoute("/wd/hub/session/:sessionId/doubleTap", "post"), doubleTapAtCoordinate),
                 (RequestRoute("/wd/hub/session/:sessionId/keys", "post"), handleKeys),
+                (RequestRoute("/keys", "post"), handleKeys),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTap),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/touchAndHold", "post"), touchAndHoldOnElement),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/twoFingerTap", "post"), handleTwoElementTap),
@@ -396,7 +397,7 @@ internal class XCTestWDElementController: Controller {
     
     internal static func handleKeys(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let action = request.jsonBody
-        let text = action["value"].string ?? ""
+        let text = action["value"][0].string ?? ""
         
         XCTestDaemonsProxy.testRunnerProxy()._XCT_send(text, maximumFrequency: 60) { (error) in
             if error != nil {
