@@ -237,9 +237,8 @@ internal class XCTestWDElementController: Controller {
         let elementId = request.elementId
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
-        let attributeName = request.params[":name"]
         
-        if elementId == nil || attributeName == nil {
+        if elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
