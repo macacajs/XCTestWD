@@ -237,9 +237,8 @@ internal class XCTestWDElementController: Controller {
         let elementId = request.elementId
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let element = session.cache.elementForUUID(elementId)
-        let attributeName = request.params[":name"]
         
-        if elementId == nil || attributeName == nil {
+        if elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -396,7 +395,7 @@ internal class XCTestWDElementController: Controller {
     
     internal static func handleKeys(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let action = request.jsonBody
-        let text = action["value"].string ?? ""
+        let text = action["value"][0].string ?? ""
         
         XCTestDaemonsProxy.testRunnerProxy()._XCT_send(text, maximumFrequency: 60) { (error) in
             if error != nil {
