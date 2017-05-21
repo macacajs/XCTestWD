@@ -1,7 +1,7 @@
 {
   "name": "xctestwd",
   "version": "1.0.21",
-  "description": "Node.js wrapper for XCTest.",
+  "description": "A Swift implementation of WebDriver server for iOS that runs on Simulator/iOS devices. ",
   "keywords": [
     "iOS",
     "xctest"
