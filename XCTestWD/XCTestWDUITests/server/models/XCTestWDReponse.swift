@@ -27,7 +27,7 @@ internal class XCTestWDResponse {
         let response : JSON = ["sessionId":self.sessionId,
                                "status":self.status.rawValue,
                                "value":self.value as Any]
-        let rawString = response.rawString()?.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: " ", with: "")
+        let rawString = response.rawString()?.replacingOccurrences(of: "\n", with: "")
         return rawString != nil ? HttpResponse.ok(.text(rawString!)) : HttpResponse.internalServerError
     }
     
