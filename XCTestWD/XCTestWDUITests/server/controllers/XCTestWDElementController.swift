@@ -258,12 +258,15 @@ internal class XCTestWDElementController: Controller {
             element?.tap()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
-            if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
+            let rawX = getFloatValue(target: request.jsonBody, field: "x")
+            let rawY = getFloatValue(target: request.jsonBody, field: "y")
+            
+            if rawX == nil || rawY == nil {
                 return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
             }
             
-            let x = CGFloat(request.jsonBody["x"].float ?? 0)
-            let y = CGFloat(request.jsonBody["y"].float ?? 0)
+            let x = CGFloat(rawX!)
+            let y = CGFloat(rawY!)
             
             let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
             let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
@@ -276,12 +279,15 @@ internal class XCTestWDElementController: Controller {
     internal static func doubleTapAtCoordinate(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         
-        if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
+        let rawX = getFloatValue(target: request.jsonBody, field: "x")
+        let rawY = getFloatValue(target: request.jsonBody, field: "y")
+        
+        if rawX == nil || rawY == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let x = CGFloat(request.jsonBody["x"].float ?? 0)
-        let y = CGFloat(request.jsonBody["y"].float ?? 0)
+        let x = CGFloat(rawX!)
+        let y = CGFloat(rawY!)
         
         let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
         let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
@@ -294,13 +300,16 @@ internal class XCTestWDElementController: Controller {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let action = request.jsonBody
         
-        if action["x"].float == nil || action["y"].float == nil {
+        let rawX = getFloatValue(target: request.jsonBody, field: "x")
+        let rawY = getFloatValue(target: request.jsonBody, field: "y")
+        
+        if rawX == nil || rawY == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let x = CGFloat(action["x"].float ?? 0)
-        let y = CGFloat(action["y"].float ?? 0)
-        let duration = action["duration"].double
+        let x = CGFloat(rawX!)
+        let y = CGFloat(rawY!)
+        let duration = getDoubleValue(target: action, field: "duration")
         
         let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
         let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
@@ -323,9 +332,9 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let duration = action["duration"].double ?? 2
+        let duration = getDoubleValue(target: action, field: "duration")
         
-        element?.press(forDuration: duration)
+        element?.press(forDuration: duration ?? 2)
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     
@@ -334,15 +343,21 @@ internal class XCTestWDElementController: Controller {
         let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
         let action = request.jsonBody
         
-        if action["fromX"].float == nil || action["fromY"].float == nil {
+        let rawX = getFloatValue(target: action, field: "fromX")
+        let rawY = getFloatValue(target: action, field: "fromY")
+        let rawToX = getFloatValue(target: action, field: "toX")
+        let rawToY = getFloatValue(target: action, field: "toX")
+        
+        
+        if rawX == nil || rawY == nil || rawToX == nil || rawToY == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let x = CGFloat(action["fromX"].float ?? 0)
-        let y = CGFloat(action["fromY"].float ?? 0)
-        let toX = CGFloat(action["toX"].float ?? 0)
-        let toY = CGFloat(action["toY"].float ?? 0)
-        let duration = action["duration"].double
+        let x = CGFloat(rawX!)
+        let y = CGFloat(rawY!)
+        let toX = CGFloat(rawToX!)
+        let toY = CGFloat(rawToY!)
+        let duration = getDoubleValue(target: action, field: "duration")
         
         let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
         let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
@@ -369,8 +384,8 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
-        let scale = CGFloat(action["scale"].double ?? 2)
-        let velocity = CGFloat(action["velocity"].double ?? 1)
+        let scale = CGFloat(getDoubleValue(target: action, field: "scale") ?? 2)
+        let velocity = CGFloat(getDoubleValue(target: action, field: "velocity") ?? 1)
         
         element?.pinch(withScale: scale, velocity: velocity)
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
@@ -415,12 +430,15 @@ internal class XCTestWDElementController: Controller {
             element?.doubleTap()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
-            if request.jsonBody["x"].float == nil || request.jsonBody["y"].float == nil {
+            let rawX = getFloatValue(target: request.jsonBody, field: "x")
+            let rawY = getFloatValue(target: request.jsonBody, field: "y")
+            
+            if rawX == nil || rawY == nil {
                 return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
             }
             
-            let x = CGFloat(request.jsonBody["x"].float ?? 0)
-            let y = CGFloat(request.jsonBody["y"].float ?? 0)
+            let x = CGFloat(rawX!)
+            let y = CGFloat(rawY!)
             
             let coordinate = XCUICoordinate.init(element: session.application, normalizedOffset: CGVector.init())
             let triggerCoordinate = XCUICoordinate.init(coordinate: coordinate, pointsOffset: CGVector.init(dx: x, dy: y))
@@ -439,20 +457,31 @@ internal class XCTestWDElementController: Controller {
         return HttpResponse.ok(.html("getComputedCss"))
     }
     
-    private static func checkRequestValid(request: Swifter.HttpRequest) -> Swifter.HttpResponse? {
-        let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
-        
-        if elementId == nil {
-            return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
+    private static func getFloatValue(target:JSON?, field:String) -> Float? {
+        if target == nil {
+            return nil
         }
         
-        if element == nil {
-            return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
+        if target![field].type == Type.string {
+            return Float.init((target![field].rawString()) ?? "")
+        } else if target![field].type == Type.number {
+            return target![field].float
         }
         
         return nil
     }
     
+    private static func getDoubleValue(target:JSON?, field:String) -> Double? {
+        if target == nil {
+            return nil
+        }
+        
+        if target![field].type == Type.string {
+            return Double.init((target![field].rawString()) ?? "")
+        } else if target![field].type == Type.number {
+            return target![field].double
+        }
+        
+        return nil
+    }
 }
