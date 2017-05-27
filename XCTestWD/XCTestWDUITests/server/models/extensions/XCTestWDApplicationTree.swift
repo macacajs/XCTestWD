@@ -44,6 +44,7 @@ extension XCUIApplication {
         info["rawIndentifier"] = snapshot.identifier.characters.count > 0 ? snapshot.identifier as AnyObject : nil
         info["name"] = snapshot.wdName() as AnyObject? ?? nil
         info["value"] = snapshot.wdValue() as AnyObject? ?? nil
+        info["label"] = snapshot.wdLabel() as AnyObject? ?? nil
         info["rect"] = snapshot.wdRect() as AnyObject
         info["frame"] = NSStringFromCGRect(snapshot.wdFrame()) as AnyObject
         info["isEnabled"] = snapshot.isWDEnabled() as AnyObject
