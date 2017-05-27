@@ -10,18 +10,30 @@ import XCTest
 import Swifter
 
 class XCTextWDRunner: XCTestCase {
-  var server: HttpServer?
-  override func setUp() {
-    super.setUp()
-    continueAfterFailure = false
-    XCUIApplication().launch()
-  }
-  
-  override func tearDown() {
-    super.tearDown()
-  }
-  
-  func testRunner() {
-    XCTestWDServer().startServer()
-  }
+    var server: XCTestWDServer?
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = false
+        XCUIApplication().launch()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(terminate(notification:)),
+                                               name: NSNotification.Name(rawValue: XCTestWDSessionShutDown),
+                                               object: nil)
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testRunner() {
+        self.server = XCTestWDServer()
+        self.server?.startServer()
+    }
+    
+    @objc func terminate(notification: NSNotification){
+        self.server?.stopServer();
+        NSLog("XCTestWDTearDown->Session Reset")
+        assert(false, "")
+    }
 }

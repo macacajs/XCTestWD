@@ -103,7 +103,9 @@ internal class XCTestWDSessionManager {
     }
     
     func deleteSession(_ sessionId:String) {
+        sessionMapping[sessionId]?.application.terminate()
         sessionMapping.removeValue(forKey: sessionId)
+        NotificationCenter.default.post(name: NSNotification.Name(XCTestWDSessionShutDown), object: nil)
     }
 }
 
