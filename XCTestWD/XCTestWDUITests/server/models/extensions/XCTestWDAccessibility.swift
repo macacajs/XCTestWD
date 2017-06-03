@@ -29,7 +29,11 @@ extension XCUIElement {
         }
         if self.elementType == XCUIElementType.button {
             if let temp = self.value {
-                value = self.value
+                if ((temp as? String)?.characters.count) ?? 0 > 0 {
+                    value = self.value
+                } else {
+                    value = self.isSelected
+                }
             } else {
                 value = self.isSelected
             }
@@ -237,7 +241,11 @@ extension XCElementSnapshot {
         }
         if self.elementType == XCUIElementType.button {
             if let temp = self.value {
-                value = self.value
+                if ((temp as? String)?.characters.count) ?? 0 > 0 {
+                    value = self.value
+                } else {
+                    value = self.isSelected
+                }
             } else {
                 value = self.isSelected
             }
