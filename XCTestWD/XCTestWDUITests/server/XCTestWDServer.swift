@@ -26,6 +26,10 @@ public class XCTestWDServer {
         }
     }
     
+    internal func stopServer() {
+        server.stop()
+    }
+    
     private func registerRouters() {
         
         var controllers = [Controller]()

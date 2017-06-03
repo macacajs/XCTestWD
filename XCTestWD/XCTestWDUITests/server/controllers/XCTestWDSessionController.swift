@@ -11,6 +11,8 @@ import Swifter
 import XCTest
 import SwiftyJSON
 
+let XCTestWDSessionShutDown = "XCTestWDSessionShutDown"
+
 internal class XCTestWDSessionController: Controller {
     
     //MARK: Controller - Protocol
