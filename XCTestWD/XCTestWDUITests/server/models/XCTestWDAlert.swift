@@ -98,6 +98,8 @@ internal class XCTestWDAlert {
         }
         
         alert.resolve()
+        self.application.query()
+        self.application.resolve()
         return alert
     }
 }

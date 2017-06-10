@@ -36,7 +36,16 @@ internal class XCTestWDSession {
     
     var identifier: String!
     var cache: XCTestWDElementCache = XCTestWDElementCache()
-    var application: XCUIApplication!
+    private var _application: XCUIApplication!
+    var application: XCUIApplication! {
+        get {
+            resolve()
+            return _application
+        }
+        set {
+            _application = newValue
+        }
+    }
     
     static func sessionWithApplication(_ application: XCUIApplication) -> XCTestWDSession {
         
@@ -64,8 +73,8 @@ internal class XCTestWDSession {
     }
     
     func resolve() {
-        self.application.query()
-        self.application.resolve()
+        self._application.query()
+        self._application.resolve()
     }
 }
 
@@ -91,6 +100,7 @@ internal class XCTestWDSessionManager {
             self.defaultSession = XCTestWDSession.sessionWithApplication(application!)
         }
         
+        self.defaultSession?.resolve()
         return self.defaultSession!
     }
     
