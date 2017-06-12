@@ -30,6 +30,7 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap),
                 (RequestRoute("/wd/hub/session/:sessionId/doubleTap", "post"), doubleTapAtCoordinate),
                 (RequestRoute("/wd/hub/session/:sessionId/keys", "post"), handleKeys),
+                (RequestRoute("/wd/hub/session/:sessionId/homeScreen", "post"), homeScreen),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTap),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/touchAndHold", "post"), touchAndHoldOnElement),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/twoFingerTap", "post"), handleTwoElementTap),
@@ -420,6 +421,13 @@ internal class XCTestWDElementController: Controller {
         
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
+    
+    internal static func homeScreen(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        
+        XCUIDevice.shared().press(XCUIDeviceButton.home)
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
     
     internal static func doubleTap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let elementId = request.elementId

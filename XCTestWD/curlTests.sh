@@ -43,6 +43,11 @@ TagHead "Check Source"
 curl -X GET $JSON_HEADER \
 $DEVICE_URL/wd/hub/source \
 
+TagHead "Press Home"
+
+curl -X POST $JSON_HEADER \
+$DEVICE_URL/wd/hub/session/$sessionID/homeScreen \
+
 ##Session: delete session by ID
 
 TagHead "Delete Session By ID"
