@@ -19,6 +19,10 @@ public class XCTestWDServer {
             registerRouters()
             
             XCUIApplication().terminate()
+            
+            NSLog("\(Bundle.main.bundleIdentifier!)")
+            
+            
             NSLog("XCTestWDSetup->http://localhost:\(try! server.port())<-XCTestWDSetup")
             RunLoop.main.run()
         } catch {

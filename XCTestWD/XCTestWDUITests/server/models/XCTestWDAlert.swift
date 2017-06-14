@@ -82,16 +82,9 @@ internal class XCTestWDAlert {
             alert = self.application.sheets.element
             // Check actionsheet exists
             if !(alert.exists) {
-               return nil
-            }
-            
-            if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
-                // Check pad contains a popover which contains alert, 
-                // In that case, it is ignored.
-                let predicateString = NSPredicate.init(format: "indentifier == 'PopoverDismissRegion'")
-                let query = self.application.descendants(matching: XCUIElementType.any).matching(predicateString)
-                let childElements = query.allElementsBoundByIndex
-                if childElements.count > 0 {
+               let sprintboard = XCUIApplication.init(privateWithPath: nil, bundleID: "com.apple.springboard")
+               alert = (sprintboard?.alerts.element) ?? alert
+                if !(alert.exists) {
                     return nil
                 }
             }

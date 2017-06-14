@@ -226,6 +226,93 @@ extension XCUIElement {
     open override func value(forUndefinedKey key: String) -> Any? {
         return ""
     }
+    
+    //MARK: Commands
+    func tree() -> [String : AnyObject]? {
+        if self.lastSnapshot == nil {
+            self.resolve()
+        }
+        
+        return dictionaryForElement(self.lastSnapshot)
+    }
+    
+    func digest() -> String {
+        let tree = self.tree() ?? ["":"" as AnyObject]
+        var description = tree.description
+        
+        if description.contains("_TtGCs23_") {
+            description = description.substring(from: debugDescription.index(debugDescription.startIndex, offsetBy: 80))
+        }
+        
+        return MathUtils.MD5(string: description)
+    }
+    
+    func accessibilityTree() -> [String : AnyObject]? {
+        
+        if self.lastSnapshot == nil {
+            self.resolve()
+            let _ = self.query
+        }
+        
+        return accessibilityInfoForElement(self.lastSnapshot)
+    }
+    
+    //MARK: Private Methods
+    func dictionaryForElement(_ snapshot:XCElementSnapshot) -> [String : AnyObject]? {
+        var info = [String : AnyObject]()
+        info["type"] = XCUIElementTypeTransformer.singleton.shortStringWithElementType(snapshot.elementType) as AnyObject?
+        info["rawIndentifier"] = snapshot.identifier.characters.count > 0 ? snapshot.identifier as AnyObject : nil
+        info["name"] = snapshot.wdName() as AnyObject? ?? nil
+        info["value"] = snapshot.wdValue() as AnyObject? ?? nil
+        info["label"] = snapshot.wdLabel() as AnyObject? ?? nil
+        info["rect"] = snapshot.wdRect() as AnyObject
+        info["frame"] = NSStringFromCGRect(snapshot.wdFrame()) as AnyObject
+        info["isEnabled"] = snapshot.isWDEnabled() as AnyObject
+        info["isVisible"] = snapshot.isWDEnabled() as AnyObject
+        
+        let childrenElements = snapshot.children
+        if childrenElements != nil && childrenElements!.count > 0 {
+            var children = [AnyObject]()
+            for child in childrenElements! {
+                children.append(dictionaryForElement(child as! XCElementSnapshot) as AnyObject)
+            }
+            
+            info["children"] = children as AnyObject
+        }
+        
+        return info
+    }
+    
+    func accessibilityInfoForElement(_ snapshot:XCElementSnapshot) -> [String:AnyObject]? {
+        let isAccessible = snapshot.isWDAccessible()
+        let isVisible = snapshot.isWDVisible()
+        
+        var info = [String: AnyObject]()
+        
+        if isAccessible {
+            if isVisible {
+                info["value"] = snapshot.wdValue as AnyObject
+                info["label"] = snapshot.wdLabel as AnyObject
+            }
+        }
+        else {
+            var children = [AnyObject]()
+            let childrenElements = snapshot.children
+            for childSnapshot in childrenElements! {
+                let childInfo: [String: AnyObject] = self.accessibilityInfoForElement(childSnapshot as! XCElementSnapshot)!
+                if childInfo.keys.count > 0{
+                    children.append(childInfo as AnyObject)
+                }
+            }
+            
+            if children.count > 0 {
+                info["children"] = children as AnyObject
+            }
+        }
+        
+        return info
+    }
+    
 }
 
 extension XCElementSnapshot {
