@@ -44,7 +44,7 @@ $ xcodebuild -project XCTestWD.xcodeproj \
            -scheme XCTestWDUITests \
            -destination 'platform=iOS Simulator,name=iPhone 6' \
            XCTESTWD_PORT=8001 \
-           test
+           clean test
 ```
 
 To execute for iOS device, run the following command:
@@ -58,7 +58,7 @@ $ xcodebuild -project XCTestWD.xcodeproj \
            -scheme XCTestWDUITests \
            -destination 'platform=iOS,name=(your device name)' \
            XCTESTWD_PORT=8001 \
-           test
+           clean test
 ```
 
 
