@@ -39,7 +39,10 @@ internal class XCTestWDSession {
     private var _application: XCUIApplication!
     var application: XCUIApplication! {
         get {
-            resolve()
+            // Add protection for application resolve. only when application status active cam execute this
+            if _application.accessibilityActivate() == true {
+                resolve()
+            }
             return _application
         }
         set {
@@ -67,7 +70,6 @@ internal class XCTestWDSession {
         
         let application = XCUIApplication.app(withPID: (activeApplicationElement?.processIdentifier)!)
         _ = application?.query()
-        application?.resolve()
         
         return application
     }

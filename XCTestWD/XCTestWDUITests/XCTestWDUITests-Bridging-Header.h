@@ -18,3 +18,4 @@
 #import "XCTestDriver.h"
 #import "XCTestDaemonsProxy.h"
 #import "XCTRunnerDaemonSession.h"
+#import <CommonCrypto/CommonCrypto.h>
