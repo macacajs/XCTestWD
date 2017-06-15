@@ -42,8 +42,14 @@ internal class XCTestWDSession {
             // Add protection for application resolve. only when application status active cam execute this
             if _application.accessibilityActivate() == true {
                 resolve()
+                return _application
+            } else {
+                _application = XCTestWDSession.activeApplication() ?? _application
+                if (_application.accessibilityActivate()) {
+                    resolve()
+                }
+                return _application
             }
-            return _application
         }
         set {
             _application = newValue
