@@ -153,10 +153,6 @@ extension XCUIElement {
     func descendantsMatchingIdentifier(accessibilityId:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
         var result = [XCUIElement]()
         
-        if self.lastSnapshot == nil {
-            self.resolve()
-        }
-        
         if self.identifier == accessibilityId {
             result.append(self)
             if returnAfterFirstMatch {
