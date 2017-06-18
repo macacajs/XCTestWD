@@ -42,10 +42,18 @@ extension XCUIElement {
             value = (self.value as! NSString).doubleValue > 0
         }
         if self.elementType == XCUIElementType.textField ||
-           self.elementType == XCUIElementType.textView ||
+            self.elementType == XCUIElementType.textView ||
             self.elementType == XCUIElementType.secureTextField {
             if let temp = self.value {
-                value = self.value
+                if let str = temp as? String {
+                    if str.characters.count > 0 {
+                        value = self.value
+                    } else {
+                        value = self.placeholderValue
+                    }
+                } else {
+                    value = self.value
+                }
             } else {
                 value = self.placeholderValue
             }
@@ -72,7 +80,7 @@ extension XCUIElement {
             return name
         }
     }
-
+    
     
     func wdType() -> String {
         return XCUIElementTypeTransformer.singleton.stringWithElementType(self.elementType)
@@ -119,18 +127,18 @@ extension XCUIElement {
         if returnAfterFirstMatch {
             matchSnapShots = [matchSnapShots!.first!]
         }
-
+        
         var matchingTypes = Set<XCUIElementType>()
         for snapshot in matchSnapShots! {
             matchingTypes.insert(XCUIElementTypeTransformer.singleton.elementTypeWithTypeName(snapshot.wdType()))
         }
-
+        
         var map = [XCUIElementType:[XCUIElement]]()
         for type in matchingTypes {
             let descendantsOfType = self.descendants(matching: type).allElementsBoundByIndex
             map[type] = descendantsOfType
         }
-
+        
         var matchingElements = [XCUIElement]()
         for snapshot in matchSnapShots! {
             var elements = map[snapshot.elementType]
@@ -146,7 +154,7 @@ extension XCUIElement {
             }
             
         }
-
+        
         return matchingElements
     }
     
@@ -344,7 +352,15 @@ extension XCElementSnapshot {
             self.elementType == XCUIElementType.textView ||
             self.elementType == XCUIElementType.secureTextField {
             if let temp = self.value {
-                value = self.value
+                if let str = temp as? String {
+                    if str.characters.count > 0 {
+                        value = self.value
+                    } else {
+                        value = self.placeholderValue
+                    }
+                } else {
+                    value = self.value
+                }
             } else {
                 value = self.placeholderValue
             }
@@ -396,7 +412,7 @@ extension XCElementSnapshot {
         if self.frame.isEmpty || self.visibleFrame.isEmpty {
             return false
         }
-
+        
         let app: XCElementSnapshot? = _rootElement() as! XCElementSnapshot?
         let screenSize: CGSize? = MathUtils.adjustDimensionsForApplication((app?.frame.size)!, (XCUIDevice.shared().orientation))
         let screenFrame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat((screenSize?.width)!), height: CGFloat((screenSize?.height)!))
@@ -432,7 +448,7 @@ extension XCElementSnapshot {
         
         return true
     }
-
+    
     func isAccessibile() -> Bool {
         return self.attributeValue(XCAXAIsElementAttribute)?.boolValue ?? false
     }
@@ -441,6 +457,6 @@ extension XCElementSnapshot {
         let attributesResult = (XCAXClient_iOS.sharedClient() as! XCAXClient_iOS).attributes(forElementSnapshot: self, attributeList: [number])
         return attributesResult as AnyObject?
     }
-
+    
 }
 
