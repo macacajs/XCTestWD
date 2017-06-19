@@ -348,7 +348,7 @@ internal class XCTestWDElementController: Controller {
         let rawX = getFloatValue(target: action, field: "fromX")
         let rawY = getFloatValue(target: action, field: "fromY")
         let rawToX = getFloatValue(target: action, field: "toX")
-        let rawToY = getFloatValue(target: action, field: "toX")
+        let rawToY = getFloatValue(target: action, field: "toY")
         
         
         if rawX == nil || rawY == nil || rawToX == nil || rawToY == nil {
