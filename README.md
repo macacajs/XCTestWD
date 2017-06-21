@@ -21,7 +21,7 @@
 
 ## 1. Requirements
 
-- XCode version 8.2 and above.
+- XCode version 8.3.0 and above.
 - iOS version 9.0 and above.
 
 ## 2. Starting XCTestWD
