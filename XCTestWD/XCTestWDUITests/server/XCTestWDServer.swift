@@ -17,9 +17,7 @@ public class XCTestWDServer {
         do {
             try server.start(fetchPort())
             registerRouters()
-            
-            XCUIApplication().terminate()
-            
+                        
             NSLog("\(Bundle.main.bundleIdentifier!)")
             
             
