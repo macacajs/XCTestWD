@@ -71,16 +71,6 @@
 		7FF2623B1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2623A1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		63D4082C1EAB629400198736 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 63D4080F1EAB629400198736 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 63D408161EAB629400198736;
-			remoteInfo = XCTestWD;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		63BCCF171EAC8CF900DE4CC0 /* CDStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDStructures.h; sourceTree = "<group>"; };
 		63BCCF181EAC8CF900DE4CC0 /* XCAXClient_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCAXClient_iOS.h; sourceTree = "<group>"; };
@@ -388,6 +378,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D408371EAB629400198736 /* Build configuration list for PBXNativeTarget "XCTestWDUITests" */;
 			buildPhases = (
+				7F6C3B601EFCD8AB00F53D6B /* ShellScript */,
 				63D408271EAB629400198736 /* Sources */,
 				63D408281EAB629400198736 /* Frameworks */,
 				63D408291EAB629400198736 /* Resources */,
@@ -397,7 +388,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				63D4082D1EAB629400198736 /* PBXTargetDependency */,
 			);
 			name = XCTestWDUITests;
 			productName = XCTestWDUITests;
@@ -498,6 +488,19 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		7F6C3B601EFCD8AB00F53D6B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf ../Carthage/Checkouts/Fuzi/libxml2/";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -550,14 +553,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		63D4082D1EAB629400198736 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 63D408161EAB629400198736 /* XCTestWD */;
-			targetProxy = 63D4082C1EAB629400198736 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		63D4081E1EAB629400198736 /* Main.storyboard */ = {
