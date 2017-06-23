@@ -4,7 +4,7 @@ npm_bin= $$(npm bin)
 all: install
 carthage:
 	carthage update --platform iOS
-build:
+build: carthage
 	xcodebuild -project ./XCTestWD/XCTestWD.xcodeproj -sdk iphonesimulator
 install:
 	@npm install

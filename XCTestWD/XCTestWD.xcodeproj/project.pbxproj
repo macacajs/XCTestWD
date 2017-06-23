@@ -349,6 +349,7 @@
 				63D408291EAB629400198736 /* Resources */,
 				63F4564A1EAB657100EC91AF /* ShellScript */,
 				7FB002E61EAC5C6900476E7A /* Headers */,
+				7F6C3B5F1EFCCA6B00F53D6B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -421,6 +422,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		7F6C3B5F1EFCCA6B00F53D6B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf ../Carthage/Checkouts/Fuzi/libxml2 \\\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
