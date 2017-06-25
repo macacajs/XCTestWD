@@ -126,7 +126,6 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
         
-        element?.tap()
         if element?.hasKeyboardFocus == true {
             element?.typeText(value!)
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
