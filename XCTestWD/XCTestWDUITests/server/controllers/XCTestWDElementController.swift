@@ -125,7 +125,9 @@ internal class XCTestWDElementController: Controller {
             element?.adjust(toNormalizedSliderPosition: CGFloat((value! as NSString).floatValue))
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
-        
+        if element?.hasKeyboardFocus != true {
+            element?.tap()
+        }
         if element?.hasKeyboardFocus == true {
             element?.typeText(value!)
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
@@ -184,7 +186,9 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
-        element?.tap()
+        if element?.hasKeyboardFocus != true {
+            element?.tap()
+        }
         if element?.hasKeyboardFocus == true {
             element?.typeText("")
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
