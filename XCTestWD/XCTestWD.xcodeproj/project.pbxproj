@@ -412,7 +412,6 @@
 						CreatedOnToolsVersion = 8.3.1;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 63D408161EAB629400198736;
 					};
 				};
 			};
@@ -723,10 +722,10 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWDUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XCTestWDUITests/XCTestWDUITests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = XCTestWD;
 				XCTESTWD_PORT = 8001;
 			};
 			name = Debug;
@@ -749,9 +748,9 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWDUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XCTestWDUITests/XCTestWDUITests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = XCTestWD;
 				XCTESTWD_PORT = 8001;
 			};
 			name = Release;
