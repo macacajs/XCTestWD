@@ -14,7 +14,6 @@ class XCTextWDRunner: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        XCUIApplication().launch()
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(terminate(notification:)),
