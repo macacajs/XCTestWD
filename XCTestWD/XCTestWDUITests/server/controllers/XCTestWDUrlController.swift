@@ -34,7 +34,11 @@ internal class XCTestWDUrlController: Controller {
     }
     
     internal static func forward(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        return HttpResponse.ok(.html("forward"))
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let application = session.application
+        application?.navigationBars.buttons.element(boundBy: 0).tap()
+    
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     
     internal static func back(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
