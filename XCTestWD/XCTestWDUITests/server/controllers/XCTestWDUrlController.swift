@@ -13,11 +13,11 @@ internal class XCTestWDUrlController: Controller {
     
     //MARK: Controller - Protocol
     static func routes() -> [(RequestRoute, RoutingCall)] {
-        return [(RequestRoute("/url", "post"), url),
-                (RequestRoute("/url", "get"), getUrl),
-                (RequestRoute("/forward", "post"), forward),
-                (RequestRoute("/back", "post"), back),
-                (RequestRoute("/refresh", "post"), refresh)]
+        return [(RequestRoute("/wd/hub/session/:sessionId/url", "post"), url),
+                (RequestRoute("/wd/hub/session/:sessionId/url", "get"), getUrl),
+                (RequestRoute("/wd/hub/session/:sessionId/forward", "post"), forward),
+                (RequestRoute("/wd/hub/session/:sessionId/back", "post"), back),
+                (RequestRoute("/wd/hub/session/:sessionId/refresh", "post"), refresh)]
     }
     
     static func shouldRegisterAutomatically() -> Bool {
@@ -34,15 +34,18 @@ internal class XCTestWDUrlController: Controller {
     }
     
     internal static func forward(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let application = session.application
-        application?.navigationBars.buttons.element(boundBy: 0).tap()
-    
-        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+        return HttpResponse.ok(.html("forward"))
     }
     
     internal static func back(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        return HttpResponse.ok(.html("back"))
+        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let application = session.application
+        if ((application?.navigationBars.buttons.count) ?? 0 > 0) {
+            application?.navigationBars.buttons.element(boundBy: 0).tap()
+            return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+        }
+        
+        return XCTestWDResponse.response(session: nil, error: WDStatus.ElementIsNotSelectable)
     }
     
     internal static func refresh(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
