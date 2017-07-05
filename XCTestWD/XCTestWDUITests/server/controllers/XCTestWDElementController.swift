@@ -150,7 +150,10 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
-        element?.tap()
+        if (element?.exists)! && (element?.isHittable)! {
+            element?.tap()
+        }
+        
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     

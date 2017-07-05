@@ -378,6 +378,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D408371EAB629400198736 /* Build configuration list for PBXNativeTarget "XCTestWDUITests" */;
 			buildPhases = (
+				7FA43F311F0CB57400FB2332 /* ShellScript */,
 				7F6C3B601EFCD8AB00F53D6B /* ShellScript */,
 				63D408271EAB629400198736 /* Sources */,
 				63D408281EAB629400198736 /* Frameworks */,
@@ -410,6 +411,7 @@
 					};
 					63D4082A1EAB629400198736 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = CM2CQ7U9GM;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -499,6 +501,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "rm -rf ../Carthage/Checkouts/Fuzi/libxml2/";
+		};
+		7FA43F311F0CB57400FB2332 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun simctl uninstall booted com.apple.test.XCTestWDUITests-Runner\ndeviceConnected = $(idevice_id -l)\nif [ $deviceConnected -gt 0 ]; then\n    ideviceinstaller -U com.apple.test.XCTestWDUITests-Runner\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -709,7 +724,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CM2CQ7U9GM;
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,7 +750,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CM2CQ7U9GM;
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

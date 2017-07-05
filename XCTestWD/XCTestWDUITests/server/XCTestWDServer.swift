@@ -50,6 +50,7 @@ public class XCTestWDServer {
         controllers.append(XCTestWDTitleController())
         controllers.append(XCTestWDElementController())
         controllers.append(XCTestWDWindowController())
+        controllers.append(XCTestWDUrlController())
         
         for controller in controllers {
             let routes = type(of: controller).routes()

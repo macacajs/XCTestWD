@@ -245,14 +245,9 @@ extension XCUIElement {
     }
     
     func digest() -> String {
-        let tree = self.tree() ?? ["":"" as AnyObject]
-        var description = tree.description
-        
-        if description.contains("_TtGCs23_") {
-            description = description.substring(from: debugDescription.index(debugDescription.startIndex, offsetBy: 80))
-        }
-        
-        return MathUtils.MD5(string: description)
+        let description = "\(self.buttons.count)_\(self.textViews.count)_\(self.textFields.count)_\(self.otherElements.count)_\(self.traits())"
+
+        return description
     }
     
     func accessibilityTree() -> [String : AnyObject]? {
