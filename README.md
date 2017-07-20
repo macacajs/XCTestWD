@@ -60,8 +60,10 @@ $ xcodebuild -project XCTestWD.xcodeproj \
            XCTESTWD_PORT=8001 \
            clean test
 ```
+**Note:** For versions above wxtestwd 2.0.0, please install ideviceinstaller for supporting real device testing
 
 
 ## 3. Element Types
 
 In the current protocol, element strings for each `XCUIElementType` are generated based on the existing mapping in [reference/xctest/xcuielementtype](https://developer.apple.com/reference/xctest/xcuielementtype)
+
