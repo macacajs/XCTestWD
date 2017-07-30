@@ -51,6 +51,7 @@ internal class XCTestWDElementController: Controller {
         let uuid  = request.elementId
         let session = XCTestWDSessionManager.singleton.checkDefaultSession()
         let application = session.application
+        session.resolve()
         
         // Check if UUID is specified in request
         var root:XCUIElement? = application
@@ -79,6 +80,7 @@ internal class XCTestWDElementController: Controller {
         let uuid  = request.elementId
         let session = XCTestWDSessionManager.singleton.checkDefaultSession()
         let application = session.application
+        session.resolve()
         
         // Check if UUID is specified in request
         var root:XCUIElement? = application
