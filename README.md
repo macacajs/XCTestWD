@@ -73,13 +73,18 @@ In the current protocol, element strings for each `XCUIElementType` are generate
 ### 4.1 Socket Hangup Error
 Socket Hangup Error happens in the following two scenarios: <br>
 - **Case 1** <br>
-Issue: When you have some existing XCTestWD instances running and creating new ones. <br>
-Solution: verify whether ideviceinstaller and xcrun is properly working on your device and simulator. <br>
+Issue: <br>
+When you have some existing XCTestWD instances running and creating new ones. <br>
+Solution: <br>
+verify whether ideviceinstaller and xcrun is properly working on your device and simulator. <br>
 
 - **Case 2** <br>
-Issue: When you have started the XCTestWD instance properly but fails in middle of a testing process. <br>
-Solution: See the Macaca Service log to checkout which command leads the error. With detailed and comprehensive log information, please submit an issue to us. <br>
-Optional: If you cannot get anything from macaca server log, open the XCTestWD in your node installation path and attatch for debugging on process 'XCTRunner'. <br>
+Issue: <br>
+When you have started the XCTestWD instance properly but fails in middle of a testing process. <br>
+Solution: <br>
+See the Macaca Service log to checkout which command leads the error. With detailed and comprehensive log information, please submit an issue to us. <br>
+Optional: <br>
+If you cannot get anything from macaca server log, open the XCTestWD in your node installation path and attatch for debugging on process 'XCTRunner'. <br>
 
 
 
