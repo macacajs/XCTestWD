@@ -113,9 +113,7 @@ extension XCUIElement {
     //MARK: element query
     
     func descendantsMatchingXPathQuery(xpathQuery:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
-        if self.lastSnapshot == nil {
-            self.resolve()
-        }
+        self.resolve()
         
         let query = xpathQuery.replacingOccurrences(of: "XCUIElementTypeAny", with: "*")
         var matchSnapShots = XCTestWDXPath.findMatchesIn(self.lastSnapshot, query)
@@ -160,6 +158,7 @@ extension XCUIElement {
     
     func descendantsMatchingIdentifier(accessibilityId:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
         var result = [XCUIElement]()
+        self.resolve()
         
         if self.identifier == accessibilityId {
             result.append(self)
@@ -176,6 +175,7 @@ extension XCUIElement {
     
     func descendantsMatchingClassName(className:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
         var result = [XCUIElement]()
+        self.resolve()
         
         let type = XCUIElementTypeTransformer.singleton.elementTypeWithTypeName(className)
         if self.elementType == type || type == XCUIElementType.any {
