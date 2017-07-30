@@ -70,7 +70,7 @@ In the current protocol, element strings for each `XCUIElementType` are generate
 
 ## 4. Common Issues
 
-### 4.1 Socket Hangup Error
+### 4.1 Socket hangup error
 Socket Hangup Error happens in the following two scenarios: <br>
 - **Case 1** <br>
 Issue: <br>
@@ -86,6 +86,7 @@ See the Macaca Service log to checkout which command leads the error. With detai
 Optional: <br>
 If you cannot get anything from macaca server log, open the XCTestWD in your node installation path and attatch for debugging on process 'XCTRunner'. <br>
 
-
+### 4.2 Swift modules fails to compile
+Check carthage installation
 
 
