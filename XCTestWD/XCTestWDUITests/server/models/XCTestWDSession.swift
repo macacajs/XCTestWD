@@ -35,7 +35,6 @@ internal class XCTestWDElementCache
 internal class XCTestWDSession {
     
     var identifier: String!
-    var cache: XCTestWDElementCache = XCTestWDElementCache()
     private var _application: XCUIApplication!
     var application: XCUIApplication! {
         get {
@@ -84,9 +83,10 @@ internal class XCTestWDSession {
 internal class XCTestWDSessionManager {
     
     static let singleton = XCTestWDSessionManager()
+    static let commonCache: XCTestWDElementCache = XCTestWDElementCache()
     
     private var sessionMapping = [String: XCTestWDSession]()
-    private var defaultSession:XCTestWDSession?
+    var defaultSession:XCTestWDSession?
     
     func mountSession(_ session: XCTestWDSession) {
         sessionMapping[session.identifier] = session
@@ -97,12 +97,13 @@ internal class XCTestWDSessionManager {
     }
     
     func checkDefaultSession() -> XCTestWDSession {
-        if self.defaultSession == nil || self.defaultSession?.application.accessibilityActivate() == false {
+        if self.defaultSession == nil || self.defaultSession?.application.running == false {
+            sleep(3)
             let application = XCTestWDSession.activeApplication()
             self.defaultSession = XCTestWDSession.sessionWithApplication(application!)
+            self.defaultSession?.resolve()
         }
         
-        self.defaultSession?.resolve()
         return self.defaultSession!
     }
     
