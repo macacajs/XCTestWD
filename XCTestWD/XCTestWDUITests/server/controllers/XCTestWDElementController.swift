@@ -49,13 +49,14 @@ internal class XCTestWDElementController: Controller {
         let usage = request.jsonBody["using"].string
         let value = request.jsonBody["value"].string
         let uuid  = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let application = request.session?.application ?? XCTestWDSessionManager.singleton.checkDefaultSession().application
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let application = session.application
+        session.resolve()
         
         // Check if UUID is specified in request
         var root:XCUIElement? = application
         if uuid != nil {
-            root = session.cache.elementForUUID(uuid)
+            root = XCTestWDSessionManager.commonCache.elementForUUID(uuid)
         }
         
         if value == nil || usage == nil || root == nil {
@@ -66,7 +67,7 @@ internal class XCTestWDElementController: Controller {
         
         if let element = element {
             if let element = element {
-                return XCTestWDResponse.responseWithCacheElement(element, session.cache)
+                return XCTestWDResponse.responseWithCacheElement(element, XCTestWDSessionManager.commonCache)
             }
         }
         
@@ -77,13 +78,14 @@ internal class XCTestWDElementController: Controller {
         let usage = request.jsonBody["using"].string
         let value = request.jsonBody["value"].string
         let uuid  = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let application = request.session?.application ?? XCTestWDSessionManager.singleton.checkDefaultSession().application
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let application = session.application
+        session.resolve()
         
         // Check if UUID is specified in request
         var root:XCUIElement? = application
         if uuid != nil {
-            root = session.cache.elementForUUID(uuid)
+            root = XCTestWDSessionManager.commonCache.elementForUUID(uuid)
         }
         
         if value == nil || usage == nil || root == nil {
@@ -94,7 +96,7 @@ internal class XCTestWDElementController: Controller {
         
         if let elements = elements {
             if let elements = elements {
-                return XCTestWDResponse.responsWithCacheElements(elements, session.cache)
+                return XCTestWDResponse.responsWithCacheElements(elements, XCTestWDSessionManager.commonCache)
             }
         }
         
@@ -104,8 +106,7 @@ internal class XCTestWDElementController: Controller {
     internal static func setValue(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         let value = request.jsonBody["value"][0].string
         
         if value == nil || elementId == nil {
@@ -139,8 +140,7 @@ internal class XCTestWDElementController: Controller {
     internal static func click(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
@@ -160,8 +160,8 @@ internal class XCTestWDElementController: Controller {
     internal static func getText(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
@@ -178,8 +178,7 @@ internal class XCTestWDElementController: Controller {
     internal static func clearText(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
@@ -192,6 +191,7 @@ internal class XCTestWDElementController: Controller {
         if element?.hasKeyboardFocus != true {
             element?.tap()
         }
+        
         if element?.hasKeyboardFocus == true {
             element?.typeText("")
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
@@ -203,8 +203,8 @@ internal class XCTestWDElementController: Controller {
     internal static func isDisplayed(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
@@ -224,8 +224,8 @@ internal class XCTestWDElementController: Controller {
     internal static func getAttribute(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         let attributeName = request.params[":name"]
         
         if elementId == nil || attributeName == nil {
@@ -243,8 +243,8 @@ internal class XCTestWDElementController: Controller {
     internal static func getRect(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
@@ -258,9 +258,9 @@ internal class XCTestWDElementController: Controller {
     }
     
     internal static func tap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
         let elementId = request.params[":elementId"]
-        let element = session.cache.elementForUUID(elementId)
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if element != nil {
             element?.tap()
@@ -285,7 +285,7 @@ internal class XCTestWDElementController: Controller {
     }
     
     internal static func doubleTapAtCoordinate(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
         
         let rawX = getFloatValue(target: request.jsonBody, field: "x")
         let rawY = getFloatValue(target: request.jsonBody, field: "y")
@@ -305,7 +305,7 @@ internal class XCTestWDElementController: Controller {
     }
     
     internal static func touchAndHold(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
         let action = request.jsonBody
         
         let rawX = getFloatValue(target: request.jsonBody, field: "x")
@@ -328,8 +328,7 @@ internal class XCTestWDElementController: Controller {
     
     internal static func touchAndHoldOnElement(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         let action = request.jsonBody
         
         if element == nil {
@@ -348,7 +347,7 @@ internal class XCTestWDElementController: Controller {
     
     
     internal static func dragForDuration(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
         let action = request.jsonBody
         
         let rawX = getFloatValue(target: action, field: "fromX")
@@ -380,8 +379,7 @@ internal class XCTestWDElementController: Controller {
     
     internal static func pinch(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         let action = request.jsonBody
         
         if element == nil {
@@ -401,8 +399,7 @@ internal class XCTestWDElementController: Controller {
     
     internal static func handleTwoElementTap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if element == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
@@ -432,6 +429,7 @@ internal class XCTestWDElementController: Controller {
     internal static func homeScreen(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
         XCUIDevice.shared().press(XCUIDeviceButton.home)
+        sleep(3);
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
     
@@ -439,6 +437,7 @@ internal class XCTestWDElementController: Controller {
         
         let session = XCTestWDSessionManager.singleton.checkDefaultSession()
         let application = session.application
+        
         let elements = application?.descendants(matching: XCUIElementType.window).allElementsBoundByIndex
         
         if  elements == nil || elements?.count == 0 {
@@ -460,8 +459,8 @@ internal class XCTestWDElementController: Controller {
 
     internal static func doubleTap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let elementId = request.elementId
-        let session = request.session ?? XCTestWDSessionManager.singleton.checkDefaultSession()
-        let element = session.cache.elementForUUID(elementId)
+        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
+        let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if element != nil {
             element?.doubleTap()

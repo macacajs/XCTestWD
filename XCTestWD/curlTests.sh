@@ -43,19 +43,29 @@ TagHead "Check Source"
 curl -X GET $JSON_HEADER \
 $DEVICE_URL/wd/hub/source \
 
-#TagHead "Press Home"
-#
-#curl -X POST $JSON_HEADER \
-#$DEVICE_URL/wd/hub/session/$sessionID/homeScreen \
+TagHead "Press Home"
+
+curl -X POST $JSON_HEADER \
+$DEVICE_URL/wd/hub/session/$sessionID/homeScreen \
 
 TagHead "Title"
 
 curl -X GET $JSON_HEADER \
 $DEVICE_URL/wd/hub/session/$sessionID/title \
 
-##Session: delete session by ID
+TagHead "Check"
 
-#TagHead "Delete Session By ID"
-#
-#curl -X DELETE $JSON_HEADER \
-#$DEVICE_URL/wd/hub/session/$sessionID \
+curl -X GET $JSON_HEADER \
+$DEVICE_URL/wd/hub/session/$sessionID/title \
+
+TagHead "Trigger touch event by x & y"
+
+curl -X POST $JSON_HEADER \
+-d "{\"using\":\"xpath\",\"value\":\"//*[@name="DanaDemo"]\"}" \
+$DEVICE_URL/wd/hub/session/$sessionID/elements \
+
+echo "\n\ninput the elementID generated:\n"
+read elementID
+
+curl -X POST $JSON_HEADER \
+$DEVICE_URL/wd/hub/session/$sessionID/tap/$elementID \

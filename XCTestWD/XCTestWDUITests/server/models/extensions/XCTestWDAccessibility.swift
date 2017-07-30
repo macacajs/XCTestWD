@@ -113,9 +113,6 @@ extension XCUIElement {
     //MARK: element query
     
     func descendantsMatchingXPathQuery(xpathQuery:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
-        if self.lastSnapshot == nil {
-            self.resolve()
-        }
         
         let query = xpathQuery.replacingOccurrences(of: "XCUIElementTypeAny", with: "*")
         var matchSnapShots = XCTestWDXPath.findMatchesIn(self.lastSnapshot, query)

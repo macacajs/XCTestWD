@@ -42,10 +42,12 @@ internal class XCTestWDSessionController: Controller {
             app!.launchArguments = desiredCapabilities?["arguments"]?.arrayObject as! [String]? ?? [String]()
             app!.launchEnvironment = desiredCapabilities?["environment"]?.dictionaryObject as! [String : String]? ?? [String:String]();
             app!.launch()
+            sleep(1)
         }
         
         if app != nil {
             session = XCTestWDSession.sessionWithApplication(app!)
+            XCTestWDSessionManager.singleton.defaultSession = session;
             XCTestWDSessionManager.singleton.mountSession(session)
             session.resolve()
         }
