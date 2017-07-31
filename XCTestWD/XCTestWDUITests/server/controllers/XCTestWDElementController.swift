@@ -263,7 +263,9 @@ internal class XCTestWDElementController: Controller {
         let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if element != nil {
-            element?.tap()
+            if (element?.isHittable)! && (element?.exists)! {
+                element?.tap()
+            }
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
             let rawX = getFloatValue(target: request.jsonBody, field: "x")
@@ -463,7 +465,9 @@ internal class XCTestWDElementController: Controller {
         let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if element != nil {
-            element?.doubleTap()
+            if (element?.exists)! && (element?.isHittable)! {
+                element?.doubleTap()
+            }
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
             let rawX = getFloatValue(target: request.jsonBody, field: "x")
