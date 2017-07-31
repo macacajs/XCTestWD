@@ -77,6 +77,8 @@ Issue: <br>
 When you have some existing XCTestWD instances running and creating new ones. <br>
 Solution: <br>
 verify whether ideviceinstaller and xcrun is properly working on your device and simulator. <br>
+Hint: <br>
+https://github.com/libimobiledevice/ideviceinstaller/issues/48
 
 - **Case 2** <br>
 Issue: <br>
