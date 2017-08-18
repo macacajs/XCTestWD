@@ -2,7 +2,6 @@
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
 [![node version][node-image]][node-url]
 [![npm download][download-image]][download-url]
 
@@ -10,8 +9,6 @@
 [npm-url]: https://npmjs.org/package/xctestwd
 [travis-image]: https://img.shields.io/travis/macacajs/XCTestWD.svg?style=flat-square
 [travis-url]: https://travis-ci.org/macacajs/XCTestWD
-[coveralls-image]: https://img.shields.io/coveralls/macacajs/XCTestWD.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/macacajs/XCTestWD?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=_6-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 [download-image]: https://img.shields.io/npm/dm/xctestwd.svg?style=flat-square
@@ -71,6 +68,7 @@ In the current protocol, element strings for each `XCUIElementType` are generate
 ## 4. Common Issues
 
 ### 4.1 Socket hangup error
+
 Socket Hangup Error happens in the following two scenarios: <br>
 - **Case 1** <br>
 Issue: <br>
@@ -89,6 +87,5 @@ Optional: <br>
 If you cannot get anything from macaca server log, open the XCTestWD in your node installation path and attatch for debugging on process 'XCTRunner'. <br>
 
 ### 4.2 Swift modules fails to compile
+
 Check carthage installation
-
-
