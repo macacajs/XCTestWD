@@ -193,7 +193,7 @@ internal class XCTestWDElementController: Controller {
         }
         
         if element?.hasKeyboardFocus == true {
-            element?.typeText("")
+            element?.typeText((element?.value as? String ?? "").characters.map { _ in XCUIKeyboardKeyDelete }.joined(separator: ""))
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
         
