@@ -32,7 +32,8 @@
   "scripts": {
     "test": "make test",
     "jshint": "make jshint",
-    "install": "node ./scripts/install.js"
+    "install": "node ./scripts/install.js",
+    "prepublish": "make build"
   },
   "site": "https://macacajs.github.io",
   "license": "MIT"
