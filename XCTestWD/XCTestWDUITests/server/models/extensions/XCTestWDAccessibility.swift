@@ -409,7 +409,13 @@ extension XCElementSnapshot {
         let screenSize: CGSize? = MathUtils.adjustDimensionsForApplication((app?.frame.size)!, (XCUIDevice.shared().orientation))
         let screenFrame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat((screenSize?.width)!), height: CGFloat((screenSize?.height)!))
         let rectIntersects: Bool = visibleFrame.intersects(screenFrame)
-        let isActionable: Bool? = app?.frame.contains(hitPoint)
+        var temphitPoint:CGPoint?=CGPoint(x:-1,y:-1)
+        do{
+            try temphitPoint=self.hitPoint
+        } catch  {
+            temphitPoint=CGPoint(x:-1,y:-1)
+        }
+        let isActionable: Bool? = app?.frame.contains(temphitPoint!)
         return rectIntersects && isActionable!
     }
     
