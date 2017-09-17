@@ -275,19 +275,14 @@ extension XCUIElement {
             var children = [AnyObject]()
             for child in childrenElements! {
                 let tempchild=child as! XCElementSnapshot
-                if tempchild.isWDVisible()
-                {
+                if tempchild.isWDVisible() {
                     children.append(dictionaryForElement(child as! XCElementSnapshot) as AnyObject)
                 }
-
             }
-            if !children.isEmpty
-            {
+            if !children.isEmpty {
                 info["children"] = children as AnyObject
             }
-
         }
-        
         return info
     }
     
