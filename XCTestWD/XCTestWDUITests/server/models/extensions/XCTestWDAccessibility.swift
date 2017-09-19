@@ -62,6 +62,19 @@ extension XCUIElement {
         return value
     }
     
+    func waitUntilSnapshotIsStable() ->  Bool {    
+        let sem = DispatchSemaphore(value:0)
+        let sharedClient=XCAXClient_iOS()
+        sharedClient?.notifyWhenNoAnimationsAreActive(forApplication: self.application,reply:{sem.signal()})
+        let timeout = DispatchTime.now()+DispatchTimeInterval.seconds(2)
+        let result:Bool = DispatchTimeoutResult.success == sem.wait(timeout: timeout)
+        if (!result) {
+            print("There are still some active animations in progress after 2 seconds timeout. Visibility detection may cause unexpected delays.", 2)
+        }
+        
+        return result
+    }
+    
     func wdLabel() -> String {
         if self.elementType == XCUIElementType.textField {
             return self.label
@@ -237,6 +250,7 @@ extension XCUIElement {
         if self.lastSnapshot == nil {
             self.resolve()
         }
+        self.waitUntilSnapshotIsStable()
         
         return dictionaryForElement(self.lastSnapshot)
     }
@@ -253,6 +267,7 @@ extension XCUIElement {
             self.resolve()
             let _ = self.query
         }
+        self.waitUntilSnapshotIsStable()
         
         return accessibilityInfoForElement(self.lastSnapshot)
     }
@@ -283,6 +298,7 @@ extension XCUIElement {
                 info["children"] = children as AnyObject
             }
         }
+        
         return info
     }
     
