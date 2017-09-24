@@ -21,7 +21,7 @@ extension XCUIElement {
     func wdValue() -> Any! {
         var value = self.value
         if self.elementType == XCUIElementType.staticText {
-            if let temp = self.value {
+            if self.value != nil {
                 value = self.value
             } else {
                 value = self.label
@@ -235,8 +235,13 @@ extension XCUIElement {
     
     //MARK: Commands
     func tree() -> [String : AnyObject]? {
+        self.safeQueryResolutionEnabled = true;
         if self.lastSnapshot == nil {
             self.resolve()
+        }
+        
+        if (self.lastSnapshot == nil) {
+            return ["result" : "empty" as AnyObject];
         }
         
         return dictionaryForElement(self.lastSnapshot)
@@ -325,7 +330,7 @@ extension XCElementSnapshot {
     func wdValue() -> Any? {
         var value = self.value
         if self.elementType == XCUIElementType.staticText {
-            if let temp = self.value {
+            if self.value != nil {
                 value = self.value
             } else {
                 value = self.label
