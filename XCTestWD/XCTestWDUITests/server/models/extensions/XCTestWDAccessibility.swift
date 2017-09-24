@@ -21,7 +21,7 @@ extension XCUIElement {
     func wdValue() -> Any! {
         var value = self.value
         if self.elementType == XCUIElementType.staticText {
-            if self.value != nil {
+            if let temp = self.value {
                 value = self.value
             } else {
                 value = self.label
@@ -235,13 +235,8 @@ extension XCUIElement {
     
     //MARK: Commands
     func tree() -> [String : AnyObject]? {
-        self.safeQueryResolutionEnabled = true;
         if self.lastSnapshot == nil {
             self.resolve()
-        }
-        
-        if (self.lastSnapshot == nil) {
-            return ["result" : "empty" as AnyObject];
         }
         
         return dictionaryForElement(self.lastSnapshot)
@@ -330,7 +325,7 @@ extension XCElementSnapshot {
     func wdValue() -> Any? {
         var value = self.value
         if self.elementType == XCUIElementType.staticText {
-            if self.value != nil {
+            if let temp = self.value {
                 value = self.value
             } else {
                 value = self.label
@@ -415,7 +410,7 @@ extension XCElementSnapshot {
             return false
         }
         
-        let app: XCElementSnapshot? = rootElement() as! XCElementSnapshot?
+        let app: XCElementSnapshot? = _rootElement() as! XCElementSnapshot?
         let screenSize: CGSize? = MathUtils.adjustDimensionsForApplication((app?.frame.size)!, (XCUIDevice.shared().orientation))
         let screenFrame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat((screenSize?.width)!), height: CGFloat((screenSize?.height)!))
         let rectIntersects: Bool = visibleFrame.intersects(screenFrame)

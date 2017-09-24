@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,7 +44,7 @@
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
 		7F36D5371EADDE5D00C83CF0 /* XCTestWDStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36D5361EADDE5D00C83CF0 /* XCTestWDStatus.swift */; };
 		7F36D5391EADFD8E00C83CF0 /* XCTestWDReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36D5381EADFD8E00C83CF0 /* XCTestWDReponse.swift */; };
-		7F5D04CB1F76B7AE0023AAAE /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
+		7F698F9E1EBCB37800E5FEE0 /* XCAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F698F9D1EBCB37800E5FEE0 /* XCAccessibilityElement.h */; };
 		7F7F5E921ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */; };
 		7F7F5E941ECAC6EA00A68906 /* XCTestDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */; };
 		7F7F5E991ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E951ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h */; };
@@ -56,15 +56,14 @@
 		7F7F5EA21ECAD10D00A68906 /* XCTestDaemonsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */; };
 		7F8119581EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8119571EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift */; };
 		7F9ACA9E1EAEF39100AA39A7 /* XCTestWDDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9ACA9D1EAEF39100AA39A7 /* XCTestWDDispatch.swift */; };
-		7FBC887D1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FBC887C1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h */; };
-		7FBC88841F773E6E002B19E4 /* XCTestPrivateSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */; };
-		7FBC88851F773E6E002B19E4 /* XCTestPrivateSymbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */; };
-		7FD1CFBD1F7747860075B056 /* XCTestWDApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD1CFBB1F7747860075B056 /* XCTestWDApplication.h */; };
-		7FD1CFBE1F7747860075B056 /* XCTestWDApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1CFBC1F7747860075B056 /* XCTestWDApplication.m */; };
+		7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		7FD7996F1EBC07FC0053C4D2 /* XCTestWDXPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7996E1EBC07FC0053C4D2 /* XCTestWDXPath.swift */; };
 		7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD799771EBC15D70053C4D2 /* Foundation.framework */; };
+		7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
 		7FD7997B1EBC5EFE0053C4D2 /* XCTestWDApplicationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7997A1EBC5EFE0053C4D2 /* XCTestWDApplicationTree.swift */; };
 		7FD7997E1EBC6AC30053C4D2 /* XCTestWDMathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7997D1EBC6AC30053C4D2 /* XCTestWDMathUtils.swift */; };
+		7FD799811EBC84D50053C4D2 /* XCTestPrivateSymbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD7997F1EBC84D50053C4D2 /* XCTestPrivateSymbols.h */; };
+		7FD799821EBC84D50053C4D2 /* XCTestPrivateSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD799801EBC84D50053C4D2 /* XCTestPrivateSymbols.m */; };
 		7FD799851EBC96F00053C4D2 /* XCRuntimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */; };
 		7FD799861EBC96F00053C4D2 /* XCRuntimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */; };
 		7FE01C5A1EB183D800B38DE1 /* XCTestWDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE01C591EB183D800B38DE1 /* XCTestWDAlert.swift */; };
@@ -114,6 +113,7 @@
 		7F36D5361EADDE5D00C83CF0 /* XCTestWDStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDStatus.swift; path = XCTestWDUITests/server/models/XCTestWDStatus.swift; sourceTree = SOURCE_ROOT; };
 		7F36D5381EADFD8E00C83CF0 /* XCTestWDReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDReponse.swift; sourceTree = "<group>"; };
 		7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		7F698F9D1EBCB37800E5FEE0 /* XCAccessibilityElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCAccessibilityElement.h; sourceTree = "<group>"; };
 		7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestManager_ManagerInterface-Protocol.h"; sourceTree = "<group>"; };
 		7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestDriver.h; sourceTree = "<group>"; };
 		7F7F5E951ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCDebugLogDelegate-Protocol.h"; sourceTree = "<group>"; };
@@ -126,15 +126,12 @@
 		7F8119571EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCUIElementTypeTransformer.swift; path = XCTestWDUITests/server/models/XCUIElementTypeTransformer.swift; sourceTree = SOURCE_ROOT; };
 		7F9ACA9D1EAEF39100AA39A7 /* XCTestWDDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDDispatch.swift; path = XCTestWDUITests/server/XCTestWDDispatch.swift; sourceTree = SOURCE_ROOT; };
 		7FB002EF1EAC66F900476E7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7FBC887C1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCTElementSnapshotProvider-Protocol.h"; path = "../../../../../../Desktop/headers/XCTElementSnapshotProvider-Protocol.h"; sourceTree = "<group>"; };
-		7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestPrivateSymbols.m; sourceTree = "<group>"; };
-		7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestPrivateSymbols.h; sourceTree = "<group>"; };
-		7FD1CFBB1F7747860075B056 /* XCTestWDApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestWDApplication.h; sourceTree = "<group>"; };
-		7FD1CFBC1F7747860075B056 /* XCTestWDApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCTestWDApplication.m; sourceTree = "<group>"; };
 		7FD7996E1EBC07FC0053C4D2 /* XCTestWDXPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDXPath.swift; path = XCTestWDUITests/server/models/XCTestWDXPath.swift; sourceTree = SOURCE_ROOT; };
 		7FD799771EBC15D70053C4D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7FD7997A1EBC5EFE0053C4D2 /* XCTestWDApplicationTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDApplicationTree.swift; sourceTree = "<group>"; };
 		7FD7997D1EBC6AC30053C4D2 /* XCTestWDMathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDMathUtils.swift; sourceTree = "<group>"; };
+		7FD7997F1EBC84D50053C4D2 /* XCTestPrivateSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestPrivateSymbols.h; sourceTree = "<group>"; };
+		7FD799801EBC84D50053C4D2 /* XCTestPrivateSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestPrivateSymbols.m; sourceTree = "<group>"; };
 		7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCRuntimeUtils.h; sourceTree = "<group>"; };
 		7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCRuntimeUtils.m; sourceTree = "<group>"; };
 		7FE01C591EB183D800B38DE1 /* XCTestWDAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlert.swift; path = XCTestWDUITests/server/models/XCTestWDAlert.swift; sourceTree = SOURCE_ROOT; };
@@ -155,9 +152,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F5D04CB1F76B7AE0023AAAE /* libxml2.tbd in Frameworks */,
+				7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */,
 				7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */,
 				7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */,
+				7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */,
 				63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,10 +166,6 @@
 		63BCCF161EAC8CF900DE4CC0 /* PrivateHeaders */ = {
 			isa = PBXGroup;
 			children = (
-				7FD1CFBF1F77478A0075B056 /* Macaca */,
-				7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */,
-				7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */,
-				7FBC887C1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h */,
 				7F7F5E9F1ECAD10D00A68906 /* XCTestDaemonsProxy.h */,
 				7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */,
 				7F7F5E9D1ECACFCF00A68906 /* XCTRunnerDaemonSession.h */,
@@ -182,8 +176,11 @@
 				7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */,
 				7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */,
 				7F2332F91EC85EEB009AABD4 /* XCUICoordinate.h */,
+				7F698F9D1EBCB37800E5FEE0 /* XCAccessibilityElement.h */,
 				7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */,
 				7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */,
+				7FD7997F1EBC84D50053C4D2 /* XCTestPrivateSymbols.h */,
+				7FD799801EBC84D50053C4D2 /* XCTestPrivateSymbols.m */,
 				63BCCF171EAC8CF900DE4CC0 /* CDStructures.h */,
 				63BCCF181EAC8CF900DE4CC0 /* XCAXClient_iOS.h */,
 				63BCCF191EAC8CF900DE4CC0 /* XCElementSnapshot.h */,
@@ -317,15 +314,6 @@
 			path = XCTestWDUITests/server/models/extensions;
 			sourceTree = SOURCE_ROOT;
 		};
-		7FD1CFBF1F77478A0075B056 /* Macaca */ = {
-			isa = PBXGroup;
-			children = (
-				7FD1CFBB1F7747860075B056 /* XCTestWDApplication.h */,
-				7FD1CFBC1F7747860075B056 /* XCTestWDApplication.m */,
-			);
-			path = Macaca;
-			sourceTree = "<group>";
-		};
 		7FD7997C1EBC6A960053C4D2 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,15 +337,14 @@
 				63BCCF1D1EAC8CF900DE4CC0 /* CDStructures.h in Headers */,
 				63BCCF211EAC8CF900DE4CC0 /* XCUIElement.h in Headers */,
 				63BCCF201EAC8CF900DE4CC0 /* XCUIApplication.h in Headers */,
+				7FD799811EBC84D50053C4D2 /* XCTestPrivateSymbols.h in Headers */,
+				7F698F9E1EBCB37800E5FEE0 /* XCAccessibilityElement.h in Headers */,
 				63BCCF531EAC926500DE4CC0 /* XCTestWDUITests-Bridging-Header.h in Headers */,
 				63BCCF221EAC8CF900DE4CC0 /* XCUIElementQuery.h in Headers */,
 				7F7F5E9C1ECAC7EB00A68906 /* XCTestManager_TestsInterface-Protocol.h in Headers */,
 				63BCCF1F1EAC8CF900DE4CC0 /* XCElementSnapshot.h in Headers */,
 				63BCCF1E1EAC8CF900DE4CC0 /* XCAXClient_iOS.h in Headers */,
-				7FBC88851F773E6E002B19E4 /* XCTestPrivateSymbols.h in Headers */,
 				7F7F5EA11ECAD10D00A68906 /* XCTestDaemonsProxy.h in Headers */,
-				7FD1CFBD1F7747860075B056 /* XCTestWDApplication.h in Headers */,
-				7FBC887D1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h in Headers */,
 				7F7F5E9E1ECACFCF00A68906 /* XCTRunnerDaemonSession.h in Headers */,
 				7F2332FA1EC85EEB009AABD4 /* XCUICoordinate.h in Headers */,
 				7F7F5E921ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h in Headers */,
@@ -415,7 +402,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = XCTestWD;
 				TargetAttributes = {
 					63D408161EAB629400198736 = {
@@ -430,7 +417,7 @@
 				};
 			};
 			buildConfigurationList = 63D408121EAB629400198736 /* Build configuration list for PBXProject "XCTestWD" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -556,10 +543,10 @@
 				63BCCF3F1EAC8D0600DE4CC0 /* XCTestWDSourceController.swift in Sources */,
 				63BCCF3A1EAC8D0600DE4CC0 /* XCTestWDElementController.swift in Sources */,
 				7FEDEA761EC48D0900748089 /* XCTestWDErrors.swift in Sources */,
+				7FD799821EBC84D50053C4D2 /* XCTestPrivateSymbols.m in Sources */,
 				63D408671EAB62EB00198736 /* XCTestWDRunner.swift in Sources */,
 				7F9ACA9E1EAEF39100AA39A7 /* XCTestWDDispatch.swift in Sources */,
 				7F36D5391EADFD8E00C83CF0 /* XCTestWDReponse.swift in Sources */,
-				7FBC88841F773E6E002B19E4 /* XCTestPrivateSymbols.m in Sources */,
 				63BCCF461EAC8D0600DE4CC0 /* XCTestWDController.swift in Sources */,
 				63BCCF391EAC8D0600DE4CC0 /* XCTestWDContextController.swift in Sources */,
 				63BCCF371EAC8D0600DE4CC0 /* XCTestWDActionsController.swift in Sources */,
@@ -569,7 +556,6 @@
 				63BCCF3B1EAC8D0600DE4CC0 /* XCTestWDExecuteController.swift in Sources */,
 				7FD7996F1EBC07FC0053C4D2 /* XCTestWDXPath.swift in Sources */,
 				63BCCF431EAC8D0600DE4CC0 /* XCTestWDUrlController.swift in Sources */,
-				7FD1CFBE1F7747860075B056 /* XCTestWDApplication.m in Sources */,
 				7FD799861EBC96F00053C4D2 /* XCRuntimeUtils.m in Sources */,
 				63BCCF421EAC8D0600DE4CC0 /* XCTestWDTitleController.swift in Sources */,
 				7FF2623B1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift in Sources */,
@@ -611,9 +597,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -621,11 +605,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -669,9 +649,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -679,11 +657,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -760,9 +734,8 @@
 					"$(SRCROOT)/",
 				);
 				INFOPLIST_FILE = XCTestWDUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = mh_bundle;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWDUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -789,9 +762,8 @@
 					"$(SRCROOT)/",
 				);
 				INFOPLIST_FILE = XCTestWDUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = mh_bundle;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWDUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
