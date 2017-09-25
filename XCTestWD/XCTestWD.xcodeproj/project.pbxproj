@@ -56,7 +56,6 @@
 		7F7F5EA21ECAD10D00A68906 /* XCTestDaemonsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */; };
 		7F8119581EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8119571EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift */; };
 		7F9ACA9E1EAEF39100AA39A7 /* XCTestWDDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9ACA9D1EAEF39100AA39A7 /* XCTestWDDispatch.swift */; };
-		7FBC887D1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FBC887C1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h */; };
 		7FBC88841F773E6E002B19E4 /* XCTestPrivateSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */; };
 		7FBC88851F773E6E002B19E4 /* XCTestPrivateSymbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */; };
 		7FD1CFBD1F7747860075B056 /* XCTestWDApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD1CFBB1F7747860075B056 /* XCTestWDApplication.h */; };
@@ -126,7 +125,6 @@
 		7F8119571EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCUIElementTypeTransformer.swift; path = XCTestWDUITests/server/models/XCUIElementTypeTransformer.swift; sourceTree = SOURCE_ROOT; };
 		7F9ACA9D1EAEF39100AA39A7 /* XCTestWDDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDDispatch.swift; path = XCTestWDUITests/server/XCTestWDDispatch.swift; sourceTree = SOURCE_ROOT; };
 		7FB002EF1EAC66F900476E7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7FBC887C1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCTElementSnapshotProvider-Protocol.h"; path = "../../../../../../Desktop/headers/XCTElementSnapshotProvider-Protocol.h"; sourceTree = "<group>"; };
 		7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestPrivateSymbols.m; sourceTree = "<group>"; };
 		7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestPrivateSymbols.h; sourceTree = "<group>"; };
 		7FD1CFBB1F7747860075B056 /* XCTestWDApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestWDApplication.h; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 				7FD1CFBF1F77478A0075B056 /* Macaca */,
 				7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */,
 				7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */,
-				7FBC887C1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h */,
 				7F7F5E9F1ECAD10D00A68906 /* XCTestDaemonsProxy.h */,
 				7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */,
 				7F7F5E9D1ECACFCF00A68906 /* XCTRunnerDaemonSession.h */,
@@ -357,7 +354,6 @@
 				7FBC88851F773E6E002B19E4 /* XCTestPrivateSymbols.h in Headers */,
 				7F7F5EA11ECAD10D00A68906 /* XCTestDaemonsProxy.h in Headers */,
 				7FD1CFBD1F7747860075B056 /* XCTestWDApplication.h in Headers */,
-				7FBC887D1F773A53002B19E4 /* XCTElementSnapshotProvider-Protocol.h in Headers */,
 				7F7F5E9E1ECACFCF00A68906 /* XCTRunnerDaemonSession.h in Headers */,
 				7F2332FA1EC85EEB009AABD4 /* XCUICoordinate.h in Headers */,
 				7F7F5E921ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h in Headers */,
