@@ -60,7 +60,17 @@ internal class XCTestWDSession {
     
     static func activeApplication() -> XCUIApplication?
     {
-        return XCTestWDApplication.activeApplication()
+        var activeApplicationElement:XCAccessibilityElement?
+        
+        activeApplicationElement = (XCAXClient_iOS.sharedClient() as! XCAXClient_iOS).activeApplications().first
+        if activeApplicationElement == nil {
+            activeApplicationElement = (XCAXClient_iOS.sharedClient() as! XCAXClient_iOS).systemApplication() as? XCAccessibilityElement
+        }
+        
+        let application = XCUIApplication.app(withPID: (activeApplicationElement?.processIdentifier)!)
+        _ = application?.query()
+        
+        return application
     }
     
     func resolve() {
@@ -87,8 +97,8 @@ internal class XCTestWDSessionManager {
     }
     
     func checkDefaultSession() -> XCTestWDSession {
-        if self.defaultSession == nil || self.defaultSession?.application.state != XCUIApplication.State.runningForeground {
-            sleep(2)
+        if self.defaultSession == nil || self.defaultSession?.application.running == false {
+            sleep(3)
             let application = XCTestWDSession.activeApplication()
             self.defaultSession = XCTestWDSession.sessionWithApplication(application!)
             self.defaultSession?.resolve()
