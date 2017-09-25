@@ -56,7 +56,10 @@
 		7F7F5EA21ECAD10D00A68906 /* XCTestDaemonsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */; };
 		7F8119581EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8119571EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift */; };
 		7F9ACA9E1EAEF39100AA39A7 /* XCTestWDDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9ACA9D1EAEF39100AA39A7 /* XCTestWDDispatch.swift */; };
-		7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
+		7FBC88841F773E6E002B19E4 /* XCTestPrivateSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */; };
+		7FBC88851F773E6E002B19E4 /* XCTestPrivateSymbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */; };
+		7FD1CFBD1F7747860075B056 /* XCTestWDApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD1CFBB1F7747860075B056 /* XCTestWDApplication.h */; };
+		7FD1CFBE1F7747860075B056 /* XCTestWDApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1CFBC1F7747860075B056 /* XCTestWDApplication.m */; };
 		7FD7996F1EBC07FC0053C4D2 /* XCTestWDXPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7996E1EBC07FC0053C4D2 /* XCTestWDXPath.swift */; };
 		7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD799771EBC15D70053C4D2 /* Foundation.framework */; };
 		7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
@@ -126,6 +129,10 @@
 		7F8119571EB4727B00C77CF4 /* XCUIElementTypeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCUIElementTypeTransformer.swift; path = XCTestWDUITests/server/models/XCUIElementTypeTransformer.swift; sourceTree = SOURCE_ROOT; };
 		7F9ACA9D1EAEF39100AA39A7 /* XCTestWDDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDDispatch.swift; path = XCTestWDUITests/server/XCTestWDDispatch.swift; sourceTree = SOURCE_ROOT; };
 		7FB002EF1EAC66F900476E7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestPrivateSymbols.m; sourceTree = "<group>"; };
+		7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestPrivateSymbols.h; sourceTree = "<group>"; };
+		7FD1CFBB1F7747860075B056 /* XCTestWDApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestWDApplication.h; sourceTree = "<group>"; };
+		7FD1CFBC1F7747860075B056 /* XCTestWDApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCTestWDApplication.m; sourceTree = "<group>"; };
 		7FD7996E1EBC07FC0053C4D2 /* XCTestWDXPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDXPath.swift; path = XCTestWDUITests/server/models/XCTestWDXPath.swift; sourceTree = SOURCE_ROOT; };
 		7FD799771EBC15D70053C4D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7FD7997A1EBC5EFE0053C4D2 /* XCTestWDApplicationTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDApplicationTree.swift; sourceTree = "<group>"; };
@@ -166,6 +173,9 @@
 		63BCCF161EAC8CF900DE4CC0 /* PrivateHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				7FD1CFBF1F77478A0075B056 /* Macaca */,
+				7FBC88831F773E6E002B19E4 /* XCTestPrivateSymbols.h */,
+				7FBC88821F773E6E002B19E4 /* XCTestPrivateSymbols.m */,
 				7F7F5E9F1ECAD10D00A68906 /* XCTestDaemonsProxy.h */,
 				7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */,
 				7F7F5E9D1ECACFCF00A68906 /* XCTRunnerDaemonSession.h */,
@@ -345,6 +355,7 @@
 				63BCCF1F1EAC8CF900DE4CC0 /* XCElementSnapshot.h in Headers */,
 				63BCCF1E1EAC8CF900DE4CC0 /* XCAXClient_iOS.h in Headers */,
 				7F7F5EA11ECAD10D00A68906 /* XCTestDaemonsProxy.h in Headers */,
+				7FD1CFBD1F7747860075B056 /* XCTestWDApplication.h in Headers */,
 				7F7F5E9E1ECACFCF00A68906 /* XCTRunnerDaemonSession.h in Headers */,
 				7F2332FA1EC85EEB009AABD4 /* XCUICoordinate.h in Headers */,
 				7F7F5E921ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h in Headers */,
