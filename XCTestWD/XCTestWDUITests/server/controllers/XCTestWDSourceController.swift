@@ -33,7 +33,7 @@ internal class XCTestWDSourceController: Controller {
     }
     
     internal static func sourceWithoutSession(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let temp = XCTestWDSession.activeApplication()?.tree()
+        let temp = XCTestWDSessionManager.singleton.checkDefaultSession().application.tree()
         return XCTestWDResponse.response(session: request.session, value: JSON(temp!))
     }
     
@@ -45,7 +45,7 @@ internal class XCTestWDSourceController: Controller {
     }
     
     internal static func accessiblitySourceWithoutSession(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        let temp = XCTestWDSession.activeApplication()?.accessibilityTree()
+        let temp = XCTestWDSessionManager.singleton.checkDefaultSession().application.accessibilityTree()
         return XCTestWDResponse.response(session: request.session, value: JSON(temp!))
     }
 }
