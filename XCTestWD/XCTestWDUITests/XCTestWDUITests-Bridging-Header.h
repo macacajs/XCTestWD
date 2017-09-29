@@ -12,7 +12,7 @@
 #import "XCElementSnapshot.h"
 #import "XCAXClient_iOS.h"
 #import "XCUIApplication.h"
-#import "XCAccessibilityElement.h"
+#import "XCTestWDApplication.h"
 #import "XCTestPrivateSymbols.h"
 #import "XCUICoordinate.h"
 #import "XCTestDriver.h"

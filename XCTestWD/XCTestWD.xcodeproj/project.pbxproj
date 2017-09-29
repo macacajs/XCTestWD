@@ -44,7 +44,8 @@
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
 		7F36D5371EADDE5D00C83CF0 /* XCTestWDStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36D5361EADDE5D00C83CF0 /* XCTestWDStatus.swift */; };
 		7F36D5391EADFD8E00C83CF0 /* XCTestWDReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36D5381EADFD8E00C83CF0 /* XCTestWDReponse.swift */; };
-		7F698F9E1EBCB37800E5FEE0 /* XCAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F698F9D1EBCB37800E5FEE0 /* XCAccessibilityElement.h */; };
+		7F62C41A1F79D7F300CC2BFF /* XCTestWDApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F62C4181F79D7F300CC2BFF /* XCTestWDApplication.h */; };
+		7F62C41B1F79D7F300CC2BFF /* XCTestWDApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F62C4191F79D7F300CC2BFF /* XCTestWDApplication.m */; };
 		7F7F5E921ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */; };
 		7F7F5E941ECAC6EA00A68906 /* XCTestDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */; };
 		7F7F5E991ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E951ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h */; };
@@ -113,7 +114,8 @@
 		7F36D5361EADDE5D00C83CF0 /* XCTestWDStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDStatus.swift; path = XCTestWDUITests/server/models/XCTestWDStatus.swift; sourceTree = SOURCE_ROOT; };
 		7F36D5381EADFD8E00C83CF0 /* XCTestWDReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDReponse.swift; sourceTree = "<group>"; };
 		7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		7F698F9D1EBCB37800E5FEE0 /* XCAccessibilityElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCAccessibilityElement.h; sourceTree = "<group>"; };
+		7F62C4181F79D7F300CC2BFF /* XCTestWDApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestWDApplication.h; sourceTree = "<group>"; };
+		7F62C4191F79D7F300CC2BFF /* XCTestWDApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestWDApplication.m; sourceTree = "<group>"; };
 		7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestManager_ManagerInterface-Protocol.h"; sourceTree = "<group>"; };
 		7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestDriver.h; sourceTree = "<group>"; };
 		7F7F5E951ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCDebugLogDelegate-Protocol.h"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		63BCCF161EAC8CF900DE4CC0 /* PrivateHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				7F62C4171F79D7F300CC2BFF /* Macaca */,
 				7F7F5E9F1ECAD10D00A68906 /* XCTestDaemonsProxy.h */,
 				7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */,
 				7F7F5E9D1ECACFCF00A68906 /* XCTRunnerDaemonSession.h */,
@@ -176,7 +179,6 @@
 				7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */,
 				7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */,
 				7F2332F91EC85EEB009AABD4 /* XCUICoordinate.h */,
-				7F698F9D1EBCB37800E5FEE0 /* XCAccessibilityElement.h */,
 				7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */,
 				7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */,
 				7FD7997F1EBC84D50053C4D2 /* XCTestPrivateSymbols.h */,
@@ -314,6 +316,15 @@
 			path = XCTestWDUITests/server/models/extensions;
 			sourceTree = SOURCE_ROOT;
 		};
+		7F62C4171F79D7F300CC2BFF /* Macaca */ = {
+			isa = PBXGroup;
+			children = (
+				7F62C4181F79D7F300CC2BFF /* XCTestWDApplication.h */,
+				7F62C4191F79D7F300CC2BFF /* XCTestWDApplication.m */,
+			);
+			path = Macaca;
+			sourceTree = "<group>";
+		};
 		7FD7997C1EBC6A960053C4D2 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,12 +349,12 @@
 				63BCCF211EAC8CF900DE4CC0 /* XCUIElement.h in Headers */,
 				63BCCF201EAC8CF900DE4CC0 /* XCUIApplication.h in Headers */,
 				7FD799811EBC84D50053C4D2 /* XCTestPrivateSymbols.h in Headers */,
-				7F698F9E1EBCB37800E5FEE0 /* XCAccessibilityElement.h in Headers */,
 				63BCCF531EAC926500DE4CC0 /* XCTestWDUITests-Bridging-Header.h in Headers */,
 				63BCCF221EAC8CF900DE4CC0 /* XCUIElementQuery.h in Headers */,
 				7F7F5E9C1ECAC7EB00A68906 /* XCTestManager_TestsInterface-Protocol.h in Headers */,
 				63BCCF1F1EAC8CF900DE4CC0 /* XCElementSnapshot.h in Headers */,
 				63BCCF1E1EAC8CF900DE4CC0 /* XCAXClient_iOS.h in Headers */,
+				7F62C41A1F79D7F300CC2BFF /* XCTestWDApplication.h in Headers */,
 				7F7F5EA11ECAD10D00A68906 /* XCTestDaemonsProxy.h in Headers */,
 				7F7F5E9E1ECACFCF00A68906 /* XCTRunnerDaemonSession.h in Headers */,
 				7F2332FA1EC85EEB009AABD4 /* XCUICoordinate.h in Headers */,
@@ -556,6 +567,7 @@
 				63BCCF3B1EAC8D0600DE4CC0 /* XCTestWDExecuteController.swift in Sources */,
 				7FD7996F1EBC07FC0053C4D2 /* XCTestWDXPath.swift in Sources */,
 				63BCCF431EAC8D0600DE4CC0 /* XCTestWDUrlController.swift in Sources */,
+				7F62C41B1F79D7F300CC2BFF /* XCTestWDApplication.m in Sources */,
 				7FD799861EBC96F00053C4D2 /* XCRuntimeUtils.m in Sources */,
 				63BCCF421EAC8D0600DE4CC0 /* XCTestWDTitleController.swift in Sources */,
 				7FF2623B1EBF3D080031C5F8 /* XCTestWDFindElementUtils.swift in Sources */,

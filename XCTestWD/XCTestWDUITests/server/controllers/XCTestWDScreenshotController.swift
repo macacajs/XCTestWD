@@ -25,8 +25,15 @@ internal class XCTestWDScreenshotController: Controller {
   //MARK: Routing Logic Specification
   internal static func getScreenshot(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
     var base64String:String!
-    let data = (XCAXClient_iOS.sharedClient() as! XCAXClient_iOS).screenshotData()
-    base64String = ((data?.base64EncodedString()))!
+    let xcScreen = NSClassFromString("XCUIScreen")
+    if xcScreen != nil {
+        let data = xcScreen?.value(forKeyPath: "mainScreen.screenshot.PNGRepresentation") as? NSData
+        base64String = ((data?.base64EncodedString()))!
+    } else {
+        let data = (XCAXClient_iOS.sharedClient() as! XCAXClient_iOS).screenshotData()
+        base64String = ((data?.base64EncodedString()))!
+    }
+
     return XCTestWDResponse.response(session: request.session, value: JSON(base64String!))
   }
 
