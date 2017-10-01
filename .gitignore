@@ -36,4 +36,5 @@ Thumbs.db
 coverage/
 .project
 logs/
-*.un~
+package/
+*.tgz
