@@ -24,7 +24,6 @@ Cartfile.resolved
 UserInterfaceState.xcuserstate
 Cartfile
 XCTestWD/build
-*.un~
 coverage.html
 lib-cov/
 node_modules
@@ -36,3 +35,6 @@ Makefile
 .jshintignore
 coverage/
 logs/
+package/
+*.un~
+*.tgz
