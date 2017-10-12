@@ -422,8 +422,9 @@
 					};
 					63D4082A1EAB629400198736 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = CM2CQ7U9GM;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -523,7 +524,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#Check about simulator\ncount=`xcrun simctl list | grep Booted | wc -l | sed -e 's/ //g'`\nif [ $count -gt 0 ]; then\nxcrun simctl uninstall booted com.apple.test.XCTestWDUITests-Runner\nfi\n\n# Check about iOS device\ndeviceConnected=$(idevice_id -l)\necho $deviceConnected\nif [ ${#deviceConnected} -gt 0 ]; then\n    ideviceinstaller -U com.apple.test.XCTestWDUITests-Runner\nfi";
+			shellScript = "#Check about simulator\ncount=`xcrun simctl list | grep Booted | wc -l | sed -e 's/ //g'`\nif [ $count -gt 0 ]; then\nxcrun simctl uninstall booted com.apple.test.XCTestWDUITests-Runner\nfi\n\n# Check about iOS device\ndeviceConnected=$(idevice_id -l)\necho $deviceConnected\nif [ ${#deviceConnected} -gt 0 ]; then\n    ideviceinstaller -U com.apple.test.XCTestWDUITests-Runner\n    fi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -738,7 +739,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CM2CQ7U9GM;
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -766,7 +768,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CM2CQ7U9GM;
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
