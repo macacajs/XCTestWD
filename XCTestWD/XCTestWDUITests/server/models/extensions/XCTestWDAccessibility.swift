@@ -242,8 +242,8 @@ extension XCUIElement {
         return dictionaryForElement(self.lastSnapshot)
     }
     
-    func digest() -> String {
-        let description = "\(self.buttons.count)_\(self.textViews.count)_\(self.textFields.count)_\(self.otherElements.count)_\(self.traits())"
+    func digest(windowName : String) -> String {
+        let description = "\(windowName)_\(self.buttons.count)_\(self.textViews.count)_\(self.textFields.count)_\(self.otherElements.count)_\(self.traits())"
 
         return description
     }
