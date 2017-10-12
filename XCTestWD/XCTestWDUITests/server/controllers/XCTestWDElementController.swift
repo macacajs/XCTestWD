@@ -448,17 +448,12 @@ internal class XCTestWDElementController: Controller {
         
         let window = elements![0]
         let navBar = window.descendants(matching: XCUIElementType.navigationBar).allElementsBoundByIndex.first
-        
-        if (navBar?.identifier.characters.count) ?? 0 > 0 {
-            return XCTestWDResponse.response(session: nil, value: JSON(navBar?.identifier as Any))
-        } else {
-            window.resolve()
-            let digest = window.digest()
-            return XCTestWDResponse.response(session: nil, value: JSON(digest as Any))
-        }
+        window.resolve()
+        let digest = window.digest(windowName: navBar?.identifier == nil ? "" : (navBar?.identifier)!)
+        return XCTestWDResponse.response(session: nil, value: JSON(digest as Any))
     }
     
-
+    
     internal static func doubleTap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let elementId = request.elementId
         let session = XCTestWDSessionManager.singleton.checkDefaultSession()
@@ -525,3 +520,4 @@ internal class XCTestWDElementController: Controller {
         return nil
     }
 }
+
