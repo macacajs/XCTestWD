@@ -422,9 +422,8 @@
 					};
 					63D4082A1EAB629400198736 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = CM2CQ7U9GM;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -739,8 +738,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -768,8 +767,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
