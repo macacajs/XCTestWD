@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 func firstNonEmptyValue(_ value1:String?, _ value2:String?) -> String? {
     if value1 != nil && (value1?.characters.count)! > 0 {
@@ -62,7 +63,7 @@ extension XCUIElement {
         return value
     }
     
-    
+
     func wdLabel() -> String {
         if self.elementType == XCUIElementType.textField {
             return self.label
@@ -245,7 +246,7 @@ extension XCUIElement {
     
     func digest(windowName : String) -> String {
         let description = "\(windowName)_\(self.buttons.count)_\(self.textViews.count)_\(self.textFields.count)_\(self.otherElements.count)_\(self.traits())"
-        
+
         return description
     }
     
@@ -263,7 +264,7 @@ extension XCUIElement {
     func dictionaryForElement(_ snapshot:XCElementSnapshot) -> [String : AnyObject]? {
         var info = [String : AnyObject]()
         info["type"] = XCUIElementTypeTransformer.singleton.shortStringWithElementType(snapshot.elementType) as AnyObject?
-        info["rawIndentifier"] = snapshot.identifier.characters.count > 0 ? snapshot.identifier as AnyObject : nil
+        info["rawIndentifier"] = (snapshot.identifier.characters.count > 0 ? snapshot.identifier : "") as AnyObject
         info["name"] = snapshot.wdName() as AnyObject? ?? "" as AnyObject
         info["value"] = snapshot.wdValue() as AnyObject? ?? "" as AnyObject
         info["label"] = snapshot.wdLabel() as AnyObject? ?? "" as AnyObject
@@ -274,7 +275,7 @@ extension XCUIElement {
         
         // If block is not visible, return
         if info["isVisible"] as! Bool == false {
-            return info;
+            return nil;
         }
         
         // If block is visible, iterate through all its children
@@ -282,12 +283,16 @@ extension XCUIElement {
         if childrenElements != nil && childrenElements!.count > 0 {
             var children = [AnyObject]()
             for child in childrenElements! {
-                children.append(dictionaryForElement(child as! XCElementSnapshot) as AnyObject)
+                if let temp = dictionaryForElement(child as! XCElementSnapshot) {
+                    children.append(temp as AnyObject)
+                }
             }
             
-            info["children"] = children as AnyObject
+            if children.count > 0 {
+                info["children"] = children as AnyObject
+            }
         }
-        
+
         return info
     }
     

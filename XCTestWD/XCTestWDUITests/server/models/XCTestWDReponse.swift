@@ -28,12 +28,13 @@ internal class XCTestWDResponse {
                                "status":self.status.rawValue,
                                "value":self.value as Any]
         let rawString = response.rawString()?.replacingOccurrences(of: "\n", with: "")
-        return rawString != nil ? HttpResponse.ok(.text(rawString!)) : HttpResponse.internalServerError
+        print("check raw string :\(rawString ?? "")");
+        return rawString != nil ? HttpResponse.ok(.text(rawString!)) : HttpResponse.ok(.text("{}"))
     }
     
     //MARK: Utils
     static func response(session:XCTestWDSession?, value:JSON?) -> HttpResponse {
-        return XCTestWDResponse(session?.identifier ?? "", WDStatus.Success, value ?? JSON("")).response()
+        return XCTestWDResponse(session?.identifier ?? "", WDStatus.Success, value ?? JSON("{}")).response()
     }
     
     static func response(session:XCTestWDSession? ,error:WDStatus) -> HttpResponse {
