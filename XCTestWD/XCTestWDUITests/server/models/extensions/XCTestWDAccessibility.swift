@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 func firstNonEmptyValue(_ value1:String?, _ value2:String?) -> String? {
     if value1 != nil && (value1?.characters.count)! > 0 {
@@ -235,6 +236,7 @@ extension XCUIElement {
     
     //MARK: Commands
     func tree() -> [String : AnyObject]? {
+        
         if self.lastSnapshot == nil {
             self.resolve()
         }
@@ -262,25 +264,35 @@ extension XCUIElement {
     func dictionaryForElement(_ snapshot:XCElementSnapshot) -> [String : AnyObject]? {
         var info = [String : AnyObject]()
         info["type"] = XCUIElementTypeTransformer.singleton.shortStringWithElementType(snapshot.elementType) as AnyObject?
-        info["rawIndentifier"] = snapshot.identifier.characters.count > 0 ? snapshot.identifier as AnyObject : nil
-        info["name"] = snapshot.wdName() as AnyObject? ?? nil
-        info["value"] = snapshot.wdValue() as AnyObject? ?? nil
-        info["label"] = snapshot.wdLabel() as AnyObject? ?? nil
+        info["rawIndentifier"] = (snapshot.identifier.characters.count > 0 ? snapshot.identifier : "") as AnyObject
+        info["name"] = snapshot.wdName() as AnyObject? ?? "" as AnyObject
+        info["value"] = snapshot.wdValue() as AnyObject? ?? "" as AnyObject
+        info["label"] = snapshot.wdLabel() as AnyObject? ?? "" as AnyObject
         info["rect"] = snapshot.wdRect() as AnyObject
         info["frame"] = NSStringFromCGRect(snapshot.wdFrame()) as AnyObject
         info["isEnabled"] = snapshot.isWDEnabled() as AnyObject
-        info["isVisible"] = snapshot.isWDEnabled() as AnyObject
+        info["isVisible"] = snapshot.isWDVisible() as AnyObject
         
+        // If block is not visible, return
+        if info["isVisible"] as! Bool == false {
+            return nil;
+        }
+        
+        // If block is visible, iterate through all its children
         let childrenElements = snapshot.children
         if childrenElements != nil && childrenElements!.count > 0 {
             var children = [AnyObject]()
             for child in childrenElements! {
-                children.append(dictionaryForElement(child as! XCElementSnapshot) as AnyObject)
+                if let temp = dictionaryForElement(child as! XCElementSnapshot) {
+                    children.append(temp as AnyObject)
+                }
             }
             
-            info["children"] = children as AnyObject
+            if children.count > 0 {
+                info["children"] = children as AnyObject
+            }
         }
-        
+
         return info
     }
     
@@ -368,14 +380,14 @@ extension XCElementSnapshot {
         } else if self.label.characters.count > 0 {
             return self.label
         } else {
-            return nil
+            return ""
         }
     }
     
     func wdName() -> String? {
         let name = (firstNonEmptyValue(self.identifier, self.label))
         if name?.characters.count == 0 {
-            return nil
+            return ""
         } else {
             return name
         }
