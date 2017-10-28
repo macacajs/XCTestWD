@@ -526,11 +526,10 @@ internal class XCTestWDElementController: Controller {
     }
     
     private static func dismissKeyboard() {
-        let app = XCTestWDSessionManager.singleton.checkDefaultSession().application
-        let firstKey = app?.keys.element(boundBy: 0)
-        if firstKey?.exists ?? false {
-            app?.typeText("\n")
+        XCTestDaemonsProxy.testRunnerProxy()._XCT_send("\n", maximumFrequency: 60) { (error) in
+            if error != nil {
+                print("Error occured in sending key: \(error.debugDescription)")
+            }
         }
     }
 }
-
