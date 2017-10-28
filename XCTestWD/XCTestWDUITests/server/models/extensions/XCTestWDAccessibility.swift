@@ -63,7 +63,7 @@ extension XCUIElement {
         return value
     }
     
-
+    
     func wdLabel() -> String {
         if self.elementType == XCUIElementType.textField {
             return self.label
@@ -421,9 +421,22 @@ extension XCElementSnapshot {
         let app: XCElementSnapshot? = rootElement() as! XCElementSnapshot?
         let screenSize: CGSize? = MathUtils.adjustDimensionsForApplication((app?.frame.size)!, (XCUIDevice.shared().orientation))
         let screenFrame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat((screenSize?.width)!), height: CGFloat((screenSize?.height)!))
-        let rectIntersects: Bool = visibleFrame.intersects(screenFrame)
-        let isActionable: Bool? = app?.frame.contains(hitPoint)
-        return rectIntersects && isActionable!
+        
+        if !visibleFrame.intersects(screenFrame) {
+            return false;
+        }
+        
+        if app?.frame.contains(hitPoint) ?? false {
+            return true;
+        }
+        
+        for elementSnapshot in self._allDescendants() {
+            if app?.frame.contains(elementSnapshot.hitPoint) ?? false {
+                return true;
+            }
+        }
+        
+        return false
     }
     
     //MARK: Accessibility Measurement
