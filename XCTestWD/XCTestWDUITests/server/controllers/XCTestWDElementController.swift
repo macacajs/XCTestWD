@@ -129,12 +129,15 @@ internal class XCTestWDElementController: Controller {
         if element?.hasKeyboardFocus != true {
             element?.tap()
         }
+        
         if element?.hasKeyboardFocus == true {
             element?.typeText(value!)
+            dismissKeyboard()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+        } else {
+            dismissKeyboard()
+            return XCTestWDResponse.response(session: nil, error: WDStatus.ElementIsNotSelectable)
         }
-        
-        return XCTestWDResponse.response(session: nil, error: WDStatus.ElementIsNotSelectable)
     }
     
     internal static func click(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
@@ -194,10 +197,12 @@ internal class XCTestWDElementController: Controller {
         
         if element?.hasKeyboardFocus == true {
             element?.typeText((element?.value as? String ?? "").characters.map { _ in XCUIKeyboardKeyDelete }.joined(separator: ""))
+            dismissKeyboard()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+        } else {
+            dismissKeyboard()
+            return XCTestWDResponse.response(session: nil, error: WDStatus.ElementIsNotSelectable)
         }
-        
-        return XCTestWDResponse.response(session: nil, error: WDStatus.ElementIsNotSelectable)
     }
     
     internal static func isDisplayed(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
@@ -518,6 +523,14 @@ internal class XCTestWDElementController: Controller {
         }
         
         return nil
+    }
+    
+    private static func dismissKeyboard() {
+        let app = XCTestWDSessionManager.singleton.checkDefaultSession().application
+        let firstKey = app?.keys.element(boundBy: 0)
+        if firstKey?.exists ?? false {
+            app?.typeText("\n")
+        }
     }
 }
 
