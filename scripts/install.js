@@ -3,11 +3,24 @@
 const fs = require('fs');
 const path = require('path');
 const xcode = require('xcode');
+const shelljs = require('shelljs');
 const hostname = require('os').hostname();
 const childProcess = require('child_process');
+const doctorIOS = require('macaca-doctor/lib/ios');
 
 const distDirName = path.join(__dirname, '..');
 const DEVELOPMENT_TEAM = process.env.DEVELOPMENT_TEAM_ID || '';
+
+const xctestwdFrameworksPrefix = 'xctestwd-frameworks-';
+
+doctorIOS.getXcodeVersion()
+  .then(version => {
+    const pkgName = `${xctestwdFrameworksPrefix}${version}`;
+    const dir = require.resolve(pkgName);
+    const originDir = path.join(dir, '..', 'Carthage');
+    const distDir = path.join(__dirname, '..');
+    shelljs.mv('-n', originDir, distDir);
+  });
 
 try {
   const schemeName = 'XCTestWDUITests';
