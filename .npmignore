@@ -33,4 +33,4 @@ logs/
 package/
 *.un~
 *.tgz
-Carthage/Checkouts
+Carthage/
