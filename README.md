@@ -33,7 +33,7 @@ Download the project and open the XCode project, checkout the scheme `XCTestWDUI
 
 Open the terminal, go to the directory where contains `XCTestWD.xcodeproj` file and execute the following command:
 
-``` bash
+```bash
 #
 #Change the port number to override the default port 
 #
