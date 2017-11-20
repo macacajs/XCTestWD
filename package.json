@@ -1,6 +1,6 @@
 {
   "name": "xctestwd",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "description": "Swift implementation of WebDriver server for iOS that runs on Simulator/iOS devices. ",
   "keywords": [
     "iOS",
@@ -33,9 +33,8 @@
   },
   "scripts": {
     "test": "make test",
-    "jshint": "make jshint",
-    "install": "node ./scripts/install.js",
-    "prepublish": "make build"
+    "lint": "make jshint",
+    "install": "node ./scripts/install.js"
   },
   "site": "https://macacajs.github.io",
   "license": "MIT"
