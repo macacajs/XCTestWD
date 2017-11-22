@@ -436,7 +436,7 @@ extension XCElementSnapshot {
             }
         }
         
-        return false
+        return true
     }
     
     //MARK: Accessibility Measurement
