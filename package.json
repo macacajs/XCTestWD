@@ -1,6 +1,6 @@
 {
   "name": "xctestwd",
-  "version": "1.3.6",
+  "version": "1.3.9",
   "description": "Swift implementation of WebDriver server for iOS that runs on Simulator/iOS devices. ",
   "keywords": [
     "iOS",
@@ -14,10 +14,13 @@
   "dependencies": {
     "detect-port": "^1.1.3",
     "ios-utils": "~1.0.0",
+    "macaca-doctor": "^2.0.4",
     "macaca-utils": "^1.0.0",
     "request": "~2.69.0",
+    "shelljs": "^0.7.8",
     "webdriver-dfn-error-code": "~1.0.1",
     "xcode": "^0.8.9",
+    "xctestwd-frameworks-9.1": "^1.0.1",
     "xlogger": "~1.0.0"
   },
   "devDependencies": {
@@ -30,9 +33,8 @@
   },
   "scripts": {
     "test": "make test",
-    "jshint": "make jshint",
-    "install": "node ./scripts/install.js",
-    "prepublish": "make build"
+    "lint": "make jshint",
+    "install": "node ./scripts/install.js"
   },
   "site": "https://macacajs.github.io",
   "license": "MIT"
