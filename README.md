@@ -18,8 +18,8 @@
 
 ## 1. Requirements
 
-- XCode version 8.3.0 and above.
-- iOS version 9.0 and above.
+- XCode version 9.0 and above.
+- iOS version 11.0 and above. （there is significant change on XCUITest interfaces and system private headers, hence we decide to support newest OS version only）
 
 ## 2. Starting XCTestWD
 
