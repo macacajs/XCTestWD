@@ -523,7 +523,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#Check about simulator\ncount=`xcrun simctl list | grep Booted | wc -l | sed -e 's/ //g'`\nif [ $count -gt 0 ]; then\nxcrun simctl uninstall booted com.apple.test.XCTestWDUITests-Runner\nfi\n\n# Check about iOS device\ndeviceConnected=$(idevice_id -l)\necho $deviceConnected\nif [ ${#deviceConnected} -gt 0 ]; then\n    ideviceinstaller -U com.apple.test.XCTestWDUITests-Runner\n    fi";
+			shellScript = "#Check about simulator\ncount=`xcrun simctl list | grep Booted | wc -l | sed -e 's/ //g'`\nif [ $count -gt 0 ]; then\nxcrun simctl uninstall booted com.apple.test.XCTestWDUITests-Runner\nfi\n\n# Check about iOS device\ndeviceConnected=$(idevice_id -l)\necho $deviceConnected\nif [ ${#deviceConnected} -gt 0 ]; then\n    ideviceinstaller -U com.apple.test.XCTestWDUITests-Runner\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
