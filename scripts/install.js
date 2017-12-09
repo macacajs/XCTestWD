@@ -28,7 +28,7 @@ const updateInformation = function() {
     const myProj = xcode.project(projectPath);
     myProj.parseSync();
 
-    update(myProj,schemeName, function(buildSettings) {
+    update(myProj, schemeName, function(buildSettings) {
       const newBundleId = process.env.BUNDLE_ID || `XCTestWDRunner.XCTestWDRunner.${hostname}`;
       buildSettings.PRODUCT_BUNDLE_IDENTIFIER = newBundleId;
       if (DEVELOPMENT_TEAM) {

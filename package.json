@@ -1,7 +1,7 @@
 {
   "name": "xctestwd",
   "version": "1.3.11",
-  "description": "Swift implementation of WebDriver server for iOS that runs on Simulator/iOS devices. ",
+  "description": "Swift implementation of WebDriver server for iOS that runs on Simulator/iOS devices.",
   "keywords": [
     "iOS",
     "xctest"
@@ -25,15 +25,19 @@
   },
   "devDependencies": {
     "co-mocha": "*",
+    "eslint": "^4.13.0",
+    "eslint-plugin-mocha": "^4.11.0",
     "istanbul": "*",
-    "jshint": "*",
     "mocha": "*",
     "pre-commit": "*",
     "should": "*"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "scripts": {
-    "test": "make test",
-    "lint": "make jshint",
+    "test": "mocha",
+    "lint": "eslint . --fix",
     "install": "node ./scripts/install.js"
   },
   "site": "https://macacajs.github.io",

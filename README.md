@@ -46,7 +46,7 @@ $ xcodebuild -project XCTestWD.xcodeproj \
 
 To execute for iOS device, run the following command:
 
-``` bash
+```bash
 #
 #Change the port number to override the default port 
 #Specify the device name
