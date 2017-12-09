@@ -4,3 +4,4 @@ osx_image:
   - xcode9
 script:
   - npm run lint
+  - xcodebuild -project ./XCTestWD/XCTestWD.xcodeproj -sdk iphonesimulator
