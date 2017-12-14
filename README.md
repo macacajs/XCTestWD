@@ -89,11 +89,12 @@ If you cannot get anything from macaca server log, open the XCTestWD in your nod
 The project path is at
 ```
 cd "$(npm root -g)/macaca-ios/node_modules/xctestwd"
-
 ```
-<img width="843" alt="2017-12-14 10 55 14" src="https://user-images.githubusercontent.com/8198256/33973561-912c0dde-e0be-11e7-824c-bfa5df42e889.png">
-
+Set up the linebreak for swift error and exceptions:
 <img width="267" alt="2017-12-14 10 56 33" src="https://user-images.githubusercontent.com/8198256/33973562-9153137a-e0be-11e7-9ef0-b2d06bbd32c8.png">
+
+Run your command regularly, once the driver has been initialized, attach the process:
+<img width="843" alt="2017-12-14 10 55 14" src="https://user-images.githubusercontent.com/8198256/33973561-912c0dde-e0be-11e7-824c-bfa5df42e889.png">
 
 
 
