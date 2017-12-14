@@ -86,16 +86,16 @@ See the Macaca Service log to checkout which command leads the error. With detai
 Optional: <br>
 If you cannot get anything from macaca server log, open the XCTestWD in your node installation path and attatch for debugging on process 'XCTRunnerUITests-Runner'. <br>
 
-**Additional Info**
-`The project path is at`<br>
+**Additional Info**<br>
+`The project path is at`<br><br>
 ```
 cd "$(npm root -g)/macaca-ios/node_modules/xctestwd"
 ```
 
-`Set up the linebreak for swift error and exceptions:`<br>
+`Set up the linebreak for swift error and exceptions:`<br><br>
 <img width="267" alt="2017-12-14 10 56 33" src="https://user-images.githubusercontent.com/8198256/33973562-9153137a-e0be-11e7-9ef0-b2d06bbd32c8.png">
 
-`Run your command regularly, once the driver has been initialized, attach the process:`<br>
+`Run your command regularly, once the driver has been initialized, attach the process:`<br><br>
 <img width="843" alt="2017-12-14 10 55 14" src="https://user-images.githubusercontent.com/8198256/33973561-912c0dde-e0be-11e7-824c-bfa5df42e889.png">
 
 ### 4.2 Swift modules fails to compile
