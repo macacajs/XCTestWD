@@ -84,7 +84,18 @@ When you have started the XCTestWD instance properly but fails in middle of a te
 Solution: <br>
 See the Macaca Service log to checkout which command leads the error. With detailed and comprehensive log information, please submit an issue to us. <br>
 Optional: <br>
-If you cannot get anything from macaca server log, open the XCTestWD in your node installation path and attatch for debugging on process 'XCTRunner'. <br>
+If you cannot get anything from macaca server log, open the XCTestWD in your node installation path and attatch for debugging on process 'XCTRunnerUITests-Runner'. <br>
+
+The project path is at
+```
+cd "$(npm root -g)/macaca-ios/node_modules/xctestwd"
+
+```
+<img width="843" alt="2017-12-14 10 55 14" src="https://user-images.githubusercontent.com/8198256/33973561-912c0dde-e0be-11e7-824c-bfa5df42e889.png">
+
+<img width="267" alt="2017-12-14 10 56 33" src="https://user-images.githubusercontent.com/8198256/33973562-9153137a-e0be-11e7-9ef0-b2d06bbd32c8.png">
+
+
 
 ### 4.2 Swift modules fails to compile
 
