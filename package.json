@@ -30,8 +30,7 @@
     "eslint-plugin-mocha": "^4.11.0",
     "istanbul": "*",
     "mocha": "*",
-    "pre-commit": "*",
-    "should": "*"
+    "pre-commit": "*"
   },
   "pre-commit": [
     "lint"
