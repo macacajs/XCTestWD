@@ -13,7 +13,11 @@ public class XCTestWDServer {
     
     private let server = HttpServer()
     
-    internal func startServer() {
+    public init() {
+        print("initializing wd server")
+    }
+    
+    public func startServer() {
         do {
             try server.start(fetchPort())
             registerRouters()
@@ -28,7 +32,7 @@ public class XCTestWDServer {
         }
     }
     
-    internal func stopServer() {
+    public func stopServer() {
         server.stop()
     }
     

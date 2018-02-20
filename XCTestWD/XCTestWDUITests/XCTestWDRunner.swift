@@ -8,20 +8,21 @@
 
 import XCTest
 import Swifter
+import XCTestWDModule
 
-class XCTextWDRunner: XCTestCase {
+public class XCTextWDRunner: XCTestCase {
     var server: XCTestWDServer?
-    override func setUp() {
+    override public func setUp() {
         super.setUp()
         continueAfterFailure = false
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(terminate(notification:)),
-                                               name: NSNotification.Name(rawValue: XCTestWDSessionShutDown),
+                                               name: NSNotification.Name(rawValue: "XCTestWDSessionShutDown"),
                                                object: nil)
     }
     
-    override func tearDown() {
+    override public func tearDown() {
         super.tearDown()
     }
     
