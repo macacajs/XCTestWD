@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		7F2B0207203C265F00B07F50 /* XCTestWDModuleAggregation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7F2B0208203C265F00B07F50 /* Build configuration list for PBXAggregateTarget "XCTestWDModuleAggregation" */;
+			buildPhases = (
+				7F5D35CB203C2AA300BCC922 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = XCTestWDModuleAggregation;
+			productName = XCTestWDModuleAggregation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		63D4081B1EAB629400198736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4081A1EAB629400198736 /* AppDelegate.swift */; };
 		63D4081D1EAB629400198736 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4081C1EAB629400198736 /* ViewController.swift */; };
@@ -18,28 +32,11 @@
 		7F2B017E203BDBD800B07F50 /* XCTestWDModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F2B017C203BDBD800B07F50 /* XCTestWDModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F2B0181203BDBD800B07F50 /* XCTestWDModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */; };
 		7F2B0182203BDBD800B07F50 /* XCTestWDModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F2B0195203BDC9200B07F50 /* XCTestWDContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0187203BDC9000B07F50 /* XCTestWDContextController.swift */; };
-		7F2B0196203BDC9200B07F50 /* XCTestWDUrlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0188203BDC9000B07F50 /* XCTestWDUrlController.swift */; };
-		7F2B0197203BDC9200B07F50 /* XCTestWDSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0189203BDC9000B07F50 /* XCTestWDSourceController.swift */; };
-		7F2B0198203BDC9200B07F50 /* XCTestWDActionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B018A203BDC9000B07F50 /* XCTestWDActionsController.swift */; };
-		7F2B0199203BDC9200B07F50 /* XCTestWDElementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B018B203BDC9100B07F50 /* XCTestWDElementController.swift */; };
-		7F2B019A203BDC9200B07F50 /* XCTestWDStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B018C203BDC9100B07F50 /* XCTestWDStatusController.swift */; };
-		7F2B019B203BDC9200B07F50 /* XCTestWDExecuteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B018D203BDC9100B07F50 /* XCTestWDExecuteController.swift */; };
-		7F2B019C203BDC9200B07F50 /* XCTestWDScreenshotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B018E203BDC9100B07F50 /* XCTestWDScreenshotController.swift */; };
-		7F2B019D203BDC9200B07F50 /* XCTestWDAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B018F203BDC9100B07F50 /* XCTestWDAlertController.swift */; };
-		7F2B019E203BDC9200B07F50 /* XCTestWDSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0190203BDC9100B07F50 /* XCTestWDSessionController.swift */; };
-		7F2B019F203BDC9200B07F50 /* XCTestWDKeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0191203BDC9100B07F50 /* XCTestWDKeysController.swift */; };
-		7F2B01A0203BDC9200B07F50 /* XCTestWDTitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0192203BDC9100B07F50 /* XCTestWDTitleController.swift */; };
-		7F2B01A1203BDC9200B07F50 /* XCTestWDWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0193203BDC9100B07F50 /* XCTestWDWindowController.swift */; };
-		7F2B01A2203BDC9200B07F50 /* XCTestWDTimeoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0194203BDC9100B07F50 /* XCTestWDTimeoutController.swift */; };
 		7F2B01A5203BDCB500B07F50 /* XCTestWDFindElementUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01A3203BDCB500B07F50 /* XCTestWDFindElementUtils.swift */; };
 		7F2B01A6203BDCB500B07F50 /* XCTestWDMathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01A4203BDCB500B07F50 /* XCTestWDMathUtils.swift */; };
-		7F2B01A9203BDCCA00B07F50 /* XCTestWDApplicationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01A7203BDCCA00B07F50 /* XCTestWDApplicationTree.swift */; };
-		7F2B01AA203BDCCA00B07F50 /* XCTestWDAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01A8203BDCCA00B07F50 /* XCTestWDAccessibility.swift */; };
 		7F2B01AE203BDCDE00B07F50 /* XCTestWDServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01AB203BDCDD00B07F50 /* XCTestWDServer.swift */; };
 		7F2B01AF203BDCDE00B07F50 /* XCTestWDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01AC203BDCDD00B07F50 /* XCTestWDController.swift */; };
 		7F2B01B0203BDCDE00B07F50 /* XCTestWDDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01AD203BDCDD00B07F50 /* XCTestWDDispatch.swift */; };
-		7F2B01B3203BDCFC00B07F50 /* XCTestWDXPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B2203BDCFC00B07F50 /* XCTestWDXPath.swift */; };
 		7F2B01BA203BDD3A00B07F50 /* XCTestWDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B4203BDD3900B07F50 /* XCTestWDAlert.swift */; };
 		7F2B01BB203BDD3A00B07F50 /* XCTestWDErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B5203BDD3900B07F50 /* XCTestWDErrors.swift */; };
 		7F2B01BC203BDD3A00B07F50 /* XCTestWDSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B6203BDD3900B07F50 /* XCTestWDSession.swift */; };
@@ -75,6 +72,23 @@
 		7F2B01DC203BDEF500B07F50 /* Fuzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B01DA203BDEF500B07F50 /* Fuzi.framework */; };
 		7F2B01DD203BDEF500B07F50 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B01DB203BDEF500B07F50 /* AEXML.framework */; };
 		7F2B01E0203BE22200B07F50 /* XCTestWDModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */; };
+		7F2B01F2203C249A00B07F50 /* XCTestWDContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E4203C249900B07F50 /* XCTestWDContextController.swift */; };
+		7F2B01F3203C249A00B07F50 /* XCTestWDUrlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E5203C249900B07F50 /* XCTestWDUrlController.swift */; };
+		7F2B01F4203C249A00B07F50 /* XCTestWDSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E6203C249900B07F50 /* XCTestWDSourceController.swift */; };
+		7F2B01F5203C249A00B07F50 /* XCTestWDActionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E7203C249900B07F50 /* XCTestWDActionsController.swift */; };
+		7F2B01F6203C249A00B07F50 /* XCTestWDElementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E8203C249900B07F50 /* XCTestWDElementController.swift */; };
+		7F2B01F7203C249A00B07F50 /* XCTestWDStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E9203C249900B07F50 /* XCTestWDStatusController.swift */; };
+		7F2B01F8203C249A00B07F50 /* XCTestWDExecuteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EA203C249A00B07F50 /* XCTestWDExecuteController.swift */; };
+		7F2B01F9203C249A00B07F50 /* XCTestWDScreenshotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EB203C249A00B07F50 /* XCTestWDScreenshotController.swift */; };
+		7F2B01FA203C249A00B07F50 /* XCTestWDAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EC203C249A00B07F50 /* XCTestWDAlertController.swift */; };
+		7F2B01FB203C249A00B07F50 /* XCTestWDSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01ED203C249A00B07F50 /* XCTestWDSessionController.swift */; };
+		7F2B01FC203C249A00B07F50 /* XCTestWDKeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EE203C249A00B07F50 /* XCTestWDKeysController.swift */; };
+		7F2B01FD203C249A00B07F50 /* XCTestWDTitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EF203C249A00B07F50 /* XCTestWDTitleController.swift */; };
+		7F2B01FE203C249A00B07F50 /* XCTestWDWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01F0203C249A00B07F50 /* XCTestWDWindowController.swift */; };
+		7F2B01FF203C249A00B07F50 /* XCTestWDTimeoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01F1203C249A00B07F50 /* XCTestWDTimeoutController.swift */; };
+		7F2B0203203C24DE00B07F50 /* XCTestWDApplicationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0201203C24DE00B07F50 /* XCTestWDApplicationTree.swift */; };
+		7F2B0204203C24DE00B07F50 /* XCTestWDAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0202203C24DE00B07F50 /* XCTestWDAccessibility.swift */; };
+		7F2B0206203C253700B07F50 /* XCTestWDXPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0205203C253700B07F50 /* XCTestWDXPath.swift */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
 		7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD799771EBC15D70053C4D2 /* Foundation.framework */; };
@@ -128,28 +142,11 @@
 		7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCTestWDModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2B017C203BDBD800B07F50 /* XCTestWDModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestWDModule.h; sourceTree = "<group>"; };
 		7F2B017D203BDBD800B07F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F2B0187203BDC9000B07F50 /* XCTestWDContextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDContextController.swift; path = XCTestWDModule/server/controllers/XCTestWDContextController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0188203BDC9000B07F50 /* XCTestWDUrlController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDUrlController.swift; path = XCTestWDModule/server/controllers/XCTestWDUrlController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0189203BDC9000B07F50 /* XCTestWDSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSourceController.swift; path = XCTestWDModule/server/controllers/XCTestWDSourceController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B018A203BDC9000B07F50 /* XCTestWDActionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDActionsController.swift; path = XCTestWDModule/server/controllers/XCTestWDActionsController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B018B203BDC9100B07F50 /* XCTestWDElementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDElementController.swift; path = XCTestWDModule/server/controllers/XCTestWDElementController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B018C203BDC9100B07F50 /* XCTestWDStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDStatusController.swift; path = XCTestWDModule/server/controllers/XCTestWDStatusController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B018D203BDC9100B07F50 /* XCTestWDExecuteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDExecuteController.swift; path = XCTestWDModule/server/controllers/XCTestWDExecuteController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B018E203BDC9100B07F50 /* XCTestWDScreenshotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDScreenshotController.swift; path = XCTestWDModule/server/controllers/XCTestWDScreenshotController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B018F203BDC9100B07F50 /* XCTestWDAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlertController.swift; path = XCTestWDModule/server/controllers/XCTestWDAlertController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0190203BDC9100B07F50 /* XCTestWDSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSessionController.swift; path = XCTestWDModule/server/controllers/XCTestWDSessionController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0191203BDC9100B07F50 /* XCTestWDKeysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDKeysController.swift; path = XCTestWDModule/server/controllers/XCTestWDKeysController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0192203BDC9100B07F50 /* XCTestWDTitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDTitleController.swift; path = XCTestWDModule/server/controllers/XCTestWDTitleController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0193203BDC9100B07F50 /* XCTestWDWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDWindowController.swift; path = XCTestWDModule/server/controllers/XCTestWDWindowController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0194203BDC9100B07F50 /* XCTestWDTimeoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDTimeoutController.swift; path = XCTestWDModule/server/controllers/XCTestWDTimeoutController.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01A3203BDCB500B07F50 /* XCTestWDFindElementUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDFindElementUtils.swift; path = XCTestWDModule/server/models/utils/XCTestWDFindElementUtils.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01A4203BDCB500B07F50 /* XCTestWDMathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDMathUtils.swift; path = XCTestWDModule/server/models/utils/XCTestWDMathUtils.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01A7203BDCCA00B07F50 /* XCTestWDApplicationTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDApplicationTree.swift; path = XCTestWDModule/server/models/extensions/XCTestWDApplicationTree.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01A8203BDCCA00B07F50 /* XCTestWDAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAccessibility.swift; path = XCTestWDModule/server/models/extensions/XCTestWDAccessibility.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01AB203BDCDD00B07F50 /* XCTestWDServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDServer.swift; path = XCTestWDModule/server/XCTestWDServer.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01AC203BDCDD00B07F50 /* XCTestWDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDController.swift; path = XCTestWDModule/server/XCTestWDController.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01AD203BDCDD00B07F50 /* XCTestWDDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDDispatch.swift; path = XCTestWDModule/server/XCTestWDDispatch.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01B2203BDCFC00B07F50 /* XCTestWDXPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDXPath.swift; path = XCTestWDUITests/server/models/utils/XCTestWDXPath.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01B4203BDD3900B07F50 /* XCTestWDAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlert.swift; path = XCTestWDModule/server/models/XCTestWDAlert.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01B5203BDD3900B07F50 /* XCTestWDErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDErrors.swift; path = XCTestWDModule/server/models/XCTestWDErrors.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01B6203BDD3900B07F50 /* XCTestWDSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSession.swift; path = XCTestWDModule/server/models/XCTestWDSession.swift; sourceTree = SOURCE_ROOT; };
@@ -158,6 +155,23 @@
 		7F2B01B9203BDD3A00B07F50 /* XCUIElementTypeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCUIElementTypeTransformer.swift; path = XCTestWDModule/server/models/XCUIElementTypeTransformer.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01DA203BDEF500B07F50 /* Fuzi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fuzi.framework; path = ../Carthage/Build/iOS/Fuzi.framework; sourceTree = "<group>"; };
 		7F2B01DB203BDEF500B07F50 /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = ../Carthage/Build/iOS/AEXML.framework; sourceTree = "<group>"; };
+		7F2B01E4203C249900B07F50 /* XCTestWDContextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDContextController.swift; path = XCTestWDModule/server/controllers/XCTestWDContextController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01E5203C249900B07F50 /* XCTestWDUrlController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDUrlController.swift; path = XCTestWDModule/server/controllers/XCTestWDUrlController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01E6203C249900B07F50 /* XCTestWDSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSourceController.swift; path = XCTestWDModule/server/controllers/XCTestWDSourceController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01E7203C249900B07F50 /* XCTestWDActionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDActionsController.swift; path = XCTestWDModule/server/controllers/XCTestWDActionsController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01E8203C249900B07F50 /* XCTestWDElementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDElementController.swift; path = XCTestWDModule/server/controllers/XCTestWDElementController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01E9203C249900B07F50 /* XCTestWDStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDStatusController.swift; path = XCTestWDModule/server/controllers/XCTestWDStatusController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01EA203C249A00B07F50 /* XCTestWDExecuteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDExecuteController.swift; path = XCTestWDModule/server/controllers/XCTestWDExecuteController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01EB203C249A00B07F50 /* XCTestWDScreenshotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDScreenshotController.swift; path = XCTestWDModule/server/controllers/XCTestWDScreenshotController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01EC203C249A00B07F50 /* XCTestWDAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlertController.swift; path = XCTestWDModule/server/controllers/XCTestWDAlertController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01ED203C249A00B07F50 /* XCTestWDSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSessionController.swift; path = XCTestWDModule/server/controllers/XCTestWDSessionController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01EE203C249A00B07F50 /* XCTestWDKeysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDKeysController.swift; path = XCTestWDModule/server/controllers/XCTestWDKeysController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01EF203C249A00B07F50 /* XCTestWDTitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDTitleController.swift; path = XCTestWDModule/server/controllers/XCTestWDTitleController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01F0203C249A00B07F50 /* XCTestWDWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDWindowController.swift; path = XCTestWDModule/server/controllers/XCTestWDWindowController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B01F1203C249A00B07F50 /* XCTestWDTimeoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDTimeoutController.swift; path = XCTestWDModule/server/controllers/XCTestWDTimeoutController.swift; sourceTree = SOURCE_ROOT; };
+		7F2B0201203C24DE00B07F50 /* XCTestWDApplicationTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDApplicationTree.swift; path = XCTestWDModule/server/models/extensions/XCTestWDApplicationTree.swift; sourceTree = SOURCE_ROOT; };
+		7F2B0202203C24DE00B07F50 /* XCTestWDAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAccessibility.swift; path = XCTestWDModule/server/models/extensions/XCTestWDAccessibility.swift; sourceTree = SOURCE_ROOT; };
+		7F2B0205203C253700B07F50 /* XCTestWDXPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDXPath.swift; path = XCTestWDModule/server/models/utils/XCTestWDXPath.swift; sourceTree = SOURCE_ROOT; };
 		7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7F62C4181F79D7F300CC2BFF /* XCTestWDApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestWDApplication.h; sourceTree = "<group>"; };
 		7F62C4191F79D7F300CC2BFF /* XCTestWDApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestWDApplication.m; sourceTree = "<group>"; };
@@ -248,40 +262,20 @@
 		63BCCF231EAC8D0600DE4CC0 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				7F2B01E3203C247C00B07F50 /* Controllers */,
 				7F2B01AD203BDCDD00B07F50 /* XCTestWDDispatch.swift */,
 				7F2B01AB203BDCDD00B07F50 /* XCTestWDServer.swift */,
 				7F2B01AC203BDCDD00B07F50 /* XCTestWDController.swift */,
-				63BCCF241EAC8D0600DE4CC0 /* Controllers */,
 				63BCCF331EAC8D0600DE4CC0 /* Models */,
 			);
 			name = Server;
 			path = ../XCTestWDUITests/Server;
 			sourceTree = "<group>";
 		};
-		63BCCF241EAC8D0600DE4CC0 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				7F2B018A203BDC9000B07F50 /* XCTestWDActionsController.swift */,
-				7F2B018F203BDC9100B07F50 /* XCTestWDAlertController.swift */,
-				7F2B0187203BDC9000B07F50 /* XCTestWDContextController.swift */,
-				7F2B018B203BDC9100B07F50 /* XCTestWDElementController.swift */,
-				7F2B018D203BDC9100B07F50 /* XCTestWDExecuteController.swift */,
-				7F2B0191203BDC9100B07F50 /* XCTestWDKeysController.swift */,
-				7F2B018E203BDC9100B07F50 /* XCTestWDScreenshotController.swift */,
-				7F2B0190203BDC9100B07F50 /* XCTestWDSessionController.swift */,
-				7F2B0189203BDC9000B07F50 /* XCTestWDSourceController.swift */,
-				7F2B018C203BDC9100B07F50 /* XCTestWDStatusController.swift */,
-				7F2B0194203BDC9100B07F50 /* XCTestWDTimeoutController.swift */,
-				7F2B0192203BDC9100B07F50 /* XCTestWDTitleController.swift */,
-				7F2B0188203BDC9000B07F50 /* XCTestWDUrlController.swift */,
-				7F2B0193203BDC9100B07F50 /* XCTestWDWindowController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		63BCCF331EAC8D0600DE4CC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F2B0200203C24BE00B07F50 /* extension */,
 				7F2B01B4203BDD3900B07F50 /* XCTestWDAlert.swift */,
 				7F2B01B5203BDD3900B07F50 /* XCTestWDErrors.swift */,
 				7F2B01B7203BDD3A00B07F50 /* XCTestWDReponse.swift */,
@@ -289,7 +283,6 @@
 				7F2B01B8203BDD3A00B07F50 /* XCTestWDStatus.swift */,
 				7F2B01B9203BDD3A00B07F50 /* XCUIElementTypeTransformer.swift */,
 				7FD7997C1EBC6A960053C4D2 /* utils */,
-				7F22148C1EB46781006D706F /* extensions */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -351,16 +344,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7F22148C1EB46781006D706F /* extensions */ = {
-			isa = PBXGroup;
-			children = (
-				7F2B01A8203BDCCA00B07F50 /* XCTestWDAccessibility.swift */,
-				7F2B01A7203BDCCA00B07F50 /* XCTestWDApplicationTree.swift */,
-			);
-			name = extensions;
-			path = XCTestWDUITests/server/models/extensions;
-			sourceTree = SOURCE_ROOT;
-		};
 		7F2B017B203BDBD800B07F50 /* XCTestWDModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +353,36 @@
 				7F2B017D203BDBD800B07F50 /* Info.plist */,
 			);
 			path = XCTestWDModule;
+			sourceTree = "<group>";
+		};
+		7F2B01E3203C247C00B07F50 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F2B01E7203C249900B07F50 /* XCTestWDActionsController.swift */,
+				7F2B01EC203C249A00B07F50 /* XCTestWDAlertController.swift */,
+				7F2B01E4203C249900B07F50 /* XCTestWDContextController.swift */,
+				7F2B01E8203C249900B07F50 /* XCTestWDElementController.swift */,
+				7F2B01EA203C249A00B07F50 /* XCTestWDExecuteController.swift */,
+				7F2B01EE203C249A00B07F50 /* XCTestWDKeysController.swift */,
+				7F2B01EB203C249A00B07F50 /* XCTestWDScreenshotController.swift */,
+				7F2B01ED203C249A00B07F50 /* XCTestWDSessionController.swift */,
+				7F2B01E6203C249900B07F50 /* XCTestWDSourceController.swift */,
+				7F2B01E9203C249900B07F50 /* XCTestWDStatusController.swift */,
+				7F2B01F1203C249A00B07F50 /* XCTestWDTimeoutController.swift */,
+				7F2B01EF203C249A00B07F50 /* XCTestWDTitleController.swift */,
+				7F2B01E5203C249900B07F50 /* XCTestWDUrlController.swift */,
+				7F2B01F0203C249A00B07F50 /* XCTestWDWindowController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7F2B0200203C24BE00B07F50 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				7F2B0202203C24DE00B07F50 /* XCTestWDAccessibility.swift */,
+				7F2B0201203C24DE00B07F50 /* XCTestWDApplicationTree.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		7F62C4171F79D7F300CC2BFF /* Macaca */ = {
@@ -384,7 +397,7 @@
 		7FD7997C1EBC6A960053C4D2 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				7F2B01B2203BDCFC00B07F50 /* XCTestWDXPath.swift */,
+				7F2B0205203C253700B07F50 /* XCTestWDXPath.swift */,
 				7F2B01A3203BDCB500B07F50 /* XCTestWDFindElementUtils.swift */,
 				7F2B01A4203BDCB500B07F50 /* XCTestWDMathUtils.swift */,
 			);
@@ -516,6 +529,10 @@
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
+					7F2B0207203C265F00B07F50 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 63D408121EAB629400198736 /* Build configuration list for PBXProject "XCTestWD" */;
@@ -534,6 +551,7 @@
 				63D408161EAB629400198736 /* XCTestWD */,
 				63D4082A1EAB629400198736 /* XCTestWDUITests */,
 				7F2B0179203BDBD800B07F50 /* XCTestWDModule */,
+				7F2B0207203C265F00B07F50 /* XCTestWDModuleAggregation */,
 			);
 		};
 /* End PBXProject section */
@@ -628,6 +646,19 @@
 			shellPath = /bin/sh;
 			shellScript = "rm -rf ../Carthage/Checkouts/Fuzi/libxml2/";
 		};
+		7F5D35CB203C2AA300BCC922 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $SRCROOT/../scripts/aggregate.sh;
+		};
 		7F6C3B601EFCD8AB00F53D6B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -681,35 +712,35 @@
 				7F2B01D2203BDDFB00B07F50 /* XCTestWDApplication.m in Sources */,
 				7F2B01D3203BDDFB00B07F50 /* XCTestDaemonsProxy.m in Sources */,
 				7F2B01D4203BDDFB00B07F50 /* XCRuntimeUtils.m in Sources */,
+				7F2B01F9203C249A00B07F50 /* XCTestWDScreenshotController.swift in Sources */,
+				7F2B01FE203C249A00B07F50 /* XCTestWDWindowController.swift in Sources */,
 				7F2B01D5203BDDFB00B07F50 /* XCTestPrivateSymbols.m in Sources */,
-				7F2B01A0203BDC9200B07F50 /* XCTestWDTitleController.swift in Sources */,
+				7F2B01FA203C249A00B07F50 /* XCTestWDAlertController.swift in Sources */,
 				7F2B01AF203BDCDE00B07F50 /* XCTestWDController.swift in Sources */,
-				7F2B01A2203BDC9200B07F50 /* XCTestWDTimeoutController.swift in Sources */,
 				7F2B01BC203BDD3A00B07F50 /* XCTestWDSession.swift in Sources */,
-				7F2B019B203BDC9200B07F50 /* XCTestWDExecuteController.swift in Sources */,
+				7F2B0206203C253700B07F50 /* XCTestWDXPath.swift in Sources */,
 				7F2B01A6203BDCB500B07F50 /* XCTestWDMathUtils.swift in Sources */,
-				7F2B019C203BDC9200B07F50 /* XCTestWDScreenshotController.swift in Sources */,
-				7F2B019E203BDC9200B07F50 /* XCTestWDSessionController.swift in Sources */,
-				7F2B01B3203BDCFC00B07F50 /* XCTestWDXPath.swift in Sources */,
+				7F2B01F7203C249A00B07F50 /* XCTestWDStatusController.swift in Sources */,
+				7F2B01F5203C249A00B07F50 /* XCTestWDActionsController.swift in Sources */,
 				7F2B01BA203BDD3A00B07F50 /* XCTestWDAlert.swift in Sources */,
-				7F2B01A1203BDC9200B07F50 /* XCTestWDWindowController.swift in Sources */,
-				7F2B0199203BDC9200B07F50 /* XCTestWDElementController.swift in Sources */,
 				7F2B01BD203BDD3A00B07F50 /* XCTestWDReponse.swift in Sources */,
-				7F2B019F203BDC9200B07F50 /* XCTestWDKeysController.swift in Sources */,
+				7F2B01F2203C249A00B07F50 /* XCTestWDContextController.swift in Sources */,
+				7F2B01F3203C249A00B07F50 /* XCTestWDUrlController.swift in Sources */,
+				7F2B01FB203C249A00B07F50 /* XCTestWDSessionController.swift in Sources */,
 				7F2B01B0203BDCDE00B07F50 /* XCTestWDDispatch.swift in Sources */,
-				7F2B019A203BDC9200B07F50 /* XCTestWDStatusController.swift in Sources */,
-				7F2B01AA203BDCCA00B07F50 /* XCTestWDAccessibility.swift in Sources */,
-				7F2B0195203BDC9200B07F50 /* XCTestWDContextController.swift in Sources */,
-				7F2B019D203BDC9200B07F50 /* XCTestWDAlertController.swift in Sources */,
-				7F2B0198203BDC9200B07F50 /* XCTestWDActionsController.swift in Sources */,
+				7F2B01F4203C249A00B07F50 /* XCTestWDSourceController.swift in Sources */,
+				7F2B0204203C24DE00B07F50 /* XCTestWDAccessibility.swift in Sources */,
+				7F2B01FC203C249A00B07F50 /* XCTestWDKeysController.swift in Sources */,
 				7F2B01BB203BDD3A00B07F50 /* XCTestWDErrors.swift in Sources */,
 				7F2B01A5203BDCB500B07F50 /* XCTestWDFindElementUtils.swift in Sources */,
+				7F2B01F6203C249A00B07F50 /* XCTestWDElementController.swift in Sources */,
+				7F2B01FD203C249A00B07F50 /* XCTestWDTitleController.swift in Sources */,
+				7F2B01F8203C249A00B07F50 /* XCTestWDExecuteController.swift in Sources */,
+				7F2B01FF203C249A00B07F50 /* XCTestWDTimeoutController.swift in Sources */,
 				7F2B01BF203BDD3A00B07F50 /* XCUIElementTypeTransformer.swift in Sources */,
-				7F2B0197203BDC9200B07F50 /* XCTestWDSourceController.swift in Sources */,
-				7F2B0196203BDC9200B07F50 /* XCTestWDUrlController.swift in Sources */,
 				7F2B01AE203BDCDE00B07F50 /* XCTestWDServer.swift in Sources */,
-				7F2B01A9203BDCCA00B07F50 /* XCTestWDApplicationTree.swift in Sources */,
 				7F2B01BE203BDD3A00B07F50 /* XCTestWDStatus.swift in Sources */,
+				7F2B0203203C24DE00B07F50 /* XCTestWDApplicationTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1065,22 @@
 			};
 			name = Release;
 		};
+		7F2B0209203C265F00B07F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7F2B020A203C265F00B07F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1069,6 +1116,15 @@
 			buildConfigurations = (
 				7F2B0184203BDBD800B07F50 /* Debug */,
 				7F2B0185203BDBD800B07F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2B0208203C265F00B07F50 /* Build configuration list for PBXAggregateTarget "XCTestWDModuleAggregation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2B0209203C265F00B07F50 /* Debug */,
+				7F2B020A203C265F00B07F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
