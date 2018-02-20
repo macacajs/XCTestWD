@@ -38,7 +38,6 @@
 		7F2B01D9203BDE9F00B07F50 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
 		7F2B01DC203BDEF500B07F50 /* Fuzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B01DA203BDEF500B07F50 /* Fuzi.framework */; };
 		7F2B01DD203BDEF500B07F50 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B01DB203BDEF500B07F50 /* AEXML.framework */; };
-		7F2B01E0203BE22200B07F50 /* XCTestWDModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
 		7F5D35E6203C470A00BCC922 /* XCElementSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D1203C470800BCC922 /* XCElementSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F5D35E7203C470A00BCC922 /* XCTestPrivateSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D35D2203C470800BCC922 /* XCTestPrivateSymbols.m */; };
@@ -90,6 +89,7 @@
 		7F5D363A203C486B00BCC922 /* XCTestWDFindElementUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3637203C486B00BCC922 /* XCTestWDFindElementUtils.swift */; };
 		7F5D363B203C486B00BCC922 /* XCTestWDMathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3638203C486B00BCC922 /* XCTestWDMathUtils.swift */; };
 		7F5D363C203C486B00BCC922 /* XCTestWDXPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3639203C486B00BCC922 /* XCTestWDXPath.swift */; };
+		7F5D363E203C4AD000BCC922 /* XCTestWDModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5D363D203C4AD000BCC922 /* XCTestWDModule.framework */; };
 		7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD799771EBC15D70053C4D2 /* Foundation.framework */; };
 		7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
@@ -188,6 +188,7 @@
 		7F5D3637203C486B00BCC922 /* XCTestWDFindElementUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDFindElementUtils.swift; path = XCTestWDModule/server/models/utils/XCTestWDFindElementUtils.swift; sourceTree = SOURCE_ROOT; };
 		7F5D3638203C486B00BCC922 /* XCTestWDMathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDMathUtils.swift; path = XCTestWDModule/server/models/utils/XCTestWDMathUtils.swift; sourceTree = SOURCE_ROOT; };
 		7F5D3639203C486B00BCC922 /* XCTestWDXPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDXPath.swift; path = XCTestWDModule/server/models/utils/XCTestWDXPath.swift; sourceTree = SOURCE_ROOT; };
+		7F5D363D203C4AD000BCC922 /* XCTestWDModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTestWDModule.framework; path = Frameworks/XCTestWDModule.framework; sourceTree = "<group>"; };
 		7FB002EF1EAC66F900476E7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7FD799771EBC15D70053C4D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -206,7 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F2B01E0203BE22200B07F50 /* XCTestWDModule.framework in Frameworks */,
+				7F5D363E203C4AD000BCC922 /* XCTestWDModule.framework in Frameworks */,
 				7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */,
 				7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */,
 				7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */,
@@ -277,6 +278,7 @@
 		63D4083A1EAB62D500198736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F5D363D203C4AD000BCC922 /* XCTestWDModule.framework */,
 				7F2B01DB203BDEF500B07F50 /* AEXML.framework */,
 				7F2B01DA203BDEF500B07F50 /* Fuzi.framework */,
 				7FD799771EBC15D70053C4D2 /* Foundation.framework */,
@@ -921,6 +923,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -949,6 +955,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
