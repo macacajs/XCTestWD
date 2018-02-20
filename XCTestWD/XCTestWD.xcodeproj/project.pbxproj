@@ -32,39 +32,6 @@
 		7F2B017E203BDBD800B07F50 /* XCTestWDModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F2B017C203BDBD800B07F50 /* XCTestWDModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F2B0181203BDBD800B07F50 /* XCTestWDModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */; };
 		7F2B0182203BDBD800B07F50 /* XCTestWDModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F2B01A5203BDCB500B07F50 /* XCTestWDFindElementUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01A3203BDCB500B07F50 /* XCTestWDFindElementUtils.swift */; };
-		7F2B01A6203BDCB500B07F50 /* XCTestWDMathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01A4203BDCB500B07F50 /* XCTestWDMathUtils.swift */; };
-		7F2B01AE203BDCDE00B07F50 /* XCTestWDServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01AB203BDCDD00B07F50 /* XCTestWDServer.swift */; };
-		7F2B01AF203BDCDE00B07F50 /* XCTestWDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01AC203BDCDD00B07F50 /* XCTestWDController.swift */; };
-		7F2B01B0203BDCDE00B07F50 /* XCTestWDDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01AD203BDCDD00B07F50 /* XCTestWDDispatch.swift */; };
-		7F2B01BA203BDD3A00B07F50 /* XCTestWDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B4203BDD3900B07F50 /* XCTestWDAlert.swift */; };
-		7F2B01BB203BDD3A00B07F50 /* XCTestWDErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B5203BDD3900B07F50 /* XCTestWDErrors.swift */; };
-		7F2B01BC203BDD3A00B07F50 /* XCTestWDSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B6203BDD3900B07F50 /* XCTestWDSession.swift */; };
-		7F2B01BD203BDD3A00B07F50 /* XCTestWDReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B7203BDD3A00B07F50 /* XCTestWDReponse.swift */; };
-		7F2B01BE203BDD3A00B07F50 /* XCTestWDStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B8203BDD3A00B07F50 /* XCTestWDStatus.swift */; };
-		7F2B01BF203BDD3A00B07F50 /* XCUIElementTypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01B9203BDD3A00B07F50 /* XCUIElementTypeTransformer.swift */; };
-		7F2B01C0203BDDB900B07F50 /* XCTestWDApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F62C4181F79D7F300CC2BFF /* XCTestWDApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C1203BDDB900B07F50 /* XCTestDaemonsProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E9F1ECAD10D00A68906 /* XCTestDaemonsProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C2203BDDB900B07F50 /* XCTRunnerDaemonSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E9D1ECACFCF00A68906 /* XCTRunnerDaemonSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C3203BDDD100B07F50 /* XCDebugLogDelegate-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E951ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C4203BDDD100B07F50 /* XCTestDriverInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E961ECAC7EB00A68906 /* XCTestDriverInterface-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C5203BDDD100B07F50 /* XCTestManager_IDEInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E971ECAC7EB00A68906 /* XCTestManager_IDEInterface-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C6203BDDD100B07F50 /* XCTestManager_TestsInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E981ECAC7EB00A68906 /* XCTestManager_TestsInterface-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C7203BDDD100B07F50 /* XCTestDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C8203BDDD100B07F50 /* XCTestManager_ManagerInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01C9203BDDD100B07F50 /* XCUICoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F2332F91EC85EEB009AABD4 /* XCUICoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01CA203BDDD100B07F50 /* XCRuntimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01CB203BDDD100B07F50 /* XCTestPrivateSymbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD7997F1EBC84D50053C4D2 /* XCTestPrivateSymbols.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01CC203BDDD100B07F50 /* CDStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BCCF171EAC8CF900DE4CC0 /* CDStructures.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01CD203BDDD100B07F50 /* XCAXClient_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BCCF181EAC8CF900DE4CC0 /* XCAXClient_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01CE203BDDD100B07F50 /* XCElementSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BCCF191EAC8CF900DE4CC0 /* XCElementSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01CF203BDDD100B07F50 /* XCUIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BCCF1A1EAC8CF900DE4CC0 /* XCUIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01D0203BDDD100B07F50 /* XCUIElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BCCF1B1EAC8CF900DE4CC0 /* XCUIElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01D1203BDDD100B07F50 /* XCUIElementQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BCCF1C1EAC8CF900DE4CC0 /* XCUIElementQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F2B01D2203BDDFB00B07F50 /* XCTestWDApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F62C4191F79D7F300CC2BFF /* XCTestWDApplication.m */; };
-		7F2B01D3203BDDFB00B07F50 /* XCTestDaemonsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */; };
-		7F2B01D4203BDDFB00B07F50 /* XCRuntimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */; };
-		7F2B01D5203BDDFB00B07F50 /* XCTestPrivateSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD799801EBC84D50053C4D2 /* XCTestPrivateSymbols.m */; };
 		7F2B01D6203BDE2F00B07F50 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7F2B01D7203BDE2F00B07F50 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7F2B01D8203BDE3D00B07F50 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -72,24 +39,57 @@
 		7F2B01DC203BDEF500B07F50 /* Fuzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B01DA203BDEF500B07F50 /* Fuzi.framework */; };
 		7F2B01DD203BDEF500B07F50 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B01DB203BDEF500B07F50 /* AEXML.framework */; };
 		7F2B01E0203BE22200B07F50 /* XCTestWDModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */; };
-		7F2B01F2203C249A00B07F50 /* XCTestWDContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E4203C249900B07F50 /* XCTestWDContextController.swift */; };
-		7F2B01F3203C249A00B07F50 /* XCTestWDUrlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E5203C249900B07F50 /* XCTestWDUrlController.swift */; };
-		7F2B01F4203C249A00B07F50 /* XCTestWDSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E6203C249900B07F50 /* XCTestWDSourceController.swift */; };
-		7F2B01F5203C249A00B07F50 /* XCTestWDActionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E7203C249900B07F50 /* XCTestWDActionsController.swift */; };
-		7F2B01F6203C249A00B07F50 /* XCTestWDElementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E8203C249900B07F50 /* XCTestWDElementController.swift */; };
-		7F2B01F7203C249A00B07F50 /* XCTestWDStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01E9203C249900B07F50 /* XCTestWDStatusController.swift */; };
-		7F2B01F8203C249A00B07F50 /* XCTestWDExecuteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EA203C249A00B07F50 /* XCTestWDExecuteController.swift */; };
-		7F2B01F9203C249A00B07F50 /* XCTestWDScreenshotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EB203C249A00B07F50 /* XCTestWDScreenshotController.swift */; };
-		7F2B01FA203C249A00B07F50 /* XCTestWDAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EC203C249A00B07F50 /* XCTestWDAlertController.swift */; };
-		7F2B01FB203C249A00B07F50 /* XCTestWDSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01ED203C249A00B07F50 /* XCTestWDSessionController.swift */; };
-		7F2B01FC203C249A00B07F50 /* XCTestWDKeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EE203C249A00B07F50 /* XCTestWDKeysController.swift */; };
-		7F2B01FD203C249A00B07F50 /* XCTestWDTitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01EF203C249A00B07F50 /* XCTestWDTitleController.swift */; };
-		7F2B01FE203C249A00B07F50 /* XCTestWDWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01F0203C249A00B07F50 /* XCTestWDWindowController.swift */; };
-		7F2B01FF203C249A00B07F50 /* XCTestWDTimeoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B01F1203C249A00B07F50 /* XCTestWDTimeoutController.swift */; };
-		7F2B0203203C24DE00B07F50 /* XCTestWDApplicationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0201203C24DE00B07F50 /* XCTestWDApplicationTree.swift */; };
-		7F2B0204203C24DE00B07F50 /* XCTestWDAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0202203C24DE00B07F50 /* XCTestWDAccessibility.swift */; };
-		7F2B0206203C253700B07F50 /* XCTestWDXPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B0205203C253700B07F50 /* XCTestWDXPath.swift */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
+		7F5D35E6203C470A00BCC922 /* XCElementSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D1203C470800BCC922 /* XCElementSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35E7203C470A00BCC922 /* XCTestPrivateSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D35D2203C470800BCC922 /* XCTestPrivateSymbols.m */; };
+		7F5D35E8203C470A00BCC922 /* XCRuntimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D3203C470800BCC922 /* XCRuntimeUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35E9203C470A00BCC922 /* XCUICoordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D4203C470800BCC922 /* XCUICoordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35EA203C470A00BCC922 /* CDStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D5203C470800BCC922 /* CDStructures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35EB203C470A00BCC922 /* XCTestManager_ManagerInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D6203C470800BCC922 /* XCTestManager_ManagerInterface-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35EC203C470A00BCC922 /* XCTestDriverInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D7203C470800BCC922 /* XCTestDriverInterface-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35ED203C470A00BCC922 /* XCUIElementQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D8203C470900BCC922 /* XCUIElementQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35EE203C470A00BCC922 /* XCTestPrivateSymbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35D9203C470900BCC922 /* XCTestPrivateSymbols.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35EF203C470A00BCC922 /* XCTRunnerDaemonSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35DA203C470900BCC922 /* XCTRunnerDaemonSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35F0203C470A00BCC922 /* XCUIElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35DB203C470900BCC922 /* XCUIElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35F1203C470A00BCC922 /* XCTestDaemonsProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35DC203C470900BCC922 /* XCTestDaemonsProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35F2203C470A00BCC922 /* XCTestDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35DD203C470900BCC922 /* XCTestDriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35F3203C470A00BCC922 /* XCTestManager_TestsInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35DE203C470900BCC922 /* XCTestManager_TestsInterface-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35F4203C470A00BCC922 /* XCTestDaemonsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D35DF203C470900BCC922 /* XCTestDaemonsProxy.m */; };
+		7F5D35F6203C470A00BCC922 /* XCRuntimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D35E1203C470900BCC922 /* XCRuntimeUtils.m */; };
+		7F5D35F7203C470A00BCC922 /* XCAXClient_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35E2203C470900BCC922 /* XCAXClient_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35F8203C470A00BCC922 /* XCDebugLogDelegate-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35E3203C470900BCC922 /* XCDebugLogDelegate-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35F9203C470A00BCC922 /* XCTestManager_IDEInterface-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35E4203C470900BCC922 /* XCTestManager_IDEInterface-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35FA203C470A00BCC922 /* XCUIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35E5203C470900BCC922 /* XCUIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D35FE203C474900BCC922 /* XCTestWDApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D35FC203C474900BCC922 /* XCTestWDApplication.m */; };
+		7F5D35FF203C474900BCC922 /* XCTestWDApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5D35FD203C474900BCC922 /* XCTestWDApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5D3604203C479D00BCC922 /* XCTestWDServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3601203C479D00BCC922 /* XCTestWDServer.swift */; };
+		7F5D3605203C479D00BCC922 /* XCTestWDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3602203C479D00BCC922 /* XCTestWDController.swift */; };
+		7F5D3606203C479D00BCC922 /* XCTestWDDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3603203C479D00BCC922 /* XCTestWDDispatch.swift */; };
+		7F5D3616203C47C900BCC922 /* XCTestWDContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3608203C47C800BCC922 /* XCTestWDContextController.swift */; };
+		7F5D3617203C47C900BCC922 /* XCTestWDUrlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3609203C47C800BCC922 /* XCTestWDUrlController.swift */; };
+		7F5D3618203C47C900BCC922 /* XCTestWDSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D360A203C47C800BCC922 /* XCTestWDSourceController.swift */; };
+		7F5D3619203C47C900BCC922 /* XCTestWDActionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D360B203C47C800BCC922 /* XCTestWDActionsController.swift */; };
+		7F5D361A203C47C900BCC922 /* XCTestWDElementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D360C203C47C800BCC922 /* XCTestWDElementController.swift */; };
+		7F5D361B203C47C900BCC922 /* XCTestWDStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D360D203C47C800BCC922 /* XCTestWDStatusController.swift */; };
+		7F5D361C203C47C900BCC922 /* XCTestWDExecuteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D360E203C47C800BCC922 /* XCTestWDExecuteController.swift */; };
+		7F5D361D203C47C900BCC922 /* XCTestWDScreenshotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D360F203C47C800BCC922 /* XCTestWDScreenshotController.swift */; };
+		7F5D361E203C47C900BCC922 /* XCTestWDAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3610203C47C800BCC922 /* XCTestWDAlertController.swift */; };
+		7F5D361F203C47C900BCC922 /* XCTestWDSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3611203C47C900BCC922 /* XCTestWDSessionController.swift */; };
+		7F5D3620203C47C900BCC922 /* XCTestWDKeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3612203C47C900BCC922 /* XCTestWDKeysController.swift */; };
+		7F5D3621203C47C900BCC922 /* XCTestWDTitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3613203C47C900BCC922 /* XCTestWDTitleController.swift */; };
+		7F5D3622203C47C900BCC922 /* XCTestWDWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3614203C47C900BCC922 /* XCTestWDWindowController.swift */; };
+		7F5D3623203C47C900BCC922 /* XCTestWDTimeoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3615203C47C900BCC922 /* XCTestWDTimeoutController.swift */; };
+		7F5D362B203C480500BCC922 /* XCTestWDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3625203C480400BCC922 /* XCTestWDAlert.swift */; };
+		7F5D362C203C480500BCC922 /* XCTestWDErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3626203C480400BCC922 /* XCTestWDErrors.swift */; };
+		7F5D362D203C480500BCC922 /* XCTestWDSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3627203C480400BCC922 /* XCTestWDSession.swift */; };
+		7F5D362E203C480500BCC922 /* XCTestWDReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3628203C480400BCC922 /* XCTestWDReponse.swift */; };
+		7F5D362F203C480500BCC922 /* XCTestWDStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3629203C480400BCC922 /* XCTestWDStatus.swift */; };
+		7F5D3630203C480500BCC922 /* XCUIElementTypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D362A203C480400BCC922 /* XCUIElementTypeTransformer.swift */; };
+		7F5D3635203C484E00BCC922 /* XCTestWDApplicationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3633203C484E00BCC922 /* XCTestWDApplicationTree.swift */; };
+		7F5D3636203C484E00BCC922 /* XCTestWDAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3634203C484E00BCC922 /* XCTestWDAccessibility.swift */; };
+		7F5D363A203C486B00BCC922 /* XCTestWDFindElementUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3637203C486B00BCC922 /* XCTestWDFindElementUtils.swift */; };
+		7F5D363B203C486B00BCC922 /* XCTestWDMathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3638203C486B00BCC922 /* XCTestWDMathUtils.swift */; };
+		7F5D363C203C486B00BCC922 /* XCTestWDXPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D3639203C486B00BCC922 /* XCTestWDXPath.swift */; };
 		7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD799771EBC15D70053C4D2 /* Foundation.framework */; };
 		7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
@@ -120,12 +120,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		63BCCF171EAC8CF900DE4CC0 /* CDStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDStructures.h; sourceTree = "<group>"; };
-		63BCCF181EAC8CF900DE4CC0 /* XCAXClient_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCAXClient_iOS.h; sourceTree = "<group>"; };
-		63BCCF191EAC8CF900DE4CC0 /* XCElementSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCElementSnapshot.h; sourceTree = "<group>"; };
-		63BCCF1A1EAC8CF900DE4CC0 /* XCUIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCUIApplication.h; sourceTree = "<group>"; };
-		63BCCF1B1EAC8CF900DE4CC0 /* XCUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCUIElement.h; sourceTree = "<group>"; };
-		63BCCF1C1EAC8CF900DE4CC0 /* XCUIElementQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCUIElementQuery.h; sourceTree = "<group>"; };
 		63D408171EAB629400198736 /* XCTestWD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCTestWD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D4081A1EAB629400198736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63D4081C1EAB629400198736 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,58 +132,64 @@
 		63D4083B1EAB62D500198736 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = ../Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
 		63D408551EAB62EB00198736 /* XCTestWDRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestWDRunner.swift; sourceTree = "<group>"; };
 		7F2214861EB1CB6E006D706F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		7F2332F91EC85EEB009AABD4 /* XCUICoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCUICoordinate.h; sourceTree = "<group>"; };
 		7F2B017A203BDBD800B07F50 /* XCTestWDModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCTestWDModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2B017C203BDBD800B07F50 /* XCTestWDModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestWDModule.h; sourceTree = "<group>"; };
 		7F2B017D203BDBD800B07F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F2B01A3203BDCB500B07F50 /* XCTestWDFindElementUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDFindElementUtils.swift; path = XCTestWDModule/server/models/utils/XCTestWDFindElementUtils.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01A4203BDCB500B07F50 /* XCTestWDMathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDMathUtils.swift; path = XCTestWDModule/server/models/utils/XCTestWDMathUtils.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01AB203BDCDD00B07F50 /* XCTestWDServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDServer.swift; path = XCTestWDModule/server/XCTestWDServer.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01AC203BDCDD00B07F50 /* XCTestWDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDController.swift; path = XCTestWDModule/server/XCTestWDController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01AD203BDCDD00B07F50 /* XCTestWDDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDDispatch.swift; path = XCTestWDModule/server/XCTestWDDispatch.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01B4203BDD3900B07F50 /* XCTestWDAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlert.swift; path = XCTestWDModule/server/models/XCTestWDAlert.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01B5203BDD3900B07F50 /* XCTestWDErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDErrors.swift; path = XCTestWDModule/server/models/XCTestWDErrors.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01B6203BDD3900B07F50 /* XCTestWDSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSession.swift; path = XCTestWDModule/server/models/XCTestWDSession.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01B7203BDD3A00B07F50 /* XCTestWDReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDReponse.swift; path = XCTestWDModule/server/models/XCTestWDReponse.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01B8203BDD3A00B07F50 /* XCTestWDStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDStatus.swift; path = XCTestWDModule/server/models/XCTestWDStatus.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01B9203BDD3A00B07F50 /* XCUIElementTypeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCUIElementTypeTransformer.swift; path = XCTestWDModule/server/models/XCUIElementTypeTransformer.swift; sourceTree = SOURCE_ROOT; };
 		7F2B01DA203BDEF500B07F50 /* Fuzi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fuzi.framework; path = ../Carthage/Build/iOS/Fuzi.framework; sourceTree = "<group>"; };
 		7F2B01DB203BDEF500B07F50 /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = ../Carthage/Build/iOS/AEXML.framework; sourceTree = "<group>"; };
-		7F2B01E4203C249900B07F50 /* XCTestWDContextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDContextController.swift; path = XCTestWDModule/server/controllers/XCTestWDContextController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01E5203C249900B07F50 /* XCTestWDUrlController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDUrlController.swift; path = XCTestWDModule/server/controllers/XCTestWDUrlController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01E6203C249900B07F50 /* XCTestWDSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSourceController.swift; path = XCTestWDModule/server/controllers/XCTestWDSourceController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01E7203C249900B07F50 /* XCTestWDActionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDActionsController.swift; path = XCTestWDModule/server/controllers/XCTestWDActionsController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01E8203C249900B07F50 /* XCTestWDElementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDElementController.swift; path = XCTestWDModule/server/controllers/XCTestWDElementController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01E9203C249900B07F50 /* XCTestWDStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDStatusController.swift; path = XCTestWDModule/server/controllers/XCTestWDStatusController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01EA203C249A00B07F50 /* XCTestWDExecuteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDExecuteController.swift; path = XCTestWDModule/server/controllers/XCTestWDExecuteController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01EB203C249A00B07F50 /* XCTestWDScreenshotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDScreenshotController.swift; path = XCTestWDModule/server/controllers/XCTestWDScreenshotController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01EC203C249A00B07F50 /* XCTestWDAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlertController.swift; path = XCTestWDModule/server/controllers/XCTestWDAlertController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01ED203C249A00B07F50 /* XCTestWDSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSessionController.swift; path = XCTestWDModule/server/controllers/XCTestWDSessionController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01EE203C249A00B07F50 /* XCTestWDKeysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDKeysController.swift; path = XCTestWDModule/server/controllers/XCTestWDKeysController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01EF203C249A00B07F50 /* XCTestWDTitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDTitleController.swift; path = XCTestWDModule/server/controllers/XCTestWDTitleController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01F0203C249A00B07F50 /* XCTestWDWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDWindowController.swift; path = XCTestWDModule/server/controllers/XCTestWDWindowController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B01F1203C249A00B07F50 /* XCTestWDTimeoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDTimeoutController.swift; path = XCTestWDModule/server/controllers/XCTestWDTimeoutController.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0201203C24DE00B07F50 /* XCTestWDApplicationTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDApplicationTree.swift; path = XCTestWDModule/server/models/extensions/XCTestWDApplicationTree.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0202203C24DE00B07F50 /* XCTestWDAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAccessibility.swift; path = XCTestWDModule/server/models/extensions/XCTestWDAccessibility.swift; sourceTree = SOURCE_ROOT; };
-		7F2B0205203C253700B07F50 /* XCTestWDXPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDXPath.swift; path = XCTestWDModule/server/models/utils/XCTestWDXPath.swift; sourceTree = SOURCE_ROOT; };
 		7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		7F62C4181F79D7F300CC2BFF /* XCTestWDApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestWDApplication.h; sourceTree = "<group>"; };
-		7F62C4191F79D7F300CC2BFF /* XCTestWDApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestWDApplication.m; sourceTree = "<group>"; };
-		7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestManager_ManagerInterface-Protocol.h"; sourceTree = "<group>"; };
-		7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestDriver.h; sourceTree = "<group>"; };
-		7F7F5E951ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCDebugLogDelegate-Protocol.h"; sourceTree = "<group>"; };
-		7F7F5E961ECAC7EB00A68906 /* XCTestDriverInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestDriverInterface-Protocol.h"; sourceTree = "<group>"; };
-		7F7F5E971ECAC7EB00A68906 /* XCTestManager_IDEInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestManager_IDEInterface-Protocol.h"; sourceTree = "<group>"; };
-		7F7F5E981ECAC7EB00A68906 /* XCTestManager_TestsInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestManager_TestsInterface-Protocol.h"; sourceTree = "<group>"; };
-		7F7F5E9D1ECACFCF00A68906 /* XCTRunnerDaemonSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTRunnerDaemonSession.h; sourceTree = "<group>"; };
-		7F7F5E9F1ECAD10D00A68906 /* XCTestDaemonsProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestDaemonsProxy.h; sourceTree = "<group>"; };
-		7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestDaemonsProxy.m; sourceTree = "<group>"; };
+		7F5D35D1203C470800BCC922 /* XCElementSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCElementSnapshot.h; path = XCTestWDModule/PrivateHeaders/XCElementSnapshot.h; sourceTree = SOURCE_ROOT; };
+		7F5D35D2203C470800BCC922 /* XCTestPrivateSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XCTestPrivateSymbols.m; path = XCTestWDModule/PrivateHeaders/XCTestPrivateSymbols.m; sourceTree = SOURCE_ROOT; };
+		7F5D35D3203C470800BCC922 /* XCRuntimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCRuntimeUtils.h; path = XCTestWDModule/PrivateHeaders/XCRuntimeUtils.h; sourceTree = SOURCE_ROOT; };
+		7F5D35D4203C470800BCC922 /* XCUICoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCUICoordinate.h; path = XCTestWDModule/PrivateHeaders/XCUICoordinate.h; sourceTree = SOURCE_ROOT; };
+		7F5D35D5203C470800BCC922 /* CDStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDStructures.h; path = XCTestWDModule/PrivateHeaders/CDStructures.h; sourceTree = SOURCE_ROOT; };
+		7F5D35D6203C470800BCC922 /* XCTestManager_ManagerInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCTestManager_ManagerInterface-Protocol.h"; path = "XCTestWDModule/PrivateHeaders/XCTestManager_ManagerInterface-Protocol.h"; sourceTree = SOURCE_ROOT; };
+		7F5D35D7203C470800BCC922 /* XCTestDriverInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCTestDriverInterface-Protocol.h"; path = "XCTestWDModule/PrivateHeaders/XCTestDriverInterface-Protocol.h"; sourceTree = SOURCE_ROOT; };
+		7F5D35D8203C470900BCC922 /* XCUIElementQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCUIElementQuery.h; path = XCTestWDModule/PrivateHeaders/XCUIElementQuery.h; sourceTree = SOURCE_ROOT; };
+		7F5D35D9203C470900BCC922 /* XCTestPrivateSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCTestPrivateSymbols.h; path = XCTestWDModule/PrivateHeaders/XCTestPrivateSymbols.h; sourceTree = SOURCE_ROOT; };
+		7F5D35DA203C470900BCC922 /* XCTRunnerDaemonSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCTRunnerDaemonSession.h; path = XCTestWDModule/PrivateHeaders/XCTRunnerDaemonSession.h; sourceTree = SOURCE_ROOT; };
+		7F5D35DB203C470900BCC922 /* XCUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCUIElement.h; path = XCTestWDModule/PrivateHeaders/XCUIElement.h; sourceTree = SOURCE_ROOT; };
+		7F5D35DC203C470900BCC922 /* XCTestDaemonsProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCTestDaemonsProxy.h; path = XCTestWDModule/PrivateHeaders/XCTestDaemonsProxy.h; sourceTree = SOURCE_ROOT; };
+		7F5D35DD203C470900BCC922 /* XCTestDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCTestDriver.h; path = XCTestWDModule/PrivateHeaders/XCTestDriver.h; sourceTree = SOURCE_ROOT; };
+		7F5D35DE203C470900BCC922 /* XCTestManager_TestsInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCTestManager_TestsInterface-Protocol.h"; path = "XCTestWDModule/PrivateHeaders/XCTestManager_TestsInterface-Protocol.h"; sourceTree = SOURCE_ROOT; };
+		7F5D35DF203C470900BCC922 /* XCTestDaemonsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XCTestDaemonsProxy.m; path = XCTestWDModule/PrivateHeaders/XCTestDaemonsProxy.m; sourceTree = SOURCE_ROOT; };
+		7F5D35E1203C470900BCC922 /* XCRuntimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XCRuntimeUtils.m; path = XCTestWDModule/PrivateHeaders/XCRuntimeUtils.m; sourceTree = SOURCE_ROOT; };
+		7F5D35E2203C470900BCC922 /* XCAXClient_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCAXClient_iOS.h; path = XCTestWDModule/PrivateHeaders/XCAXClient_iOS.h; sourceTree = SOURCE_ROOT; };
+		7F5D35E3203C470900BCC922 /* XCDebugLogDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCDebugLogDelegate-Protocol.h"; path = "XCTestWDModule/PrivateHeaders/XCDebugLogDelegate-Protocol.h"; sourceTree = SOURCE_ROOT; };
+		7F5D35E4203C470900BCC922 /* XCTestManager_IDEInterface-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCTestManager_IDEInterface-Protocol.h"; path = "XCTestWDModule/PrivateHeaders/XCTestManager_IDEInterface-Protocol.h"; sourceTree = SOURCE_ROOT; };
+		7F5D35E5203C470900BCC922 /* XCUIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCUIApplication.h; path = XCTestWDModule/PrivateHeaders/XCUIApplication.h; sourceTree = SOURCE_ROOT; };
+		7F5D35FC203C474900BCC922 /* XCTestWDApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XCTestWDApplication.m; path = XCTestWDModule/PrivateHeaders/Macaca/XCTestWDApplication.m; sourceTree = SOURCE_ROOT; };
+		7F5D35FD203C474900BCC922 /* XCTestWDApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCTestWDApplication.h; path = XCTestWDModule/PrivateHeaders/Macaca/XCTestWDApplication.h; sourceTree = SOURCE_ROOT; };
+		7F5D3601203C479D00BCC922 /* XCTestWDServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDServer.swift; path = XCTestWDModule/server/XCTestWDServer.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3602203C479D00BCC922 /* XCTestWDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDController.swift; path = XCTestWDModule/server/XCTestWDController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3603203C479D00BCC922 /* XCTestWDDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDDispatch.swift; path = XCTestWDModule/server/XCTestWDDispatch.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3608203C47C800BCC922 /* XCTestWDContextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDContextController.swift; path = XCTestWDModule/server/controllers/XCTestWDContextController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3609203C47C800BCC922 /* XCTestWDUrlController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDUrlController.swift; path = XCTestWDModule/server/controllers/XCTestWDUrlController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D360A203C47C800BCC922 /* XCTestWDSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSourceController.swift; path = XCTestWDModule/server/controllers/XCTestWDSourceController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D360B203C47C800BCC922 /* XCTestWDActionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDActionsController.swift; path = XCTestWDModule/server/controllers/XCTestWDActionsController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D360C203C47C800BCC922 /* XCTestWDElementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDElementController.swift; path = XCTestWDModule/server/controllers/XCTestWDElementController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D360D203C47C800BCC922 /* XCTestWDStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDStatusController.swift; path = XCTestWDModule/server/controllers/XCTestWDStatusController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D360E203C47C800BCC922 /* XCTestWDExecuteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDExecuteController.swift; path = XCTestWDModule/server/controllers/XCTestWDExecuteController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D360F203C47C800BCC922 /* XCTestWDScreenshotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDScreenshotController.swift; path = XCTestWDModule/server/controllers/XCTestWDScreenshotController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3610203C47C800BCC922 /* XCTestWDAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlertController.swift; path = XCTestWDModule/server/controllers/XCTestWDAlertController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3611203C47C900BCC922 /* XCTestWDSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSessionController.swift; path = XCTestWDModule/server/controllers/XCTestWDSessionController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3612203C47C900BCC922 /* XCTestWDKeysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDKeysController.swift; path = XCTestWDModule/server/controllers/XCTestWDKeysController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3613203C47C900BCC922 /* XCTestWDTitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDTitleController.swift; path = XCTestWDModule/server/controllers/XCTestWDTitleController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3614203C47C900BCC922 /* XCTestWDWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDWindowController.swift; path = XCTestWDModule/server/controllers/XCTestWDWindowController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3615203C47C900BCC922 /* XCTestWDTimeoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDTimeoutController.swift; path = XCTestWDModule/server/controllers/XCTestWDTimeoutController.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3625203C480400BCC922 /* XCTestWDAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAlert.swift; path = XCTestWDModule/server/models/XCTestWDAlert.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3626203C480400BCC922 /* XCTestWDErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDErrors.swift; path = XCTestWDModule/server/models/XCTestWDErrors.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3627203C480400BCC922 /* XCTestWDSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDSession.swift; path = XCTestWDModule/server/models/XCTestWDSession.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3628203C480400BCC922 /* XCTestWDReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDReponse.swift; path = XCTestWDModule/server/models/XCTestWDReponse.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3629203C480400BCC922 /* XCTestWDStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDStatus.swift; path = XCTestWDModule/server/models/XCTestWDStatus.swift; sourceTree = SOURCE_ROOT; };
+		7F5D362A203C480400BCC922 /* XCUIElementTypeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCUIElementTypeTransformer.swift; path = XCTestWDModule/server/models/XCUIElementTypeTransformer.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3633203C484E00BCC922 /* XCTestWDApplicationTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDApplicationTree.swift; path = XCTestWDModule/server/models/extensions/XCTestWDApplicationTree.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3634203C484E00BCC922 /* XCTestWDAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDAccessibility.swift; path = XCTestWDModule/server/models/extensions/XCTestWDAccessibility.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3637203C486B00BCC922 /* XCTestWDFindElementUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDFindElementUtils.swift; path = XCTestWDModule/server/models/utils/XCTestWDFindElementUtils.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3638203C486B00BCC922 /* XCTestWDMathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDMathUtils.swift; path = XCTestWDModule/server/models/utils/XCTestWDMathUtils.swift; sourceTree = SOURCE_ROOT; };
+		7F5D3639203C486B00BCC922 /* XCTestWDXPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTestWDXPath.swift; path = XCTestWDModule/server/models/utils/XCTestWDXPath.swift; sourceTree = SOURCE_ROOT; };
 		7FB002EF1EAC66F900476E7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7FD799771EBC15D70053C4D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7FD7997F1EBC84D50053C4D2 /* XCTestPrivateSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestPrivateSymbols.h; sourceTree = "<group>"; };
-		7FD799801EBC84D50053C4D2 /* XCTestPrivateSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestPrivateSymbols.m; sourceTree = "<group>"; };
-		7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCRuntimeUtils.h; sourceTree = "<group>"; };
-		7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCRuntimeUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,62 +231,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		63BCCF161EAC8CF900DE4CC0 /* PrivateHeaders */ = {
-			isa = PBXGroup;
-			children = (
-				7F62C4171F79D7F300CC2BFF /* Macaca */,
-				7F7F5E9F1ECAD10D00A68906 /* XCTestDaemonsProxy.h */,
-				7F7F5EA01ECAD10D00A68906 /* XCTestDaemonsProxy.m */,
-				7F7F5E9D1ECACFCF00A68906 /* XCTRunnerDaemonSession.h */,
-				7F7F5E951ECAC7EB00A68906 /* XCDebugLogDelegate-Protocol.h */,
-				7F7F5E961ECAC7EB00A68906 /* XCTestDriverInterface-Protocol.h */,
-				7F7F5E971ECAC7EB00A68906 /* XCTestManager_IDEInterface-Protocol.h */,
-				7F7F5E981ECAC7EB00A68906 /* XCTestManager_TestsInterface-Protocol.h */,
-				7F7F5E931ECAC6EA00A68906 /* XCTestDriver.h */,
-				7F7F5E911ECAC61F00A68906 /* XCTestManager_ManagerInterface-Protocol.h */,
-				7F2332F91EC85EEB009AABD4 /* XCUICoordinate.h */,
-				7FD799831EBC96F00053C4D2 /* XCRuntimeUtils.h */,
-				7FD799841EBC96F00053C4D2 /* XCRuntimeUtils.m */,
-				7FD7997F1EBC84D50053C4D2 /* XCTestPrivateSymbols.h */,
-				7FD799801EBC84D50053C4D2 /* XCTestPrivateSymbols.m */,
-				63BCCF171EAC8CF900DE4CC0 /* CDStructures.h */,
-				63BCCF181EAC8CF900DE4CC0 /* XCAXClient_iOS.h */,
-				63BCCF191EAC8CF900DE4CC0 /* XCElementSnapshot.h */,
-				63BCCF1A1EAC8CF900DE4CC0 /* XCUIApplication.h */,
-				63BCCF1B1EAC8CF900DE4CC0 /* XCUIElement.h */,
-				63BCCF1C1EAC8CF900DE4CC0 /* XCUIElementQuery.h */,
-			);
-			path = PrivateHeaders;
-			sourceTree = "<group>";
-		};
-		63BCCF231EAC8D0600DE4CC0 /* Server */ = {
-			isa = PBXGroup;
-			children = (
-				7F2B01E3203C247C00B07F50 /* Controllers */,
-				7F2B01AD203BDCDD00B07F50 /* XCTestWDDispatch.swift */,
-				7F2B01AB203BDCDD00B07F50 /* XCTestWDServer.swift */,
-				7F2B01AC203BDCDD00B07F50 /* XCTestWDController.swift */,
-				63BCCF331EAC8D0600DE4CC0 /* Models */,
-			);
-			name = Server;
-			path = ../XCTestWDUITests/Server;
-			sourceTree = "<group>";
-		};
-		63BCCF331EAC8D0600DE4CC0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				7F2B0200203C24BE00B07F50 /* extension */,
-				7F2B01B4203BDD3900B07F50 /* XCTestWDAlert.swift */,
-				7F2B01B5203BDD3900B07F50 /* XCTestWDErrors.swift */,
-				7F2B01B7203BDD3A00B07F50 /* XCTestWDReponse.swift */,
-				7F2B01B6203BDD3900B07F50 /* XCTestWDSession.swift */,
-				7F2B01B8203BDD3A00B07F50 /* XCTestWDStatus.swift */,
-				7F2B01B9203BDD3A00B07F50 /* XCUIElementTypeTransformer.swift */,
-				7FD7997C1EBC6A960053C4D2 /* utils */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		63D4080E1EAB629400198736 = {
 			isa = PBXGroup;
 			children = (
@@ -347,63 +291,119 @@
 		7F2B017B203BDBD800B07F50 /* XCTestWDModule */ = {
 			isa = PBXGroup;
 			children = (
-				63BCCF231EAC8D0600DE4CC0 /* Server */,
-				63BCCF161EAC8CF900DE4CC0 /* PrivateHeaders */,
+				7F5D3600203C477E00BCC922 /* Server */,
+				7F5D35D0203C46E700BCC922 /* PrivateHeaders */,
 				7F2B017C203BDBD800B07F50 /* XCTestWDModule.h */,
 				7F2B017D203BDBD800B07F50 /* Info.plist */,
 			);
 			path = XCTestWDModule;
 			sourceTree = "<group>";
 		};
-		7F2B01E3203C247C00B07F50 /* Controllers */ = {
+		7F5D35D0203C46E700BCC922 /* PrivateHeaders */ = {
 			isa = PBXGroup;
 			children = (
-				7F2B01E7203C249900B07F50 /* XCTestWDActionsController.swift */,
-				7F2B01EC203C249A00B07F50 /* XCTestWDAlertController.swift */,
-				7F2B01E4203C249900B07F50 /* XCTestWDContextController.swift */,
-				7F2B01E8203C249900B07F50 /* XCTestWDElementController.swift */,
-				7F2B01EA203C249A00B07F50 /* XCTestWDExecuteController.swift */,
-				7F2B01EE203C249A00B07F50 /* XCTestWDKeysController.swift */,
-				7F2B01EB203C249A00B07F50 /* XCTestWDScreenshotController.swift */,
-				7F2B01ED203C249A00B07F50 /* XCTestWDSessionController.swift */,
-				7F2B01E6203C249900B07F50 /* XCTestWDSourceController.swift */,
-				7F2B01E9203C249900B07F50 /* XCTestWDStatusController.swift */,
-				7F2B01F1203C249A00B07F50 /* XCTestWDTimeoutController.swift */,
-				7F2B01EF203C249A00B07F50 /* XCTestWDTitleController.swift */,
-				7F2B01E5203C249900B07F50 /* XCTestWDUrlController.swift */,
-				7F2B01F0203C249A00B07F50 /* XCTestWDWindowController.swift */,
+				7F5D35FB203C473000BCC922 /* Macaca */,
+				7F5D35D5203C470800BCC922 /* CDStructures.h */,
+				7F5D35E2203C470900BCC922 /* XCAXClient_iOS.h */,
+				7F5D35E3203C470900BCC922 /* XCDebugLogDelegate-Protocol.h */,
+				7F5D35D1203C470800BCC922 /* XCElementSnapshot.h */,
+				7F5D35D3203C470800BCC922 /* XCRuntimeUtils.h */,
+				7F5D35E1203C470900BCC922 /* XCRuntimeUtils.m */,
+				7F5D35DC203C470900BCC922 /* XCTestDaemonsProxy.h */,
+				7F5D35DF203C470900BCC922 /* XCTestDaemonsProxy.m */,
+				7F5D35DD203C470900BCC922 /* XCTestDriver.h */,
+				7F5D35D7203C470800BCC922 /* XCTestDriverInterface-Protocol.h */,
+				7F5D35E4203C470900BCC922 /* XCTestManager_IDEInterface-Protocol.h */,
+				7F5D35D6203C470800BCC922 /* XCTestManager_ManagerInterface-Protocol.h */,
+				7F5D35DE203C470900BCC922 /* XCTestManager_TestsInterface-Protocol.h */,
+				7F5D35D9203C470900BCC922 /* XCTestPrivateSymbols.h */,
+				7F5D35D2203C470800BCC922 /* XCTestPrivateSymbols.m */,
+				7F5D35DA203C470900BCC922 /* XCTRunnerDaemonSession.h */,
+				7F5D35E5203C470900BCC922 /* XCUIApplication.h */,
+				7F5D35D4203C470800BCC922 /* XCUICoordinate.h */,
+				7F5D35DB203C470900BCC922 /* XCUIElement.h */,
+				7F5D35D8203C470900BCC922 /* XCUIElementQuery.h */,
 			);
-			path = Controllers;
+			name = PrivateHeaders;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
-		7F2B0200203C24BE00B07F50 /* extension */ = {
+		7F5D35FB203C473000BCC922 /* Macaca */ = {
 			isa = PBXGroup;
 			children = (
-				7F2B0202203C24DE00B07F50 /* XCTestWDAccessibility.swift */,
-				7F2B0201203C24DE00B07F50 /* XCTestWDApplicationTree.swift */,
-			);
-			path = extension;
-			sourceTree = "<group>";
-		};
-		7F62C4171F79D7F300CC2BFF /* Macaca */ = {
-			isa = PBXGroup;
-			children = (
-				7F62C4181F79D7F300CC2BFF /* XCTestWDApplication.h */,
-				7F62C4191F79D7F300CC2BFF /* XCTestWDApplication.m */,
+				7F5D35FD203C474900BCC922 /* XCTestWDApplication.h */,
+				7F5D35FC203C474900BCC922 /* XCTestWDApplication.m */,
 			);
 			path = Macaca;
 			sourceTree = "<group>";
 		};
-		7FD7997C1EBC6A960053C4D2 /* utils */ = {
+		7F5D3600203C477E00BCC922 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				7F2B0205203C253700B07F50 /* XCTestWDXPath.swift */,
-				7F2B01A3203BDCB500B07F50 /* XCTestWDFindElementUtils.swift */,
-				7F2B01A4203BDCB500B07F50 /* XCTestWDMathUtils.swift */,
+				7F5D3624203C47E100BCC922 /* Modules */,
+				7F5D3607203C47A600BCC922 /* Controllers */,
+				7F5D3602203C479D00BCC922 /* XCTestWDController.swift */,
+				7F5D3603203C479D00BCC922 /* XCTestWDDispatch.swift */,
+				7F5D3601203C479D00BCC922 /* XCTestWDServer.swift */,
 			);
-			name = utils;
-			path = XCTestWDUITests/server/models/utils;
-			sourceTree = SOURCE_ROOT;
+			name = Server;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		7F5D3607203C47A600BCC922 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F5D360B203C47C800BCC922 /* XCTestWDActionsController.swift */,
+				7F5D3610203C47C800BCC922 /* XCTestWDAlertController.swift */,
+				7F5D3608203C47C800BCC922 /* XCTestWDContextController.swift */,
+				7F5D360C203C47C800BCC922 /* XCTestWDElementController.swift */,
+				7F5D360E203C47C800BCC922 /* XCTestWDExecuteController.swift */,
+				7F5D3612203C47C900BCC922 /* XCTestWDKeysController.swift */,
+				7F5D360F203C47C800BCC922 /* XCTestWDScreenshotController.swift */,
+				7F5D3611203C47C900BCC922 /* XCTestWDSessionController.swift */,
+				7F5D360A203C47C800BCC922 /* XCTestWDSourceController.swift */,
+				7F5D360D203C47C800BCC922 /* XCTestWDStatusController.swift */,
+				7F5D3615203C47C900BCC922 /* XCTestWDTimeoutController.swift */,
+				7F5D3613203C47C900BCC922 /* XCTestWDTitleController.swift */,
+				7F5D3609203C47C800BCC922 /* XCTestWDUrlController.swift */,
+				7F5D3614203C47C900BCC922 /* XCTestWDWindowController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7F5D3624203C47E100BCC922 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7F5D3632203C482700BCC922 /* Utils */,
+				7F5D3631203C481F00BCC922 /* Extensions */,
+				7F5D3625203C480400BCC922 /* XCTestWDAlert.swift */,
+				7F5D3626203C480400BCC922 /* XCTestWDErrors.swift */,
+				7F5D3628203C480400BCC922 /* XCTestWDReponse.swift */,
+				7F5D3627203C480400BCC922 /* XCTestWDSession.swift */,
+				7F5D3629203C480400BCC922 /* XCTestWDStatus.swift */,
+				7F5D362A203C480400BCC922 /* XCUIElementTypeTransformer.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7F5D3631203C481F00BCC922 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7F5D3637203C486B00BCC922 /* XCTestWDFindElementUtils.swift */,
+				7F5D3638203C486B00BCC922 /* XCTestWDMathUtils.swift */,
+				7F5D3639203C486B00BCC922 /* XCTestWDXPath.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7F5D3632203C482700BCC922 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7F5D3634203C484E00BCC922 /* XCTestWDAccessibility.swift */,
+				7F5D3633203C484E00BCC922 /* XCTestWDApplicationTree.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -412,25 +412,25 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5D35F2203C470A00BCC922 /* XCTestDriver.h in Headers */,
+				7F5D35F8203C470A00BCC922 /* XCDebugLogDelegate-Protocol.h in Headers */,
+				7F5D35EA203C470A00BCC922 /* CDStructures.h in Headers */,
+				7F5D35ED203C470A00BCC922 /* XCUIElementQuery.h in Headers */,
+				7F5D35F1203C470A00BCC922 /* XCTestDaemonsProxy.h in Headers */,
+				7F5D35E6203C470A00BCC922 /* XCElementSnapshot.h in Headers */,
+				7F5D35F0203C470A00BCC922 /* XCUIElement.h in Headers */,
+				7F5D35EF203C470A00BCC922 /* XCTRunnerDaemonSession.h in Headers */,
+				7F5D35E8203C470A00BCC922 /* XCRuntimeUtils.h in Headers */,
+				7F5D35F7203C470A00BCC922 /* XCAXClient_iOS.h in Headers */,
+				7F5D35F9203C470A00BCC922 /* XCTestManager_IDEInterface-Protocol.h in Headers */,
+				7F5D35EC203C470A00BCC922 /* XCTestDriverInterface-Protocol.h in Headers */,
 				7F2B017E203BDBD800B07F50 /* XCTestWDModule.h in Headers */,
-				7F2B01C3203BDDD100B07F50 /* XCDebugLogDelegate-Protocol.h in Headers */,
-				7F2B01C4203BDDD100B07F50 /* XCTestDriverInterface-Protocol.h in Headers */,
-				7F2B01C5203BDDD100B07F50 /* XCTestManager_IDEInterface-Protocol.h in Headers */,
-				7F2B01C6203BDDD100B07F50 /* XCTestManager_TestsInterface-Protocol.h in Headers */,
-				7F2B01C7203BDDD100B07F50 /* XCTestDriver.h in Headers */,
-				7F2B01C8203BDDD100B07F50 /* XCTestManager_ManagerInterface-Protocol.h in Headers */,
-				7F2B01C9203BDDD100B07F50 /* XCUICoordinate.h in Headers */,
-				7F2B01CA203BDDD100B07F50 /* XCRuntimeUtils.h in Headers */,
-				7F2B01CB203BDDD100B07F50 /* XCTestPrivateSymbols.h in Headers */,
-				7F2B01CC203BDDD100B07F50 /* CDStructures.h in Headers */,
-				7F2B01CD203BDDD100B07F50 /* XCAXClient_iOS.h in Headers */,
-				7F2B01CE203BDDD100B07F50 /* XCElementSnapshot.h in Headers */,
-				7F2B01CF203BDDD100B07F50 /* XCUIApplication.h in Headers */,
-				7F2B01D0203BDDD100B07F50 /* XCUIElement.h in Headers */,
-				7F2B01D1203BDDD100B07F50 /* XCUIElementQuery.h in Headers */,
-				7F2B01C0203BDDB900B07F50 /* XCTestWDApplication.h in Headers */,
-				7F2B01C1203BDDB900B07F50 /* XCTestDaemonsProxy.h in Headers */,
-				7F2B01C2203BDDB900B07F50 /* XCTRunnerDaemonSession.h in Headers */,
+				7F5D35EE203C470A00BCC922 /* XCTestPrivateSymbols.h in Headers */,
+				7F5D35FA203C470A00BCC922 /* XCUIApplication.h in Headers */,
+				7F5D35E9203C470A00BCC922 /* XCUICoordinate.h in Headers */,
+				7F5D35EB203C470A00BCC922 /* XCTestManager_ManagerInterface-Protocol.h in Headers */,
+				7F5D35F3203C470A00BCC922 /* XCTestManager_TestsInterface-Protocol.h in Headers */,
+				7F5D35FF203C474900BCC922 /* XCTestWDApplication.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,38 +709,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F2B01D2203BDDFB00B07F50 /* XCTestWDApplication.m in Sources */,
-				7F2B01D3203BDDFB00B07F50 /* XCTestDaemonsProxy.m in Sources */,
-				7F2B01D4203BDDFB00B07F50 /* XCRuntimeUtils.m in Sources */,
-				7F2B01F9203C249A00B07F50 /* XCTestWDScreenshotController.swift in Sources */,
-				7F2B01FE203C249A00B07F50 /* XCTestWDWindowController.swift in Sources */,
-				7F2B01D5203BDDFB00B07F50 /* XCTestPrivateSymbols.m in Sources */,
-				7F2B01FA203C249A00B07F50 /* XCTestWDAlertController.swift in Sources */,
-				7F2B01AF203BDCDE00B07F50 /* XCTestWDController.swift in Sources */,
-				7F2B01BC203BDD3A00B07F50 /* XCTestWDSession.swift in Sources */,
-				7F2B0206203C253700B07F50 /* XCTestWDXPath.swift in Sources */,
-				7F2B01A6203BDCB500B07F50 /* XCTestWDMathUtils.swift in Sources */,
-				7F2B01F7203C249A00B07F50 /* XCTestWDStatusController.swift in Sources */,
-				7F2B01F5203C249A00B07F50 /* XCTestWDActionsController.swift in Sources */,
-				7F2B01BA203BDD3A00B07F50 /* XCTestWDAlert.swift in Sources */,
-				7F2B01BD203BDD3A00B07F50 /* XCTestWDReponse.swift in Sources */,
-				7F2B01F2203C249A00B07F50 /* XCTestWDContextController.swift in Sources */,
-				7F2B01F3203C249A00B07F50 /* XCTestWDUrlController.swift in Sources */,
-				7F2B01FB203C249A00B07F50 /* XCTestWDSessionController.swift in Sources */,
-				7F2B01B0203BDCDE00B07F50 /* XCTestWDDispatch.swift in Sources */,
-				7F2B01F4203C249A00B07F50 /* XCTestWDSourceController.swift in Sources */,
-				7F2B0204203C24DE00B07F50 /* XCTestWDAccessibility.swift in Sources */,
-				7F2B01FC203C249A00B07F50 /* XCTestWDKeysController.swift in Sources */,
-				7F2B01BB203BDD3A00B07F50 /* XCTestWDErrors.swift in Sources */,
-				7F2B01A5203BDCB500B07F50 /* XCTestWDFindElementUtils.swift in Sources */,
-				7F2B01F6203C249A00B07F50 /* XCTestWDElementController.swift in Sources */,
-				7F2B01FD203C249A00B07F50 /* XCTestWDTitleController.swift in Sources */,
-				7F2B01F8203C249A00B07F50 /* XCTestWDExecuteController.swift in Sources */,
-				7F2B01FF203C249A00B07F50 /* XCTestWDTimeoutController.swift in Sources */,
-				7F2B01BF203BDD3A00B07F50 /* XCUIElementTypeTransformer.swift in Sources */,
-				7F2B01AE203BDCDE00B07F50 /* XCTestWDServer.swift in Sources */,
-				7F2B01BE203BDD3A00B07F50 /* XCTestWDStatus.swift in Sources */,
-				7F2B0203203C24DE00B07F50 /* XCTestWDApplicationTree.swift in Sources */,
+				7F5D35E7203C470A00BCC922 /* XCTestPrivateSymbols.m in Sources */,
+				7F5D362F203C480500BCC922 /* XCTestWDStatus.swift in Sources */,
+				7F5D361F203C47C900BCC922 /* XCTestWDSessionController.swift in Sources */,
+				7F5D362D203C480500BCC922 /* XCTestWDSession.swift in Sources */,
+				7F5D361B203C47C900BCC922 /* XCTestWDStatusController.swift in Sources */,
+				7F5D3616203C47C900BCC922 /* XCTestWDContextController.swift in Sources */,
+				7F5D3635203C484E00BCC922 /* XCTestWDApplicationTree.swift in Sources */,
+				7F5D3636203C484E00BCC922 /* XCTestWDAccessibility.swift in Sources */,
+				7F5D362B203C480500BCC922 /* XCTestWDAlert.swift in Sources */,
+				7F5D363C203C486B00BCC922 /* XCTestWDXPath.swift in Sources */,
+				7F5D363B203C486B00BCC922 /* XCTestWDMathUtils.swift in Sources */,
+				7F5D3618203C47C900BCC922 /* XCTestWDSourceController.swift in Sources */,
+				7F5D3605203C479D00BCC922 /* XCTestWDController.swift in Sources */,
+				7F5D3604203C479D00BCC922 /* XCTestWDServer.swift in Sources */,
+				7F5D3622203C47C900BCC922 /* XCTestWDWindowController.swift in Sources */,
+				7F5D3620203C47C900BCC922 /* XCTestWDKeysController.swift in Sources */,
+				7F5D3606203C479D00BCC922 /* XCTestWDDispatch.swift in Sources */,
+				7F5D3630203C480500BCC922 /* XCUIElementTypeTransformer.swift in Sources */,
+				7F5D3621203C47C900BCC922 /* XCTestWDTitleController.swift in Sources */,
+				7F5D361C203C47C900BCC922 /* XCTestWDExecuteController.swift in Sources */,
+				7F5D361A203C47C900BCC922 /* XCTestWDElementController.swift in Sources */,
+				7F5D3617203C47C900BCC922 /* XCTestWDUrlController.swift in Sources */,
+				7F5D361E203C47C900BCC922 /* XCTestWDAlertController.swift in Sources */,
+				7F5D3623203C47C900BCC922 /* XCTestWDTimeoutController.swift in Sources */,
+				7F5D3619203C47C900BCC922 /* XCTestWDActionsController.swift in Sources */,
+				7F5D361D203C47C900BCC922 /* XCTestWDScreenshotController.swift in Sources */,
+				7F5D362E203C480500BCC922 /* XCTestWDReponse.swift in Sources */,
+				7F5D35F4203C470A00BCC922 /* XCTestDaemonsProxy.m in Sources */,
+				7F5D35FE203C474900BCC922 /* XCTestWDApplication.m in Sources */,
+				7F5D363A203C486B00BCC922 /* XCTestWDFindElementUtils.swift in Sources */,
+				7F5D35F6203C470A00BCC922 /* XCRuntimeUtils.m in Sources */,
+				7F5D362C203C480500BCC922 /* XCTestWDErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
