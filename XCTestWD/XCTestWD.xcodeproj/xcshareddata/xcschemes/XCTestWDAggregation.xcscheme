@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F8D6296203E57CD00D92323"
-               BuildableName = "XCTestWD.framework"
-               BlueprintName = "XCTestWD"
+               BlueprintIdentifier = "7F2B0207203C265F00B07F50"
+               BuildableName = "XCTestWDAggregation"
+               BlueprintName = "XCTestWDAggregation"
                ReferencedContainer = "container:XCTestWD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F8D6296203E57CD00D92323"
-            BuildableName = "XCTestWD.framework"
-            BlueprintName = "XCTestWD"
+            BlueprintIdentifier = "7F2B0207203C265F00B07F50"
+            BuildableName = "XCTestWDAggregation"
+            BlueprintName = "XCTestWDAggregation"
             ReferencedContainer = "container:XCTestWD.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F8D6296203E57CD00D92323"
-            BuildableName = "XCTestWD.framework"
-            BlueprintName = "XCTestWD"
+            BlueprintIdentifier = "7F2B0207203C265F00B07F50"
+            BuildableName = "XCTestWDAggregation"
+            BlueprintName = "XCTestWDAggregation"
             ReferencedContainer = "container:XCTestWD.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
