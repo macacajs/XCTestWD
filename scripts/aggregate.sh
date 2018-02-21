@@ -42,4 +42,4 @@ echo "Combine Fat File"
 lipo -create "$DEVICE_DIR/$BUILD_TARGET" "$SIMULATOR_DIR/$BUILD_TARGET" -output "${INSTALL_DIR}/${BUILD_TARGET}"
 
 # Clean Up Intermediate File
-
+rm -rf "$WORK_DIR"
