@@ -5,7 +5,7 @@ IFS=$'\n\t'
 # Sets the target folders and the final framework product.
 PROJECT_NAME=XCTestWD
 FRAMEWORK_CONFIG=Release
-BUILD_TARGET=XCTestWDModule
+BUILD_TARGET=XCTestWD
 
 # Install dir will be the final output to the framework.
 # The following line create it in the root folder of the current project.
@@ -26,7 +26,7 @@ xcodebuild -configuration "$FRAMEWORK_CONFIG" -target "$BUILD_TARGET" -sdk iphon
 echo "Preparing directory..."
 rm -rf "$INSTALL_DIR"
 mkdir -p "$INSTALL_DIR/Headers"
-mkdir -p "$INSTALL_DIR/Modules/XCTestWDModule.swiftmodule"
+mkdir -p "$INSTALL_DIR/Modules/$BUILD_TARGET.swiftmodule"
 
 # Regulating Framework Deliverables
 echo "Migrating System Headers:"
@@ -34,12 +34,12 @@ cp "$SIMULATOR_DIR/Headers/"*.h "$INSTALL_DIR/Headers/"
 
 echo "Mixing Mutli-Architecture Swift Modules:"
 cp "$SIMULATOR_DIR/Modules/module.modulemap" "$INSTALL_DIR/Modules/"
-cp "$SIMULATOR_DIR/Modules/XCTestWDModule.swiftmodule/"* "$INSTALL_DIR/Modules/XCTestWDModule.swiftmodule/"
-cp "$DEVICE_DIR/Modules/XCTestWDModule.swiftmodule/"* "$INSTALL_DIR/Modules/XCTestWDModule.swiftmodule/"
+cp "$SIMULATOR_DIR/Modules/$BUILD_TARGET.swiftmodule/"* "$INSTALL_DIR/Modules/$BUILD_TARGET.swiftmodule/"
+cp "$DEVICE_DIR/Modules/$BUILD_TARGET.swiftmodule/"* "$INSTALL_DIR/Modules/$BUILD_TARGET.swiftmodule/"
 cp "$SIMULATOR_DIR/Info.plist" "$INSTALL_DIR/"
 
 echo "Combine Fat File"
 lipo -create "$DEVICE_DIR/$BUILD_TARGET" "$SIMULATOR_DIR/$BUILD_TARGET" -output "${INSTALL_DIR}/${BUILD_TARGET}"
 
 # Clean Up Intermediate File
-rm -rf "$WORK_DIR"
+# rm -rf "$WORK_DIR"
