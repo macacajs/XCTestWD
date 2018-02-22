@@ -29,7 +29,6 @@
 		63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; };
 		63D408671EAB62EB00198736 /* XCTestWDRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D408551EAB62EB00198736 /* XCTestWDRunner.swift */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
-		7F5D3641203DB5E300BCC922 /* XCTestWDModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5D3640203DB5E300BCC922 /* XCTestWDModule.framework */; };
 		7F8D629B203E57CD00D92323 /* XCTestWD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F8D6299203E57CD00D92323 /* XCTestWD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F8D629E203E57CD00D92323 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; };
 		7F8D629F203E57CD00D92323 /* XCTestWD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -159,6 +158,13 @@
 			remoteGlobalIDString = 7F8D6296203E57CD00D92323;
 			remoteInfo = XCTestWD;
 		};
+		7F8D6329203E75F100D92323 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63D4080F1EAB629400198736 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F8D6296203E57CD00D92323;
+			remoteInfo = XCTestWD;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -270,7 +276,6 @@
 				7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */,
 				7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */,
 				63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */,
-				7F5D3641203DB5E300BCC922 /* XCTestWDModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +584,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7F8D632A203E75F100D92323 /* PBXTargetDependency */,
 			);
 			name = XCTestWDUITests;
 			productName = XCTestWDUITests;
@@ -589,12 +595,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F8D62A0203E57CD00D92323 /* Build configuration list for PBXNativeTarget "XCTestWD" */;
 			buildPhases = (
+				7F8D6328203E617F00D92323 /* ShellScript */,
 				7F8D6292203E57CD00D92323 /* Sources */,
 				7F8D6293203E57CD00D92323 /* Frameworks */,
 				7F8D6294203E57CD00D92323 /* Headers */,
 				7F8D6295203E57CD00D92323 /* Resources */,
 				7F8D62E2203E5A2500D92323 /* ShellScript */,
-				7F8D6328203E617F00D92323 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -739,7 +745,6 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/AEXML.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Fuzi.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/XCTestWDModule.framework",
 			);
 			outputPaths = (
 			);
@@ -951,6 +956,11 @@
 			isa = PBXTargetDependency;
 			target = 7F8D6296203E57CD00D92323 /* XCTestWD */;
 			targetProxy = 7F8D629C203E57CD00D92323 /* PBXContainerItemProxy */;
+		};
+		7F8D632A203E75F100D92323 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F8D6296203E57CD00D92323 /* XCTestWD */;
+			targetProxy = 7F8D6329203E75F100D92323 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1225,6 +1235,7 @@
 				);
 				INFOPLIST_FILE = XCTestWD/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.Test.XCTestWD;
@@ -1271,6 +1282,7 @@
 				);
 				INFOPLIST_FILE = XCTestWD/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.Test.XCTestWD;
@@ -1317,6 +1329,7 @@
 				);
 				INFOPLIST_FILE = "XCTestWD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.Test.XCTestWD;
@@ -1363,6 +1376,7 @@
 				);
 				INFOPLIST_FILE = "XCTestWD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.Test.XCTestWD;

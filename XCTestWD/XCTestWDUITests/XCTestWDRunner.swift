@@ -8,7 +8,7 @@
 
 import XCTest
 import Swifter
-import XCTestWDModule
+import XCTestWD
 
 public class XCTextWDRunner: XCTestCase {
     var server: XCTestWDServer?
