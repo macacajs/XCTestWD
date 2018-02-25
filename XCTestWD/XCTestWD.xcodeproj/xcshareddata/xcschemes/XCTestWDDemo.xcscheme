@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0910"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F8D6296203E57CD00D92323"
-               BuildableName = "XCTestWD.framework"
-               BlueprintName = "XCTestWD"
+               BlueprintIdentifier = "63D408161EAB629400198736"
+               BuildableName = "XCTestWDDemo.app"
+               BlueprintName = "XCTestWDDemo"
                ReferencedContainer = "container:XCTestWD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "63D4082A1EAB629400198736"
+               BuildableName = "XCTestWDUITests.xctest"
+               BlueprintName = "XCTestWDUITests"
+               ReferencedContainer = "container:XCTestWD.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "63D408161EAB629400198736"
+            BuildableName = "XCTestWDDemo.app"
+            BlueprintName = "XCTestWDDemo"
+            ReferencedContainer = "container:XCTestWD.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -44,15 +63,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F8D6296203E57CD00D92323"
-            BuildableName = "XCTestWD.framework"
-            BlueprintName = "XCTestWD"
+            BlueprintIdentifier = "63D408161EAB629400198736"
+            BuildableName = "XCTestWDDemo.app"
+            BlueprintName = "XCTestWDDemo"
             ReferencedContainer = "container:XCTestWD.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -62,15 +82,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F8D6296203E57CD00D92323"
-            BuildableName = "XCTestWD.framework"
-            BlueprintName = "XCTestWD"
+            BlueprintIdentifier = "63D408161EAB629400198736"
+            BuildableName = "XCTestWDDemo.app"
+            BlueprintName = "XCTestWDDemo"
             ReferencedContainer = "container:XCTestWD.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
