@@ -57,7 +57,7 @@ public class XCTestWDServer {
         controllers.append(XCTestWDUrlController())
         
         for controller in controllers {
-            let routes = type(of: controller).routes()
+            let routes = Swift.type(of: controller).routes()
             for i in 0...routes.count - 1 {
                 let (router, requestHandler) = routes[i]
                 var routeMethod: HttpServer.MethodRoute?

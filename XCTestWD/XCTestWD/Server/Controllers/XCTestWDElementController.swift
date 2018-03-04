@@ -9,6 +9,7 @@
 import Foundation
 import Swifter
 import SwiftyJSON
+import XCTest
 
 internal class XCTestWDElementController: Controller {
     
@@ -117,12 +118,12 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
-        if element?.elementType == XCUIElementType.pickerWheel {
+        if element?.elementType == XCUIElement.ElementType.picker {
             element?.adjust(toPickerWheelValue: value!)
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
         
-        if element?.elementType == XCUIElementType.slider {
+        if element?.elementType == XCUIElement.ElementType.slider {
             element?.adjust(toNormalizedSliderPosition: CGFloat((value! as NSString).floatValue))
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
@@ -196,7 +197,8 @@ internal class XCTestWDElementController: Controller {
         }
         
         if element?.hasKeyboardFocus == true {
-            element?.typeText((element?.value as? String ?? "").characters.map { _ in XCUIKeyboardKeyDelete }.joined(separator: ""))
+            let content:String = element?.value as? String ?? ""
+            element?.typeText(content)  //characters.map { _ in XCUIKeyboardKey.delete }.joined(separator: "")
             dismissKeyboard()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
@@ -435,7 +437,7 @@ internal class XCTestWDElementController: Controller {
     
     internal static func homeScreen(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         
-        XCUIDevice.shared().press(XCUIDeviceButton.home)
+        XCUIDevice.shared.press(XCUIDevice.Button.home)
         sleep(3);
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }
@@ -445,14 +447,14 @@ internal class XCTestWDElementController: Controller {
         let session = XCTestWDSessionManager.singleton.checkDefaultSession()
         let application = session.application
         
-        let elements = application?.descendants(matching: XCUIElementType.window).allElementsBoundByIndex
+        let elements = application?.descendants(matching: XCUIElement.ElementType.window).allElementsBoundByIndex
         
         if  elements == nil || elements?.count == 0 {
             return XCTestWDResponse.response(session: nil, error: WDStatus.ElementNotVisible)
         }
         
         let window = elements![0]
-        let navBar = window.descendants(matching: XCUIElementType.navigationBar).allElementsBoundByIndex.first
+        let navBar = window.descendants(matching: XCUIElement.ElementType.navigationBar).allElementsBoundByIndex.first
         window.resolve()
         let digest = window.digest(windowName: navBar?.identifier == nil ? "" : (navBar?.identifier)!)
         return XCTestWDResponse.response(session: nil, value: JSON(digest as Any))
