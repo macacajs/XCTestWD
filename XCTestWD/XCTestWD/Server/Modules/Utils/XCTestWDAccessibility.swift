@@ -22,7 +22,7 @@ extension XCUIElement {
     func wdValue() -> Any! {
         var value = self.value
         if self.elementType == XCUIElement.ElementType.staticText {
-            if let temp = self.value {
+            if self.value != nil {
                 value = self.value
             } else {
                 value = self.label
@@ -30,7 +30,7 @@ extension XCUIElement {
         }
         if self.elementType == XCUIElement.ElementType.button {
             if let temp = self.value {
-                if ((temp as? String)?.characters.count) ?? 0 > 0 {
+                if ((temp as? String)?.count) ?? 0 > 0 {
                     value = self.value
                 } else {
                     value = self.isSelected
@@ -47,7 +47,7 @@ extension XCUIElement {
             self.elementType == XCUIElement.ElementType.secureTextField {
             if let temp = self.value {
                 if let str = temp as? String {
-                    if str.characters.count > 0 {
+                    if str.count > 0 {
                         value = self.value
                     } else {
                         value = self.placeholderValue
@@ -67,7 +67,7 @@ extension XCUIElement {
     func wdLabel() -> String {
         if self.elementType == XCUIElement.ElementType.textField {
             return self.label
-        } else if self.label.characters.count > 0 {
+        } else if self.label.count > 0 {
             return self.label
         } else {
             return ""
@@ -76,7 +76,7 @@ extension XCUIElement {
     
     func wdName() -> String? {
         let name = (firstNonEmptyValue(self.identifier, self.label))
-        if name?.characters.count == 0 {
+        if name?.count == 0 {
             return nil
         } else {
             return name
@@ -264,7 +264,7 @@ extension XCUIElement {
     func dictionaryForElement(_ snapshot:XCElementSnapshot) -> [String : AnyObject]? {
         var info = [String : AnyObject]()
         info["type"] = XCUIElementTypeTransformer.singleton.shortStringWithElementType(snapshot.elementType) as AnyObject?
-        info["rawIndentifier"] = (snapshot.identifier.characters.count > 0 ? snapshot.identifier : "") as AnyObject
+        info["rawIndentifier"] = (snapshot.identifier.count > 0 ? snapshot.identifier : "") as AnyObject
         info["name"] = snapshot.wdName() as AnyObject? ?? "" as AnyObject
         info["value"] = snapshot.wdValue() as AnyObject? ?? "" as AnyObject
         info["label"] = snapshot.wdLabel() as AnyObject? ?? "" as AnyObject
@@ -333,7 +333,7 @@ extension XCElementSnapshot {
     func wdValue() -> Any? {
         var value = self.value
         if self.elementType == XCUIElement.ElementType.staticText {
-            if let temp = self.value {
+            if self.value != nil {
                 value = self.value
             } else {
                 value = self.label
@@ -341,7 +341,7 @@ extension XCElementSnapshot {
         }
         if self.elementType == XCUIElement.ElementType.button {
             if let temp = self.value {
-                if ((temp as? String)?.characters.count) ?? 0 > 0 {
+                if ((temp as? String)?.count) ?? 0 > 0 {
                     value = self.value
                 } else {
                     value = self.isSelected
@@ -358,7 +358,7 @@ extension XCElementSnapshot {
             self.elementType == XCUIElement.ElementType.secureTextField {
             if let temp = self.value {
                 if let str = temp as? String {
-                    if str.characters.count > 0 {
+                    if str.count > 0 {
                         value = self.value
                     } else {
                         value = self.placeholderValue
@@ -377,7 +377,7 @@ extension XCElementSnapshot {
     func wdLabel() -> String? {
         if self.elementType == XCUIElement.ElementType.textField {
             return self.label
-        } else if self.label.characters.count > 0 {
+        } else if self.label.count > 0 {
             return self.label
         } else {
             return ""
@@ -386,7 +386,7 @@ extension XCElementSnapshot {
     
     func wdName() -> String? {
         let name = (firstNonEmptyValue(self.identifier, self.label))
-        if name?.characters.count == 0 {
+        if name?.count == 0 {
             return ""
         } else {
             return name

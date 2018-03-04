@@ -25,7 +25,7 @@ internal class XCTestWDScreenshotController: Controller {
   //MARK: Routing Logic Specification
   internal static func getScreenshot(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
     var base64String:String!
-    let xcScreen = NSClassFromString("XCUIScreen")
+    let xcScreen:AnyClass? = NSClassFromString("XCUIScreen")
     if xcScreen != nil {
         let data = xcScreen?.value(forKeyPath: "mainScreen.screenshot.PNGRepresentation") as? NSData
         base64String = ((data?.base64EncodedString()))!

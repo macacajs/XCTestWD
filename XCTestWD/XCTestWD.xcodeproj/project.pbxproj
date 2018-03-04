@@ -94,14 +94,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7F8D629C203E57CD00D92323 /* PBXContainerItemProxy */ = {
+		7F53645D204C2DA20041990F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63D4080F1EAB629400198736 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7F8D6296203E57CD00D92323;
 			remoteInfo = XCTestWD;
 		};
-		7F8D6329203E75F100D92323 /* PBXContainerItemProxy */ = {
+		7F8D629C203E57CD00D92323 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63D4080F1EAB629400198736 /* Project object */;
 			proxyType = 1;
@@ -140,6 +140,7 @@
 		7F2B01DA203BDEF500B07F50 /* Fuzi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fuzi.framework; path = ../Carthage/Build/iOS/Fuzi.framework; sourceTree = "<group>"; };
 		7F2B01DB203BDEF500B07F50 /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = ../Carthage/Build/iOS/AEXML.framework; sourceTree = "<group>"; };
 		7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		7F53645B204C2D5B0041990F /* XCTestWD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTestWD.framework; path = Frameworks/XCTestWD.framework; sourceTree = "<group>"; };
 		7F5D35D1203C470800BCC922 /* XCElementSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCElementSnapshot.h; path = XCTestWD/PrivateHeaders/XCElementSnapshot.h; sourceTree = SOURCE_ROOT; };
 		7F5D35D2203C470800BCC922 /* XCTestPrivateSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XCTestPrivateSymbols.m; path = XCTestWD/PrivateHeaders/XCTestPrivateSymbols.m; sourceTree = SOURCE_ROOT; };
 		7F5D35D3203C470800BCC922 /* XCRuntimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XCRuntimeUtils.h; path = XCTestWD/PrivateHeaders/XCRuntimeUtils.h; sourceTree = SOURCE_ROOT; };
@@ -282,6 +283,7 @@
 		63D4083A1EAB62D500198736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F53645B204C2D5B0041990F /* XCTestWD.framework */,
 				7F5D363D203C4AD000BCC922 /* XCTestWDModule.framework */,
 				7F5D3640203DB5E300BCC922 /* XCTestWDModule.framework */,
 				7F2B01DB203BDEF500B07F50 /* AEXML.framework */,
@@ -484,7 +486,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7F8D632A203E75F100D92323 /* PBXTargetDependency */,
+				7F53645E204C2DA20041990F /* PBXTargetDependency */,
 			);
 			name = XCTestWDUITests;
 			productName = XCTestWDUITests;
@@ -753,15 +755,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7F53645E204C2DA20041990F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F8D6296203E57CD00D92323 /* XCTestWD */;
+			targetProxy = 7F53645D204C2DA20041990F /* PBXContainerItemProxy */;
+		};
 		7F8D629D203E57CD00D92323 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7F8D6296203E57CD00D92323 /* XCTestWD */;
 			targetProxy = 7F8D629C203E57CD00D92323 /* PBXContainerItemProxy */;
-		};
-		7F8D632A203E75F100D92323 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7F8D6296203E57CD00D92323 /* XCTestWD */;
-			targetProxy = 7F8D6329203E75F100D92323 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

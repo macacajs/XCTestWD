@@ -198,7 +198,8 @@ internal class XCTestWDElementController: Controller {
         
         if element?.hasKeyboardFocus == true {
             let content:String = element?.value as? String ?? ""
-            element?.typeText(content)  //characters.map { _ in XCUIKeyboardKey.delete }.joined(separator: "")
+            
+            element?.typeText(String(describing: Array(content).map { _ in XCUIKeyboardKey.delete }))
             dismissKeyboard()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
