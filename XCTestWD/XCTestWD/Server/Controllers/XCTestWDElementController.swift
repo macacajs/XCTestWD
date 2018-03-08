@@ -154,8 +154,8 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
-        if (element?.exists)! && (element?.isHittable)! {
-            element?.tap()
+        if (element?.exists)! && ((element?.isHittable) ?? false) {
+            element?.coordinate(withNormalizedOffset: CGVector.init()).tap()
         }
         
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
