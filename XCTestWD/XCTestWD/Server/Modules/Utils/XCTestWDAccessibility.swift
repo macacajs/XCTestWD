@@ -426,16 +426,6 @@ extension XCElementSnapshot {
             return false;
         }
         
-        if app?.frame.contains(hitPoint) ?? false {
-            return true;
-        }
-        
-        for elementSnapshot in self._allDescendants() {
-            if app?.frame.contains(elementSnapshot.hitPoint) ?? false {
-                return true;
-            }
-        }
-        
         return true
     }
     
