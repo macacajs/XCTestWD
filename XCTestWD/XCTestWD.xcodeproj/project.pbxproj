@@ -29,7 +29,7 @@
 		63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; };
 		63D408671EAB62EB00198736 /* XCTestWDRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D408551EAB62EB00198736 /* XCTestWDRunner.swift */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
-		7F536465204C35BB0041990F /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F536464204C35BB0041990F /* CocoaLumberjackSwift.framework */; };
+		7F859E802050DD5400913C67 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; };
 		7F8D629B203E57CD00D92323 /* XCTestWD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F8D6299203E57CD00D92323 /* XCTestWD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F8D629E203E57CD00D92323 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; };
 		7F8D629F203E57CD00D92323 /* XCTestWD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -95,7 +95,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7F53645D204C2DA20041990F /* PBXContainerItemProxy */ = {
+		7F859E7E2050DD4C00913C67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63D4080F1EAB629400198736 /* Project object */;
 			proxyType = 1;
@@ -216,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F859E802050DD5400913C67 /* XCTestWD.framework in Frameworks */,
 				7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */,
 				7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */,
 				7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */,
@@ -228,7 +229,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F536465204C35BB0041990F /* CocoaLumberjackSwift.framework in Frameworks */,
 				7F8D62DD203E59EE00D92323 /* libxml2.tbd in Frameworks */,
 				7F8D62DE203E5A1300D92323 /* AEXML.framework in Frameworks */,
 				7F8D62DF203E5A1300D92323 /* Fuzi.framework in Frameworks */,
@@ -497,7 +497,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7F53645E204C2DA20041990F /* PBXTargetDependency */,
+				7F859E7F2050DD4C00913C67 /* PBXTargetDependency */,
 			);
 			name = XCTestWDUITests;
 			productName = XCTestWDUITests;
@@ -634,6 +634,7 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/AEXML.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Fuzi.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/CocoaLumberjackSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -677,7 +678,6 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/AEXML.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Fuzi.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/CocoaLumberjackSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -773,10 +773,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7F53645E204C2DA20041990F /* PBXTargetDependency */ = {
+		7F859E7F2050DD4C00913C67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7F8D6296203E57CD00D92323 /* XCTestWD */;
-			targetProxy = 7F53645D204C2DA20041990F /* PBXContainerItemProxy */;
+			targetProxy = 7F859E7E2050DD4C00913C67 /* PBXContainerItemProxy */;
 		};
 		7F8D629D203E57CD00D92323 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

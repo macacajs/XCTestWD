@@ -8,7 +8,6 @@
 
 import Foundation
 import Swifter
-import CocoaLumberjack
 
 public class XCTestWDServer {
     
@@ -39,13 +38,13 @@ public class XCTestWDServer {
     }
     
     private func setupLog() {
-        DDLog.add(DDTTYLogger.sharedInstance)
-        DDLog.add(DDASLLogger.sharedInstance)
-        
-        let fileLogger: DDFileLogger = DDFileLogger()
-        fileLogger.rollingFrequency = TimeInterval(60*60*24)
-        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
-        DDLog.add(fileLogger)
+//        DDLog.add(DDTTYLogger.sharedInstance)
+//        DDLog.add(DDASLLogger.sharedInstance)
+//
+//        let fileLogger: DDFileLogger = DDFileLogger()
+//        fileLogger.rollingFrequency = TimeInterval(60*60*24)
+//        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+//        DDLog.add(fileLogger)
     }
     
     private func registerRouters() {
