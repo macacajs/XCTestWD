@@ -28,3 +28,4 @@ FOUNDATION_EXPORT const unsigned char XCTestWDVersionString[];
 #import <XCTestWD/XCTestDriver.h>
 #import <XCTestWD/XCTestDaemonsProxy.h>
 #import <XCTestWD/XCTRunnerDaemonSession.h>
+#import <XCTestWD/XCRuntimeUtils.h>

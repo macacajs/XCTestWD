@@ -31,7 +31,7 @@ public class XCTextWDRunner: XCTestCase {
         self.server?.startServer()
     }
     
-    @objc func terminate(notification: NSNotification){
+    @objc func terminate(notification: NSNotification) {
         self.server?.stopServer();
         NSLog("XCTestWDTearDown->Session Reset")
         assert(false, "")

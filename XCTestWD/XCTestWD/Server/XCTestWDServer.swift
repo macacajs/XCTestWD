@@ -8,6 +8,7 @@
 
 import Foundation
 import Swifter
+import CocoaLumberjack
 
 public class XCTestWDServer {
     
@@ -15,6 +16,7 @@ public class XCTestWDServer {
     
     public init() {
         print("initializing wd server")
+        setupLog()
     }
     
     public func startServer() {
@@ -34,6 +36,16 @@ public class XCTestWDServer {
     
     public func stopServer() {
         server.stop()
+    }
+    
+    private func setupLog() {
+        DDLog.add(DDTTYLogger.sharedInstance)
+        DDLog.add(DDASLLogger.sharedInstance)
+        
+        let fileLogger: DDFileLogger = DDFileLogger()
+        fileLogger.rollingFrequency = TimeInterval(60*60*24)
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.add(fileLogger)
     }
     
     private func registerRouters() {
@@ -57,7 +69,7 @@ public class XCTestWDServer {
         controllers.append(XCTestWDUrlController())
         
         for controller in controllers {
-            let routes = type(of: controller).routes()
+            let routes = Swift.type(of: controller).routes()
             for i in 0...routes.count - 1 {
                 let (router, requestHandler) = routes[i]
                 var routeMethod: HttpServer.MethodRoute?
