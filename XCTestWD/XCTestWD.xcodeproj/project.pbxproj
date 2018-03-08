@@ -634,7 +634,6 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/AEXML.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Fuzi.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/CocoaLumberjackSwift.framework",
 			);
 			outputPaths = (
 			);
