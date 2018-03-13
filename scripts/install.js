@@ -3,11 +3,13 @@
 const fs = require('fs');
 const path = require('path');
 const xcode = require('xcode');
+const _ = require('macaca-utils');
 const shelljs = require('shelljs');
 const hostname = require('os').hostname();
 const doctorIOS = require('macaca-doctor/lib/ios');
 
 const DEVELOPMENT_TEAM = process.env.DEVELOPMENT_TEAM_ID || '';
+
 const xctestwdFrameworksPrefix = 'xctestwd-frameworks-';
 
 const update = function(project, schemeName, callback) {
@@ -63,6 +65,23 @@ doctorIOS.getXcodeVersion()
     const dir = require.resolve(pkgName);
     const originDir = path.join(dir, '..', 'Carthage');
     const distDir = path.join(__dirname, '..');
-    shelljs.mv('-n', originDir, distDir);
+    console.log(`start to mv ${_.chalk.gray(originDir)} ${_.chalk.gray(distDir)}`);
+
+    try {
+      shelljs.mv('-n', originDir, distDir);
+    } catch (e) {
+      console.log(e);
+    }
+
+    const latestDir = path.join(distDir, 'Carthage');
+
+    if (_.isExistedDir(latestDir)) {
+      console.log(_.chalk.cyan(`Carthage is existed: ${latestDir}`));
+    } else {
+      throw _.chalk.red('Carthage is not existed, please reinstall!')
+    }
     updateInformation();
+  })
+  .catch(e => {
+    console.log(e);
   });
