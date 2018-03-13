@@ -78,7 +78,7 @@ doctorIOS.getXcodeVersion()
     if (_.isExistedDir(latestDir)) {
       console.log(_.chalk.cyan(`Carthage is existed: ${latestDir}`));
     } else {
-      throw _.chalk.red('Carthage is not existed, please reinstall!')
+      throw _.chalk.red('Carthage is not existed, please reinstall!');
     }
     updateInformation();
   })
