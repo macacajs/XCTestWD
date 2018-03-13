@@ -29,7 +29,6 @@
 		63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; };
 		63D408671EAB62EB00198736 /* XCTestWDRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D408551EAB62EB00198736 /* XCTestWDRunner.swift */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
-		7F859E802050DD5400913C67 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; };
 		7F8D629B203E57CD00D92323 /* XCTestWD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F8D6299203E57CD00D92323 /* XCTestWD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F8D629E203E57CD00D92323 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; };
 		7F8D629F203E57CD00D92323 /* XCTestWD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -92,6 +91,7 @@
 		7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD799771EBC15D70053C4D2 /* Foundation.framework */; };
 		7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
+		7FF25DE32057F4B70001C119 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F53645B204C2D5B0041990F /* XCTestWD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,7 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F859E802050DD5400913C67 /* XCTestWD.framework in Frameworks */,
+				7FF25DE32057F4B70001C119 /* XCTestWD.framework in Frameworks */,
 				7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */,
 				7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */,
 				7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */,
