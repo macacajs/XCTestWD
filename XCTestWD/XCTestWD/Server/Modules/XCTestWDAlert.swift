@@ -37,10 +37,10 @@ internal class XCTestWDAlert {
     internal func accept() -> Bool {
         
         let alertElement = self.alertElement()
-        let buttons = self.alertElement()?.descendants(matching: XCUIElementType.button).allElementsBoundByIndex
+        let buttons = self.alertElement()?.descendants(matching: XCUIElement.ElementType.button).allElementsBoundByIndex
         var defaultButton:XCUIElement?
         
-        if alertElement?.elementType == XCUIElementType.alert {
+        if alertElement?.elementType == XCUIElement.ElementType.alert {
             defaultButton = (buttons?.last)
         } else {
             defaultButton = (buttons?.first)
@@ -57,10 +57,10 @@ internal class XCTestWDAlert {
     internal func dismiss() -> Bool {
     
         let alertElement = self.alertElement()
-        let buttons = self.alertElement()?.descendants(matching: XCUIElementType.button).allElementsBoundByIndex
+        let buttons = self.alertElement()?.descendants(matching: XCUIElement.ElementType.button).allElementsBoundByIndex
         var defaultButton:XCUIElement?
         
-        if alertElement?.elementType == XCUIElementType.alert {
+        if alertElement?.elementType == XCUIElement.ElementType.alert {
             defaultButton = (buttons?.first)
         } else {
             defaultButton = (buttons?.last)

@@ -105,15 +105,15 @@ class XCUIElementTypeTransformer {
         }
     }
     
-    func elementTypeWithTypeName(_ typeName:String) -> XCUIElementType {
-        return XCUIElementType(rawValue: stringElementMapping[typeName]!)!
+    func elementTypeWithTypeName(_ typeName:String) -> XCUIElement.ElementType {
+        return XCUIElement.ElementType(rawValue: stringElementMapping[typeName]!)!
     }
     
-    func stringWithElementType(_ elementType:XCUIElementType) -> String {
+    func stringWithElementType(_ elementType:XCUIElement.ElementType) -> String {
         return elementStringMapping[elementType.rawValue]!
     }
     
-    func shortStringWithElementType(_ elementType:XCUIElementType) -> String {
+    func shortStringWithElementType(_ elementType:XCUIElement.ElementType) -> String {
         return stringWithElementType(elementType).replacingOccurrences(of: "XCUIElementType", with: "")
     }
     
