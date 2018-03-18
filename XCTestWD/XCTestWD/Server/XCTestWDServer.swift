@@ -8,6 +8,11 @@
 
 import Foundation
 import Swifter
+import CocoaLumberjackSwift
+
+struct XCTestWDDebugInfo {
+    static let DebugLogPrefix = "XCTestWD-Debug-Info: \n"
+}
 
 public class XCTestWDServer {
     
@@ -15,6 +20,7 @@ public class XCTestWDServer {
     
     public init() {
         print("initializing wd server")
+        print("check dir:\( NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true) )")
         setupLog()
     }
     
@@ -38,13 +44,14 @@ public class XCTestWDServer {
     }
     
     private func setupLog() {
-//        DDLog.add(DDTTYLogger.sharedInstance)
-//        DDLog.add(DDASLLogger.sharedInstance)
-//
-//        let fileLogger: DDFileLogger = DDFileLogger()
-//        fileLogger.rollingFrequency = TimeInterval(60*60*24)
-//        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
-//        DDLog.add(fileLogger)
+        DDLog.add(DDTTYLogger.sharedInstance)
+        DDLog.add(DDASLLogger.sharedInstance)
+
+        let fileLogger: DDFileLogger = DDFileLogger()
+        fileLogger.rollingFrequency = TimeInterval(60*60*24)
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.add(fileLogger)
+        DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix)setup debug log")
     }
     
     private func registerRouters() {

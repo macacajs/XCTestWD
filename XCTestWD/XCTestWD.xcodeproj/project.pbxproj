@@ -91,6 +91,12 @@
 		7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		7FD799781EBC15D70053C4D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD799771EBC15D70053C4D2 /* Foundation.framework */; };
 		7FD799791EBC174C0053C4D2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
+		7FE23790205E58220026CEFB /* CocoaLumberjackSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F536464204C35BB0041990F /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FE23791205E583D0026CEFB /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F536464204C35BB0041990F /* CocoaLumberjackSwift.framework */; };
+		7FE23792205E58540026CEFB /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F536464204C35BB0041990F /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7FE23794205E5C900026CEFB /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7FE23795205E5CB60026CEFB /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */; };
+		7FE23796205E5D470026CEFB /* CocoaLumberjack.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FF25E022058D7170001C119 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; };
 		7FF25E052058D94D0001C119 /* XCTestWD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FF25E042058D94D0001C119 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FF25E062058DB280001C119 /* AEXML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F2B01DB203BDEF500B07F50 /* AEXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -134,6 +140,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7FE23796205E5D470026CEFB /* CocoaLumberjack.framework in CopyFiles */,
+				7FE23790205E58220026CEFB /* CocoaLumberjackSwift.framework in CopyFiles */,
 				7FF25E062058DB280001C119 /* AEXML.framework in CopyFiles */,
 				7FF25E072058DB280001C119 /* Fuzi.framework in CopyFiles */,
 				7FF25E092058DB280001C119 /* SwiftyJSON.framework in CopyFiles */,
@@ -220,6 +228,7 @@
 		7F8D629A203E57CD00D92323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FB002EF1EAC66F900476E7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7FD799771EBC15D70053C4D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		7FF25E042058D94D0001C119 /* XCTestWD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTestWD.framework; path = Frameworks/XCTestWD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +251,8 @@
 				7FB002F01EAC66F900476E7A /* XCTest.framework in Frameworks */,
 				63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */,
 				7FF25E022058D7170001C119 /* XCTestWD.framework in Frameworks */,
+				7FE23795205E5CB60026CEFB /* CocoaLumberjack.framework in Frameworks */,
+				7FE23791205E583D0026CEFB /* CocoaLumberjackSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +266,8 @@
 				7F8D62E0203E5A1300D92323 /* Swifter.framework in Frameworks */,
 				7F8D62E1203E5A1300D92323 /* SwiftyJSON.framework in Frameworks */,
 				7F8D62DC203E59E900D92323 /* XCTest.framework in Frameworks */,
+				7FE23794205E5C900026CEFB /* CocoaLumberjack.framework in Frameworks */,
+				7FE23792205E58540026CEFB /* CocoaLumberjackSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,11 +321,12 @@
 		63D4083A1EAB62D500198736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7F536464204C35BB0041990F /* CocoaLumberjackSwift.framework */,
+				7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */,
 				7F536461204C35350041990F /* XCTestWD.xcodeproj */,
 				7F53645B204C2D5B0041990F /* XCTestWD.framework */,
 				7F5D363D203C4AD000BCC922 /* XCTestWDModule.framework */,
 				7F5D3640203DB5E300BCC922 /* XCTestWDModule.framework */,
+				7F536464204C35BB0041990F /* CocoaLumberjackSwift.framework */,
 				7F2B01DB203BDEF500B07F50 /* AEXML.framework */,
 				7F2B01DA203BDEF500B07F50 /* Fuzi.framework */,
 				7FD799771EBC15D70053C4D2 /* Foundation.framework */,
@@ -512,7 +526,6 @@
 				63D408271EAB629400198736 /* Sources */,
 				63D408281EAB629400198736 /* Frameworks */,
 				63D408291EAB629400198736 /* Resources */,
-				63F4564A1EAB657100EC91AF /* ShellScript */,
 				7FB002E61EAC5C6900476E7A /* Headers */,
 				7FF25E032058D92E0001C119 /* CopyFiles */,
 			);
@@ -535,7 +548,6 @@
 				7F8D6293203E57CD00D92323 /* Frameworks */,
 				7F8D6294203E57CD00D92323 /* Headers */,
 				7F8D6295203E57CD00D92323 /* Resources */,
-				7F8D62E2203E5A2500D92323 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -646,23 +658,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		63F4564A1EAB657100EC91AF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Swifter.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/AEXML.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/Fuzi.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		7F5D35CB203C2AA300BCC922 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,23 +683,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "rm -rf ../Carthage/Checkouts/Fuzi/libxml2/";
-		};
-		7F8D62E2203E5A2500D92323 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Swifter.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/AEXML.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/Fuzi.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyJSON.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		7F8D6328203E617F00D92323 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -988,6 +966,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
@@ -1022,6 +1001,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (

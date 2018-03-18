@@ -9,6 +9,7 @@
 import Foundation
 import Swifter
 import SwiftyJSON
+import CocoaLumberjackSwift
 
 //MARK: Session & Cache for XCUIElement
 internal class XCTestWDElementCache
@@ -88,6 +89,7 @@ internal class XCTestWDSessionManager {
     
     func checkDefaultSession() -> XCTestWDSession {
         if self.defaultSession == nil || self.defaultSession?.application.state != XCUIApplication.State.runningForeground {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) current application not active, reloading active application")
             sleep(3)
             let application = XCTestWDSession.activeApplication()
             self.defaultSession = XCTestWDSession.sessionWithApplication(application!)
@@ -122,10 +124,12 @@ extension HttpRequest {
                 let components = self.path.components(separatedBy:"/")
                 let index = components.index(of: "session")!
                 if index >= components.count - 1 {
+                    DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) session can't be at the last component in the whole path")
                     return nil
                 }
                 return XCTestWDSessionManager.singleton.querySession(components[index + 1])
             } else {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) no session id in current request")
                 return nil
             }
         }
@@ -140,7 +144,8 @@ extension HttpRequest {
                     return components[index + 1]
                 }
             }
-            
+
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) no element id retrieved from current query")
             return nil
         }
     }
