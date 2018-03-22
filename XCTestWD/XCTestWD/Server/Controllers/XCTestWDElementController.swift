@@ -10,6 +10,7 @@ import Foundation
 import Swifter
 import SwiftyJSON
 import XCTest
+import CocoaLumberjackSwift
 
 internal class XCTestWDElementController: Controller {
     
@@ -61,6 +62,7 @@ internal class XCTestWDElementController: Controller {
         }
         
         if value == nil || usage == nil || root == nil {
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) root/usage/root one of those params are null")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -68,6 +70,7 @@ internal class XCTestWDElementController: Controller {
         
         if let element = element {
             if let element = element {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) element hit and return")
                 return XCTestWDResponse.responseWithCacheElement(element, XCTestWDSessionManager.commonCache)
             }
         }
@@ -90,6 +93,7 @@ internal class XCTestWDElementController: Controller {
         }
         
         if value == nil || usage == nil || root == nil {
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) root/usage/root one of those params are null")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -113,18 +117,22 @@ internal class XCTestWDElementController: Controller {
         if value == nil || elementId == nil {
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
-        
+
         if element == nil {
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) setValue, abort since no element found")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
         if element?.elementType == XCUIElement.ElementType.picker {
             element?.adjust(toPickerWheelValue: value!)
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) setValue, set picker value \(value!)")
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
         
         if element?.elementType == XCUIElement.ElementType.slider {
             element?.adjust(toNormalizedSliderPosition: CGFloat((value! as NSString).floatValue))
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) setValue, set slider value \(value!)")
+
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         }
         if element?.hasKeyboardFocus != true {
@@ -133,9 +141,11 @@ internal class XCTestWDElementController: Controller {
         
         if element?.hasKeyboardFocus == true {
             element?.typeText(value!)
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) dismiss keyboard after setValue")
             dismissKeyboard()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) dismiss keyboard while aborting setValue, element does not have focus")
             dismissKeyboard()
             return XCTestWDResponse.response(session: nil, error: WDStatus.ElementIsNotSelectable)
         }
@@ -147,14 +157,17 @@ internal class XCTestWDElementController: Controller {
         let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) click, abort by invalid elementId")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
         if element == nil {
+            DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) click, abort by no such element")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
         if (element?.exists)! && ((element?.isHittable) ?? false) {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) click, based on element coordinate")
             element?.coordinate(withNormalizedOffset: CGVector.init()).tap()
         }
         
@@ -168,10 +181,12 @@ internal class XCTestWDElementController: Controller {
         let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) getText, abort due to no elementId")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
         if element == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) getText, abort due to can't find element")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
@@ -185,10 +200,12 @@ internal class XCTestWDElementController: Controller {
         let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) clearText, abort due to no elementId")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
         if element == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) clearText, abort due to can't find element")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
@@ -201,6 +218,7 @@ internal class XCTestWDElementController: Controller {
             for _ in content {
                 element?.typeText(XCUIKeyboardKey.delete.rawValue)
             }
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) clearText, clear text done")
             dismissKeyboard()
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
@@ -238,10 +256,12 @@ internal class XCTestWDElementController: Controller {
         let attributeName = request.params[":name"]
         
         if elementId == nil || attributeName == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) getAttribute, fails to get attribute")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
         if element == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) getAttribute, fails to get element")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
@@ -256,10 +276,12 @@ internal class XCTestWDElementController: Controller {
         let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if elementId == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) getRect, fails to get elementId")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
         if element == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) getRect, fails to get element")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
@@ -275,12 +297,15 @@ internal class XCTestWDElementController: Controller {
             if (element?.isHittable)! && (element?.exists)! {
                 element?.tap()
             }
+
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) tap, tap element with element 'tap' method")
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
             let rawX = getFloatValue(target: request.jsonBody, field: "x")
             let rawY = getFloatValue(target: request.jsonBody, field: "y")
             
             if rawX == nil || rawY == nil {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) tap, invalid x y coordination info")
                 return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
             }
             
@@ -302,6 +327,7 @@ internal class XCTestWDElementController: Controller {
         let rawY = getFloatValue(target: request.jsonBody, field: "y")
         
         if rawX == nil || rawY == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) doubleTap, invalid x y coordination info")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -323,6 +349,7 @@ internal class XCTestWDElementController: Controller {
         let rawY = getFloatValue(target: request.jsonBody, field: "y")
         
         if rawX == nil || rawY == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) touchAndHold, invalid x y coordination info")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -343,10 +370,12 @@ internal class XCTestWDElementController: Controller {
         let action = request.jsonBody
         
         if element == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) touchAndHoldOnElement, invalid element info")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
         if elementId == nil{
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) touchAndHoldOnElement, invalid elementId")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -368,6 +397,7 @@ internal class XCTestWDElementController: Controller {
         
         
         if rawX == nil || rawY == nil || rawToX == nil || rawToY == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) dragForDuration, invalid input parameters")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -394,10 +424,12 @@ internal class XCTestWDElementController: Controller {
         let action = request.jsonBody
         
         if element == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) pinch, element is null")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
         if elementId == nil{
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) pinch, invalid elementId")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -413,10 +445,12 @@ internal class XCTestWDElementController: Controller {
         let element = XCTestWDSessionManager.commonCache.elementForUUID(elementId)
         
         if element == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) handleTwoElementTap, invalid element")
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
         if elementId == nil{
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) handleTwoElementTap, invalid elementId")
             return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
         }
         
@@ -430,7 +464,7 @@ internal class XCTestWDElementController: Controller {
         
         XCTestDaemonsProxy.testRunnerProxy()._XCT_send(text, maximumFrequency: 60) { (error) in
             if error != nil {
-                print("Error occured in sending key: \(error.debugDescription)")
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) Error occured in sending key: \(error.debugDescription)")
             }
         }
         
@@ -452,6 +486,7 @@ internal class XCTestWDElementController: Controller {
         let elements = application?.descendants(matching: XCUIElement.ElementType.window).allElementsBoundByIndex
         
         if  elements == nil || elements?.count == 0 {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) title, elements and element count")
             return XCTestWDResponse.response(session: nil, error: WDStatus.ElementNotVisible)
         }
         
@@ -472,12 +507,15 @@ internal class XCTestWDElementController: Controller {
             if (element?.exists)! && (element?.isHittable)! {
                 element?.doubleTap()
             }
+
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) doubleTap, doubleTap with element's internal method")
             return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
         } else {
             let rawX = getFloatValue(target: request.jsonBody, field: "x")
             let rawY = getFloatValue(target: request.jsonBody, field: "y")
             
             if rawX == nil || rawY == nil {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) doubleTap, abort due to invalid arguments")
                 return XCTestWDResponse.response(session: nil, error: WDStatus.InvalidSelector)
             }
             

@@ -14,6 +14,9 @@ FOUNDATION_EXPORT double XCTestWDVersionNumber;
 //! Project version string for XCTestWD.
 FOUNDATION_EXPORT const unsigned char XCTestWDVersionString[];
 
+//! Export debug level
+#define LOG_LEVEL_DEF ddLogLevel
+
 // In this header, you should import all the public headers of your framework using statements like #import <XCTestWD/PublicHeader.h>
 
 #import <XCTestWD/CDStructures.h>

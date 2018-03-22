@@ -8,9 +8,11 @@
  */
 
 #import "XCRuntimeUtils.h"
-
+#import <CocoaLumberjack/CocoaLumberjack.h>
 #include <dlfcn.h>
 #import <objc/runtime.h>
+
+NSUInteger const ddLogLevel = DDLogLevelDebug;
 
 NSArray<Class> *FBClassesThatConformsToProtocol(Protocol *protocol)
 {

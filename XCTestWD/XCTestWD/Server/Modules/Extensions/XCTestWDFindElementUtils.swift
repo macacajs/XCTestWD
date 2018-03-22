@@ -9,10 +9,7 @@
 import Foundation
 
 class XCTestWDFindElementUtils {
-    
-    // TODO: provide alert filter here
-    
-    
+
     static func filterElement(usingText:String, withvalue:String, underElement:XCUIElement) throws -> XCUIElement? {
         return try filterElements(usingText:usingText, withValue:withvalue, underElement:underElement, returnAfterFirstMatch:true)?.first
     }

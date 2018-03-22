@@ -9,6 +9,7 @@
 import Foundation
 import Swifter
 import SwiftyJSON
+import CocoaLumberjackSwift
 
 internal class XCTestWDAlertController: Controller {
   
@@ -31,9 +32,10 @@ internal class XCTestWDAlertController: Controller {
         } else {
             let alert = XCTestWDAlert(request.session!.application)
             if alert.accept() {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) accepAlert success")
                 return XCTestWDResponse.response(session: request.session!, value: nil)
-                
             } else {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) accepAlert failure")
                 return XCTestWDResponse.response(session: request.session!, error: WDStatus.NoAlertOpenError)
             }
         }
@@ -45,8 +47,10 @@ internal class XCTestWDAlertController: Controller {
         } else {
             let alert = XCTestWDAlert(request.session!.application)
             if alert.dismiss() {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) dismissAlert success")
                 return XCTestWDResponse.response(session: request.session!, value: nil)
             } else {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) dismissAlert failure")
                 return XCTestWDResponse.response(session: request.session!, error: WDStatus.NoAlertOpenError)
             }
         }
@@ -59,8 +63,10 @@ internal class XCTestWDAlertController: Controller {
             let alert = XCTestWDAlert(request.session!.application)
             let text = alert.text()
             if text != nil {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) retrieving alert text \(text!)")
                 return XCTestWDResponse.response(session: request.session!, value: JSON(text!))
             } else {
+                DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) retrieving alert text nil")
                 return XCTestWDResponse.response(session: request.session!, error: WDStatus.NoAlertOpenError)
             }
         }

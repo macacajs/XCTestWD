@@ -8,6 +8,7 @@
 
 import Foundation
 import Swifter
+import CocoaLumberjackSwift
 
 internal class XCTestWDActionsController: Controller {
   
@@ -22,7 +23,7 @@ internal class XCTestWDActionsController: Controller {
     
     //MARK: Routing Logic Specification
     internal static func actions(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        DDLogError("\(XCTestWDDebugInfo.DebugLogPrefix) calling empty method: getContext")
         return HttpResponse.ok(.html("actions"))
     }
-    
 }
