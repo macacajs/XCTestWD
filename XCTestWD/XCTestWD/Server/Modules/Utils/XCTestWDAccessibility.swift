@@ -272,6 +272,7 @@ extension XCUIElement {
         info["frame"] = NSStringFromCGRect(snapshot.wdFrame()) as AnyObject
         info["isEnabled"] = snapshot.isWDEnabled() as AnyObject
         info["isVisible"] = snapshot.isWDVisible() as AnyObject
+        info["isHittable"] = snapshot.isHittable() as AnyObject
         
         // If block is not visible, return
         if info["isVisible"] as! Bool == false {
@@ -411,6 +412,34 @@ extension XCElementSnapshot {
             "y":self.frame.minY,
             "width":self.frame.width,
             "height":self.frame.height]
+    }
+    
+    func isHittable() -> Bool {
+        //check whether self is the current hitelement
+        let midPoint:CGPoint = ((self.suggestedHitpoints as! NSArray).lastObject as! NSValue).cgPointValue;
+        let hitElement1 = self.hitTest(midPoint) ;//as? XCElementSnapshot)! ;
+        if( hitElement1 is XCElementSnapshot){
+            let hitElement = hitElement1 as! XCElementSnapshot;
+            if (self == hitElement || self._allDescendants().contains(hitElement) ) {
+                return true;
+            }
+        }
+        
+        // check whether hitPoint is in  current visible frame
+        let fb_hitPoint:CGPoint = self.hitPoint ;
+        if ( self.visibleFrame.contains(  fb_hitPoint) ) {
+            return true;
+        }
+        
+        // get the children's hittable properties
+        for ele  in self.children  {
+            let elementSnapshot  = ele as! XCElementSnapshot;
+            if (elementSnapshot.isHittable() ) {
+                return true;
+            }
+        }
+        
+        return false;
     }
     
     func isWDVisible() -> Bool {
