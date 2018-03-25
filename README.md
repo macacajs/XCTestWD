@@ -35,7 +35,7 @@ Open the terminal, go to the directory where contains `XCTestWD.xcodeproj` file 
 
 ```bash
 #
-#Change the port number to override the default port 
+# Change the port number to override the default port 
 #
 $ xcodebuild -project XCTestWD.xcodeproj \
            -scheme XCTestWDUITests \
@@ -48,8 +48,8 @@ To execute for iOS device, run the following command:
 
 ```bash
 #
-#Change the port number to override the default port 
-#Specify the device name
+# Change the port number to override the default port 
+# Specify the device name
 #
 $ xcodebuild -project XCTestWD.xcodeproj \
            -scheme XCTestWDUITests \
@@ -101,6 +101,17 @@ cd "$(npm root -g)/macaca-ios/node_modules/xctestwd"
 ### 4.2 Swift modules fails to compile
 
 Check carthage installation
+
+### 4.3 Debug info
+
+Now XCTestWD supports gathering debug log into log files which is stored in "Your-App-Sandbox-Root"/Documents/Logs dir. For real devices, you can connect to itunes and choose backup for `XCTestWDUITests` and get the debug log. For iOS simulators, the log file is in your computer's simulator app directory like:
+
+```
+"/Users/${user-name}/Library/Developer/CoreSimulator/Devices \
+/${device-id}/data/Containers/Data/Application/${app-id}/Documents/Logs"
+```
+
+You can use `xcrun simctl list` to get the id of the booted device.
 
 <!-- GITCONTRIBUTOR_START -->
 
