@@ -59,29 +59,24 @@ const updateInformation = function() {
   }
 };
 
-doctorIOS.getXcodeVersion()
-  .then(version => {
-    const pkgName = `${xctestwdFrameworksPrefix}${version}`;
-    const dir = require.resolve(pkgName);
-    const originDir = path.join(dir, '..', 'Carthage');
-    const distDir = path.join(__dirname, '..');
-    console.log(`start to mv ${_.chalk.gray(originDir)} ${_.chalk.gray(distDir)}`);
+const version = doctorIOS.getXcodeVersion();
+const pkgName = `${xctestwdFrameworksPrefix}${version}`;
+const dir = require.resolve(pkgName);
+const originDir = path.join(dir, '..', 'Carthage');
+const distDir = path.join(__dirname, '..');
+console.log(`start to mv ${_.chalk.gray(originDir)} ${_.chalk.gray(distDir)}`);
 
-    try {
-      shelljs.mv('-n', originDir, distDir);
-    } catch (e) {
-      console.log(e);
-    }
+try {
+  shelljs.mv('-n', originDir, distDir);
+} catch (e) {
+  console.log(e);
+}
 
-    const latestDir = path.join(distDir, 'Carthage');
+const latestDir = path.join(distDir, 'Carthage');
 
-    if (_.isExistedDir(latestDir)) {
-      console.log(_.chalk.cyan(`Carthage is existed: ${latestDir}`));
-    } else {
-      throw _.chalk.red('Carthage is not existed, please reinstall!');
-    }
-    updateInformation();
-  })
-  .catch(e => {
-    console.log(e);
-  });
+if (_.isExistedDir(latestDir)) {
+  console.log(_.chalk.cyan(`Carthage is existed: ${latestDir}`));
+} else {
+  throw _.chalk.red('Carthage is not existed, please reinstall!');
+}
+updateInformation();

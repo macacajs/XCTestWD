@@ -27,17 +27,20 @@
     "co-mocha": "*",
     "eslint": "^4.13.0",
     "eslint-plugin-mocha": "^4.11.0",
+    "git-contributor": "^1.0.0",
     "istanbul": "*",
     "mocha": "*",
     "pre-commit": "*"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "contributor"
   ],
   "scripts": {
     "test": "mocha",
     "lint": "eslint . --fix",
-    "install": "node ./scripts/install.js"
+    "install": "node ./scripts/install.js",
+    "contributor": "git-contributor"
   },
   "site": "https://macacajs.github.io",
   "license": "MIT"
