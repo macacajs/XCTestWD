@@ -19,8 +19,8 @@ public class XCTestWDServer {
     private let server = HttpServer()
     
     public init() {
-        print("initializing wd server")
-        print("check dir:\( NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true) )")
+        NSLog("initializing wd server")
+        NSLog("check log dir @:\( NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true) )")
         setupLog()
     }
     
@@ -30,12 +30,11 @@ public class XCTestWDServer {
             registerRouters()
             
             NSLog("\(Bundle.main.bundleIdentifier!)")
-            
-            
             NSLog("XCTestWDSetup->http://localhost:\(try! server.port())<-XCTestWDSetup")
+
             RunLoop.main.run()
         } catch {
-            print("Server start error: \(error)")
+            NSLog("Server start error: \(error)")
         }
     }
     
@@ -47,7 +46,10 @@ public class XCTestWDServer {
         DDLog.add(DDTTYLogger.sharedInstance)
         DDLog.add(DDASLLogger.sharedInstance)
 
-        let fileLogger: DDFileLogger = DDFileLogger()
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let logDir = "\(paths[0])/Logs"
+        let ddLogFileManager : DDLogFileManagerDefault = DDLogFileManagerDefault.init(logsDirectory: logDir)
+        let fileLogger: DDFileLogger = DDFileLogger.init(logFileManager: ddLogFileManager)
         fileLogger.rollingFrequency = TimeInterval(60*60*24)
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.add(fileLogger)

@@ -10,6 +10,7 @@ import Foundation
 import Swifter
 import XCTest
 import SwiftyJSON
+import CocoaLumberjackSwift
 
 let XCTestWDSessionShutDown = "XCTestWDSessionShutDown"
 
@@ -36,8 +37,10 @@ internal class XCTestWDSessionController: Controller {
         let bundleID = desiredCapabilities?["bundleId"]?.string ?? nil
         
         if bundleID == nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) bundle ID input is nil, create session with current active app")
             app = XCTestWDSession.activeApplication()
         } else {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) create bundle from launching input")
             app = XCUIApplication.init(privateWithPath: path, bundleID: bundleID)!
             app!.launchArguments = desiredCapabilities?["arguments"]?.arrayObject as! [String]? ?? [String]()
             app!.launchEnvironment = desiredCapabilities?["environment"]?.dictionaryObject as! [String : String]? ?? [String:String]();
@@ -46,6 +49,7 @@ internal class XCTestWDSessionController: Controller {
         }
         
         if app != nil {
+            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) create app failure ")
             session = XCTestWDSession.sessionWithApplication(app!)
             XCTestWDSessionManager.singleton.defaultSession = session;
             XCTestWDSessionManager.singleton.mountSession(session)
