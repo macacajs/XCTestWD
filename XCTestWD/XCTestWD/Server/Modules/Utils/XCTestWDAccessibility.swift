@@ -275,9 +275,9 @@ extension XCUIElement {
         info["isHittable"] = snapshot.isHittable() as AnyObject
         
         // If block is not visible, return
-        if info["isVisible"] as! Bool == false {
-            return nil;
-        }
+        //if info["isVisible"] as! Bool == false {
+        //    return nil;
+        //}
         
         // If block is visible, iterate through all its children
         let childrenElements = snapshot.children
