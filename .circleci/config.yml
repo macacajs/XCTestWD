@@ -20,11 +20,17 @@ jobs:
 
       # Build the app and run tests
       - run:
-          name: Run Tests
-          command: echo "Preparing execution"
+          name: Preparing Tests
+          command: echo "preparing execution"
           environment:
             SCAN_DEVICE: iPhone 6
-            SCAN_SCHEME: WebTests
+
+      - run:
+          name: Run Tests
+          command: xcodebuild -project XCTestWD.xcodeproj \
+                              -scheme XCTestWDUnitTest \
+                              -destination 'platform=iOS Simulator,name=iPhone 6' \
+                              test
 
       # Collect XML test results data to show in the UI,
       # and save the same XML files under test-results folder
