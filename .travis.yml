@@ -1,8 +1,0 @@
-language:
-  - swift
-osx_image:
-  - xcode9
-script:
-  - npm i
-  - npm run lint
-  - xcodebuild -project ./XCTestWD/XCTestWD.xcodeproj -sdk iphonesimulator
