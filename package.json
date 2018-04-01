@@ -33,8 +33,7 @@
     "pre-commit": "*"
   },
   "pre-commit": [
-    "lint",
-    "contributor"
+    "lint"
   ],
   "scripts": {
     "test": "mocha",
