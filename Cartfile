@@ -3,3 +3,4 @@ github "SwiftyJSON/SwiftyJSON"
 github "cezheng/Fuzi" ~> 1.0.0
 github "tadija/AEXML"
 github "CocoaLumberjack/CocoaLumberjack"
+github "Quick/Nimble"

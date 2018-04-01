@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		56563F6B2070A191006F4371 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56563F6A2070A191006F4371 /* Nimble.framework */; };
+		56563F6C2070A240006F4371 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56563F6A2070A191006F4371 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5663B89E206F7180005C0CBA /* XCTestWDSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */; };
 		5663B8A3206F71BA005C0CBA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		5663B8A4206F71D3005C0CBA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
@@ -138,6 +140,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				56563F6C2070A240006F4371 /* Nimble.framework in CopyFiles */,
 				5663B8CC206F7F2A005C0CBA /* XCTestWD.framework in CopyFiles */,
 				5663B8B2206F76C0005C0CBA /* AEXML.framework in CopyFiles */,
 				5663B8B3206F76C0005C0CBA /* Fuzi.framework in CopyFiles */,
@@ -167,6 +170,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		56563F6A2070A191006F4371 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		5663B89B206F7180005C0CBA /* XCTestWDUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestWDUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDSessionTest.swift; sourceTree = "<group>"; };
 		5663B89F206F7180005C0CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56563F6B2070A191006F4371 /* Nimble.framework in Frameworks */,
 				5663B8A4206F71D3005C0CBA /* libxml2.tbd in Frameworks */,
 				5663B8A5206F7203005C0CBA /* CocoaLumberjack.framework in Frameworks */,
 				5663B8A6206F7203005C0CBA /* CocoaLumberjackSwift.framework in Frameworks */,
@@ -330,6 +335,7 @@
 		63D4083A1EAB62D500198736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56563F6A2070A191006F4371 /* Nimble.framework */,
 				7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */,
 				7F53645B204C2D5B0041990F /* XCTestWD.framework */,
 				7F536464204C35BB0041990F /* CocoaLumberjackSwift.framework */,

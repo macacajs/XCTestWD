@@ -8,6 +8,7 @@
 
 import XCTest
 import Swifter
+import Nimble
 @testable import XCTestWD
 
 class XCTestWDSessionTest: XCTestWDUnitTestBase {
@@ -48,5 +49,10 @@ class XCTestWDSessionTest: XCTestWDUnitTestBase {
 
         XCTestWDSessionManager.singleton.deleteSession(session.identifier)
         XCTAssert(XCTestWDSessionManager.singleton.queryAll().keys.count == 0, "key length shoud be zero")
+    }
+    
+    func testElementCache() {
+        let uuid = XCTestWDSessionManager.commonCache.storeElement(self.springApplication!)
+        expect(XCTestWDSessionManager.commonCache.elementForUUID(uuid)).to(equal(self.springApplication!))
     }
 }
