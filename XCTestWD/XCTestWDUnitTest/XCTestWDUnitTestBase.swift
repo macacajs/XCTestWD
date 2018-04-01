@@ -8,7 +8,7 @@
 //
 
 import XCTest
-import XCTestWD
+@testable import XCTestWD
 
 class XCTestWDUnitTestBase: XCTestCase {
 
@@ -17,10 +17,12 @@ class XCTestWDUnitTestBase: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
+        XCTestWDSessionManager.singleton.clearAll()
         self.springApplication = XCTestWDApplication.activeApplication()
     }
     
     override func tearDown() {
         super.tearDown()
+        XCTestWDSessionManager.singleton.clearAll()
     }
 }

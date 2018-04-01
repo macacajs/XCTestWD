@@ -29,7 +29,7 @@ class XCTestWDSessionTest: XCTestWDUnitTestBase {
         let session = XCTestWDSession.sessionWithApplication(self.springApplication!)
         XCTestWDSessionManager.singleton.mountSession(session)
         
-        XCTAssert(XCTestWDSessionManager.singleton.queryAll().keys.count == 1, "key length should be one, containing ");
+        XCTAssert(XCTestWDSessionManager.singleton.queryAll().keys.count == 1, "key length should be one, containing");
     }
     
     func testSessionDeletion() {
@@ -37,6 +37,16 @@ class XCTestWDSessionTest: XCTestWDUnitTestBase {
         
         XCTestWDSessionManager.singleton.clearAll();
         
+        XCTAssert(XCTestWDSessionManager.singleton.queryAll().keys.count == 0, "key length shoud be zero")
+    }
+    
+    func testSessionIDDeletion() {
+        let session = XCTestWDSession.sessionWithApplication(self.springApplication!)
+        XCTestWDSessionManager.singleton.mountSession(session)
+
+        XCTAssert(XCTestWDSessionManager.singleton.queryAll().keys.count == 1, "key length should be one, containing");
+
+        XCTestWDSessionManager.singleton.deleteSession(session.identifier)
         XCTAssert(XCTestWDSessionManager.singleton.queryAll().keys.count == 0, "key length shoud be zero")
     }
 }
