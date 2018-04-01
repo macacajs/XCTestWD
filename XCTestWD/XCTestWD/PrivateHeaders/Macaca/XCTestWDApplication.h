@@ -13,4 +13,6 @@
 
 + (XCUIApplication*)activeApplication;
 
++ (XCUIApplication*)createByPID:(pid_t)pid;
+
 @end

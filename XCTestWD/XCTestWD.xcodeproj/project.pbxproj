@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		5663B89E206F7180005C0CBA /* XCTestWDUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663B89D206F7180005C0CBA /* XCTestWDUnitTest.swift */; };
+		5663B89E206F7180005C0CBA /* XCTestWDSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */; };
 		5663B8A3206F71BA005C0CBA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB002EF1EAC66F900476E7A /* XCTest.framework */; };
 		5663B8A4206F71D3005C0CBA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2214861EB1CB6E006D706F /* libxml2.tbd */; };
 		5663B8A5206F7203005C0CBA /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */; };
@@ -38,6 +38,7 @@
 		5663B8BF206F7A91005C0CBA /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F53645B204C2D5B0041990F /* XCTestWD.framework */; };
 		5663B8CC206F7F2A005C0CBA /* XCTestWD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5663B8CE206F7F61005C0CBA /* XCTestWD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5663B8D420707693005C0CBA /* XCTestWDUnitTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663B8D320707693005C0CBA /* XCTestWDUnitTestBase.swift */; };
 		63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; };
 		63D408671EAB62EB00198736 /* XCTestWDRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D408551EAB62EB00198736 /* XCTestWDRunner.swift */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
@@ -167,8 +168,9 @@
 
 /* Begin PBXFileReference section */
 		5663B89B206F7180005C0CBA /* XCTestWDUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestWDUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5663B89D206F7180005C0CBA /* XCTestWDUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDUnitTest.swift; sourceTree = "<group>"; };
+		5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDSessionTest.swift; sourceTree = "<group>"; };
 		5663B89F206F7180005C0CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5663B8D320707693005C0CBA /* XCTestWDUnitTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDUnitTestBase.swift; sourceTree = "<group>"; };
 		63D4082B1EAB629400198736 /* XCTestWDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestWDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D408311EAB629400198736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D4083B1EAB62D500198736 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = ../Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
@@ -288,7 +290,8 @@
 		5663B89C206F7180005C0CBA /* XCTestWDUnitTest */ = {
 			isa = PBXGroup;
 			children = (
-				5663B89D206F7180005C0CBA /* XCTestWDUnitTest.swift */,
+				5663B8D320707693005C0CBA /* XCTestWDUnitTestBase.swift */,
+				5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */,
 				5663B89F206F7180005C0CBA /* Info.plist */,
 			);
 			path = XCTestWDUnitTest;
@@ -681,7 +684,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5663B89E206F7180005C0CBA /* XCTestWDUnitTest.swift in Sources */,
+				5663B8D420707693005C0CBA /* XCTestWDUnitTestBase.swift in Sources */,
+				5663B89E206F7180005C0CBA /* XCTestWDSessionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

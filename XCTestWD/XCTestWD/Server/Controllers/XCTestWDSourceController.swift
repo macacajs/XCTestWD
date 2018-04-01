@@ -13,7 +13,7 @@ import SwiftyJSON
 internal class XCTestWDSourceController: Controller {
     
     //MARK: Controller - Protocol
-    static func routes() -> [(RequestRoute, RoutingCall)] {
+     static func routes() -> [(RequestRoute, RoutingCall)] {
         return [(RequestRoute("/wd/hub/session/:sessionId/source", "get"), source),
                 (RequestRoute("/wd/hub/source", "get"), sourceWithoutSession),
                 (RequestRoute("/wd/hub/session/:sessionId/accessibleSource", "get"), accessiblitySource),
