@@ -6,4 +6,8 @@ nvm install 8
 
 npm i macaca-scripts -g
 
+export XCTESTWD_PATH=`pwd`"/XCTestWD/XCTestWD.xcodeproj"
+
+echo process env XCTESTWD_PATH set to $XCTESTWD_PATH
+
 macaca-scripts integration-test-ios
