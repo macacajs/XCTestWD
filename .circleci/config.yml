@@ -26,11 +26,19 @@ jobs:
             SCAN_DEVICE: iPhone 6
 
       - run:
-          name: Run Tests
+          name: Run XCTestWD Unit Tests
           command: xcodebuild -project XCTestWD/XCTestWD.xcodeproj
                               -scheme XCTestWDUnitTest
                               -destination 'platform=iOS Simulator,name=iPhone 6'
                               test
+
+      - run:
+          name: Run Macaca iOS Integration Tests
+          command:
+            - brew install node
+            - git clone https://github.com/macaca-sample/sample-nodejs.git --depth=1
+            - cd sample-nodejs
+            - npm i && npm run ios
 
       # Collect XML test results data to show in the UI,
       # and save the same XML files under test-results folder
