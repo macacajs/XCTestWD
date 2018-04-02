@@ -22,10 +22,10 @@
 
 /* Begin PBXBuildFile section */
 		56234E8620720D95008B8875 /* XCTestWDWindowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56234E8520720D95008B8875 /* XCTestWDWindowControllerTests.swift */; };
-		5641873A20721135008DAA73 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5641873920721135008DAA73 /* Swifter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		5641873B20721140008DAA73 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5641873920721135008DAA73 /* Swifter.framework */; };
-		5641873C20721147008DAA73 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5641873920721135008DAA73 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5641873E20723F82008DAA73 /* XCTestWDUrlControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641873D20723F82008DAA73 /* XCTestWDUrlControllerTests.swift */; };
+		5641874120726073008DAA73 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5641874020726073008DAA73 /* Swifter.framework */; };
+		564187422072607D008DAA73 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5641874020726073008DAA73 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5641874320726097008DAA73 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		56563F6B2070A191006F4371 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56563F6A2070A191006F4371 /* Nimble.framework */; };
 		56563F6C2070A240006F4371 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56563F6A2070A191006F4371 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5663B89E206F7180005C0CBA /* XCTestWDSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */; };
@@ -141,7 +141,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5641873C20721147008DAA73 /* Swifter.framework in CopyFiles */,
+				564187422072607D008DAA73 /* Swifter.framework in CopyFiles */,
 				56563F6C2070A240006F4371 /* Nimble.framework in CopyFiles */,
 				5663B8CC206F7F2A005C0CBA /* XCTestWD.framework in CopyFiles */,
 				5663B8B2206F76C0005C0CBA /* AEXML.framework in CopyFiles */,
@@ -174,6 +174,7 @@
 		56234E8520720D95008B8875 /* XCTestWDWindowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDWindowControllerTests.swift; sourceTree = "<group>"; };
 		5641873920721135008DAA73 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Frameworks/Swifter.framework; sourceTree = "<group>"; };
 		5641873D20723F82008DAA73 /* XCTestWDUrlControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDUrlControllerTests.swift; sourceTree = "<group>"; };
+		5641874020726073008DAA73 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = XCTestWDUnitTest/Swifter.framework; sourceTree = "<group>"; };
 		56563F6A2070A191006F4371 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		5663B89B206F7180005C0CBA /* XCTestWDUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestWDUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDSessionTest.swift; sourceTree = "<group>"; };
@@ -251,7 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5641873B20721140008DAA73 /* Swifter.framework in Frameworks */,
+				5641874120726073008DAA73 /* Swifter.framework in Frameworks */,
 				56563F6B2070A191006F4371 /* Nimble.framework in Frameworks */,
 				5663B8A4206F71D3005C0CBA /* libxml2.tbd in Frameworks */,
 				5663B8A5206F7203005C0CBA /* CocoaLumberjack.framework in Frameworks */,
@@ -280,7 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5641873A20721135008DAA73 /* Swifter.framework in Frameworks */,
+				5641874320726097008DAA73 /* Swifter.framework in Frameworks */,
 				7F8D62DD203E59EE00D92323 /* libxml2.tbd in Frameworks */,
 				7F8D62DE203E5A1300D92323 /* AEXML.framework in Frameworks */,
 				7F8D62DF203E5A1300D92323 /* Fuzi.framework in Frameworks */,
@@ -348,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				5641873920721135008DAA73 /* Swifter.framework */,
+				5641874020726073008DAA73 /* Swifter.framework */,
 				56563F6A2070A191006F4371 /* Nimble.framework */,
 				7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */,
 				7F536464204C35BB0041990F /* CocoaLumberjackSwift.framework */,
@@ -781,6 +783,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/XCTestWDUnitTest",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
@@ -810,6 +813,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/XCTestWDUnitTest",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
