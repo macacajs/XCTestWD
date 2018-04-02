@@ -18,4 +18,29 @@ class XCTestWDUrlControllerTests: XCTestWDUnitTestBase {
         let response = XCTestWDUrlController.url(request: request)
         response.shouldBeSuccessful()
     }
+
+    func testGetUrlController() {
+        let request = Swifter.HttpRequest.init()
+        let response = XCTestWDUrlController.getUrl(request: request)
+        response.shouldBeSuccessful()
+    }
+
+    func testForwardUrlController() {
+        let request = Swifter.HttpRequest.init()
+        let response = XCTestWDUrlController.forward(request: request)
+        response.shouldBeSuccessful()
+    }
+
+    func testRefreshUrlController() {
+        let request = Swifter.HttpRequest.init()
+        let response = XCTestWDUrlController.refresh(request: request)
+        response.shouldBeSuccessful()
+    }
+
+    func testBack() {
+        let request = Swifter.HttpRequest.init()
+        let response = XCTestWDUrlController.back(request: request)
+        let contentJSON = XCTestWDUnitTestBase.getResponseData(response)
+        expect(contentJSON["status"].int).to(equal(WDStatus.ElementIsNotSelectable.rawValue))
+    }
 }

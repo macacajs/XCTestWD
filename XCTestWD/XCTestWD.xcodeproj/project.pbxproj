@@ -26,6 +26,7 @@
 		5641874120726073008DAA73 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5641874020726073008DAA73 /* Swifter.framework */; };
 		564187422072607D008DAA73 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5641874020726073008DAA73 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5641874320726097008DAA73 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5641874520726BFE008DAA73 /* XCTestWDTitleControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641874420726BFE008DAA73 /* XCTestWDTitleControllerTests.swift */; };
 		56563F6B2070A191006F4371 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56563F6A2070A191006F4371 /* Nimble.framework */; };
 		56563F6C2070A240006F4371 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56563F6A2070A191006F4371 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5663B89E206F7180005C0CBA /* XCTestWDSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */; };
@@ -175,6 +176,7 @@
 		5641873920721135008DAA73 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Frameworks/Swifter.framework; sourceTree = "<group>"; };
 		5641873D20723F82008DAA73 /* XCTestWDUrlControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDUrlControllerTests.swift; sourceTree = "<group>"; };
 		5641874020726073008DAA73 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = XCTestWDUnitTest/Swifter.framework; sourceTree = "<group>"; };
+		5641874420726BFE008DAA73 /* XCTestWDTitleControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDTitleControllerTests.swift; sourceTree = "<group>"; };
 		56563F6A2070A191006F4371 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		5663B89B206F7180005C0CBA /* XCTestWDUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestWDUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDSessionTest.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			children = (
 				56234E8520720D95008B8875 /* XCTestWDWindowControllerTests.swift */,
 				5641873D20723F82008DAA73 /* XCTestWDUrlControllerTests.swift */,
+				5641874420726BFE008DAA73 /* XCTestWDTitleControllerTests.swift */,
 			);
 			path = ControllerTests;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				56234E8620720D95008B8875 /* XCTestWDWindowControllerTests.swift in Sources */,
 				5663B89E206F7180005C0CBA /* XCTestWDSessionTest.swift in Sources */,
 				5641873E20723F82008DAA73 /* XCTestWDUrlControllerTests.swift in Sources */,
+				5641874520726BFE008DAA73 /* XCTestWDTitleControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,6 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/tap/:elementId", "post"), tap),
                 (RequestRoute("/wd/hub/session/:sessionId/doubleTap", "post"), doubleTapAtCoordinate),
                 (RequestRoute("/wd/hub/session/:sessionId/keys", "post"), handleKeys),
-                (RequestRoute("/wd/hub/session/:sessionId/title", "get"), title),
                 (RequestRoute("/wd/hub/session/:sessionId/homeScreen", "post"), homeScreen),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTap),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/touchAndHold", "post"), touchAndHoldOnElement),
@@ -476,27 +475,7 @@ internal class XCTestWDElementController: Controller {
         XCUIDevice.shared.press(XCUIDevice.Button.home)
         sleep(3);
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
-    }
-    
-    internal static func title(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
-        
-        let session = XCTestWDSessionManager.singleton.checkDefaultSession()
-        let application = session.application
-        
-        let elements = application?.descendants(matching: XCUIElement.ElementType.window).allElementsBoundByIndex
-        
-        if  elements == nil || elements?.count == 0 {
-            DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) title, elements and element count")
-            return XCTestWDResponse.response(session: nil, error: WDStatus.ElementNotVisible)
-        }
-        
-        let window = elements![0]
-        let navBar = window.descendants(matching: XCUIElement.ElementType.navigationBar).allElementsBoundByIndex.first
-        window.resolve()
-        let digest = window.digest(windowName: navBar?.identifier == nil ? "" : (navBar?.identifier)!)
-        return XCTestWDResponse.response(session: nil, value: JSON(digest as Any))
-    }
-    
+    }    
     
     internal static func doubleTap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let elementId = request.elementId
