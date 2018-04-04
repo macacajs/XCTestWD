@@ -544,7 +544,6 @@
 			buildConfigurationList = 63D408371EAB629400198736 /* Build configuration list for PBXNativeTarget "XCTestWDUITests" */;
 			buildPhases = (
 				7FA43F311F0CB57400FB2332 /* ShellScript */,
-				7F6C3B601EFCD8AB00F53D6B /* ShellScript */,
 				63D408271EAB629400198736 /* Sources */,
 				63D408281EAB629400198736 /* Frameworks */,
 				63D408291EAB629400198736 /* Resources */,
@@ -565,7 +564,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F8D62A0203E57CD00D92323 /* Build configuration list for PBXNativeTarget "XCTestWD" */;
 			buildPhases = (
-				7F8D6328203E617F00D92323 /* ShellScript */,
 				7F8D6292203E57CD00D92323 /* Sources */,
 				7F8D6293203E57CD00D92323 /* Frameworks */,
 				7F8D6294203E57CD00D92323 /* Headers */,
@@ -660,32 +658,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = $SRCROOT/../scripts/aggregate.sh;
-		};
-		7F6C3B601EFCD8AB00F53D6B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "rm -rf ../Carthage/Checkouts/Fuzi/libxml2/";
-		};
-		7F8D6328203E617F00D92323 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "rm -rf ../Carthage/Checkouts/Fuzi/libxml2/";
 		};
 		7FA43F311F0CB57400FB2332 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
