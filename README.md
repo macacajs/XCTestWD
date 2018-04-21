@@ -115,9 +115,10 @@ You can use `xcrun simctl list` to get the id of the booted device.
 
 ## Contributors
 
-|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars0.githubusercontent.com/u/8198256?v=4" width="100px;"/><br/><sub><b>SamuelZhaoY</b></sub>](https://github.com/SamuelZhaoY)<br/>|[<img src="https://avatars1.githubusercontent.com/u/7436932?v=4" width="100px;"/><br/><sub><b>gurisxie</b></sub>](https://github.com/gurisxie)<br/>|[<img src="https://avatars1.githubusercontent.com/u/17233599?v=4" width="100px;"/><br/><sub><b>Chan-Chun</b></sub>](https://github.com/Chan-Chun)<br/>
-| :---: | :---: | :---: | :---: |
+|[<img src="https://avatars0.githubusercontent.com/u/8198256?v=4" width="100px;"/><br/><sub><b>SamuelZhaoY</b></sub>](https://github.com/SamuelZhaoY)<br/>|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars2.githubusercontent.com/u/10086769?v=4" width="100px;"/><br/><sub><b>holy-lousie</b></sub>](https://github.com/holy-lousie)<br/>|[<img src="https://avatars2.githubusercontent.com/u/9434109?v=4" width="100px;"/><br/><sub><b>adudurant</b></sub>](https://github.com/adudurant)<br/>|[<img src="https://avatars1.githubusercontent.com/u/17233599?v=4" width="100px;"/><br/><sub><b>Chan-Chun</b></sub>](https://github.com/Chan-Chun)<br/>|[<img src="https://avatars1.githubusercontent.com/u/7436932?v=4" width="100px;"/><br/><sub><b>gurisxie</b></sub>](https://github.com/gurisxie)<br/>
+| :---: | :---: | :---: | :---: | :---: | :---: |
 
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor.git), auto upated at `Sun Mar 25 2018 15:25:37 GMT+0800`.
+
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto upated at `Sat Apr 21 2018 12:04:14 GMT+0800`.
 
 <!-- GITCONTRIBUTOR_END -->

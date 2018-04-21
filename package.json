@@ -28,7 +28,7 @@
     "co-mocha": "*",
     "eslint": "^4.13.0",
     "eslint-plugin-mocha": "^4.11.0",
-    "git-contributor": "^1.0.0",
+    "git-contributor": "^1.0.7",
     "istanbul": "*",
     "mocha": "*",
     "pre-commit": "*"
