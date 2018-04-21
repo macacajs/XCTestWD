@@ -8,6 +8,10 @@ const shelljs = require('shelljs');
 const hostname = require('os').hostname();
 const doctorIOS = require('macaca-doctor/lib/ios');
 
+if (!_.platform.isOSX) {
+  return;
+}
+
 const DEVELOPMENT_TEAM = process.env.DEVELOPMENT_TEAM_ID || '';
 
 const xctestwdFrameworksPrefix = 'xctestwd-frameworks-';
