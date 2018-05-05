@@ -1034,7 +1034,7 @@
 					"$(SDKROOT)/../../Library/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=8001";
+				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/include/libxml2",
 					"$(SRCROOT)/",
@@ -1087,7 +1087,7 @@
 					"$(SDKROOT)/../../Library/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=8001";
+				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
 				HEADER_SEARCH_PATHS = (
 					"$(SDKROOT)/usr/include/libxml2",
 					"$(SRCROOT)/",
