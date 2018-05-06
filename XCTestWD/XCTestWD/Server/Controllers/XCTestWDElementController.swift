@@ -167,7 +167,7 @@ internal class XCTestWDElementController: Controller {
         
         if (element?.exists)! && ((element?.isHittable) ?? false) {
             DDLogDebug("\(XCTestWDDebugInfo.DebugLogPrefix) click, based on element coordinate")
-            element?.coordinate(withNormalizedOffset: CGVector.init()).tap()
+            element?.coordinate(withNormalizedOffset: CGVector.init(dx: 0.5, dy: 0.5)).tap()
         }
         
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)

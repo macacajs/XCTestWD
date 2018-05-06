@@ -28,7 +28,6 @@ internal class XCTestWDResponse {
                                "status":self.status.rawValue,
                                "value":self.value as Any]
         let rawString = response.rawString(options:[])?.replacingOccurrences(of: "\n", with: "")
-        print("check raw string :\(rawString ?? "")");
         return rawString != nil ? HttpResponse.ok(.text(rawString!)) : HttpResponse.ok(.text("{}"))
     }
     

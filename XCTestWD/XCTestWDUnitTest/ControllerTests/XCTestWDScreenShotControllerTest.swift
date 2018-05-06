@@ -1,8 +1,8 @@
 //
-//  XCTestWDTitleControllerTests.swift
+//  XCTestWDScreenShotControllerTest.swift
 //  XCTestWDUnitTest
 //
-//  Created by SamuelZhaoY on 2/4/18.
+//  Created by SamuelZhaoY on 6/5/18.
 //  Copyright © 2018 XCTestWD. All rights reserved.
 //
 
@@ -11,11 +11,11 @@ import Nimble
 @testable import XCTestWD
 @testable import Swifter
 
-class XCTestWDTitleControllerTests: XCTestWDUnitTestBase {
+class XCTestWDScreenShotControllerTest: XCTestWDUnitTestBase {
 
-    func testTitleRetrieve() {
+    func testScreenShotRetrieve() {
         let request = Swifter.HttpRequest.init()
-        let response = XCTestWDTitleController.title(request: request)
+        let response = XCTestWDScreenshotController.getScreenshot(request: request)
         let contentJSON = XCTestWDUnitTestBase.getResponseData(response)
         expect(contentJSON["status"].int).to(equal(WDStatus.Success.rawValue))
     }
