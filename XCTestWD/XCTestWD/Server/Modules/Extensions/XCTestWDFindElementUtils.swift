@@ -29,6 +29,9 @@ class XCTestWDFindElementUtils {
         } else if isSearchByIdentifier {
             return underElement.descendantsMatchingIdentifier(accessibilityId: withValue,
                                                               returnAfterFirstMatch: returnAfterFirstMatch)
+        } else if usingText == "predicate string" {
+            let predicate = NSPredicate.xctestWDPredicate(withFormat: withValue)
+            return underElement.descendantsMatching(Predicate: predicate!, returnAfterFirstMatch)
         }
         
         throw XCTestWDRoutingError.noSuchUsingMethod

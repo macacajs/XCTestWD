@@ -46,6 +46,8 @@
 		5663B8CC206F7F2A005C0CBA /* XCTestWD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5663B8CE206F7F61005C0CBA /* XCTestWD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5663B8D420707693005C0CBA /* XCTestWDUnitTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663B8D320707693005C0CBA /* XCTestWDUnitTestBase.swift */; };
+		56797FD92127CBA10066DDBD /* NSPredicate+XCTestWD.h in Headers */ = {isa = PBXBuildFile; fileRef = 56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56797FDA2127CBA10066DDBD /* NSPredicate+XCTestWD.m in Sources */ = {isa = PBXBuildFile; fileRef = 56797FD82127CBA10066DDBD /* NSPredicate+XCTestWD.m */; };
 		63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; };
 		63D408671EAB62EB00198736 /* XCTestWDRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D408551EAB62EB00198736 /* XCTestWDRunner.swift */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
@@ -180,6 +182,8 @@
 		5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDSessionTest.swift; sourceTree = "<group>"; };
 		5663B89F206F7180005C0CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5663B8D320707693005C0CBA /* XCTestWDUnitTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDUnitTestBase.swift; sourceTree = "<group>"; };
+		56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+XCTestWD.h"; sourceTree = "<group>"; };
+		56797FD82127CBA10066DDBD /* NSPredicate+XCTestWD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+XCTestWD.m"; sourceTree = "<group>"; };
 		63D4082B1EAB629400198736 /* XCTestWDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestWDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D408311EAB629400198736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D4083B1EAB62D500198736 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = ../Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
@@ -417,6 +421,8 @@
 			children = (
 				7F5D35FD203C474900BCC922 /* XCTestWDApplication.h */,
 				7F5D35FC203C474900BCC922 /* XCTestWDApplication.m */,
+				56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */,
+				56797FD82127CBA10066DDBD /* NSPredicate+XCTestWD.m */,
 			);
 			path = Macaca;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56797FD92127CBA10066DDBD /* NSPredicate+XCTestWD.h in Headers */,
 				7F8D629B203E57CD00D92323 /* XCTestWD.h in Headers */,
 				7F8D62B5203E596500D92323 /* XCTestPrivateSymbols.h in Headers */,
 				7F8D62B6203E596500D92323 /* XCTRunnerDaemonSession.h in Headers */,
@@ -572,8 +579,8 @@
 		63D4080F1EAB629400198736 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 920;
+				LastUpgradeCheck = 920;
 				ORGANIZATIONNAME = XCTestWD;
 				TargetAttributes = {
 					5663B89A206F7180005C0CBA = {
@@ -581,8 +588,7 @@
 					};
 					63D4082A1EAB629400198736 = {
 						CreatedOnToolsVersion = 8.3.1;
-						LastSwiftMigration = 0910;
-						ProvisioningStyle = Manual;
+						LastSwiftMigration = 910;
 					};
 					7F2B0207203C265F00B07F50 = {
 						CreatedOnToolsVersion = 9.1;
@@ -590,8 +596,7 @@
 					};
 					7F8D6296203E57CD00D92323 = {
 						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 0910;
-						ProvisioningStyle = Manual;
+						LastSwiftMigration = 910;
 					};
 				};
 			};
@@ -693,6 +698,7 @@
 				7F8D62BD203E59B400D92323 /* XCTestDaemonsProxy.m in Sources */,
 				7F8D62BE203E59B400D92323 /* XCTestPrivateSymbols.m in Sources */,
 				7F8D62BF203E59B400D92323 /* XCTestWDApplication.m in Sources */,
+				56797FDA2127CBA10066DDBD /* NSPredicate+XCTestWD.m in Sources */,
 				7F8D62C0203E59B400D92323 /* XCTestWDController.swift in Sources */,
 				7F8D62C1203E59B400D92323 /* XCTestWDDispatch.swift in Sources */,
 				7F8D62C2203E59B400D92323 /* XCTestWDServer.swift in Sources */,
@@ -912,9 +918,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CM2CQ7U9GM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
@@ -929,7 +936,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWDUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.Ali-71875N.local";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -946,9 +953,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CM2CQ7U9GM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
@@ -963,7 +971,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWD.XCTestWDUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.Ali-71875N.local";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1004,10 +1012,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CM2CQ7U9GM;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1057,10 +1065,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CM2CQ7U9GM;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
