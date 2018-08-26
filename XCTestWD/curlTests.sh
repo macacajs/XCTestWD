@@ -11,7 +11,7 @@ echo "\n#### $1 ####"
 TagHead "Create Session"
 
 curl -X POST $JSON_HEADER \
--d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 6\",\"platformName\":\"iOS\", \"bundleId\":\"xudafeng.ios-app-bootstrap\",\"autoAcceptAlerts\":false}}" \
+-d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 8\",\"platformName\":\"iOS\", \"bundleId\":\"xudafeng.ios-app-bootstrap\",\"autoAcceptAlerts\":false}}" \
 $DEVICE_URL/wd/hub/session \
 
 ### Read session as input for next stage testing
@@ -61,7 +61,11 @@ $DEVICE_URL/wd/hub/session/$sessionID/title \
 TagHead "Trigger touch event by x & y"
 
 curl -X POST $JSON_HEADER \
--d "{\"using\":\"xpath\",\"value\":\"//*[@name="DanaDemo"]\"}" \
+-d "{\"using\":\"xpath\",\"value\":\"//*[@name="Messages"]\"}" \
+$DEVICE_URL/wd/hub/session/$sessionID/elements \
+
+curl -X POST $JSON_HEADER \
+-d "{\"using\":\"predicate string\",\"value\":\"label CONTAINS[c] 'Messages'\"}" \
 $DEVICE_URL/wd/hub/session/$sessionID/elements \
 
 echo "\n\ninput the elementID generated:\n"
