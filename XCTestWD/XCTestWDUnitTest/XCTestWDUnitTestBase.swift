@@ -28,6 +28,8 @@ class XCTestWDUnitTestBase: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+        XCUIDevice.shared.press(XCUIDevice.Button.home)
+        XCUIDevice.shared.press(XCUIDevice.Button.home)
         XCTestWDSessionManager.singleton.clearAll()
     }
 

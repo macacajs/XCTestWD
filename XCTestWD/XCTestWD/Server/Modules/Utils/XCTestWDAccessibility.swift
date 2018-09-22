@@ -189,7 +189,30 @@ extension XCUIElement {
         
         return result
     }
-    
+
+    func descendantsMatching(Predicate predicate:NSPredicate, _ returnFirstMatch:Bool) -> [XCUIElement] {
+        let formattedPredicate = NSPredicate.xctestWDformatSearch(predicate)
+        var result:[XCUIElement] = []
+
+        if formattedPredicate?.evaluate(with: self.lastSnapshot) ?? false {
+            if returnFirstMatch {
+                return [self]
+            }
+
+            result.append(self)
+        }
+
+        let query = self.descendants(matching: XCUIElement.ElementType.any).matching(formattedPredicate!)
+
+        if returnFirstMatch {
+            result.append(query.element(boundBy: 0))
+        } else {
+            result.append(contentsOf: query.allElementsBoundByIndex)
+        }
+
+        return result
+    }
+
     static func extractMatchElementFromQuery(query:XCUIElementQuery, returnAfterFirstMatch:Bool) -> [XCUIElement] {
         if !returnAfterFirstMatch {
             return query.allElementsBoundByIndex

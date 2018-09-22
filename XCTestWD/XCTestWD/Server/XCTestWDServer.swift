@@ -60,17 +60,11 @@ public class XCTestWDServer {
         
         var controllers = [Controller]()
         
-        controllers.append(XCTestWDActionsController())
         controllers.append(XCTestWDAlertController())
-        controllers.append(XCTestWDContextController())
         controllers.append(XCTestWDElementController())
-        controllers.append(XCTestWDExecuteController())
-        controllers.append(XCTestWDKeysController())
         controllers.append(XCTestWDScreenshotController())
         controllers.append(XCTestWDSessionController())
         controllers.append(XCTestWDSourceController())
-        controllers.append(XCTestWDStatusController())
-        controllers.append(XCTestWDTimeoutController())
         controllers.append(XCTestWDTitleController())
         controllers.append(XCTestWDElementController())
         controllers.append(XCTestWDWindowController())
