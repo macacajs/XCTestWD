@@ -1,4 +1,4 @@
-github "glock45/swifter" == 1.4.0
+github "glock45/swifter" "stable"
 github "SwiftyJSON/SwiftyJSON"
 github "cezheng/Fuzi" ~> 2.1.0
 github "tadija/AEXML" == 4.2.2
