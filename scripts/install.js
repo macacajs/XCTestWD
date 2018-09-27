@@ -14,7 +14,7 @@ if (!_.platform.isOSX) {
 
 const DEVELOPMENT_TEAM = process.env.DEVELOPMENT_TEAM_ID || '';
 
-const xctestwdFrameworksPrefix = 'xctestwd-frameworks-';
+const xctestwdFrameworksPrefix = 'xctestwd-frameworks';
 
 const update = function(project, schemeName, callback) {
   const myConfigKey = project.pbxTargetByName(schemeName).buildConfigurationList;
@@ -64,12 +64,16 @@ const updateInformation = function() {
 };
 
 let version = doctorIOS.getXcodeVersion();
+let pkgName = '';
 
-if (version > '9.2') {
+if (parseFloat(version) >= parseFloat('10.0')) {
+  version = '';
+  pkgName = xctestwdFrameworksPrefix;
+} else if (parseFloat(version) > parseFloat('9.2')) {
   version = version.replace(/\./, '').slice(0, 2);
+  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 }
 
-const pkgName = `${xctestwdFrameworksPrefix}${version}`;
 const dir = require.resolve(pkgName);
 const originDir = path.join(dir, '..', 'Carthage');
 const distDir = path.join(__dirname, '..');
