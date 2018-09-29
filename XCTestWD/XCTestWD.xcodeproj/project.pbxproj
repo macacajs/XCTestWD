@@ -5,7 +5,6 @@
 	};
 	objectVersion = 45;
 	objects = {
-
 /* Begin PBXAggregateTarget section */
 		7F2B0207203C265F00B07F50 /* XCTestWDAggregation */ = {
 			isa = PBXAggregateTarget;
@@ -21,6 +20,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		4D2014CF215A057B005010B2 /* XCTAutomationSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2014CE215A057B005010B2 /* XCTAutomationSupport.framework */; };
 		56215930209E98660043B404 /* XCTestWDScreenShotControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5621592F209E98660043B404 /* XCTestWDScreenShotControllerTest.swift */; };
 		56215932209E9A250043B404 /* XCTestWDSourceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56215931209E9A250043B404 /* XCTestWDSourceControllerTests.swift */; };
 		56234E8620720D95008B8875 /* XCTestWDWindowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56234E8520720D95008B8875 /* XCTestWDWindowControllerTests.swift */; };
@@ -171,6 +171,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D2014CE215A057B005010B2 /* XCTAutomationSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTAutomationSupport.framework; path = Platforms/iPhoneOS.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework; sourceTree = DEVELOPER_DIR; };
 		5621592F209E98660043B404 /* XCTestWDScreenShotControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDScreenShotControllerTest.swift; sourceTree = "<group>"; };
 		56215931209E9A250043B404 /* XCTestWDSourceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDSourceControllerTests.swift; sourceTree = "<group>"; };
 		56234E8520720D95008B8875 /* XCTestWDWindowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDWindowControllerTests.swift; sourceTree = "<group>"; };
@@ -281,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2014CF215A057B005010B2 /* XCTAutomationSupport.framework in Frameworks */,
 				5641874320726097008DAA73 /* Swifter.framework in Frameworks */,
 				7F8D62DD203E59EE00D92323 /* libxml2.tbd in Frameworks */,
 				7F8D62DE203E5A1300D92323 /* AEXML.framework in Frameworks */,
@@ -351,6 +353,7 @@
 		63D4083A1EAB62D500198736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D2014CE215A057B005010B2 /* XCTAutomationSupport.framework */,
 				5641873920721135008DAA73 /* Swifter.framework */,
 				5641874020726073008DAA73 /* Swifter.framework */,
 				56563F6A2070A191006F4371 /* Nimble.framework */,
@@ -1038,6 +1041,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(SDKROOT)/../../Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
@@ -1094,6 +1098,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(SDKROOT)/../../Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = "XCTESTWD_PORT=$(XCTESTWD_PORT)";
