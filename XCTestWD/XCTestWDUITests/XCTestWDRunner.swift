@@ -10,12 +10,10 @@ import XCTest
 import Swifter
 import XCTestWD
 
-public class XCTextWDRunner: XCTestCase {
+public class XCTextWDRunner: XCTestWDFailureProofTest {
     var server: XCTestWDServer?
     override public func setUp() {
-        super.setUp()
-        continueAfterFailure = false
-        
+        super.setUp()        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(terminate(notification:)),
                                                name: NSNotification.Name(rawValue: "XCTestWDSessionShutDown"),

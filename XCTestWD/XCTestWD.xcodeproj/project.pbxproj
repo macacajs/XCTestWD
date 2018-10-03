@@ -5,6 +5,7 @@
 	};
 	objectVersion = 45;
 	objects = {
+
 /* Begin PBXAggregateTarget section */
 		7F2B0207203C265F00B07F50 /* XCTestWDAggregation */ = {
 			isa = PBXAggregateTarget;
@@ -49,6 +50,11 @@
 		56648266215F2A1500D867F0 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; };
 		56797FD92127CBA10066DDBD /* NSPredicate+XCTestWD.h in Headers */ = {isa = PBXBuildFile; fileRef = 56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56797FDA2127CBA10066DDBD /* NSPredicate+XCTestWD.m in Sources */ = {isa = PBXBuildFile; fileRef = 56797FD82127CBA10066DDBD /* NSPredicate+XCTestWD.m */; };
+		567BAE562164689C00E56ACB /* _XCTestCaseImplementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 567BAE552164689C00E56ACB /* _XCTestCaseImplementation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		567BAE592164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 567BAE572164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		567BAE5A2164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 567BAE582164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.m */; };
+		567BAE5C21646BE900E56ACB /* XCTestWDFailureProofTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567BAE5B21646BE900E56ACB /* XCTestWDFailureProofTestCase.swift */; };
+		567BAE6021646C7800E56ACB /* XCTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 567BAE5F21646C7800E56ACB /* XCTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63D4083C1EAB62D500198736 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; };
 		63D408671EAB62EB00198736 /* XCTestWDRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D408551EAB62EB00198736 /* XCTestWDRunner.swift */; };
 		7F36D5351EADC18300C83CF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; };
@@ -186,6 +192,11 @@
 		5663B8D320707693005C0CBA /* XCTestWDUnitTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDUnitTestBase.swift; sourceTree = "<group>"; };
 		56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+XCTestWD.h"; sourceTree = "<group>"; };
 		56797FD82127CBA10066DDBD /* NSPredicate+XCTestWD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+XCTestWD.m"; sourceTree = "<group>"; };
+		567BAE552164689C00E56ACB /* _XCTestCaseImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _XCTestCaseImplementation.h; sourceTree = "<group>"; };
+		567BAE572164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCTestWDImplementationFailureHoldingProxy.h; sourceTree = "<group>"; };
+		567BAE582164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCTestWDImplementationFailureHoldingProxy.m; sourceTree = "<group>"; };
+		567BAE5B21646BE900E56ACB /* XCTestWDFailureProofTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDFailureProofTestCase.swift; sourceTree = "<group>"; };
+		567BAE5F21646C7800E56ACB /* XCTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestCase.h; sourceTree = "<group>"; };
 		63D4082B1EAB629400198736 /* XCTestWDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCTestWDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D408311EAB629400198736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D4083B1EAB62D500198736 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = ../Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
@@ -384,6 +395,7 @@
 		7F8D62A3203E57E000D92323 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				567BAE5B21646BE900E56ACB /* XCTestWDFailureProofTestCase.swift */,
 				7F5D3602203C479D00BCC922 /* XCTestWDController.swift */,
 				7F5D3603203C479D00BCC922 /* XCTestWDDispatch.swift */,
 				7F5D3601203C479D00BCC922 /* XCTestWDServer.swift */,
@@ -396,6 +408,8 @@
 		7F8D62A4203E57E600D92323 /* PrivateHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				567BAE5F21646C7800E56ACB /* XCTestCase.h */,
+				567BAE552164689C00E56ACB /* _XCTestCaseImplementation.h */,
 				7F5D35D5203C470800BCC922 /* CDStructures.h */,
 				7F5D35E2203C470900BCC922 /* XCAXClient_iOS.h */,
 				7F5D35E3203C470900BCC922 /* XCDebugLogDelegate-Protocol.h */,
@@ -428,6 +442,8 @@
 				7F5D35FC203C474900BCC922 /* XCTestWDApplication.m */,
 				56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */,
 				56797FD82127CBA10066DDBD /* NSPredicate+XCTestWD.m */,
+				567BAE572164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.h */,
+				567BAE582164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.m */,
 			);
 			path = Macaca;
 			sourceTree = "<group>";
@@ -488,6 +504,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567BAE592164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.h in Headers */,
+				567BAE562164689C00E56ACB /* _XCTestCaseImplementation.h in Headers */,
+				567BAE6021646C7800E56ACB /* XCTestCase.h in Headers */,
 				56797FD92127CBA10066DDBD /* NSPredicate+XCTestWD.h in Headers */,
 				7F8D629B203E57CD00D92323 /* XCTestWD.h in Headers */,
 				7F8D62B5203E596500D92323 /* XCTestPrivateSymbols.h in Headers */,
@@ -700,6 +719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F8D62BC203E59B400D92323 /* XCRuntimeUtils.m in Sources */,
+				567BAE5A2164693B00E56ACB /* XCTestWDImplementationFailureHoldingProxy.m in Sources */,
 				7F8D62BD203E59B400D92323 /* XCTestDaemonsProxy.m in Sources */,
 				7F8D62BE203E59B400D92323 /* XCTestPrivateSymbols.m in Sources */,
 				7F8D62BF203E59B400D92323 /* XCTestWDApplication.m in Sources */,
@@ -718,6 +738,7 @@
 				7F8D62D1203E59B400D92323 /* XCTestWDAlert.swift in Sources */,
 				7F8D62D2203E59B400D92323 /* XCTestWDErrors.swift in Sources */,
 				7F8D62D3203E59B400D92323 /* XCTestWDReponse.swift in Sources */,
+				567BAE5C21646BE900E56ACB /* XCTestWDFailureProofTestCase.swift in Sources */,
 				7F8D62D4203E59B400D92323 /* XCTestWDSession.swift in Sources */,
 				7F8D62D5203E59B400D92323 /* XCTestWDStatus.swift in Sources */,
 				7F8D62D6203E59B400D92323 /* XCUIElementTypeTransformer.swift in Sources */,
