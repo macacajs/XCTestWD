@@ -1,6 +1,6 @@
 {
   "name": "xctestwd",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Swift implementation of WebDriver server for iOS that runs on Simulator/iOS devices.",
   "keywords": [
     "iOS",
@@ -45,4 +45,3 @@
   "site": "https://macacajs.github.io",
   "license": "MIT"
 }
-
