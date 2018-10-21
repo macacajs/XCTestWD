@@ -16,7 +16,7 @@ jobs:
       # Install CocoaPods
       - run:
           name: Carthage Update
-          command: carthage update --platform iOS
+          command: carthage update --platform iOS --configuration Debug
 
       # Build the app and run tests
       - run:
