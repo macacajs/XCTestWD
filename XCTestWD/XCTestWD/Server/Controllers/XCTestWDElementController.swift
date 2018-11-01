@@ -264,7 +264,7 @@ internal class XCTestWDElementController: Controller {
             return XCTestWDResponse.response(session: nil, error: WDStatus.NoSuchElement)
         }
         
-        let value = element?.value(forKey: (attributeName?.capitalized)!)
+        let value = element?.customValue(forKey: (attributeName?.capitalized)!)
         return XCTestWDResponse.response(session: session, value: JSON(value as Any))
     }
     

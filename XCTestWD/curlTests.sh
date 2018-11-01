@@ -11,7 +11,7 @@ echo "\n#### $1 ####"
 TagHead "Create Session"
 
 curl -X POST $JSON_HEADER \
--d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 8\",\"platformName\":\"iOS\", \"bundleId\":\"xudafeng.ios-app-bootstrap\",\"autoAcceptAlerts\":false}}" \
+-d "{\"desiredCapabilities\":{\"deviceName\":\"iPhone 8\",\"platformName\":\"iOS\", \"bundleId\":\"com.apple.mobilesafari\",\"autoAcceptAlerts\":false}}" \
 $DEVICE_URL/wd/hub/session \
 
 ### Read session as input for next stage testing

@@ -227,7 +227,7 @@ extension XCUIElement {
         }
     }
     
-    open override func value(forKey key: String) -> Any? {
+    open func customValue(forKey key: String) -> Any? {
         if key.lowercased().contains("enable") {
             return self.isEnabled
         } else if key.lowercased().contains("name") {
