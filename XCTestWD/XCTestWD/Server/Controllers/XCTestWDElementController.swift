@@ -33,6 +33,9 @@ internal class XCTestWDElementController: Controller {
                 (RequestRoute("/wd/hub/session/:sessionId/doubleTap", "post"), doubleTapAtCoordinate),
                 (RequestRoute("/wd/hub/session/:sessionId/keys", "post"), handleKeys),
                 (RequestRoute("/wd/hub/session/:sessionId/homeScreen", "post"), homeScreen),
+                (RequestRoute("/wd/hub/session/:sessionId/volumeUp", "post"), volumeUp),
+                (RequestRoute("/wd/hub/session/:sessionId/volumeDown", "post"), volumeDown),
+                (RequestRoute("/wd/hub/session/:sessionId/mute", "post"), mute),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/doubleTap", "post"), doubleTap),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/touchAndHold", "post"), touchAndHoldOnElement),
                 (RequestRoute("/wd/hub/session/:sessionId/element/:elementId/twoFingerTap", "post"), handleTwoElementTap),
@@ -476,6 +479,25 @@ internal class XCTestWDElementController: Controller {
         sleep(3);
         return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
     }    
+    
+    internal static func volumeUp(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        
+        XCUIDevice.shared.press(XCUIDevice.Button.volumeUp)
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func volumeDown(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        
+        XCUIDevice.shared.press(XCUIDevice.Button.volumeDown)
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
+    
+    internal static func mute(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
+        for ii in 0..<8{
+            XCUIDevice.shared.press(XCUIDevice.Button.volumeDown)
+        }
+        return XCTestWDResponse.response(session: nil, error: WDStatus.Success)
+    }
     
     internal static func doubleTap(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let elementId = request.elementId
