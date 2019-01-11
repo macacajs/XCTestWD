@@ -38,4 +38,5 @@ coverage/
 logs/
 package/
 Frameworks/
+package-lock.json
 *.tgz
