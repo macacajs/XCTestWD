@@ -29,13 +29,15 @@
     "eslint": "^4.13.0",
     "eslint-plugin-mocha": "^4.11.0",
     "git-contributor": "^1.0.7",
+    "husky": "^1.3.1",
     "istanbul": "*",
-    "mocha": "*",
-    "pre-commit": "*"
+    "mocha": "*"
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "scripts": {
     "test": "mocha",
     "lint": "eslint . --fix",
