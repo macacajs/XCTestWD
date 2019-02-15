@@ -74,7 +74,18 @@ if (parseFloat(version) >= parseFloat('10.0')) {
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 }
 
-const dir = require.resolve(pkgName);
+let dir;
+
+try {
+  dir = require.resolve(pkgName);
+} catch (e) {
+}
+
+if (!dir) {
+  console.log(_.chalk.red(`can not find ${pkgName}, please check it.`));
+  return;
+}
+
 const originDir = path.join(dir, '..', 'Carthage');
 const distDir = path.join(__dirname, '..');
 console.log(`start to mv ${_.chalk.gray(originDir)} ${_.chalk.gray(distDir)}`);
