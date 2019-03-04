@@ -105,7 +105,7 @@ if (_.isExistedDir(latestDir)) {
 }
 // execute build of xctestrun file:
 shelljs.echo('preparing xctestrun build');
-shelljs.exec('xcodebuild build-for-testing -project \"XCTestWD/XCTestWD.xcodeproj\" -scheme \"XCTestWDUITests\" -destination \"platform=iOS Simulator,name=iPhone 7\" -derivedDataPath \"XCTestWD/build\"');
+shelljs.exec('xcodebuild build-for-testing -project \"XCTestWD/XCTestWD.xcodeproj\" -scheme \"XCTestWDUITests\" -derivedDataPath \"XCTestWD/build\"');
 
 // fetch out potential
 let result = fs.readdirSync(path.join(__dirname, '..', 'XCTestWD', 'build', 'Build', 'Products')).filter(fn => fn.match('.*simulator.*\.xctestrun')).shift();
