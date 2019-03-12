@@ -28,7 +28,7 @@ This project follows the git-contributor [spec](https://github.com/xudafeng/git-
 
 ## 1. Requirements
 
-- XCode version 9.0 and above.
+- XCode version > 9.0
 - iOS version 11.0 and above. （there is significant change on XCUITest interfaces and system private headers, hence we decide to support newest OS version only）
 
 ## 2. Starting XCTestWD
@@ -45,7 +45,7 @@ Open the terminal, go to the directory where contains `XCTestWD.xcodeproj` file 
 
 ```bash
 #
-# Change the port number to override the default port 
+# Change the port number to override the default port
 #
 $ xcodebuild -project XCTestWD.xcodeproj \
            -scheme XCTestWDUITests \
@@ -58,7 +58,7 @@ To execute for iOS device, run the following command:
 
 ```bash
 #
-# Change the port number to override the default port 
+# Change the port number to override the default port
 # Specify the device name
 #
 $ xcodebuild -project XCTestWD.xcodeproj \
