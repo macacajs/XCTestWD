@@ -69,9 +69,14 @@ let pkgName = '';
 if (parseFloat(version) >= parseFloat('10.0')) {
   version = '';
   pkgName = xctestwdFrameworksPrefix;
-} else if (parseFloat(version) > parseFloat('9.2')) {
+} else if (parseFloat(version) > parseFloat('9.2')) { // 9.3 9.4
   version = version.replace(/\./, '').slice(0, 2);
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
+} else if (parseFloat(version) > parseFloat('9.0')) { // 9.1 9.2
+  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
+} else {
+  console.log(_.chalk.red(`Xcode ${version} unsupported, please upgrade your xcode.`));
+  return;
 }
 
 let dir;
@@ -105,7 +110,7 @@ if (_.isExistedDir(latestDir)) {
 }
 // execute build of xctestrun file:
 shelljs.echo('preparing xctestrun build');
-shelljs.exec('xcodebuild build-for-testing -project \"XCTestWD/XCTestWD.xcodeproj\" -scheme \"XCTestWDUITests\" -destination \"platform=iOS Simulator,name=iPhone 7\" -derivedDataPath \"XCTestWD/build\"');
+shelljs.exec('xcodebuild build-for-testing -project \"XCTestWD/XCTestWD.xcodeproj\" -scheme \"XCTestWDUITests\" -derivedDataPath \"XCTestWD/build\"');
 
 // fetch out potential
 let result = fs.readdirSync(path.join(__dirname, '..', 'XCTestWD', 'build', 'Build', 'Products')).filter(fn => fn.match('.*simulator.*\.xctestrun')).shift();
