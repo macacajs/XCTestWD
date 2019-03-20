@@ -5,6 +5,7 @@
 	};
 	objectVersion = 45;
 	objects = {
+
 /* Begin PBXAggregateTarget section */
 		7F2B0207203C265F00B07F50 /* XCTestWDAggregation */ = {
 			isa = PBXAggregateTarget;
@@ -934,7 +935,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
@@ -952,7 +953,7 @@
 					"-lxml2",
 					"-Wl,-U,\"_OBJC_CLASS_$_XCElementSnapshot\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWDRunner.XCTestWDRunner.Ali-71875N.local;
+				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.Ali-71875N.local";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -972,7 +973,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
@@ -990,7 +991,7 @@
 					"-lxml2",
 					"-Wl,-U,\"_OBJC_CLASS_$_XCElementSnapshot\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWDRunner.XCTestWDRunner.Ali-71875N.local;
+				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.Ali-71875N.local";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1032,10 +1033,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1090,10 +1091,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CM2CQ7U9GM;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
