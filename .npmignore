@@ -23,12 +23,12 @@ logs/
 Cartfile.resolved
 UserInterfaceState.xcuserstate
 XCTestWD/build
-coverage.html
 node_modules
 .travis.yml
 .jshintrc
 .jshintignore
 coverage/
+.nyc_output
 logs/
 package/
 *.un~

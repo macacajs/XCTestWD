@@ -125,8 +125,8 @@ You can use `xcrun simctl list` to get the id of the booted device.
 
 ### 4.4
 
-user PATH variable MACACA_XCTESTWD_PATH to override the default one.
+user PATH variable MACACA_XCTESTWD_ROOT_PATH to override the default one.
 
 ```bash
-$ MACACA_XCTESTWD_PATH=/path/to/macaca_xctest app-inspector -u xxx --verbose
+$ MACACA_XCTESTWD_ROOT_PATH=/path/to/macaca_xctest app-inspector -u xxx --verbose
 ```

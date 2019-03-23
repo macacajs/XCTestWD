@@ -40,3 +40,4 @@ package/
 Frameworks/
 package-lock.json
 *.tgz
+.nyc_output
