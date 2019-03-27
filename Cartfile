@@ -1,6 +1,6 @@
 github "httpswift/swifter" == 1.4.3
 github "SwiftyJSON/SwiftyJSON"
-github "cezheng/Fuzi" ~> 2.1.0
+github "cezheng/Fuzi" "master"
 github "tadija/AEXML" == 4.2.2
 github "CocoaLumberjack/CocoaLumberjack" == 3.4.2
-github "Quick/Nimble" == 7.3.4
+github "Quick/Nimble" == 8.0.1
