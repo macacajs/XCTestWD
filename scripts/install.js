@@ -66,9 +66,12 @@ const updateInformation = function() {
 let version = doctorIOS.getXcodeVersion();
 let pkgName = '';
 
-if (parseFloat(version) >= parseFloat('10.0')) {
+if (parseFloat(version) >= parseFloat('10.1')) {
   version = '';
   pkgName = xctestwdFrameworksPrefix;
+} else if (parseFloat(version) > parseFloat('10.0')) { // 10.1
+  version = version.replace(/\./, 'dot');
+  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else if (parseFloat(version) > parseFloat('9.2')) { // 9.3 9.4
   version = version.replace(/\./, '').slice(0, 2);
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
