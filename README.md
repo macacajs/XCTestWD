@@ -130,3 +130,16 @@ user PATH variable MACACA_XCTESTWD_ROOT_PATH to override the default one.
 ```bash
 $ MACACA_XCTESTWD_ROOT_PATH=/path/to/macaca_xctest app-inspector -u xxx --verbose
 ```
+
+### 4.5
+
+We update dependencies by using other npm packages, because the XCode upgrade swift syntax is often not backward compatible.
+
+| package | XCode version | notes |
+| --- | --- | --- |
+| [xctestwd-frameworks](https://github.com/macacajs/xctestwd-frameworks) | 10.2 | |
+| [xctestwd-frameworks-101](https://github.com/macacajs/xctestwd-frameworks-10.1) | 10.1 | |
+| [xctestwd-frameworks-94](https://github.com/macacajs/xctestwd-frameworks-9.4) | 9.4 | |
+| [xctestwd-frameworks-93](https://github.com/macacajs/xctestwd-frameworks-9.3) | 9.3 | |
+| [xctestwd-frameworks-9.2](https://github.com/macacajs/xctestwd-frameworks-9.2) | 9.2 | |
+| [xctestwd-frameworks-9.1](https://github.com/macacajs/xctestwd-frameworks-9.1) | 9.1 | |
