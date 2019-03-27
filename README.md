@@ -138,7 +138,7 @@ We update dependencies by using other npm packages, because the XCode upgrade sw
 | package | XCode version | notes |
 | --- | --- | --- |
 | [xctestwd-frameworks](https://github.com/macacajs/xctestwd-frameworks) | 10.2 | |
-| [xctestwd-frameworks-101](https://github.com/macacajs/xctestwd-frameworks-10.1) | 10.1 | |
+| [xctestwd-frameworks-10dot1](https://github.com/macacajs/xctestwd-frameworks-10.1) | 10.1 | |
 | [xctestwd-frameworks-94](https://github.com/macacajs/xctestwd-frameworks-9.4) | 9.4 | |
 | [xctestwd-frameworks-93](https://github.com/macacajs/xctestwd-frameworks-9.3) | 9.3 | |
 | [xctestwd-frameworks-9.2](https://github.com/macacajs/xctestwd-frameworks-9.2) | 9.2 | |
