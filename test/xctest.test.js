@@ -1,11 +1,18 @@
 'use strict';
 
 const assert = require('assert');
+const _ = require('macaca-utils');
 
-const XCTest = require('..');
+const { XCTestWD } = require('..');
 
-describe('test', function() {
-  it('should be ok', function() {
-    assert.ok(XCTest);
+describe('project root path', () => {
+  it('should be ok', () => {
+    assert.equal(_.isExistedDir(XCTestWD.projectPath), true);
+  });
+
+  it('env variable should be work', () => {
+    delete require.cache[require.resolve('../lib/xctestwd')];
+    process.env.MACACA_XCTESTWD_ROOT_PATH = process.env.HOME;
+    assert.equal(_.isExistedDir(require('../lib/xctestwd').projectPath), false);
   });
 });
