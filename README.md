@@ -18,11 +18,11 @@
 
 ## Contributors
 
-|[<img src="https://avatars0.githubusercontent.com/u/8198256?v=4" width="100px;"/><br/><sub><b>SamuelZhaoY</b></sub>](https://github.com/SamuelZhaoY)<br/>|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars2.githubusercontent.com/u/10086769?v=4" width="100px;"/><br/><sub><b>holy-lousie</b></sub>](https://github.com/holy-lousie)<br/>|[<img src="https://avatars2.githubusercontent.com/u/9434109?v=4" width="100px;"/><br/><sub><b>adudurant</b></sub>](https://github.com/adudurant)<br/>|[<img src="https://avatars1.githubusercontent.com/u/17233599?v=4" width="100px;"/><br/><sub><b>Chan-Chun</b></sub>](https://github.com/Chan-Chun)<br/>|[<img src="https://avatars1.githubusercontent.com/u/7436932?v=4" width="100px;"/><br/><sub><b>gurisxie</b></sub>](https://github.com/gurisxie)<br/>|
+|[<img src="https://avatars0.githubusercontent.com/u/8198256?v=4" width="100px;"/><br/><sub><b>SamuelZhaoY</b></sub>](https://github.com/SamuelZhaoY)<br/>|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars2.githubusercontent.com/u/10086769?v=4" width="100px;"/><br/><sub><b>holy-lousie</b></sub>](https://github.com/holy-lousie)<br/>|[<img src="https://avatars2.githubusercontent.com/u/9434109?v=4" width="100px;"/><br/><sub><b>adudurant</b></sub>](https://github.com/adudurant)<br/>|[<img src="https://avatars1.githubusercontent.com/u/17233599?v=4" width="100px;"/><br/><sub><b>Chan-Chun</b></sub>](https://github.com/Chan-Chun)<br/>|[<img src="https://avatars3.githubusercontent.com/u/1209810?v=4" width="100px;"/><br/><sub><b>paradite</b></sub>](https://github.com/paradite)<br/>|
 | :---: | :---: | :---: | :---: | :---: | :---: |
-[<img src="https://avatars1.githubusercontent.com/u/26514264?v=4" width="100px;"/><br/><sub><b>butterflyingdog</b></sub>](https://github.com/butterflyingdog)<br/>|[<img src="https://avatars3.githubusercontent.com/u/32116360?v=4" width="100px;"/><br/><sub><b>fengguochao</b></sub>](https://github.com/fengguochao)<br/>
+[<img src="https://avatars1.githubusercontent.com/u/7436932?v=4" width="100px;"/><br/><sub><b>gurisxie</b></sub>](https://github.com/gurisxie)<br/>|[<img src="https://avatars1.githubusercontent.com/u/26514264?v=4" width="100px;"/><br/><sub><b>butterflyingdog</b></sub>](https://github.com/butterflyingdog)<br/>|[<img src="https://avatars1.githubusercontent.com/u/6138806?v=4" width="100px;"/><br/><sub><b>donlinglok</b></sub>](https://github.com/donlinglok)<br/>|[<img src="https://avatars3.githubusercontent.com/u/32116360?v=4" width="100px;"/><br/><sub><b>fengguochao</b></sub>](https://github.com/fengguochao)<br/>|[<img src="https://avatars3.githubusercontent.com/u/1265888?v=4" width="100px;"/><br/><sub><b>xqin</b></sub>](https://github.com/xqin)<br/>
 
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Fri Feb 15 2019 19:23:09 GMT+0800`.
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Thu Mar 28 2019 09:09:46 GMT+0800`.
 
 <!-- GITCONTRIBUTOR_END -->
 
@@ -130,3 +130,16 @@ user PATH variable MACACA_XCTESTWD_ROOT_PATH to override the default one.
 ```bash
 $ MACACA_XCTESTWD_ROOT_PATH=/path/to/macaca_xctest app-inspector -u xxx --verbose
 ```
+
+### 4.5
+
+We update dependencies by using other npm packages, because the XCode upgrade swift syntax is often not backward compatible.
+
+| package | XCode version | notes |
+| --- | --- | --- |
+| [xctestwd-frameworks](https://github.com/macacajs/xctestwd-frameworks) | 10.2 | |
+| [xctestwd-frameworks-10dot1](https://github.com/macacajs/xctestwd-frameworks-10.1) | 10.1 | |
+| [xctestwd-frameworks-94](https://github.com/macacajs/xctestwd-frameworks-9.4) | 9.4 | |
+| [xctestwd-frameworks-93](https://github.com/macacajs/xctestwd-frameworks-9.3) | 9.3 | |
+| [xctestwd-frameworks-9.2](https://github.com/macacajs/xctestwd-frameworks-9.2) | 9.2 | |
+| [xctestwd-frameworks-9.1](https://github.com/macacajs/xctestwd-frameworks-9.1) | 9.1 | |
