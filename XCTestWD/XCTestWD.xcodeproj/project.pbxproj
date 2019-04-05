@@ -48,6 +48,9 @@
 		5663B8CE206F7F61005C0CBA /* XCTestWD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5663B8D420707693005C0CBA /* XCTestWDUnitTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663B8D320707693005C0CBA /* XCTestWDUnitTestBase.swift */; };
 		56648266215F2A1500D867F0 /* XCTestWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8D6297203E57CD00D92323 /* XCTestWD.framework */; };
+		566C9FBB22576FB2009BF53E /* XCUIDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 566C9FBA22576FB2009BF53E /* XCUIDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		566C9FBE22576FCA009BF53E /* XCTestXCAXClientProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C9FBC22576FCA009BF53E /* XCTestXCAXClientProxy.m */; };
+		566C9FBF22576FCA009BF53E /* XCTestXCAXClientProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 566C9FBD22576FCA009BF53E /* XCTestXCAXClientProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56797FD92127CBA10066DDBD /* NSPredicate+XCTestWD.h in Headers */ = {isa = PBXBuildFile; fileRef = 56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56797FDA2127CBA10066DDBD /* NSPredicate+XCTestWD.m in Sources */ = {isa = PBXBuildFile; fileRef = 56797FD82127CBA10066DDBD /* NSPredicate+XCTestWD.m */; };
 		567BAE562164689C00E56ACB /* _XCTestCaseImplementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 567BAE552164689C00E56ACB /* _XCTestCaseImplementation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -189,6 +192,9 @@
 		5663B89D206F7180005C0CBA /* XCTestWDSessionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDSessionTest.swift; sourceTree = "<group>"; };
 		5663B89F206F7180005C0CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5663B8D320707693005C0CBA /* XCTestWDUnitTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestWDUnitTestBase.swift; sourceTree = "<group>"; };
+		566C9FBA22576FB2009BF53E /* XCUIDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCUIDevice.h; sourceTree = "<group>"; };
+		566C9FBC22576FCA009BF53E /* XCTestXCAXClientProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestXCAXClientProxy.m; sourceTree = "<group>"; };
+		566C9FBD22576FCA009BF53E /* XCTestXCAXClientProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestXCAXClientProxy.h; sourceTree = "<group>"; };
 		56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+XCTestWD.h"; sourceTree = "<group>"; };
 		56797FD82127CBA10066DDBD /* NSPredicate+XCTestWD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+XCTestWD.m"; sourceTree = "<group>"; };
 		567BAE552164689C00E56ACB /* _XCTestCaseImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _XCTestCaseImplementation.h; sourceTree = "<group>"; };
@@ -406,6 +412,7 @@
 		7F8D62A4203E57E600D92323 /* PrivateHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				566C9FBA22576FB2009BF53E /* XCUIDevice.h */,
 				567BAE5F21646C7800E56ACB /* XCTestCase.h */,
 				567BAE552164689C00E56ACB /* _XCTestCaseImplementation.h */,
 				7F5D35D5203C470800BCC922 /* CDStructures.h */,
@@ -436,6 +443,8 @@
 		7F8D62A5203E57FC00D92323 /* Macaca */ = {
 			isa = PBXGroup;
 			children = (
+				566C9FBD22576FCA009BF53E /* XCTestXCAXClientProxy.h */,
+				566C9FBC22576FCA009BF53E /* XCTestXCAXClientProxy.m */,
 				7F5D35FD203C474900BCC922 /* XCTestWDApplication.h */,
 				7F5D35FC203C474900BCC922 /* XCTestWDApplication.m */,
 				56797FD72127CBA10066DDBD /* NSPredicate+XCTestWD.h */,
@@ -521,6 +530,8 @@
 				7F8D62AE203E595100D92323 /* XCRuntimeUtils.h in Headers */,
 				7F8D62AF203E595100D92323 /* XCTestDaemonsProxy.h in Headers */,
 				7F8D62B0203E595100D92323 /* XCTestDriver.h in Headers */,
+				566C9FBF22576FCA009BF53E /* XCTestXCAXClientProxy.h in Headers */,
+				566C9FBB22576FB2009BF53E /* XCUIDevice.h in Headers */,
 				7F8D62B1203E595100D92323 /* XCTestDriverInterface-Protocol.h in Headers */,
 				7F8D62B2203E595100D92323 /* XCTestManager_IDEInterface-Protocol.h in Headers */,
 				7F8D62B3203E595100D92323 /* XCTestManager_ManagerInterface-Protocol.h in Headers */,
@@ -626,6 +637,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -716,6 +728,7 @@
 				7F8D62C9203E59B400D92323 /* XCTestWDScreenshotController.swift in Sources */,
 				7F8D62CA203E59B400D92323 /* XCTestWDSessionController.swift in Sources */,
 				7F8D62CB203E59B400D92323 /* XCTestWDSourceController.swift in Sources */,
+				566C9FBE22576FCA009BF53E /* XCTestXCAXClientProxy.m in Sources */,
 				7F8D62CE203E59B400D92323 /* XCTestWDTitleController.swift in Sources */,
 				7F8D62CF203E59B400D92323 /* XCTestWDUrlController.swift in Sources */,
 				7F8D62D0203E59B400D92323 /* XCTestWDWindowController.swift in Sources */,
