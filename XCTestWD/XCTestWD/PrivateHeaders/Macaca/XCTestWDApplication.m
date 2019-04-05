@@ -8,16 +8,16 @@
 
 #import "XCTestWDApplication.h"
 #import "XCUIApplication.h"
-#import "XCAXClient_iOS.h"
+#import "XCTestXCAXClientProxy.h"
 
 @implementation XCTestWDApplication
 
 + (XCUIApplication*)activeApplication
 {
-    id activeApplicationElement = ((NSArray*)[[XCAXClient_iOS sharedClient] activeApplications]).lastObject;
+    id activeApplicationElement = ((NSArray*)[[XCTestXCAXClientProxy sharedClient] activeApplications]).lastObject;
     
     if (!activeApplicationElement) {
-        activeApplicationElement = ((XCAXClient_iOS*)[XCAXClient_iOS sharedClient]).systemApplication;
+        activeApplicationElement = ((XCTestXCAXClientProxy*)[XCTestXCAXClientProxy sharedClient]).systemApplication;
     }
 
     XCUIApplication* application = [XCTestWDApplication createByPID:[[activeApplicationElement valueForKey:@"processIdentifier"] intValue]];
@@ -36,7 +36,11 @@
          return [XCUIApplication appWithPID:pid];
     }
     
-    return [XCUIApplication applicationWithPID:pid];
+    if ([XCUIApplication respondsToSelector:@selector(applicationWithPID:)]) {
+        return [XCUIApplication applicationWithPID:pid];
+    }
+    
+    return [[XCTestXCAXClientProxy sharedClient] monitoredApplicationWithProcessIdentifier:pid];
 }
 
 @end

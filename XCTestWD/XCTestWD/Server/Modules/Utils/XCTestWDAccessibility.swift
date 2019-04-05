@@ -485,7 +485,7 @@ extension XCElementSnapshot {
     }
     
     func attributeValue(_ number:NSNumber) -> AnyObject? {
-        let attributesResult = (XCAXClient_iOS.sharedClient() as! XCAXClient_iOS).attributes(forElementSnapshot: self, attributeList: [number])
+        let attributesResult = (XCTestXCAXClientProxy.sharedClient() ).attributes(forElement: self, attributes: [number])
         return attributesResult as AnyObject?
     }
     

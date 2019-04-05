@@ -36,3 +36,5 @@ FOUNDATION_EXPORT const unsigned char XCTestWDVersionString[];
 #import <XCTestWD/_XCTestCaseImplementation.h>
 #import <XCTestWD/XCTestCase.h>
 #import <XCTestWD/XCTestWDImplementationFailureHoldingProxy.h>
+#import <XCTestWD/XCUIDevice.h>
+#import <XCTestWD/XCTestXCAXClientProxy.h>

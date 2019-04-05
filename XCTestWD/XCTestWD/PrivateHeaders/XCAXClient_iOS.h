@@ -18,6 +18,9 @@
 }
 @property double AXTimeout;
 
+// Added since Xcode 10.2
+@property(readonly) id applicationProcessTracker;
+
 + (id)sharedClient;
 - (BOOL)_setAXTimeout:(double)arg1 error:(id *)arg2;
 - (NSData *)screenshotData;
@@ -25,6 +28,8 @@
 - (id)parameterizedAttributeForElement:(id)arg1 attribute:(id)arg2 parameter:(id)arg3;
 - (BOOL)setAttribute:(id)arg1 value:(id)arg2 element:(id)arg3 outError:(id *)arg4;
 - (id)attributesForElement:(id)arg1 attributes:(id)arg2;
+// since Xcode10
+- (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
 - (id)attributesForElementSnapshot:(id)arg1 attributeList:(id)arg2;
 - (id)snapshotForApplication:(id)arg1 attributeList:(id)arg2 parameters:(id)arg3;
 - (id)defaultParameters;
