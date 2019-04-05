@@ -66,10 +66,7 @@ const updateInformation = function() {
 let version = doctorIOS.getXcodeVersion();
 let pkgName = '';
 
-if (parseFloat(version) >= parseFloat('10.1')) {
-  version = '';
-  pkgName = xctestwdFrameworksPrefix;
-} else if (parseFloat(version) > parseFloat('10.0')) { // 10.1
+if (parseFloat(version) > parseFloat('10.0')) { // 10.1 , 10.2
   version = version.replace(/\./, 'dot');
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else if (parseFloat(version) > parseFloat('9.2')) { // 9.3 9.4
@@ -113,7 +110,7 @@ if (_.isExistedDir(latestDir)) {
 }
 // execute build of xctestrun file:
 shelljs.echo('preparing xctestrun build');
-shelljs.exec('xcodebuild build-for-testing -project \"XCTestWD/XCTestWD.xcodeproj\" -scheme \"XCTestWDUITests\" -destination \"platform=iOS Simulator,name=iPhone 7\" -derivedDataPath \"XCTestWD/build\"');
+shelljs.exec('xcodebuild build -project \"XCTestWD/XCTestWD.xcodeproj\" -scheme \"XCTestWDUITests\" -destination \"platform=iOS Simulator,name=iPhone 7\" -derivedDataPath \"XCTestWD/build\"');
 
 // fetch out potential
 let result = fs.readdirSync(path.join(__dirname, '..', 'XCTestWD', 'build', 'Build', 'Products')).filter(fn => fn.match('.*simulator.*\.xctestrun')).shift();
