@@ -111,12 +111,19 @@ if (_.isExistedDir(latestDir)) {
 } else {
   throw _.chalk.red('Carthage is not existed, please reinstall!');
 }
-// execute build of xctestrun file:
-shelljs.echo('preparing xctestrun build');
-shelljs.exec('xcodebuild build -project \"XCTestWD/XCTestWD.xcodeproj\" -scheme \"XCTestWDUITests\" -destination \"platform=iOS Simulator,name=iPhone 7\" -derivedDataPath \"XCTestWD/build\"');
 
-// fetch out potential
-let result = fs.readdirSync(path.join(__dirname, '..', 'XCTestWD', 'build', 'Build', 'Products')).filter(fn => fn.match('.*simulator.*\.xctestrun')).shift();
-console.log(`simulator optimization .xctestrun file generated: ${result}`);
+if (/^\s*(iPhone .+?) \(/m.test(shelljs.exec('xcrun simctl list devices available', { silent: true }).grep('iPhone').head({ '-n': 1 }).stdout)) {
+  const name = RegExp.$1;
 
-updateInformation();
+  // execute build of xctestrun file:
+  shelljs.echo('preparing xctestrun build');
+  shelljs.exec('xcodebuild build -project "XCTestWD/XCTestWD.xcodeproj" -scheme "XCTestWDUITests" -destination "platform=iOS Simulator,name=' + name + '" -derivedDataPath "XCTestWD/build"');
+
+  // fetch out potential
+  let result = fs.readdirSync(path.join(__dirname, '..', 'XCTestWD', 'build', 'Build', 'Products')).filter(fn => fn.match('.*simulator.*\.xctestrun')).shift();
+  console.log(`simulator optimization .xctestrun file generated: ${result}`);
+
+  updateInformation();
+} else {
+  throw _.chalk.red('Failed to find iOS Simulator!');
+}
