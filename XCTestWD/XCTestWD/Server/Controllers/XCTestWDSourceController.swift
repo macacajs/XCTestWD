@@ -27,7 +27,7 @@ internal class XCTestWDSourceController: Controller {
     //MARK: Routing Logic Specification
     internal static func source(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let _ = request.session?.application.query()
-        request.session?.application.resolve()
+        request.session?.application.fb_nativeResolve()
         let temp = request.session?.application.tree()
         return XCTestWDResponse.response(session: request.session, value: JSON(JSON(temp!).rawString() ?? ""))
     }
@@ -39,7 +39,7 @@ internal class XCTestWDSourceController: Controller {
     
     internal static func accessiblitySource(request: Swifter.HttpRequest) -> Swifter.HttpResponse {
         let _ = request.session?.application.query()
-        request.session?.application.resolve()
+        request.session?.application.fb_nativeResolve()
         let temp = request.session?.application.accessibilityTree()
         return XCTestWDResponse.response(session: request.session, value: JSON(JSON(temp!).rawString() ?? ""))
     }

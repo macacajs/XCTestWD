@@ -16,7 +16,7 @@ const DEVELOPMENT_TEAM = process.env.DEVELOPMENT_TEAM_ID || '';
 
 const xctestwdFrameworksPrefix = 'xctestwd-frameworks';
 
-const update = function(project, schemeName, callback) {
+const update = function (project, schemeName, callback) {
   const myConfigKey = project.pbxTargetByName(schemeName).buildConfigurationList;
   const buildConfig = project.pbxXCConfigurationList()[myConfigKey];
   const configArray = buildConfig.buildConfigurations;
@@ -27,14 +27,14 @@ const update = function(project, schemeName, callback) {
   });
 };
 
-const updateInformation = function() {
+const updateInformation = function () {
   try {
     const schemeName = 'XCTestWDUITests';
     const projectPath = path.join(__dirname, '..', 'XCTestWD', 'XCTestWD.xcodeproj', 'project.pbxproj');
     const myProj = xcode.project(projectPath);
     myProj.parseSync();
 
-    update(myProj, schemeName, function(buildSettings) {
+    update(myProj, schemeName, function (buildSettings) {
       const newBundleId = process.env.BUNDLE_ID || `XCTestWDRunner.XCTestWDRunner.${hostname}`;
       buildSettings.PRODUCT_BUNDLE_IDENTIFIER = newBundleId;
       if (DEVELOPMENT_TEAM) {
@@ -64,23 +64,23 @@ const updateInformation = function() {
 };
 
 let version = doctorIOS.getXcodeVersion();
+console.log(`Xcode version: ${version}`);
 let pkgName = '';
 
-if (parseFloat(version) >= parseFloat('10.1')) {
+if (parseFloat(version) >= parseFloat('11')) { // 11.1
   version = '';
   pkgName = xctestwdFrameworksPrefix;
+} else if (parseFloat(version) > parseFloat('10.1')) { // 10.2 10.3
+  version = '10dot2';
+  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else if (parseFloat(version) > parseFloat('10.0')) { // 10.1
-  version = version.replace(/\./, 'dot');
-  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
-} else if (parseFloat(version) > parseFloat('9.2')) { // 9.3 9.4
-  version = version.replace(/\./, '').slice(0, 2);
-  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
-} else if (parseFloat(version) > parseFloat('9.0')) { // 9.1 9.2
+  version = '10dot1';
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else {
   console.log(_.chalk.red(`Xcode ${version} unsupported, please upgrade your xcode.`));
   return;
 }
+console.log(`xctestwd frameworks package name: ${pkgName}`);
 
 let dir;
 
@@ -125,5 +125,7 @@ if (/^\s*(iPhone .+?) \(/m.test(shelljs.exec('xcrun simctl list devices availabl
 
   updateInformation();
 } else {
+  shelljs.echo('xcrun simctl list devices available');
+  shelljs.exec('xcrun simctl list devices available');
   throw _.chalk.red('Failed to find iOS Simulator!');
 }

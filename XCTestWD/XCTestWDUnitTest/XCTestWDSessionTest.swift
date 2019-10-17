@@ -18,7 +18,7 @@ class XCTestWDSessionTest: XCTestWDUnitTestBase {
     }
 
     func testFetchSystemApplicaiton() {
-        let systemApplication = (XCAXClient_iOS.sharedClient() as! XCAXClient_iOS).systemApplication()
+        let systemApplication = XCTestXCAXClientProxy.sharedClient().systemApplication()
         let springBoardApplication = XCTestWDApplication.create(byPID: pid_t(((systemApplication as! NSObject).value(forKey: "processIdentifier") as! NSNumber).intValue))
 
         XCTAssert(springBoardApplication != nil, "application should not be nil")

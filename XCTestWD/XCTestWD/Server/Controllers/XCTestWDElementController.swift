@@ -241,7 +241,7 @@ internal class XCTestWDElementController: Controller {
         }
         
         if element?.lastSnapshot == nil {
-            element?.resolve()
+            element?.fb_nativeResolve()
         }
         
         return XCTestWDResponse.response(session: session, value: JSON(element?.lastSnapshot.isWDVisible() as Any))

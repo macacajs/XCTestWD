@@ -38,7 +38,7 @@ internal class XCTestWDTitleController: Controller {
 
         let window = elements![0]
         let navBar = window.descendants(matching: XCUIElement.ElementType.navigationBar).allElementsBoundByIndex.first
-        window.resolve()
+        window.fb_nativeResolve()
         let digest = window.digest(windowName: navBar?.identifier == nil ? "" : (navBar?.identifier)!)
         return XCTestWDResponse.response(session: nil, value: JSON(digest as Any))
     }
