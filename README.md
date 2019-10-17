@@ -28,7 +28,7 @@ This project follows the git-contributor [spec](https://github.com/xudafeng/git-
 
 ## 1. Requirements
 
-- XCode version > 9.0
+- XCode version > 10.1
 - iOS version 11.0 and above. （there is significant change on XCUITest interfaces and system private headers, hence we decide to support newest OS version only）
 
 ## 2. Starting XCTestWD
@@ -140,7 +140,3 @@ We update dependencies by using other npm packages, because the XCode upgrade sw
 | [xctestwd-frameworks](https://github.com/macacajs/xctestwd-frameworks) | 11.1 | |
 | [xctestwd-frameworks-10dot2](https://github.com/macacajs/xctestwd-frameworks-10.2) | 10.2 | |
 | [xctestwd-frameworks-10dot1](https://github.com/macacajs/xctestwd-frameworks-10.1) | 10.1 | |
-| [xctestwd-frameworks-94](https://github.com/macacajs/xctestwd-frameworks-9.4) | 9.4 | |
-| [xctestwd-frameworks-93](https://github.com/macacajs/xctestwd-frameworks-9.3) | 9.3 | |
-| [xctestwd-frameworks-9.2](https://github.com/macacajs/xctestwd-frameworks-9.2) | 9.2 | |
-| [xctestwd-frameworks-9.1](https://github.com/macacajs/xctestwd-frameworks-9.1) | 9.1 | |

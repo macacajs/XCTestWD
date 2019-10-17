@@ -71,15 +71,10 @@ if (parseFloat(version) >= parseFloat('11')) { // 11.1
   version = '';
   pkgName = xctestwdFrameworksPrefix;
 } else if (parseFloat(version) > parseFloat('10.1')) { // 10.2 10.3
-  version = version.replace(/\./, 'dot');
+  version = '10dot2';
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else if (parseFloat(version) > parseFloat('10.0')) { // 10.1
-  version = version.replace(/\./, 'dot');
-  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
-} else if (parseFloat(version) > parseFloat('9.2')) { // 9.3 9.4
-  version = version.replace(/\./, '').slice(0, 2);
-  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
-} else if (parseFloat(version) > parseFloat('9.0')) { // 9.1 9.2
+  version = '10dot1';
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else {
   console.log(_.chalk.red(`Xcode ${version} unsupported, please upgrade your xcode.`));
