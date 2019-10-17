@@ -105,11 +105,8 @@ extension XCUIElement {
     }
     
     func checkLastSnapShot() -> XCElementSnapshot {
-        if self.lastSnapshot != nil {
-            return self.lastSnapshot
-        }
-        self.resolve()
-        return self.lastSnapshot
+        self.fb_nativeResolve()
+        return self.fb_lastSnapshot()
     }
     
     //MARK: element query
@@ -117,7 +114,7 @@ extension XCUIElement {
     func descendantsMatchingXPathQuery(xpathQuery:String, returnAfterFirstMatch:Bool) -> [XCUIElement]? {
         
         let query = xpathQuery.replacingOccurrences(of: "XCUIElementTypeAny", with: "*")
-        var matchSnapShots = XCTestWDXPath.findMatchesIn(self.lastSnapshot, query)
+        var matchSnapShots = XCTestWDXPath.findMatchesIn(self.fb_lastSnapshot(), query)
         
         if matchSnapShots == nil || matchSnapShots!.count == 0 {
             return [XCUIElement]()
@@ -194,7 +191,7 @@ extension XCUIElement {
         let formattedPredicate = NSPredicate.xctestWDformatSearch(predicate)
         var result:[XCUIElement] = []
 
-        if formattedPredicate?.evaluate(with: self.lastSnapshot) ?? false {
+        if formattedPredicate?.evaluate(with: self.fb_lastSnapshot) ?? false {
             if returnFirstMatch {
                 return [self]
             }
@@ -239,15 +236,15 @@ extension XCUIElement {
         } else if key.lowercased().contains("type") {
             return self.wdType()
         } else if key.lowercased().contains("visible") {
-            if self.lastSnapshot == nil {
-                self.resolve()
+            if self.fb_lastSnapshot() == nil {
+                self.fb_nativeResolve()
             }
-            return self.lastSnapshot.isWDVisible()
+            return self.fb_lastSnapshot().isWDVisible()
         } else if key.lowercased().contains("access") {
-            if self.lastSnapshot == nil {
-                self.resolve()
+            if self.fb_lastSnapshot() == nil {
+                self.fb_nativeResolve()
             }
-            return self.lastSnapshot.isAccessibile()
+            return self.fb_lastSnapshot().isAccessibile()
         }
         
         return ""
@@ -259,12 +256,10 @@ extension XCUIElement {
     
     //MARK: Commands
     func tree() -> [String : AnyObject]? {
+    
+        self.fb_nativeResolve()
         
-        if self.lastSnapshot == nil {
-            self.resolve()
-        }
-        
-        return dictionaryForElement(self.lastSnapshot)
+        return dictionaryForElement(self.fb_lastSnapshot())
     }
     
     func digest(windowName : String) -> String {
@@ -274,13 +269,10 @@ extension XCUIElement {
     }
     
     func accessibilityTree() -> [String : AnyObject]? {
+        self.fb_nativeResolve()
+        let _ = self.query
         
-        if self.lastSnapshot == nil {
-            self.resolve()
-            let _ = self.query
-        }
-        
-        return accessibilityInfoForElement(self.lastSnapshot)
+        return accessibilityInfoForElement(self.fb_lastSnapshot())
     }
     
     //MARK: Private Methods
@@ -303,6 +295,7 @@ extension XCUIElement {
         
         // If block is visible, iterate through all its children
         let childrenElements = snapshot.children
+        
         if childrenElements != nil && childrenElements!.count > 0 {
             var children = [AnyObject]()
             for child in childrenElements! {
@@ -315,7 +308,7 @@ extension XCUIElement {
                 info["children"] = children as AnyObject
             }
         }
-
+        
         return info
     }
     

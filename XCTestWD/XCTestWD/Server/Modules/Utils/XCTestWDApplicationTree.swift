@@ -12,7 +12,7 @@ import SwiftyJSON
 extension XCUIApplication {
 
     func mainWindowSnapshot() -> XCElementSnapshot? {
-        let mainWindows = (self.lastSnapshot() as! XCElementSnapshot).descendantsByFiltering { (snapshot) -> Bool in
+        let mainWindows = (self.fb_lastSnapshot()).descendantsByFiltering { (snapshot) -> Bool in
             return snapshot?.isMainWindow ?? false
         }
         return mainWindows?.last

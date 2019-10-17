@@ -31,14 +31,16 @@
 @property(getter=isIdleAnimationWaitEnabled) BOOL idleAnimationWaitEnabled; // @synthesize idleAnimationWaitEnabled=_idleAnimationWaitEnabled;
 @property(nonatomic) BOOL doesNotHandleUIInterruptions; // @synthesize doesNotHandleUIInterruptions=_doesNotHandleUIInterruptions;
 @property(readonly) BOOL fauxCollectionViewCellsEnabled;
+#if !TARGET_OS_TV
 @property(readonly, nonatomic) UIInterfaceOrientation interfaceOrientation; //TODO tvos
+#endif
 @property(readonly, nonatomic) BOOL running;
 @property(nonatomic) pid_t processID; // @synthesize processID=_processID;
-@property XCUIApplicationState state; // @synthesize state=_state; // @synthesize state=_state;
 @property(readonly) XCAccessibilityElement *accessibilityElement;
 
 + (instancetype)appWithPID:(pid_t)processID;
 + (instancetype)applicationWithPID:(pid_t)processID;
+- (void)activate;
 
 - (void)dismissKeyboard;
 - (BOOL)setFauxCollectionViewCellsEnabled:(BOOL)arg1 error:(id *)arg2;
@@ -50,7 +52,7 @@
 - (id)application;
 - (id)description;
 - (id)lastSnapshot;
-- (id)query;
+- (XCUIElementQuery *)query;
 - (void)clearQuery;
 - (void)resolveHandleUIInterruption:(BOOL)arg1;
 - (id)initPrivateWithPath:(id)arg1 bundleID:(id)arg2;

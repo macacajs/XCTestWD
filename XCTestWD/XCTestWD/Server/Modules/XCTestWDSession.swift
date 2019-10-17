@@ -66,7 +66,7 @@ internal class XCTestWDSession {
     
     func resolve() {
         self._application.query()
-        self._application.resolve()
+        self._application.fb_nativeResolve()
     }
 }
 

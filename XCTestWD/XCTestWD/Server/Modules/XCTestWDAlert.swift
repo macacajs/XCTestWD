@@ -90,9 +90,9 @@ internal class XCTestWDAlert {
             }
         }
         
-        alert.resolve()
+        alert.fb_nativeResolve()
         self.application.query()
-        self.application.resolve()
+        self.application.fb_nativeResolve()
         return alert
     }
 }

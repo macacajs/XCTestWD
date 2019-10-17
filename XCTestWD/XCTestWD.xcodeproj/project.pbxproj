@@ -5,7 +5,6 @@
 	};
 	objectVersion = 45;
 	objects = {
-
 /* Begin PBXAggregateTarget section */
 		7F2B0207203C265F00B07F50 /* XCTestWDAggregation */ = {
 			isa = PBXAggregateTarget;
@@ -124,6 +123,9 @@
 		7FF25E072058DB280001C119 /* Fuzi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F2B01DA203BDEF500B07F50 /* Fuzi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FF25E092058DB280001C119 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F4F31341EACECD900F8D82C /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FF25E0A2058DB280001C119 /* Swifter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63D4083B1EAB62D500198736 /* Swifter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE976F59235859E000617380 /* XCTElementSetTransformer-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = DEEEA165235858CB00DC432D /* XCTElementSetTransformer-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEEEA163235805DA00DC432D /* XCTestXCodeCompatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = DEEEA161235805D900DC432D /* XCTestXCodeCompatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEEEA164235805DA00DC432D /* XCTestXCodeCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEEA162235805DA00DC432D /* XCTestXCodeCompatibility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +263,9 @@
 		7FB002EF1EAC66F900476E7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7FD799771EBC15D70053C4D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7FE23793205E5C8F0026CEFB /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
+		DEEEA161235805D900DC432D /* XCTestXCodeCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTestXCodeCompatibility.h; sourceTree = "<group>"; };
+		DEEEA162235805DA00DC432D /* XCTestXCodeCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestXCodeCompatibility.m; sourceTree = "<group>"; };
+		DEEEA165235858CB00DC432D /* XCTElementSetTransformer-Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCTElementSetTransformer-Protocol.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +433,7 @@
 				7F5D35E4203C470900BCC922 /* XCTestManager_IDEInterface-Protocol.h */,
 				7F5D35D6203C470800BCC922 /* XCTestManager_ManagerInterface-Protocol.h */,
 				7F5D35DE203C470900BCC922 /* XCTestManager_TestsInterface-Protocol.h */,
+				DEEEA165235858CB00DC432D /* XCTElementSetTransformer-Protocol.h */,
 				7F5D35D9203C470900BCC922 /* XCTestPrivateSymbols.h */,
 				7F5D35D2203C470800BCC922 /* XCTestPrivateSymbols.m */,
 				7F5D35DA203C470900BCC922 /* XCTRunnerDaemonSession.h */,
@@ -443,6 +449,8 @@
 		7F8D62A5203E57FC00D92323 /* Macaca */ = {
 			isa = PBXGroup;
 			children = (
+				DEEEA161235805D900DC432D /* XCTestXCodeCompatibility.h */,
+				DEEEA162235805DA00DC432D /* XCTestXCodeCompatibility.m */,
 				566C9FBD22576FCA009BF53E /* XCTestXCAXClientProxy.h */,
 				566C9FBC22576FCA009BF53E /* XCTestXCAXClientProxy.m */,
 				7F5D35FD203C474900BCC922 /* XCTestWDApplication.h */,
@@ -533,9 +541,11 @@
 				566C9FBF22576FCA009BF53E /* XCTestXCAXClientProxy.h in Headers */,
 				566C9FBB22576FB2009BF53E /* XCUIDevice.h in Headers */,
 				7F8D62B1203E595100D92323 /* XCTestDriverInterface-Protocol.h in Headers */,
+				DEEEA163235805DA00DC432D /* XCTestXCodeCompatibility.h in Headers */,
 				7F8D62B2203E595100D92323 /* XCTestManager_IDEInterface-Protocol.h in Headers */,
 				7F8D62B3203E595100D92323 /* XCTestManager_ManagerInterface-Protocol.h in Headers */,
 				7F8D62B4203E595100D92323 /* XCTestManager_TestsInterface-Protocol.h in Headers */,
+				DE976F59235859E000617380 /* XCTElementSetTransformer-Protocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +751,7 @@
 				7F8D62D6203E59B400D92323 /* XCUIElementTypeTransformer.swift in Sources */,
 				7F8D62D7203E59B400D92323 /* XCTestWDFindElementUtils.swift in Sources */,
 				7F8D62D8203E59B400D92323 /* XCTestWDMathUtils.swift in Sources */,
+				DEEEA164235805DA00DC432D /* XCTestXCodeCompatibility.m in Sources */,
 				7F8D62D9203E59B400D92323 /* XCTestWDXPath.swift in Sources */,
 				7F8D62DA203E59B400D92323 /* XCTestWDAccessibility.swift in Sources */,
 				7F8D62DB203E59B400D92323 /* XCTestWDApplicationTree.swift in Sources */,
@@ -966,7 +977,7 @@
 					"-lxml2",
 					"-Wl,-U,\"_OBJC_CLASS_$_XCElementSnapshot\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.Ali-71875N.local";
+				PRODUCT_BUNDLE_IDENTIFIER = XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1004,7 +1015,7 @@
 					"-lxml2",
 					"-Wl,-U,\"_OBJC_CLASS_$_XCElementSnapshot\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.Ali-71875N.local";
+				PRODUCT_BUNDLE_IDENTIFIER = XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
