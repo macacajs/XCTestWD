@@ -130,5 +130,7 @@ if (/^\s*(iPhone .+?) \(/m.test(shelljs.exec('xcrun simctl list devices availabl
 
   updateInformation();
 } else {
+  shelljs.echo('xcrun simctl list devices available');
+  shelljs.exec('xcrun simctl list devices available');
   throw _.chalk.red('Failed to find iOS Simulator!');
 }

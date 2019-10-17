@@ -47,3 +47,47 @@ jobs:
       - store_artifacts:
           path: ~/Library/Logs/scan
           destination: scan-logs
+
+  build-11:
+
+    # Specify the Xcode version to use
+    macos:
+      xcode: "11.1.0"
+
+    steps:
+      - checkout
+
+      # Install CocoaPods
+      - run:
+          name: Carthage Update
+          command: carthage update --platform iOS --configuration Debug
+
+      # Build the app and run tests
+      - run:
+          name: Preparing Tests
+          command: echo "preparing execution"
+          environment:
+            SCAN_DEVICE: iPhone 11
+
+      - run:
+          name: Run XCTestWD Unit Tests
+          command: xcodebuild -project XCTestWD/XCTestWD.xcodeproj
+                              -scheme XCTestWDUnitTest
+                              -destination 'platform=iOS Simulator,name=iPhone 11'
+                              test
+
+      - run:
+          name: Run Macaca iOS Integration Tests
+          command: ./scripts/integration-testing.sh
+
+      # Collect XML test results data to show in the UI,
+      # and save the same XML files under test-results folder
+      # in the Artifacts tab
+      - store_test_results:
+          path: test_output/report.xml
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: scan-test-results
+      - store_artifacts:
+          path: ~/Library/Logs/scan
+          destination: scan-logs
