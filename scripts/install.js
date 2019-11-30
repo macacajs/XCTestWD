@@ -67,9 +67,12 @@ let version = doctorIOS.getXcodeVersion();
 console.log(`Xcode version: ${version}`);
 let pkgName = '';
 
-if (parseFloat(version) >= parseFloat('11')) { // 11.1
+if (parseFloat(version) >= parseFloat('11.2')) { // 11.2.1
   version = '';
   pkgName = xctestwdFrameworksPrefix;
+} else if (parseFloat(version) >= parseFloat('11.1')) { // 11.1
+  version = '11dot1';
+  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else if (parseFloat(version) > parseFloat('10.1')) { // 10.2 10.3
   version = '10dot2';
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
