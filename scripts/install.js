@@ -67,9 +67,14 @@ let version = doctorIOS.getXcodeVersion();
 console.log(`Xcode version: ${version}`);
 let pkgName = '';
 
-if (parseFloat(version) >= parseFloat('11.2')) { // 11.2.1
+if (parseFloat(version) >= parseFloat('11.4')) { // 11.4
+  // https://swift.org/blog/swift-5-2-released/
+  // Swift 5.2 ships as part of Xcode 11.4
   version = '';
   pkgName = xctestwdFrameworksPrefix;
+} else if (parseFloat(version) >= parseFloat('11.2')) { // 11.2 11.3
+  version = 'iidotiidoti';
+  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else if (parseFloat(version) >= parseFloat('11.1')) { // 11.1
   version = '11dot1';
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
