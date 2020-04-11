@@ -5,6 +5,7 @@
 	};
 	objectVersion = 45;
 	objects = {
+
 /* Begin PBXAggregateTarget section */
 		7F2B0207203C265F00B07F50 /* XCTestWDAggregation */ = {
 			isa = PBXAggregateTarget;
@@ -814,6 +815,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/XCTestWDUnitTest",
 					"$(SRCROOT)/../Carthage/Build/iOS",
@@ -932,6 +934,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -977,7 +980,7 @@
 					"-lxml2",
 					"-Wl,-U,\"_OBJC_CLASS_$_XCElementSnapshot\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local;
+				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -998,6 +1001,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
@@ -1015,7 +1019,7 @@
 					"-lxml2",
 					"-Wl,-U,\"_OBJC_CLASS_$_XCElementSnapshot\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local;
+				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1065,6 +1069,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SRCROOT)/../Carthage/Build/iOS",
@@ -1123,6 +1128,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SRCROOT)/../Carthage/Build/iOS",
