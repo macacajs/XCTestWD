@@ -14,7 +14,12 @@ open class XCTestWDFailureProofTest : XCTestCase
     override open func setUp() {
         super.setUp()
         continueAfterFailure = true;
-        internalImplementation = XCTestWDImplementationFailureHoldingProxy.proxy(with: self.internalImplementation)
+        if(self.responds(to: #selector(setter: internalImplementation))){
+            internalImplementation = XCTestWDImplementationFailureHoldingProxy.proxy(with: self.internalImplementation)
+        } else {
+            shouldSetShouldHaltWhenReceivesControl = false
+            shouldHaltWhenReceivesControl = false
+        }
     }
     
     override open func recordFailure(withDescription description: String, inFile filePath: String, atLine lineNumber: Int, expected: Bool) {
