@@ -14,7 +14,7 @@ open class XCTestWDFailureProofTest : XCTestCase
     override open func setUp() {
         super.setUp()
         continueAfterFailure = true;
-        if(self.responds(to: #selector(getter: internalImplementation))){
+        if(self.responds(to: #selector(setter: internalImplementation))){
             internalImplementation = XCTestWDImplementationFailureHoldingProxy.proxy(with: self.internalImplementation)
         } else {
             shouldSetShouldHaltWhenReceivesControl = false
