@@ -16,8 +16,5 @@ cd sample-nodejs
 
 npm i
 npm install macaca-ios -g
-
-# fix for "Unable to find application named 'Simulator'"" error on CircleCI
-ln -s  "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" /usr/local/bin/Simulator
-
+DevToolsSecurity -enable
 npm run test:ios
