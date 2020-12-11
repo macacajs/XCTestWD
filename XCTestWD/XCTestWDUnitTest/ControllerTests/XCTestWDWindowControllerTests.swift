@@ -10,7 +10,7 @@
 import XCTest
 import Nimble
 @testable import XCTestWD
-@testable import Swifter
+import Swifter
 
 class XCTestWDWindowControllerTests: XCTestWDUnitTestBase {
 

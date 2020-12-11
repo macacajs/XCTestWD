@@ -31,6 +31,18 @@ This project follows the git-contributor [spec](https://github.com/xudafeng/git-
 - XCode version > 10.1
 - iOS version 11.0 and above. （there is significant change on XCUITest interfaces and system private headers, hence we decide to support newest OS version only）
 
+### 1.1. Carthage
+
+Using Carthage with Xcode 12
+
+> https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md
+
+carthage.sh can be found at the root of the project
+
+```bash
+$ carthage.sh bootstrap --platform iOS --cache-builds
+```
+
 ## 2. Starting XCTestWD
 
 XCTestWD can be either started with XCode IDE or via simple xcodebuild command line. By default, the webdriver agent occupies port `8001`.  You can override the default port in XCode by searching `XCTESTWD_PORT` under project build settings. Alternatively, it can also be overrided when you execute command line method as specified in `2.2. Using Xcodebuild`
