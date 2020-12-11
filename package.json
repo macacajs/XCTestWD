@@ -23,8 +23,6 @@
     "xctestwd-frameworks": "1",
     "xctestwd-frameworks-iidotiidoti": "1",
     "xctestwd-frameworks-11dot1": "1",
-    "xctestwd-frameworks-10dot1": "1",
-    "xctestwd-frameworks-10dot2": "1",
     "xlogger": "~1.0.0"
   },
   "devDependencies": {

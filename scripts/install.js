@@ -85,12 +85,6 @@ if (parseFloat(version) >= parseFloat('12')) { // 12
 } else if (parseFloat(version) >= parseFloat('11.1')) { // 11.1
   version = '11dot1';
   pkgName = `${xctestwdFrameworksPrefix}-${version}`;
-} else if (parseFloat(version) > parseFloat('10.1')) { // 10.2 10.3
-  version = '10dot2';
-  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
-} else if (parseFloat(version) > parseFloat('10.0')) { // 10.1
-  version = '10dot1';
-  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
 } else {
   console.log(_.chalk.red(`Xcode ${version} unsupported, please upgrade your xcode.`));
   return;
