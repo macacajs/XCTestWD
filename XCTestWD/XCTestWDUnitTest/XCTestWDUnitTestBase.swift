@@ -11,7 +11,7 @@ import XCTest
 import SwiftyJSON
 import Nimble
 @testable import XCTestWD
-@testable import Swifter
+import Swifter
 
 class XCTestWDUnitTestBase: XCTestCase {
 
@@ -61,7 +61,7 @@ extension HttpResponse {
     {
         let jsonContent = XCTestWDUnitTestBase.getResponseData(self)
         expect(jsonContent["status"]).to(equal(0))
-        expect(self.statusCode()).to(equal(200))
+        expect(self.statusCode).to(equal(200))
     }
 }
 

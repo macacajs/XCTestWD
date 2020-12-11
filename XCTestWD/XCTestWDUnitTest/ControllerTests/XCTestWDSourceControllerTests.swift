@@ -10,7 +10,7 @@ import XCTest
 import Nimble
 import SwiftyJSON
 @testable import XCTestWD
-@testable import Swifter
+import Swifter
 
 class XCTestWDSourceControllerTests: XCTestWDUnitTestBase {
 

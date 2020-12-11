@@ -75,7 +75,6 @@ public class XCTestWDServer {
             for i in 0...routes.count - 1 {
                 let (router, requestHandler) = routes[i]
                 var routeMethod: HttpServer.MethodRoute?
-                
                 switch router.verb {
                 case "post","POST":
                     routeMethod = server.POST
@@ -88,9 +87,6 @@ public class XCTestWDServer {
                     break
                 case "delete", "DELETE":
                     routeMethod = server.DELETE
-                    break
-                case "update", "UPDATE":
-                    routeMethod = server.UPDATE
                     break
                 default:
                     routeMethod = nil

@@ -1,4 +1,4 @@
-github "httpswift/swifter" == 1.4.3
+github "httpswift/swifter" == 1.5.0
 github "SwiftyJSON/SwiftyJSON" == 4.2.0
 github "cezheng/Fuzi" "b26786259f13b8a83eaff0ac46dd052c18960df5"
 github "tadija/AEXML" == 4.5.0
