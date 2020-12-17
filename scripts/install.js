@@ -126,7 +126,7 @@ if (/^\s*(iPhone .+?) \(/m.test(shelljs.exec('xcrun simctl list devices', { sile
 
   // execute build of xctestrun file:
   shelljs.echo('preparing xctestrun build');
-  shelljs.exec('xcodebuild build -project "XCTestWD/XCTestWD.xcodeproj" -scheme "XCTestWDUITests" -destination "platform=iOS Simulator,name=' + name + '" -derivedDataPath "XCTestWD/build"');
+  shelljs.exec('xcodebuild build -project "XCTestWD/XCTestWD.xcodeproj" -scheme "XCTestWDUITests" -destination "platform=iOS Simulator,name=' + name + '" -derivedDataPath "XCTestWD/build"  -UseModernBuildSystem=NO');
 
   // fetch out potential
   let result = fs.readdirSync(path.join(__dirname, '..', 'XCTestWD', 'build', 'Build', 'Products')).filter(fn => fn.match('.*simulator.*\.xctestrun')).shift();
