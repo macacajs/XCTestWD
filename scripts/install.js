@@ -67,7 +67,12 @@ let version = doctorIOS.getXcodeVersion();
 console.log(`Xcode version: ${version}`);
 let pkgName = '';
 
-if (parseFloat(version) >= parseFloat('12')) { // 12
+if (parseFloat(version) >= parseFloat('12.5')) { // 12
+  // https://swift.org/blog/swift-5-4-released/
+  // Swift 5.4 is included in Xcode 12.5
+  version = '12dot5';
+  pkgName = `${xctestwdFrameworksPrefix}-${version}`;
+} else if (parseFloat(version) >= parseFloat('12')) { // 12
   // https://swift.org/blog/swift-5-3-released/
   // Swift 5.3 is also included in Xcode 12
   version = '12';

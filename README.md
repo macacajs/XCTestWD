@@ -40,7 +40,7 @@ Using Carthage with Xcode 12
 carthage.sh can be found at the root of the project
 
 ```bash
-$ carthage.sh bootstrap --platform iOS --cache-builds
+./carthage.sh bootstrap --platform iOS --cache-builds
 ```
 
 ## 2. Starting XCTestWD
@@ -59,11 +59,11 @@ Open the terminal, go to the directory where contains `XCTestWD.xcodeproj` file 
 #
 # Change the port number to override the default port
 #
-$ xcodebuild -project XCTestWD.xcodeproj \
-           -scheme XCTestWDUITests \
-           -destination 'platform=iOS Simulator,name=iPhone 6' \
-           XCTESTWD_PORT=8001 \
-           clean test
+xcodebuild -project XCTestWD.xcodeproj \
+  -scheme XCTestWDUITests \
+  -destination 'platform=iOS Simulator,name=iPhone 6' \
+  XCTESTWD_PORT=8001 \
+  clean test
 ```
 
 To execute for iOS device, run the following command:
@@ -73,11 +73,11 @@ To execute for iOS device, run the following command:
 # Change the port number to override the default port
 # Specify the device name
 #
-$ xcodebuild -project XCTestWD.xcodeproj \
-           -scheme XCTestWDUITests \
-           -destination 'platform=iOS,name=(your device name)' \
-           XCTESTWD_PORT=8001 \
-           clean test
+xcodebuild -project XCTestWD.xcodeproj \
+  -scheme XCTestWDUITests \
+  -destination 'platform=iOS,name=(your device name)' \
+  XCTESTWD_PORT=8001 \
+  clean test
 ```
 **Note:** For versions above wxtestwd 2.0.0, please install ideviceinstaller for supporting real device testing
 
@@ -140,7 +140,7 @@ You can use `xcrun simctl list` to get the id of the booted device.
 user PATH variable MACACA_XCTESTWD_ROOT_PATH to override the default one.
 
 ```bash
-$ MACACA_XCTESTWD_ROOT_PATH=/path/to/macaca_xctest app-inspector -u xxx --verbose
+MACACA_XCTESTWD_ROOT_PATH=/path/to/macaca_xctest app-inspector -u xxx --verbose
 ```
 
 ### 4.5
