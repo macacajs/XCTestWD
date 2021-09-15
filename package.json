@@ -1,6 +1,6 @@
 {
   "name": "xctestwd",
-  "version": "1.4.29",
+  "version": "1.4.30",
   "description": "Swift implementation of WebDriver server for iOS that runs on Simulator/iOS devices.",
   "keywords": [
     "iOS",
