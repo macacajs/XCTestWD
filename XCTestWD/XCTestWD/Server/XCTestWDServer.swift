@@ -43,7 +43,9 @@ public class XCTestWDServer {
     }
     
     private func setupLog() {
-        DDLog.add(DDTTYLogger.sharedInstance)
+        if DDTTYLogger.sharedInstance != nil {
+            DDLog.add(DDTTYLogger.sharedInstance!)
+        }
         DDLog.add(DDASLLogger.sharedInstance)
 
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)

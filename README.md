@@ -40,7 +40,7 @@ Using Carthage with Xcode 12
 carthage.sh can be found at the root of the project
 
 ```bash
-$ carthage.sh bootstrap --platform iOS --cache-builds
+$ ./carthage.sh bootstrap --platform iOS --cache-builds
 ```
 
 ## 2. Starting XCTestWD
