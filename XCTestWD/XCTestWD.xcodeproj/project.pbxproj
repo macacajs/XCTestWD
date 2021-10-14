@@ -5,6 +5,7 @@
 	};
 	objectVersion = 45;
 	objects = {
+
 /* Begin PBXAggregateTarget section */
 		7F2B0207203C265F00B07F50 /* XCTestWDAggregation */ = {
 			isa = PBXAggregateTarget;
@@ -989,7 +990,7 @@
 					"-lxml2",
 					"-Wl,-U,\"_OBJC_CLASS_$_XCElementSnapshot\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local;
+				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1029,7 +1030,7 @@
 					"-lxml2",
 					"-Wl,-U,\"_OBJC_CLASS_$_XCElementSnapshot\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local;
+				PRODUCT_BUNDLE_IDENTIFIER = "XCTestWDRunner.XCTestWDRunner.administrators-MacBook-Pro-2.local";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1081,6 +1082,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SRCROOT)/../Carthage/Build/iOS",
@@ -1140,6 +1142,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SRCROOT)/../Carthage/Build/iOS",
