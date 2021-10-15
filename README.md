@@ -1,15 +1,17 @@
 # XCTestWD
 
+---
+
 [![NPM version][npm-image]][npm-url]
 [![node version][node-image]][node-url]
 [![npm download][download-image]][download-url]
 [![CircleCI](https://circleci.com/gh/macacajs/XCTestWD.svg?style=svg)](https://circleci.com/gh/macacajs/XCTestWD)
 
-[npm-image]: https://img.shields.io/npm/v/xctestwd.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/xctestwd.svg
 [npm-url]: https://npmjs.org/package/xctestwd
-[node-image]: https://img.shields.io/badge/node.js-%3E=_8-green.svg?style=flat-square
+[node-image]: https://img.shields.io/badge/node.js-%3E=_8-green.svg
 [node-url]: http://nodejs.org/download/
-[download-image]: https://img.shields.io/npm/dm/xctestwd.svg?style=flat-square
+[download-image]: https://img.shields.io/npm/dm/xctestwd.svg
 [download-url]: https://npmjs.org/package/xctestwd
 
 > Swift implementation of WebDriver server for iOS that runs on Simulator/iOS devices.
