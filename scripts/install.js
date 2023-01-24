@@ -131,7 +131,7 @@ if (_.isExistedDir(latestDir)) {
   throw _.chalk.red('Carthage is not existed, please reinstall!');
 }
 
-if (/^\s*(iPhone .+?) \(/m.test(shelljs.exec('xcrun simctl list devices', { silent: true }).grep('iPhone').head({ '-n': 1 }).stdout)) {
+if (/^\s*(iPhone .+?) \(.{8}-.{4}-.{4}-.{4}-.{12}\)/m.test(shelljs.exec('xcrun simctl list devices', { silent: true }).grep('iPhone').head({ '-n': 1 }).stdout)) {
   const name = RegExp.$1;
 
   // execute build of xctestrun file:
